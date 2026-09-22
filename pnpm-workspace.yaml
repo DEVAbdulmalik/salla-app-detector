@@ -1,0 +1,8 @@
+packages:
+  - "packages/*"
+  - "apps/*"
+  - "tools/*"
+
+# Native resolver used by eslint-plugin-import-x.
+allowBuilds:
+  unrs-resolver: true
