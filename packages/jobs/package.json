@@ -1,0 +1,17 @@
+{
+  "name": "@salla-app-detector/jobs",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@salla-app-detector/engine": "workspace:*",
+    "@salla-app-detector/salla": "workspace:*",
+    "@salla-app-detector/shared": "workspace:*"
+  }
+}
