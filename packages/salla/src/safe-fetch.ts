@@ -2,7 +2,7 @@ import { lookup as dnsLookup } from "node:dns";
 import { err, ok, type Result } from "@salla-app-detector/shared";
 // undici's own fetch is used rather than the global one: the guarded dispatcher below
 // comes from this same copy of undici, and the global fetch rejects a foreign dispatcher.
-import { Agent, fetch as undiciFetch } from "undici";
+import { Agent, fetch as undiciFetch, type Response as UndiciResponse } from "undici";
 import { isBlockedAddress } from "./addresses";
 
 export type FetchFailure =
@@ -194,7 +194,7 @@ function isAddressLiteral(host: string): boolean {
 }
 
 async function readCappedBody(
-  response: Response,
+  response: UndiciResponse,
   maxBytes: number,
 ): Promise<Result<{ text: string; bytes: number }, FetchFailure>> {
   const declared = Number(response.headers.get("content-length") ?? "0");
