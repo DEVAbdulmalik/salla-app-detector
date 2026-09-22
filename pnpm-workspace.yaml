@@ -3,6 +3,11 @@ packages:
   - "apps/*"
   - "tools/*"
 
-# Native resolver used by eslint-plugin-import-x.
+# esbuild backs tsx; unrs-resolver backs eslint-plugin-import-x.
 allowBuilds:
+  esbuild: true
   unrs-resolver: true
+
+minimumReleaseAgeExclude:
+  - tldts-core@7.4.14
+  - tldts@7.4.14
