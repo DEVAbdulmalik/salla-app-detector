@@ -55,6 +55,22 @@ pnpm cli scan mahwous.com --json   # the full report
 
 Any link to the store works: its own domain, a `salla.sa` handle, or a product page.
 
+## Knowledge base
+
+Detection reads from a Postgres database that holds the app catalogue, the fingerprints
+that point at those apps, and the platform background to ignore. Without a database the
+scanner falls back to the knowledge bundled in `packages/knowledge`.
+
+```bash
+pnpm cli db migrate      # create or update the schema
+pnpm cli db import       # load the bundled knowledge into an empty database
+pnpm cli db snapshot     # show what the database currently knows
+pnpm cli sync catalog    # refresh the catalogue and regenerate fingerprints
+```
+
+`sync catalog` works within a time budget and saves its place, so a large refresh can span
+several scheduled runs. Set `DATABASE_URL` in `.env.local`; see `.env.example`.
+
 ## Scripts
 
 | Command               | Description                          |
