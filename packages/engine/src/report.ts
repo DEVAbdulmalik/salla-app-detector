@@ -30,13 +30,16 @@ export interface ReportInput {
 const CONFIDENCE_RANK: Record<Confidence, number> = { confirmed: 0, strong: 1, possible: 2 };
 const STRENGTH_RANK = { decisive: 0, strong: 1, medium: 2 } as const;
 
-/** Signals worth carrying into the learning loop; the rest are too noisy to cluster on. */
+/**
+ * Signals worth carrying into the learning loop; the rest are too noisy to cluster on.
+ * Theme component bundles are left out: they identify a theme's building blocks rather
+ * than an installed app.
+ */
 const LEARNABLE_KINDS = new Set<EvidenceKind>([
   "service",
   "host",
   "domain",
   "inline-signature",
-  "bundle",
   "product-image-host",
 ]);
 

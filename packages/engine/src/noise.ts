@@ -1,3 +1,4 @@
+import { describeHost } from "./domains";
 import type { Evidence, NoiseRules } from "./types";
 
 /** Salla's own infrastructure. Present on every storefront, so it identifies nothing. */
@@ -36,7 +37,12 @@ export function filterNoise(evidence: readonly Evidence[], rules: NoiseRules): N
   function isNoise(item: Evidence): boolean {
     switch (item.kind) {
       case "host":
-        return hosts.has(item.value) || isPlatformHost(item.value);
+        // A host inherits its domain's verdict: ruling out sift.com also rules out cdn.sift.com.
+        return (
+          hosts.has(item.value) ||
+          isPlatformHost(item.value) ||
+          domains.has(describeHost(item.value)?.domain ?? item.value)
+        );
       case "domain":
         return domains.has(item.value) || isPlatformHost(item.value);
       case "inline-token":
