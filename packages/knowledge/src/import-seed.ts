@@ -51,6 +51,8 @@ export async function importSeed(
     })),
   );
 
+  await repository.saveSeedDomains(developerDomains(snapshot));
+
   const noiseRules: NoiseUpsert[] = Object.entries(snapshot.noise).flatMap(
     ([kind, patterns]: [string, readonly string[]]) =>
       patterns.map((pattern) => ({ kind: kind as NoiseKind, pattern, reason: "seed" })),
@@ -62,6 +64,25 @@ export async function importSeed(
     fingerprints: snapshot.fingerprints.length,
     noiseRules: noiseRules.length,
   };
+}
+
+/**
+ * Recovers the domain-to-app links the generated fingerprints encode, so a later catalogue
+ * refresh compares against the same picture rather than starting from nothing.
+ */
+function developerDomains(snapshot: KnowledgeSnapshot): { appId: string; domain: string }[] {
+  const pairs: { appId: string; domain: string }[] = [];
+  for (const fingerprint of snapshot.fingerprints) {
+    if (sourceOf(fingerprint.id) !== "auto" || fingerprint.kind !== "domain") {
+      continue;
+    }
+    const appIds =
+      fingerprint.target.type === "app" ? [fingerprint.target.appId] : fingerprint.target.appIds;
+    for (const appId of appIds) {
+      pairs.push({ appId, domain: fingerprint.pattern });
+    }
+  }
+  return pairs;
 }
 
 function sourceOf(fingerprintId: string): FingerprintSource {

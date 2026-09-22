@@ -84,7 +84,7 @@ export class KnowledgeRepository {
     await this.#db.query(
       `insert into apps (id, name, name_en, company, categories, status, is_default, installs, last_seen_in_catalog_at, missing_from_catalog_runs, updated_at)
        select id, name, name_en, company, coalesce(categories, '{}'), status, is_default, installs, now(), 0, now()
-       from jsonb_to_recordset($1::jsonb) as incoming(
+       from jsonb_to_recordset($1::text::jsonb) as incoming(
          id text, name text, name_en text, company text, categories text[],
          status text, is_default boolean, installs int
        )
@@ -163,6 +163,32 @@ export class KnowledgeRepository {
     );
   }
 
+  /** Records domain ownership without claiming the app's details were fetched. */
+  async saveSeedDomains(pairs: readonly { appId: string; domain: string }[]): Promise<void> {
+    if (pairs.length === 0) {
+      return;
+    }
+    await this.#db.query(
+      `update apps set developer_domains = incoming.domains, updated_at = now()
+       from (
+         select app_id, array_agg(distinct domain) as domains
+         from jsonb_to_recordset($1::text::jsonb) as pairs(app_id text, domain text)
+         group by app_id
+       ) as incoming
+       where apps.id = incoming.app_id and cardinality(apps.developer_domains) = 0`,
+      [JSON.stringify(pairs.map((pair) => ({ app_id: pair.appId, domain: pair.domain })))],
+    );
+  }
+
+  async appsPendingDetails(staleBefore: Date): Promise<number> {
+    const rows = await this.#db.query<{ count: string }>(
+      `select count(*)::text as count from apps
+       where status <> 'unidentified' and (details_fetched_at is null or details_fetched_at < $1)`,
+      [staleBefore],
+    );
+    return Number(rows[0]?.count ?? 0);
+  }
+
   /** Developer domains per app, the raw material for generated domain fingerprints. */
   async appDomains(): Promise<AppDomains[]> {
     return this.#db.query<AppDomains>(
@@ -188,7 +214,7 @@ export class KnowledgeRepository {
       `insert into fingerprints (id, kind, pattern, strength, source, status, app_id, company, company_app_ids, min_product_share)
        select id, kind, pattern, strength, source, status, app_id, company,
               coalesce(company_app_ids, '{}'), min_product_share
-       from jsonb_to_recordset($1::jsonb) as incoming(
+       from jsonb_to_recordset($1::text::jsonb) as incoming(
          id text, kind text, pattern text, strength text, source text, status text,
          app_id text, company text, company_app_ids text[], min_product_share real
        )
@@ -240,7 +266,7 @@ export class KnowledgeRepository {
     await this.#db.query(
       `insert into noise_rules (kind, pattern, reason)
        select kind, pattern, reason
-       from jsonb_to_recordset($1::jsonb) as incoming(kind text, pattern text, reason text)
+       from jsonb_to_recordset($1::text::jsonb) as incoming(kind text, pattern text, reason text)
        on conflict (kind, pattern) do update set reason = excluded.reason`,
       [
         JSON.stringify(
@@ -263,7 +289,7 @@ export class KnowledgeRepository {
     await this.#db.query(
       `insert into ground_truth (app_id, store_id, observed_on)
        select app_id, store_id, observed_on
-       from jsonb_to_recordset($1::jsonb) as incoming(app_id text, store_id bigint, observed_on date)
+       from jsonb_to_recordset($1::text::jsonb) as incoming(app_id text, store_id bigint, observed_on date)
        where exists (select 1 from apps where apps.id = incoming.app_id)
        on conflict (app_id, store_id) do update set observed_on = excluded.observed_on`,
       [
@@ -303,7 +329,7 @@ export class KnowledgeRepository {
   ): Promise<void> {
     await this.#db.query(
       `insert into job_state (job, cursor, last_run_at, last_status, updated_at)
-       values ($1, $2::jsonb, $3, $4, now())
+       values ($1, $2::text::jsonb, $3, $4, now())
        on conflict (job) do update set
          cursor = excluded.cursor,
          last_run_at = excluded.last_run_at,

@@ -8,7 +8,7 @@ import type { Database } from "./executor";
 export async function createEmbeddedDatabase(): Promise<Database> {
   const pglite = await PGlite.create();
 
-  return {
+  const database: Database = {
     async query<Row>(sql: string, params: readonly unknown[] = []): Promise<Row[]> {
       if (params.length === 0) {
         // Migration files hold several statements, which only the script runner accepts.
@@ -18,8 +18,21 @@ export async function createEmbeddedDatabase(): Promise<Database> {
       const result = await pglite.query<Row>(sql, [...params]);
       return result.rows;
     },
+    async transaction<T>(work: (tx: Database) => Promise<T>): Promise<T> {
+      await pglite.exec("begin");
+      try {
+        const result = await work(database);
+        await pglite.exec("commit");
+        return result;
+      } catch (error) {
+        await pglite.exec("rollback");
+        throw error;
+      }
+    },
     async close(): Promise<void> {
       await pglite.close();
     },
   };
+
+  return database;
 }

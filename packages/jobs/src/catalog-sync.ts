@@ -123,8 +123,11 @@ export async function syncCatalog(
     detailsFetched += 1;
   }
 
-  const generated = await rebuildDomainFingerprints(options.repository);
-  const completed = detailsFetched + detailsFailed === pending.length;
+  // Pruning is only safe once every app's details have been refreshed: mid-backfill the
+  // picture is incomplete, and removing what is missing from it would discard knowledge.
+  const stillPending = await options.repository.appsPendingDetails(staleBefore);
+  const generated = await rebuildDomainFingerprints(options.repository, stillPending === 0);
+  const completed = stillPending === 0;
 
   await options.repository.saveJobState(
     JOB,
@@ -153,6 +156,7 @@ export async function syncCatalog(
  */
 async function rebuildDomainFingerprints(
   repository: KnowledgeRepository,
+  prune: boolean,
 ): Promise<{ fingerprintsWritten: number; fingerprintsRemoved: number }> {
   const [appDomains, noiseDomains] = await Promise.all([
     repository.appDomains(),
@@ -193,7 +197,9 @@ async function rebuildDomainFingerprints(
   }
 
   await repository.upsertFingerprints(fingerprints);
-  const removed = await repository.removeAutoFingerprints(fingerprints.map((item) => item.id));
+  const removed = prune
+    ? await repository.removeAutoFingerprints(fingerprints.map((item) => item.id))
+    : 0;
 
   return { fingerprintsWritten: fingerprints.length, fingerprintsRemoved: removed };
 }

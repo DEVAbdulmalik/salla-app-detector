@@ -5,5 +5,11 @@
  */
 export interface Database {
   query<Row>(sql: string, params?: readonly unknown[]): Promise<Row[]>;
+  /**
+   * Runs `work` inside a transaction that commits on success and rolls back on failure.
+   * It is a method rather than raw `begin`/`commit` statements because a pooled connection
+   * cannot guarantee that those land on the same session.
+   */
+  transaction<T>(work: (tx: Database) => Promise<T>): Promise<T>;
   close(): Promise<void>;
 }

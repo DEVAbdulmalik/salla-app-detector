@@ -36,13 +36,12 @@ export async function migrate(
       continue;
     }
     const statements = readFileSync(join(directory, file), "utf8");
-    await database.query("begin");
     try {
-      await database.query(statements);
-      await database.query("insert into schema_migrations (version) values ($1)", [version]);
-      await database.query("commit");
+      await database.transaction(async (tx) => {
+        await tx.query(statements);
+        await tx.query("insert into schema_migrations (version) values ($1)", [version]);
+      });
     } catch (error) {
-      await database.query("rollback");
       throw new Error(`migration ${version} failed`, { cause: error });
     }
     applied.push(version);

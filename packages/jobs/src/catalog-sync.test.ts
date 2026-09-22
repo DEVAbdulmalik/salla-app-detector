@@ -174,6 +174,31 @@ describe("syncCatalog", () => {
     ]);
   });
 
+  it("keeps existing fingerprints while the details backfill is still running", async () => {
+    await repository.upsertApps([{ id: "1", name: "one" }]);
+    await repository.upsertFingerprints([
+      {
+        id: "dev-domain:known.example",
+        kind: "domain",
+        pattern: "known.example",
+        strength: "strong",
+        source: "auto",
+        appId: "1",
+      },
+    ]);
+    const { client } = stubClient([catalogApp("1"), catalogApp("2")], {
+      "1": details("1", ["fresh.example"]),
+      "2": details("2", ["later.example"]),
+    });
+
+    const result = await syncCatalog({ client, repository, detailsPerRun: 1 });
+
+    expect(result.ok && result.value).toMatchObject({ completed: false, fingerprintsRemoved: 0 });
+    expect(
+      (await repository.loadSnapshot()).fingerprints.map((item) => item.pattern).sort(),
+    ).toEqual(["fresh.example", "known.example"]);
+  });
+
   it("reports a catalogue that could not be read", async () => {
     const client: CatalogClient = {
       fetchCatalog: () =>
