@@ -221,17 +221,59 @@ importers:
         specifier: ^4.6.5
         version: 4.6.5
 
+  packages/jobs:
+    dependencies:
+      '@salla-app-detector/engine':
+        specifier: workspace:*
+        version: link:../engine
+      '@salla-app-detector/salla':
+        specifier: workspace:*
+        version: link:../salla
+      '@salla-app-detector/shared':
+        specifier: workspace:*
+        version: link:../shared
+
   packages/knowledge:
     dependencies:
       '@salla-app-detector/engine':
         specifier: workspace:*
         version: link:../engine
 
+  packages/salla:
+    dependencies:
+      '@salla-app-detector/shared':
+        specifier: workspace:*
+        version: link:../shared
+      undici:
+        specifier: ^8.11.0
+        version: 8.11.0
+      zod:
+        specifier: ^4.6.5
+        version: 4.6.5
+
   packages/shared:
     dependencies:
       zod:
         specifier: ^4.6.5
         version: 4.6.5
+
+  tools/cli:
+    dependencies:
+      '@salla-app-detector/engine':
+        specifier: workspace:*
+        version: link:../../packages/engine
+      '@salla-app-detector/jobs':
+        specifier: workspace:*
+        version: link:../../packages/jobs
+      '@salla-app-detector/knowledge':
+        specifier: workspace:*
+        version: link:../../packages/knowledge
+      '@salla-app-detector/salla':
+        specifier: workspace:*
+        version: link:../../packages/salla
+      '@salla-app-detector/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
 
 packages:
 
@@ -1363,6 +1405,10 @@ packages:
   undici-types@7.18.2:
     resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==}
 
+  undici@8.11.0:
+    resolution: {integrity: sha512-AdzuGcAkzhbha3GgCSoUBx2P0quwym6qdFNCQz/fDGZc8w9XJ741wHUbt2kTmfPz+ZIOMkySFkiY7RXmiDDC8w==}
+    engines: {node: '>=22.19.0'}
+
   unrs-resolver@1.12.2:
     resolution: {integrity: sha512-dmlRxBJJayXjqTwC+JtF1HhJmgf3ftQ3YejFcZrf4+KKtJv0qDsK1pjqaaVjG7wJ5NJ6UVP1OqRMQ71Z4C3rxQ==}
 
@@ -2427,6 +2473,8 @@ snapshots:
   typescript@6.0.3: {}
 
   undici-types@7.18.2: {}
+
+  undici@8.11.0: {}
 
   unrs-resolver@1.12.2:
     dependencies:
