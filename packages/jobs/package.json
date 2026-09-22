@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "@salla-app-detector/engine": "workspace:*",
+    "@salla-app-detector/knowledge": "workspace:*",
     "@salla-app-detector/salla": "workspace:*",
     "@salla-app-detector/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8"
   }
 }
