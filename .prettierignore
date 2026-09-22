@@ -1,0 +1,5 @@
+coverage/
+.next/
+dist/
+pnpm-lock.yaml
+*.html.gz
