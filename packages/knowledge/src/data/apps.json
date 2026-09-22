@@ -1,0 +1,8680 @@
+{
+ "1466425": {
+  "id": "1466425",
+  "name": "Google Maps",
+  "nameEn": "Google Maps",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "الموقع الجغرافي"
+  ],
+  "status": "listed"
+ },
+ "5170920": {
+  "id": "5170920",
+  "name": "المتحد الذكي",
+  "nameEn": "united smart",
+  "company": "المتحد الذكي لتقنية نظم المعلومات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "5406261": {
+  "id": "5406261",
+  "name": "واتس دل",
+  "nameEn": "Whats DL",
+  "company": "mohammed abdulaziz",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "9412292": {
+  "id": "9412292",
+  "name": "نظام في",
+  "nameEn": "Fai System",
+  "company": "شركة شبكة عهد لتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "9559728": {
+  "id": "9559728",
+  "name": "محفز العميل الذكي Ai",
+  "nameEn": "Smart Customer Motivator AI",
+  "company": "لينك كود",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "11788955": {
+  "id": "11788955",
+  "name": "هاتك اكسبريس",
+  "nameEn": "Hatik express",
+  "company": "Hatik express",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "12942388": {
+  "id": "12942388",
+  "name": "فرز صور المنتجات",
+  "nameEn": "Variant Image Display",
+  "company": "سلة",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "18717213": {
+  "id": "18717213",
+  "name": "سلاسة لإدارة المخزون",
+  "nameEn": "Salasa Fulfilment",
+  "company": "Salasa",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "18835730": {
+  "id": "18835730",
+  "name": "المنتجات التي تم عرضها مؤخرا",
+  "nameEn": "Recently Viewed Products App",
+  "company": "سلة",
+  "categories": [
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "19663168": {
+  "id": "19663168",
+  "name": "مواصل",
+  "nameEn": "Mowasil",
+  "company": "مواصل",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "29037695": {
+  "id": "29037695",
+  "name": "وزن تسويق واتساب بحلول متقدمة",
+  "nameEn": "Wazzn",
+  "company": "وزن Wazzn",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "29578006": {
+  "id": "29578006",
+  "name": "Future Express",
+  "nameEn": "Future Express",
+  "company": "Future Express",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "34691955": {
+  "id": "34691955",
+  "name": "SADA",
+  "nameEn": "SADA",
+  "company": "sada",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "34811464": {
+  "id": "34811464",
+  "name": "منصة نسم",
+  "nameEn": "Nasam Platform",
+  "company": "نسم هب",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "35498667": {
+  "id": "35498667",
+  "name": "رداد AI",
+  "nameEn": "Radad AI",
+  "company": "Smarttec Innovations",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "38593688": {
+  "id": "38593688",
+  "name": "مجيب - خدمة عملاء AI",
+  "nameEn": "Mujeeb - AI Customer Service",
+  "company": "Inteli Dexer",
+  "categories": [
+   "التسويق",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "38829477": {
+  "id": "38829477",
+  "name": "تسارع الوقت للخدمات اللوجستية",
+  "nameEn": "TALS",
+  "company": "تسارع الوقت للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "50818417": {
+  "id": "50818417",
+  "name": "فينيكس",
+  "nameEn": "Phenix",
+  "company": "Phenix Systems FZCO",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "53087472": {
+  "id": "53087472",
+  "name": "بوينتات - نظام الولاء",
+  "nameEn": "Pointat Loyalty System",
+  "company": "Islam Mohamed",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "البريد الالكتروني",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "54409996": {
+  "id": "54409996",
+  "name": "عداد الزوار اللحظي",
+  "nameEn": "Live Visitor Counter",
+  "company": "لينك كود",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "58509258": {
+  "id": "58509258",
+  "name": "إضافة زينة للذكاء الاصطناعي",
+  "nameEn": "Zayna AI Plugin",
+  "company": "UVX Technologies",
+  "categories": [
+   "التسويق",
+   "المحادثة",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "62174808": {
+  "id": "62174808",
+  "name": "سينفلو",
+  "nameEn": "Synflow",
+  "company": "شركة سينفلو التجارية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "66561709": {
+  "id": "66561709",
+  "name": "فزلي",
+  "nameEn": "Fezlee",
+  "company": "شركة الالوان البرمجية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "71232877": {
+  "id": "71232877",
+  "name": "مليون بلس",
+  "nameEn": "Million Plus",
+  "company": "Mahmoud Ahmad",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "71684259": {
+  "id": "71684259",
+  "name": "خلفيات منتج بالذكاء الاصطناعي",
+  "nameEn": "Ai Product Backgrounds",
+  "company": "Bith.ai",
+  "categories": [
+   "التسويق",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "72407549": {
+  "id": "72407549",
+  "name": "كوبون بوب",
+  "nameEn": "Coupon Pop",
+  "company": "FDserv",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "75132405": {
+  "id": "75132405",
+  "name": "HubSpot",
+  "nameEn": "HubSpot",
+  "company": "سلة",
+  "categories": [
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "75637960": {
+  "id": "75637960",
+  "name": "تبيان",
+  "nameEn": "Tibyan",
+  "company": "عبدالرحمن العيسى",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "76728634": {
+  "id": "76728634",
+  "name": "نمير لنقل الطرود",
+  "nameEn": "Namear Logistics",
+  "company": "نمير",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "84942849": {
+  "id": "84942849",
+  "name": "فليت رن",
+  "nameEn": "fleetrun",
+  "company": "fleetrun",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "88735313": {
+  "id": "88735313",
+  "name": "الزهراني للخدمات اللوجستية",
+  "nameEn": "Alzahrani Logistics Services",
+  "company": "ALzahrani logistics",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "94179188": {
+  "id": "94179188",
+  "name": "نظام كارد",
+  "nameEn": "NAMKARD",
+  "company": "مؤسسة كوكبة النظام التجارية",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "94838496": {
+  "id": "94838496",
+  "name": "كونكس",
+  "nameEn": "koonx",
+  "company": "KOONX",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "95641499": {
+  "id": "95641499",
+  "name": "مزدهر",
+  "nameEn": "Mozdaher",
+  "company": "Mohamed Salem",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "99223925": {
+  "id": "99223925",
+  "name": "محدث اسعار الذهب التلقائي",
+  "nameEn": "Auto Gold Price Automatic",
+  "company": "Allexis Solution",
+  "categories": [
+   "تحسين الموقع",
+   "المحاسبة والمالية",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "112155496": {
+  "id": "112155496",
+  "name": "Crazy Egg",
+  "nameEn": "Crazy Egg",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "113529390": {
+  "id": "113529390",
+  "name": "بوب أب فورمز",
+  "nameEn": "Popup Forms",
+  "company": "TopSoft UG",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "118020975": {
+  "id": "118020975",
+  "name": "الشحن المميز",
+  "nameEn": "Premium Shipping",
+  "company": "Premium Shipping",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "118100208": {
+  "id": "118100208",
+  "name": "رسائلنا للرسائل النصية",
+  "nameEn": "Our SMS",
+  "company": "سلة",
+  "categories": [
+   "الرسائل النصية"
+  ],
+  "status": "listed"
+ },
+ "124387756": {
+  "id": "124387756",
+  "name": "أكثر - دخل اكثر مع كل بيعة",
+  "nameEn": "More - Income With Every Sale",
+  "company": "مؤسسة وصل الرقمية للاتصالات و تقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء",
+   "زيادة المبيعات"
+  ],
+  "status": "listed"
+ },
+ "125717992": {
+  "id": "125717992",
+  "name": "تكامل كين",
+  "nameEn": "qeen Integration",
+  "company": "qeen.ai",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "129751406": {
+  "id": "129751406",
+  "name": "توقعات المخزون",
+  "nameEn": "Inventory Forecast",
+  "company": "KonHub",
+  "categories": [
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "131820727": {
+  "id": "131820727",
+  "name": "حارس الطلبات - تأكيد الطلبات",
+  "nameEn": "TalabGuard - Confirm COD Order",
+  "company": "HumanEcho",
+  "categories": [
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "134268002": {
+  "id": "134268002",
+  "name": "خدمة الأداء العالي",
+  "nameEn": "High Performance Service",
+  "company": "خدمة الأداء العالي للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "134555705": {
+  "id": "134555705",
+  "name": "ريتيرن بلس - الاستبدال والاسترجاع",
+  "nameEn": "ReturnPlus - Return and Exchange",
+  "company": "NEBRAS CAPITAL EST",
+  "categories": [
+   "تحسين الموقع",
+   "الشحن و التوصيل",
+   "المحاسبة والمالية",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "135966166": {
+  "id": "135966166",
+  "name": "لوجستيك",
+  "nameEn": "Logistiq",
+  "company": "Logistiq",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "140843285": {
+  "id": "140843285",
+  "name": "مورا",
+  "nameEn": "Mora.",
+  "company": "شركة مورا للاتصالات",
+  "categories": [
+   "التسويق",
+   "الرسائل النصية",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "141967099": {
+  "id": "141967099",
+  "name": "Merchant Ops Ai",
+  "nameEn": "Merchant Ops AI",
+  "company": "الشركة العربية لتقنية المعلومات شركة مساهمة مقفلة",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "142246578": {
+  "id": "142246578",
+  "name": "ركاز للخدمات اللوجستية",
+  "nameEn": "RIKAZ LOGISTICS",
+  "company": "RIKAZ LOGISTICS",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "145565438": {
+  "id": "145565438",
+  "name": "فولستاك اودو",
+  "nameEn": "Fullstack odoo",
+  "company": "Faciliting Solutions",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "147115622": {
+  "id": "147115622",
+  "name": "بتوين",
+  "nameEn": "BETWEEN",
+  "company": "بتوين",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "147721576": {
+  "id": "147721576",
+  "name": "انفوسيد واتساب",
+  "nameEn": "Infoseed- انفوسيد",
+  "company": "Infoseed",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "151518790": {
+  "id": "151518790",
+  "name": "دسباتش اكسبريس",
+  "nameEn": "Dispatch Express",
+  "company": "الحلول الخليجية للنقل والتخزين",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "152006259": {
+  "id": "152006259",
+  "name": "ديل",
+  "nameEn": "Daleel AlEmdad ( DEL )",
+  "company": "شركة دليل الامداد للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "152233856": {
+  "id": "152233856",
+  "name": "ادوات المتجر - مغير الأسعار",
+  "nameEn": "Store Tools - Price Changer",
+  "company": "Ultra Tech Dynamics",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "154303145": {
+  "id": "154303145",
+  "name": "مساحتي للتخزين",
+  "nameEn": "MySpace fulfillment",
+  "company": "مؤسسة مساحتي للتجارة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "154382858": {
+  "id": "154382858",
+  "name": "بادجات المنتجات بوب أب سناب",
+  "nameEn": "Product Badges Popupsnap",
+  "company": "جروفـلكس",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "161519997": {
+  "id": "161519997",
+  "name": "SMACC",
+  "nameEn": "SMACC",
+  "company": "Arabsea",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "162406454": {
+  "id": "162406454",
+  "name": "لنكر البائعين",
+  "nameEn": "Linker Seller",
+  "company": "شركة روابط الشرق لتقنية المعلومات",
+  "categories": [
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "162494871": {
+  "id": "162494871",
+  "name": "اتصل بنا - الكل في واحد",
+  "nameEn": "Contact Us - All in one",
+  "company": "TopSoft UG",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "163669479": {
+  "id": "163669479",
+  "name": "كودماب للتسويق بالعمولة",
+  "nameEn": "Codemap for Affiliate Marketing",
+  "company": "مؤسسة النطاق الدقيق للاتصالات وتقنية المعلومات ـ مايكروباند",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "165566897": {
+  "id": "165566897",
+  "name": "Google Analytics",
+  "nameEn": "Google Analytics",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء",
+   "التتبع الذكي"
+  ],
+  "status": "listed"
+ },
+ "169103247": {
+  "id": "169103247",
+  "name": "نمو - باقات العروض",
+  "nameEn": "Numoo - Increase the value of your shopping cart",
+  "company": "وادي بلسم لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "زيادة المبيعات"
+  ],
+  "status": "listed"
+ },
+ "169590716": {
+  "id": "169590716",
+  "name": "تقييمات المتجر والمنتجات",
+  "nameEn": "Store And Product Reviews",
+  "company": "Coding Home LLC",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "177355464": {
+  "id": "177355464",
+  "name": "مايل جيت",
+  "nameEn": "MILEJET",
+  "company": "Smile Express Company",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "180650219": {
+  "id": "180650219",
+  "name": "دسباتش دارك ستور",
+  "nameEn": "Dispatch Dark Store",
+  "company": "الحلول الخليجية للنقل والتخزين",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "181225593": {
+  "id": "181225593",
+  "name": "أدجست -  Adjust",
+  "nameEn": "أدجست -  Adjust",
+  "company": "سلة",
+  "categories": [
+   "أخرى",
+   "التحليل و الاحصاء",
+   "صانع التطبيقات"
+  ],
+  "status": "listed"
+ },
+ "182060168": {
+  "id": "182060168",
+  "name": "صور AI - استوديو صور المنتجات",
+  "nameEn": "Sowar AI - Smart Product Image",
+  "company": "HumanEcho",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "182148585": {
+  "id": "182148585",
+  "name": "سناب شات - Follow Us",
+  "nameEn": "Snapchat - Follow Us",
+  "company": "TopSoft UG",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "185656624": {
+  "id": "185656624",
+  "name": "إرسال واتساب",
+  "nameEn": "Ersal WhatsApp",
+  "company": "شركة ايراد الذكية",
+  "categories": [
+   "التسويق",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "186433268": {
+  "id": "186433268",
+  "name": "سعودي إكس",
+  "nameEn": "SaudiEx",
+  "company": "مؤسسة دائرة التوصيل للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "188013584": {
+  "id": "188013584",
+  "name": "مفتاح الربح",
+  "nameEn": "ProfitKey",
+  "company": "فيف الدروب للتجارة",
+  "categories": [
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "192994521": {
+  "id": "192994521",
+  "name": "Sceneify - صور منتجات بالذكاء الاصطناعي",
+  "nameEn": "Sceneify - AI-Generated Product Images",
+  "company": "Mahmoud Dahdouh",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "194604204": {
+  "id": "194604204",
+  "name": "صناديق المفاجآت",
+  "nameEn": "Mystery Box",
+  "company": "Venofy فينوفاي",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "194683917": {
+  "id": "194683917",
+  "name": "معمل الصور",
+  "nameEn": "ImagesLab",
+  "company": "Mahmoud Ahmad",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "197781498": {
+  "id": "197781498",
+  "name": "WebEngage",
+  "nameEn": "WebEngage",
+  "company": "WebEngage Technologies DMCC",
+  "categories": [
+   "التسويق",
+   "الرسائل النصية",
+   "البريد الالكتروني",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "199443063": {
+  "id": "199443063",
+  "name": "دقيقة وحدة للخدمات اللوجيستية",
+  "nameEn": "One minute for logistics services",
+  "company": "مؤسسة دقيقة وحدة للخدمات اللوجيستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "201846712": {
+  "id": "201846712",
+  "name": "إنفورميشن مسج",
+  "nameEn": "Information Message",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "203626762": {
+  "id": "203626762",
+  "name": "شواهد لوجستيك",
+  "nameEn": "Shawahid logistics",
+  "company": "شواهد المستقبل",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "205657791": {
+  "id": "205657791",
+  "name": "فومو",
+  "nameEn": "Fomoo",
+  "company": "Nader Asiri",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "209423676": {
+  "id": "209423676",
+  "name": "بيز للخدمات اللوجستية",
+  "nameEn": "Beez Delivery and Storage",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "209535025": {
+  "id": "209535025",
+  "name": "العاصمة الأولى",
+  "nameEn": "Al-Asima Al-Oula",
+  "company": "شركة العاصمة الأولى للمقاولات",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "210017680": {
+  "id": "210017680",
+  "name": "AlFinder",
+  "nameEn": "Alfinder",
+  "company": "AI Finder Inc",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "210217414": {
+  "id": "210217414",
+  "name": "ورك تيبل",
+  "nameEn": "WorkTable",
+  "company": "Sky middle east technology technology",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "220669112": {
+  "id": "220669112",
+  "name": "سافي مايل",
+  "nameEn": "SafyMile",
+  "company": "Company safy mile",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "225611653": {
+  "id": "225611653",
+  "name": "مساعد التسوق الذكي",
+  "nameEn": "Smart Shopping Assistant",
+  "company": "شركة العقل المترابط لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "226860200": {
+  "id": "226860200",
+  "name": "مسار الهدف",
+  "nameEn": "MasarGo",
+  "company": "مؤسسة مسار الهدف للنقل والتخزين",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "233714962": {
+  "id": "233714962",
+  "name": "محصلة",
+  "nameEn": "Mohssilh",
+  "company": "شركة فلسفة رقمية التجارية",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "235063026": {
+  "id": "235063026",
+  "name": "رنر",
+  "nameEn": "RUNNER",
+  "company": "سفراء التوصيل للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "237130779": {
+  "id": "237130779",
+  "name": "انستاكارت - حول حسابك في انستغرام إلى أداة تسويقية",
+  "nameEn": "InstaCart - Shoppable Instagram Feed",
+  "company": "كثيب",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "238053771": {
+  "id": "238053771",
+  "name": "سله سينك",
+  "nameEn": "SallaSync",
+  "company": "Amr Sohil",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "238620953": {
+  "id": "238620953",
+  "name": "تقنيات",
+  "nameEn": "Taqnyat SMS",
+  "company": "سلة",
+  "categories": [
+   "الرسائل النصية"
+  ],
+  "status": "listed"
+ },
+ "240202805": {
+  "id": "240202805",
+  "name": "مؤتمت واتساب بالذكاء الاصطناعي",
+  "nameEn": "Moatmt bot WhatsApp",
+  "company": "مؤسسة جبل ممتد التجارية",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "240402539": {
+  "id": "240402539",
+  "name": "دقق",
+  "nameEn": "Dqq",
+  "company": "حلول دقق",
+  "categories": [
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "248543407": {
+  "id": "248543407",
+  "name": "لبيه",
+  "nameEn": "LaBaih",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "250725069": {
+  "id": "250725069",
+  "name": "داز للتخزين",
+  "nameEn": "DAZZ FULFILLMENT",
+  "company": "Dazz",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "253146341": {
+  "id": "253146341",
+  "name": "هايرن",
+  "nameEn": "Hyren",
+  "company": "Malik Alharbi",
+  "categories": [
+   "التسويق",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "258560542": {
+  "id": "258560542",
+  "name": "Live Chat",
+  "nameEn": "Live Chat",
+  "company": "سلة",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "262145291": {
+  "id": "262145291",
+  "name": "حريص (خصومات ذكية)",
+  "nameEn": "Harees (Smart Discounts)",
+  "company": "QUANTIX Team",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "264989720": {
+  "id": "264989720",
+  "name": "عزز",
+  "nameEn": "Azz",
+  "company": "مؤسسة موجة تردد للتسويق الالكتروني",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "272518455": {
+  "id": "272518455",
+  "name": "ماسح ثري دي وواقع معزز",
+  "nameEn": "3D AR Scanner",
+  "company": "شركة مدى الخيال الواقعي",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "272599704": {
+  "id": "272599704",
+  "name": "VAAL",
+  "nameEn": "Vaal",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "272858488": {
+  "id": "272858488",
+  "name": "كولدت",
+  "nameEn": "COLDT Company",
+  "company": "COLDT",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "281798420": {
+  "id": "281798420",
+  "name": "دسباتش لإدارة المخزون",
+  "nameEn": "Dispatch Fulfillment",
+  "company": "الحلول الخليجية للنقل والتخزين",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "283181018": {
+  "id": "283181018",
+  "name": "دليفر ناو للتوصيل والتخزين",
+  "nameEn": "Delivery Now Logistics",
+  "company": "شركة الحناكي والسليم المحدودة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "285314107": {
+  "id": "285314107",
+  "name": "بابليـــتك واتساب ماركت",
+  "nameEn": "PabblyTik WhatsApp Market",
+  "company": "أحمد عبدالله",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "285713607": {
+  "id": "285713607",
+  "name": "إنجازك الأفضل",
+  "nameEn": "INGAZAK",
+  "company": "مؤسسة إنجازك الأفضل للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "288585867": {
+  "id": "288585867",
+  "name": "واتساب بوت ai - اشعارات وردود ذكية",
+  "nameEn": "AI WhatsApp Bot Smart Auto Replies",
+  "company": "karem shiha",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "291143617": {
+  "id": "291143617",
+  "name": "شات بيري",
+  "nameEn": "Chatberry",
+  "company": "Chatberry",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "292605928": {
+  "id": "292605928",
+  "name": "جيتلي",
+  "nameEn": "jetly",
+  "company": "jetly",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "294453773": {
+  "id": "294453773",
+  "name": "طرود بوينت للشحن والتوصيل",
+  "nameEn": "Torod Point Public",
+  "company": "شركة طرود السرعة التجارية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "295916116": {
+  "id": "295916116",
+  "name": "سرداب للخدمات اللوجستية",
+  "nameEn": "Sirdab Logistics",
+  "company": "Sirdab",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "296491938": {
+  "id": "296491938",
+  "name": "Instagram Follow Us",
+  "nameEn": "Instagram Follow Us",
+  "company": "TopSoft UG",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "298153535": {
+  "id": "298153535",
+  "name": "إيرادي",
+  "nameEn": "Eirady",
+  "company": "مؤسسة سحب الاعمال لتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "299275781": {
+  "id": "299275781",
+  "name": "قصص Smartarget",
+  "nameEn": "Smartarget Stories",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "302543170": {
+  "id": "302543170",
+  "name": "Privy",
+  "nameEn": "Privy",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "الرسائل النصية",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "306762517": {
+  "id": "306762517",
+  "name": "تطبيق الربط مع برنامج فالكون",
+  "nameEn": "Falcon  ERP Connector",
+  "company": "haitham wehidy",
+  "categories": [
+   "المحاسبة والمالية",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "309319211": {
+  "id": "309319211",
+  "name": "SPL Fulfillment",
+  "nameEn": "SPL Fulfillment",
+  "company": "SPL",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "310716218": {
+  "id": "310716218",
+  "name": "التنبؤ بالسلاسل الزمنية",
+  "nameEn": "Time Series Forecasting",
+  "company": "tPlus Establishment",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "311203623": {
+  "id": "311203623",
+  "name": "ProFast",
+  "nameEn": "ProFast",
+  "company": "مؤسسة عمار ابراهيم شاني رديني التجارية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "311717899": {
+  "id": "311717899",
+  "name": "إسناد",
+  "nameEn": "ISNAAD",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "318582389": {
+  "id": "318582389",
+  "name": "Klaviyo",
+  "nameEn": "Klaviyo",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "الرسائل النصية",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "319853489": {
+  "id": "319853489",
+  "name": "سحب الفائزين",
+  "nameEn": "Draw winners",
+  "company": "KonHub",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "320228521": {
+  "id": "320228521",
+  "name": "زبون للتسويق عبر الإيميل",
+  "nameEn": "Zaboon for Email Marketing",
+  "company": "TAJER LABS PTY LTD",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "321743738": {
+  "id": "321743738",
+  "name": "Zoho Books",
+  "nameEn": "Zoho Books",
+  "company": "سلة",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "322865984": {
+  "id": "322865984",
+  "name": "Corner Ribbon",
+  "nameEn": "Corner Ribbon",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "325015498": {
+  "id": "325015498",
+  "name": "فولفيا",
+  "nameEn": "Fullvia",
+  "company": "Arabexsa",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "327758504": {
+  "id": "327758504",
+  "name": "Smartarget شريط العد التنازلي",
+  "nameEn": "Countdown Bar",
+  "company": "TopSoft UG",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "329339332": {
+  "id": "329339332",
+  "name": "تطبيق صقر",
+  "nameEn": "Saqr App",
+  "company": "Uteer Inc",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "332618836": {
+  "id": "332618836",
+  "name": "كودليب - Rawa AI",
+  "nameEn": "Codleap - Rawa AI",
+  "company": "CODLLEAP LLC",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "332786966": {
+  "id": "332786966",
+  "name": "روت تك اكسبريس",
+  "nameEn": "Routech Express",
+  "company": "Routech Express",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "334568552": {
+  "id": "334568552",
+  "name": "واصف Ai",
+  "nameEn": "Wasef Ai",
+  "company": "Wasef Ai",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "335961304": {
+  "id": "335961304",
+  "name": "جازجو",
+  "nameEn": "JAZGO",
+  "company": "جازقو",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "337363061": {
+  "id": "337363061",
+  "name": "قابستر",
+  "nameEn": "Gabster",
+  "company": "شركة اتم المتحدة لتقنية المعلومات",
+  "categories": [
+   "المحادثة",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "337823627": {
+  "id": "337823627",
+  "name": "جو بوينت للتوصيل",
+  "nameEn": "GoPoint Delivery",
+  "company": "شركة الحلول المتميزة للخدمات التجارية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "338023393": {
+  "id": "338023393",
+  "name": "تي شات",
+  "nameEn": "TCHAT",
+  "company": "مؤسسة بذور الأمل للتجارة",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "338190499": {
+  "id": "338190499",
+  "name": "تسويق واشعارات واتساب",
+  "nameEn": "WhatsApp Marketing Automation",
+  "company": "BusinessChat",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء",
+   "السلات المتروكة"
+  ],
+  "status": "listed"
+ },
+ "340668056": {
+  "id": "340668056",
+  "name": "ديجيتال بلس السحابي",
+  "nameEn": "DigitalPlus",
+  "company": "مؤسسة سحابة الاعمال لتقنية نظم المعلومات",
+  "categories": [
+   "المحاسبة والمالية",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "341183356": {
+  "id": "341183356",
+  "name": "ونز- ERP",
+  "nameEn": "ONEZ-ERP",
+  "company": "Onez ERP",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "341922377": {
+  "id": "341922377",
+  "name": "الريان للنقل والتخزين",
+  "nameEn": "Al Rayan Transport and Storage",
+  "company": "شركة الريان المتميزة للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "344014779": {
+  "id": "344014779",
+  "name": "مابت",
+  "nameEn": "Mapit SA",
+  "company": "MapIttt",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "344901236": {
+  "id": "344901236",
+  "name": "فايند كايلي",
+  "nameEn": "Fynd Kaily",
+  "company": "Shopsense Retail Technolgies Private Limited",
+  "categories": [
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "345016460": {
+  "id": "345016460",
+  "name": "برولو شحن مبرد",
+  "nameEn": "Prolo Cold Chain Logistics",
+  "company": "Adwar",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "345824228": {
+  "id": "345824228",
+  "name": "ثقة بوت",
+  "nameEn": "Thikaa Bot",
+  "company": "Dark Deep WLL",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "347166518": {
+  "id": "347166518",
+  "name": "Google Tag Manager",
+  "nameEn": "Google Tag Manager",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "347973230": {
+  "id": "347973230",
+  "name": "زر واتساب للتواصل المباشر",
+  "nameEn": "WhatsApp Chat Button",
+  "company": "نواف حريري",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "349235807": {
+  "id": "349235807",
+  "name": "مالكو",
+  "nameEn": "MALCO",
+  "company": "MALCO شركة مشوار العاصمة للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "358144393": {
+  "id": "358144393",
+  "name": "ركادة",
+  "nameEn": "Rakada",
+  "company": "مؤسسة نغم الطيب التجارية",
+  "categories": [
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "358772097": {
+  "id": "358772097",
+  "name": "سحاب للخدمات اللوجستية",
+  "nameEn": "Sahab Logistics Services",
+  "company": "SAHAB",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "360094173": {
+  "id": "360094173",
+  "name": "ديجي باكس دارك ستورز",
+  "nameEn": "DiggiPacks DarkStores",
+  "company": "Diggipacks",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "360493161": {
+  "id": "360493161",
+  "name": "MK 9 لتحليل صور المنتجات",
+  "nameEn": "MK 9 AI Product Analyzer",
+  "company": "محمد كتبي",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "361979609": {
+  "id": "361979609",
+  "name": "باقات العروض أب سيل و كروس سيل",
+  "nameEn": "Offers Bundles Upsell Cross sell",
+  "company": "Fady Ahmed",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "زيادة المبيعات"
+  ],
+  "status": "listed"
+ },
+ "364127555": {
+  "id": "364127555",
+  "name": "تصل",
+  "nameEn": "TASIL",
+  "company": "TASIL",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "365997110": {
+  "id": "365997110",
+  "name": "اليمامة إكسبريس (مبرد)",
+  "nameEn": "Yamamah Express ( Refrigerated)",
+  "company": "مؤسسة اليمامة لوسطاء الشحن",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "367799454": {
+  "id": "367799454",
+  "name": "Justuno",
+  "nameEn": "Justuno",
+  "company": "سلة",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "371216263": {
+  "id": "371216263",
+  "name": "FAQ",
+  "nameEn": "FAQ",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "374687309": {
+  "id": "374687309",
+  "name": "Sent Express",
+  "nameEn": "Sent Express",
+  "company": "Sent",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "375920967": {
+  "id": "375920967",
+  "name": "نظام السعد المحاسبي",
+  "nameEn": "SAAED ERP AND POS",
+  "company": "شركة دال سين لتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "377162786": {
+  "id": "377162786",
+  "name": "وصفي - تحسين الظهور",
+  "nameEn": "Wasfi - Improve Visibility",
+  "company": "Yousef Zuriqi",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "377518732": {
+  "id": "377518732",
+  "name": "دواتك",
+  "nameEn": "Dawatech",
+  "company": "SHEFT CO",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "377806403": {
+  "id": "377806403",
+  "name": "إيميل - كونتاكت أس",
+  "nameEn": "Email - Contact Us",
+  "company": "TopSoft UG",
+  "categories": [
+   "البريد الالكتروني",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "379666742": {
+  "id": "379666742",
+  "name": "فاست اكسس فلفيلمنت",
+  "nameEn": "Fast Access Fulfillment",
+  "company": "Fast Access Fulfillment",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "382858277": {
+  "id": "382858277",
+  "name": "برنامج حل المحاسبي",
+  "nameEn": "7AL ERP",
+  "company": "شركة ظلال الياسمين للتجارة",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "383146492": {
+  "id": "383146492",
+  "name": "واتس شير اشعارات واتساب و سلات متروكة",
+  "nameEn": "Whats Share BOT WhatsApp Notifications",
+  "company": "Thabt Alghamdi",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "385383879": {
+  "id": "385383879",
+  "name": "JAWAL B SMS",
+  "nameEn": "JAWAL B SMS",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "الرسائل النصية"
+  ],
+  "status": "listed"
+ },
+ "394559546": {
+  "id": "394559546",
+  "name": "آفاق متعددة للخدمات اللوجستية",
+  "nameEn": "MHL Logistics",
+  "company": "شركة افاق للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "405680792": {
+  "id": "405680792",
+  "name": "Anchanto",
+  "nameEn": "Anchanto",
+  "company": "Anchanto Pte Ltd",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "407985870": {
+  "id": "407985870",
+  "name": "تاميكس اللوجستية",
+  "nameEn": "Tamex Logistics",
+  "company": "TAMEX Company",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "410740858": {
+  "id": "410740858",
+  "name": "نيكست غلوبال تريد",
+  "nameEn": "Next global trade",
+  "company": "Next Global Trade",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "412425472": {
+  "id": "412425472",
+  "name": "سوشل لاب اشعارات واتس وأكثر Ai",
+  "nameEn": "Social Lab WhatsApp Notifications and More",
+  "company": "اتقان مختصر لخدمات الأعمال",
+  "categories": [
+   "التسويق",
+   "الرسائل النصية",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "413651994": {
+  "id": "413651994",
+  "name": "نقاطي - كسب ولاء العملاء",
+  "nameEn": "My Points",
+  "company": "Mahmoud Ahmad",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "416436349": {
+  "id": "416436349",
+  "name": "شركة الميل الأخير",
+  "nameEn": "Last Mile",
+  "company": "Last Mile Company for Information Technology",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "417472257": {
+  "id": "417472257",
+  "name": "كناري",
+  "nameEn": "Canary",
+  "company": "كناري تقنيات",
+  "categories": [
+   "التسويق",
+   "الرسائل النصية",
+   "البريد الالكتروني",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "417583638": {
+  "id": "417583638",
+  "name": "شركاء عبادي",
+  "nameEn": "Abady Partners",
+  "company": "شركة مستقبل البطاقات الذكية للتجارة",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "418994099": {
+  "id": "418994099",
+  "name": "رانك سيو",
+  "nameEn": "RankX SEO",
+  "company": "مؤسسة الصفر ستور للتجارة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "420004878": {
+  "id": "420004878",
+  "name": "الينز - شريط العد التنازلي",
+  "nameEn": "Alienzhouse - Countdown Timer Bar",
+  "company": "Alienzhouse LTD",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "420609651": {
+  "id": "420609651",
+  "name": "ربان القيادة للشحن",
+  "nameEn": "Roban AlQiada Logistics",
+  "company": "ربان القيادة  للشحن",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "421666955": {
+  "id": "421666955",
+  "name": "وصلة - توصلك بعملائك",
+  "nameEn": "wslh",
+  "company": "waleed alotaibi",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "421954626": {
+  "id": "421954626",
+  "name": "مرسال Ai",
+  "nameEn": "Mersal Ai",
+  "company": "مكاسب",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "429928388": {
+  "id": "429928388",
+  "name": "فريمفاي - صمم متجرك بالـ AI",
+  "nameEn": "Framify - Design store with AI",
+  "company": "Rqeim LLC",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "430615079": {
+  "id": "430615079",
+  "name": "Pluggy",
+  "nameEn": "Pluggy",
+  "company": "Khaled Eissa",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "432564859": {
+  "id": "432564859",
+  "name": "لينك كورد",
+  "nameEn": "Link Cord",
+  "company": "محمد الحربي",
+  "categories": [
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "434594320": {
+  "id": "434594320",
+  "name": "مسجات",
+  "nameEn": "Msegat",
+  "company": "سلة",
+  "categories": [
+   "الرسائل النصية"
+  ],
+  "status": "listed"
+ },
+ "436204515": {
+  "id": "436204515",
+  "name": "ثابت",
+  "nameEn": "Thabit",
+  "company": "Thabit Logistics",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "436548338": {
+  "id": "436548338",
+  "name": "أوميت ERP",
+  "nameEn": "Aumet ERP",
+  "company": "Aumet",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "438276570": {
+  "id": "438276570",
+  "name": "سما لوجيستكس",
+  "nameEn": "SAMA Logistics",
+  "company": "سما اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "441340947": {
+  "id": "441340947",
+  "name": "Smartarget واتساب",
+  "nameEn": "Smartarget Whatsapp",
+  "company": "TopSoft UG",
+  "categories": [
+   "الرسائل النصية",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "442263939": {
+  "id": "442263939",
+  "name": "Zoho Mail",
+  "nameEn": "Zoho Mail",
+  "company": "سلة",
+  "categories": [
+   "أخرى",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "442923791": {
+  "id": "442923791",
+  "name": "دعم التوصيل",
+  "nameEn": "Delivery Support",
+  "company": "شركة دعم التوصيل للنقل",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "443323355": {
+  "id": "443323355",
+  "name": "سما للتخزين و التجهيز",
+  "nameEn": "Sama Fullfilment",
+  "company": "مؤسسة سما السريعه للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "443411260": {
+  "id": "443411260",
+  "name": "ديجيباكس",
+  "nameEn": "Diggipack",
+  "company": "Diggipacks",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "444533506": {
+  "id": "444533506",
+  "name": "سمارت شب",
+  "nameEn": "Smartship",
+  "company": "Smartship",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "447564727": {
+  "id": "447564727",
+  "name": "ريد بوكس - توصيل للمنزل",
+  "nameEn": "RedBox - Home Delivery",
+  "company": "RedBox",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "455180188": {
+  "id": "455180188",
+  "name": "طرود بوينت",
+  "nameEn": "Torod Points",
+  "company": "شركة طرود السرعة التجارية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "456581945": {
+  "id": "456581945",
+  "name": "صفحات بلس",
+  "nameEn": "Pages Plus",
+  "company": "كرافو لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "459478704": {
+  "id": "459478704",
+  "name": "كشوف",
+  "nameEn": "Koshof",
+  "company": "روض التقنية",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "460172563": {
+  "id": "460172563",
+  "name": "تي دي لتجهيز الطلبات",
+  "nameEn": "TD Fulfillment",
+  "company": "TD Logistics",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "466991868": {
+  "id": "466991868",
+  "name": "ادوات المتجر- المسوق الاجتماعي",
+  "nameEn": "Store Tools - Social Marketer",
+  "company": "Ultra Tech Dynamics",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "471536295": {
+  "id": "471536295",
+  "name": "Microsoft Clarity",
+  "nameEn": "Microsoft Clarity",
+  "company": "سلة",
+  "categories": [
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "471742749": {
+  "id": "471742749",
+  "name": "Facebook Conversion API",
+  "nameEn": "Facebook Conversion API",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "472114418": {
+  "id": "472114418",
+  "name": "SMART PRO ERP",
+  "nameEn": "SMRTPRO ERP",
+  "company": "شركة أنظمة ذكاء الاعمال",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "472282548": {
+  "id": "472282548",
+  "name": "ChatBot",
+  "nameEn": "chatbot",
+  "company": "سلة",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "472689728": {
+  "id": "472689728",
+  "name": "منصة جذور",
+  "nameEn": "Juthor Platform",
+  "company": "JuthorSA",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "473892231": {
+  "id": "473892231",
+  "name": "فلو اكسبرس",
+  "nameEn": "Flow Express",
+  "company": "Flowxpress",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "474152039": {
+  "id": "474152039",
+  "name": "فاست كلاود",
+  "nameEn": "Fast Cloud",
+  "company": "Fast cloud",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "476989300": {
+  "id": "476989300",
+  "name": "وازن ERP",
+  "nameEn": "Wazen ERP",
+  "company": "وازن المالية",
+  "categories": [
+   "المحاسبة والمالية",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "479795680": {
+  "id": "479795680",
+  "name": "أبخص",
+  "nameEn": "Abkhus",
+  "company": "أبخص Abkhus",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "480115499": {
+  "id": "480115499",
+  "name": "ربط لادارة المخزون والطلبات",
+  "nameEn": "Rabt Fulfillment Network",
+  "company": "Omniful Saudi for Information Technology",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "490567197": {
+  "id": "490567197",
+  "name": "غرفة قياس الملابس الافتراضية",
+  "nameEn": "Virtual Fitting Room",
+  "company": "Stepinside Virtual Commerce",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "491483052": {
+  "id": "491483052",
+  "name": "Chaport",
+  "nameEn": "Chaport",
+  "company": "سلة",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "491594401": {
+  "id": "491594401",
+  "name": "لووبز",
+  "nameEn": "Loops",
+  "company": "شركة لووبز للتقنيات",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "492229274": {
+  "id": "492229274",
+  "name": "داراتش المدقق المحاسبي",
+  "nameEn": "Daretch Accounting Auditor",
+  "company": "شركة دار اتش لتقنية المعلومات شركة شخص واحد",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "500488659": {
+  "id": "500488659",
+  "name": "فارنير - حلول الشحن الذكية",
+  "nameEn": "FarNear",
+  "company": "مؤسسة ركائز السرعة لتقنية المعلومات",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "503669647": {
+  "id": "503669647",
+  "name": "برق عروض ذكية",
+  "nameEn": "Barq Smart Offers",
+  "company": "SARAH ALZHRANI",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "505419629": {
+  "id": "505419629",
+  "name": "عجلة الحظ بوب اب سناب",
+  "nameEn": "Lucky Wheel Popupsnap",
+  "company": "جروفـلكس",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "البريد الالكتروني",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "507776589": {
+  "id": "507776589",
+  "name": "موصل Odoo من Webkul",
+  "nameEn": "Odoo Connector by Webkul",
+  "company": "Webkul Software Private Limited",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "510413540": {
+  "id": "510413540",
+  "name": "شحن خزنلي",
+  "nameEn": "Khazenly Fulfillment and Shipping",
+  "company": "Khazenly",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "511454569": {
+  "id": "511454569",
+  "name": "اشحنها",
+  "nameEn": "eshhna",
+  "company": "مؤسسة اشحنها للتسويق",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "514247220": {
+  "id": "514247220",
+  "name": "جي اند تي اكسبريس",
+  "nameEn": "JNT Express",
+  "company": "JNT Express KSA LLC",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "514446954": {
+  "id": "514446954",
+  "name": "برنامج حل",
+  "nameEn": "HAL ERP",
+  "company": "HAL Simplify Solutions",
+  "categories": [
+   "المحاسبة والمالية",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "524278084": {
+  "id": "524278084",
+  "name": "زيدها",
+  "nameEn": "Zidha",
+  "company": "كرافو لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "529694128": {
+  "id": "529694128",
+  "name": "Whatsapp Hero",
+  "nameEn": "Whatsapp Hero",
+  "company": "الشركة العربية لتقنية المعلومات شركة مساهمة مقفلة",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "530380819": {
+  "id": "530380819",
+  "name": "iCARRY",
+  "nameEn": "iCARRY",
+  "company": "iCARRY",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "530601311": {
+  "id": "530601311",
+  "name": "X Pixel",
+  "nameEn": "X Pixel",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء",
+   "التتبع الذكي"
+  ],
+  "status": "listed"
+ },
+ "540231483": {
+  "id": "540231483",
+  "name": "ون تريب اكسبريس",
+  "nameEn": "One Trip Express",
+  "company": "One Trip Express",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "542868434": {
+  "id": "542868434",
+  "name": "زود, زد مبيعاتك وارفع متوسط قيمة الطلب",
+  "nameEn": "Zud, Increase Average Order Value",
+  "company": "صعودك",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "544330745": {
+  "id": "544330745",
+  "name": "بي سي - إن دروبشيبينغ",
+  "nameEn": "BCN-Dropshipping",
+  "company": "COMEXBCN TRADING CO LTD",
+  "categories": [
+   "الشحن و التوصيل",
+   "الدروب شيبينق"
+  ],
+  "status": "listed"
+ },
+ "545787762": {
+  "id": "545787762",
+  "name": "وايدرز واتساب",
+  "nameEn": "Widers Whatsapp",
+  "company": "Widers",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "547109774": {
+  "id": "547109774",
+  "name": "لوبكس  للخدمات اللوجستية",
+  "nameEn": "Lubex Logistics",
+  "company": "شركة لوبكس للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "552442182": {
+  "id": "552442182",
+  "name": "تاجر تقرير",
+  "nameEn": "Tajer Report",
+  "company": "TAJER LABS PTY LTD",
+  "categories": [
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "553077055": {
+  "id": "553077055",
+  "name": "برو للشحن",
+  "nameEn": "pro",
+  "company": "PRO LOGISTICS CO",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "554657544": {
+  "id": "554657544",
+  "name": "Zapier",
+  "nameEn": "Zapier",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "556151491": {
+  "id": "556151491",
+  "name": "أول شـــات",
+  "nameEn": "awalchat",
+  "company": "أول شات",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "558795130": {
+  "id": "558795130",
+  "name": "عدد المحاسبي",
+  "nameEn": "ADD Accounting",
+  "company": "حفظ الثروات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "569117660": {
+  "id": "569117660",
+  "name": "زييدلي",
+  "nameEn": "Zeedly",
+  "company": "الشركة العربية لتقنية المعلومات شركة مساهمة مقفلة",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "577000123": {
+  "id": "577000123",
+  "name": "Zendesk",
+  "nameEn": "Zendesk",
+  "company": "سلة",
+  "categories": [
+   "أخرى",
+   "المحادثة",
+   "صانع التطبيقات"
+  ],
+  "status": "listed"
+ },
+ "584551579": {
+  "id": "584551579",
+  "name": "العضوية - بلس",
+  "nameEn": "Membership Plus",
+  "company": "الشركة العربية لتقنية المعلومات شركة مساهمة مقفلة",
+  "categories": [
+   "التسويق",
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "586988764": {
+  "id": "586988764",
+  "name": "AI لوكتشيك",
+  "nameEn": "LookCheck AI",
+  "company": "Rendream",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "593961160": {
+  "id": "593961160",
+  "name": "SmartInsight",
+  "nameEn": "SmartInsight",
+  "company": "Smart Insight",
+  "categories": [
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "597375094": {
+  "id": "597375094",
+  "name": "باب بلس",
+  "nameEn": "Bab Plus",
+  "company": "باب بلس",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "600352558": {
+  "id": "600352558",
+  "name": "بوب أوتو",
+  "nameEn": "PopAutomate",
+  "company": "جروفـلكس",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "602421879": {
+  "id": "602421879",
+  "name": "واتساب دايركت",
+  "nameEn": "Whatsapp Direct",
+  "company": "سلمان محمد",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "602909284": {
+  "id": "602909284",
+  "name": "ماركوبولو AI",
+  "nameEn": "Markopolo AI",
+  "company": "Markopolo ai inc",
+  "categories": [
+   "التسويق",
+   "الرسائل النصية",
+   "البريد الالكتروني",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "609550895": {
+  "id": "609550895",
+  "name": "دعم الصور ثلاثية الأبعاد",
+  "nameEn": "3D images",
+  "company": "سلة",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "610038364": {
+  "id": "610038364",
+  "name": "المخازن الالكترونية",
+  "nameEn": "M5AZN",
+  "company": "M5AZN",
+  "categories": [
+   "التسويق",
+   "الشحن و التوصيل",
+   "أخرى",
+   "الدروب شيبينق"
+  ],
+  "status": "listed"
+ },
+ "617810280": {
+  "id": "617810280",
+  "name": "كاسب لوجستك",
+  "nameEn": "Kasib logistics",
+  "company": "kasib",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "618957569": {
+  "id": "618957569",
+  "name": "سهم اكسبريس",
+  "nameEn": "Saham Express",
+  "company": "مؤسسة سهم للشحن",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "621778373": {
+  "id": "621778373",
+  "name": "بطاقة امسح واربح",
+  "nameEn": "Scratch Card",
+  "company": "TopSoft UG",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "621925809": {
+  "id": "621925809",
+  "name": "فلوفاي",
+  "nameEn": "FlowFy",
+  "company": "Mohamed Yasser",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "623240684": {
+  "id": "623240684",
+  "name": "ادوات المتجر - التقرير اليومي",
+  "nameEn": "Store Tools - Daily Report",
+  "company": "UltraTechDynamics",
+  "categories": [
+   "البريد الالكتروني",
+   "التحليل و الاحصاء",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "623963430": {
+  "id": "623963430",
+  "name": "تي دي للخدمات اللوجستية",
+  "nameEn": "TD Logistics",
+  "company": "TD Logistics",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "625797922": {
+  "id": "625797922",
+  "name": "والم للخدمات اللوجستية",
+  "nameEn": "Walim Express",
+  "company": "Walim Logistics Services",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "627060499": {
+  "id": "627060499",
+  "name": "إيراد",
+  "nameEn": "erad",
+  "company": "erad",
+  "categories": [
+   "التسويق",
+   "المحاسبة والمالية",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "629343419": {
+  "id": "629343419",
+  "name": "قمقم",
+  "nameEn": "QmQm",
+  "company": "Ahmed Korany",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "630118527": {
+  "id": "630118527",
+  "name": "تكتيك لإحصائيات التجار",
+  "nameEn": "Takteek Data Analytics",
+  "company": "Takteek Agency",
+  "categories": [
+   "التسويق",
+   "المحاسبة والمالية",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "632703084": {
+  "id": "632703084",
+  "name": "بوكسيس",
+  "nameEn": "BoxEx",
+  "company": "الصندوق الذكي لنقل الطرود",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "641771672": {
+  "id": "641771672",
+  "name": "هدايا دوارة",
+  "nameEn": "Spinning Gifts",
+  "company": "Amr Sohil",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "646004852": {
+  "id": "646004852",
+  "name": "بريبوت اشعارات واتساب",
+  "nameEn": "Whatsapp Preboot AI",
+  "company": "Preboot AI Labs",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "655282390": {
+  "id": "655282390",
+  "name": "تولفيرس",
+  "nameEn": "Toolvers",
+  "company": "الديوان الراقي للإستثمار",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "656465702": {
+  "id": "656465702",
+  "name": "لمحة",
+  "nameEn": "Lamha",
+  "company": "شركة فور تيك لتقنية المعلومات",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "657866947": {
+  "id": "657866947",
+  "name": "منصة فاينكس",
+  "nameEn": "FAAINEX Platform",
+  "company": "شركة افاق الحوسبة لتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "658075449": {
+  "id": "658075449",
+  "name": "لوجيستكا",
+  "nameEn": "logistika",
+  "company": "لوجيستكا",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "660964016": {
+  "id": "660964016",
+  "name": "بوتو اشعارات واتساب بوت رد الي",
+  "nameEn": "boto",
+  "company": "بوتو",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "667073887": {
+  "id": "667073887",
+  "name": "عيار",
+  "nameEn": "Eiar",
+  "company": "مؤسسة طرف الثرى التجارية",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "669023635": {
+  "id": "669023635",
+  "name": "قيم ستيشن",
+  "nameEn": "Game Stationn",
+  "company": "مؤسسة الكرت التقني التجاريه",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "669710838": {
+  "id": "669710838",
+  "name": "تكامل ميكروتيك المحاسبى",
+  "nameEn": "Microtec Integration",
+  "company": "Microtec",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "671032370": {
+  "id": "671032370",
+  "name": "إسناد فلفلمنت",
+  "nameEn": "Isnaad Fulfillment",
+  "company": "Isnaad",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "673399964": {
+  "id": "673399964",
+  "name": "خطوه  اهتمام",
+  "nameEn": "Operation step",
+  "company": "خطوة إهتمام للصيانة والتشغيل",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "675177809": {
+  "id": "675177809",
+  "name": "Yahoo",
+  "nameEn": "Yahoo",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "679991128": {
+  "id": "679991128",
+  "name": "هالكون",
+  "nameEn": "Halcon",
+  "company": "مؤسسة هالكون للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "680278255": {
+  "id": "680278255",
+  "name": "Voice Search",
+  "nameEn": "Voice Search",
+  "company": "Coding Home LLC",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "682348088": {
+  "id": "682348088",
+  "name": "ركز رحلات ذكية لتحسين معدل التحويل",
+  "nameEn": "Rakkez Smart Journeys and Conversion Optimization",
+  "company": "Mohammad Khalaf",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "البريد الالكتروني",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "683470366": {
+  "id": "683470366",
+  "name": "بوكسي - بوكسات قابلة للتخصيص",
+  "nameEn": "Boxy - Customizable boxes",
+  "company": "مشاعل شاكر",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "688093994": {
+  "id": "688093994",
+  "name": "واتس ستور",
+  "nameEn": "WhatsStore",
+  "company": "مؤسسة ورقات المتحدة للتجارة",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "691045455": {
+  "id": "691045455",
+  "name": "Pick Logistics",
+  "nameEn": "Pick Logistics",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "691365818": {
+  "id": "691365818",
+  "name": "مترجم التقييمات",
+  "nameEn": "Reviews Translator",
+  "company": "سلة",
+  "categories": [
+   "تحسين الموقع"
+  ],
+  "status": "listed",
+  "isDefault": true
+ },
+ "692113031": {
+  "id": "692113031",
+  "name": "وولت بلس",
+  "nameEn": "Wallet Plus",
+  "company": "نعناع للتطوير",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "693514788": {
+  "id": "693514788",
+  "name": "الربط مع اسس ERP",
+  "nameEn": "Osus ERP Connecter",
+  "company": "Osus Information Technologhy Co",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "695156170": {
+  "id": "695156170",
+  "name": "إم دبليو لإشعارات واتساب",
+  "nameEn": "MW WhatsApp Notifications",
+  "company": "مؤسسة بسنت سويت التجارية",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "698155692": {
+  "id": "698155692",
+  "name": "مبروك  تراك",
+  "nameEn": "Mabrook Track",
+  "company": "VM MEDIA LLC",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "701774205": {
+  "id": "701774205",
+  "name": "لينك واتس - إشعارات ذكية",
+  "nameEn": "Lenkwhats-whats notifications",
+  "company": "لينك كود",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "706164864": {
+  "id": "706164864",
+  "name": "ليموسكرايب - تطبيق الإشتراكات",
+  "nameEn": "Lemoscribe - Subscriptions App",
+  "company": "Mostafa Eltazy",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "706364662": {
+  "id": "706364662",
+  "name": "رفلكشن ربط نظام اي ار بي نكست",
+  "nameEn": "Reflection ERPNext connecter",
+  "company": "شركة انعكاس بعدي للاتصالات وتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "709062167": {
+  "id": "709062167",
+  "name": "ادوات المتجر بالذكاء الاصطناعي",
+  "nameEn": "Store Tools  with AI",
+  "company": "Ultra Tech Dynamics",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "البريد الالكتروني",
+   "المحادثة",
+   "التحليل و الاحصاء",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "709976967": {
+  "id": "709976967",
+  "name": "برولو فلفلمنت",
+  "nameEn": "Prolo Fulfillment",
+  "company": "Adwar",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "711291874": {
+  "id": "711291874",
+  "name": "برق",
+  "nameEn": "Barq",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "713021130": {
+  "id": "713021130",
+  "name": "ثويني",
+  "nameEn": "Thuwaini",
+  "company": "ثويني للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "714297540": {
+  "id": "714297540",
+  "name": "Crisp",
+  "nameEn": "Crisp",
+  "company": "سلة",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "716487394": {
+  "id": "716487394",
+  "name": "أي إتش إكسبريس",
+  "nameEn": "AH EXPRESS",
+  "company": "شركة كافيني",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "716567107": {
+  "id": "716567107",
+  "name": "آرتز",
+  "nameEn": "ARTZ",
+  "company": "آرتز للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "717054576": {
+  "id": "717054576",
+  "name": "اوتو جولد - تحديث اسعار الذهب",
+  "nameEn": "auto gold",
+  "company": "شركة فالنتكا للحلول التقنية",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "717394609": {
+  "id": "717394609",
+  "name": "كلاود شيلف",
+  "nameEn": "Cloud Shelf",
+  "company": "CloudShelf",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "719950279": {
+  "id": "719950279",
+  "name": "أوفر شات سنتر",
+  "nameEn": "Chat center by Awfar",
+  "company": "اوفر تك للتقنية",
+  "categories": [
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "720357523": {
+  "id": "720357523",
+  "name": "طرد التوصيل العادي",
+  "nameEn": "Tard Normal Delivey",
+  "company": "شركة النقطة الأمامية للتجارة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "725903663": {
+  "id": "725903663",
+  "name": "خزنلي",
+  "nameEn": "Khazenly",
+  "company": "Khazenly",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "732006910": {
+  "id": "732006910",
+  "name": "نـقـلنـــاهـا",
+  "nameEn": "naqlnaha",
+  "company": "شركة ناصر صالح الحصين للنقل والتخزين",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "734843083": {
+  "id": "734843083",
+  "name": "امباور",
+  "nameEn": "Empower",
+  "company": "شركة امباور لادارة المشاريع",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "741692652": {
+  "id": "741692652",
+  "name": "شركة رود للنقل المبرد",
+  "nameEn": "Road refrigerated transport co",
+  "company": "Road logistics",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "747360824": {
+  "id": "747360824",
+  "name": "الربط مع هيئة الزكاة والضريبة",
+  "nameEn": "ZATCA Fatoora",
+  "company": "سلة",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "747568750": {
+  "id": "747568750",
+  "name": "سلاسة دارك ستور",
+  "nameEn": "Salasa Dark Store",
+  "company": "Salasa",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "750640776": {
+  "id": "750640776",
+  "name": "موصل اي ار بى نيكست جولايف",
+  "nameEn": "Golive ERPNext Connector",
+  "company": "Go live Solutions",
+  "categories": [
+   "تحسين الموقع",
+   "المحاسبة والمالية",
+   "أخرى",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "754450831": {
+  "id": "754450831",
+  "name": "كليك تو كول",
+  "nameEn": "Click to Call",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "756993724": {
+  "id": "756993724",
+  "name": "طرد اكسبريس",
+  "nameEn": "Tard Express",
+  "company": "شركة النقطة الأمامية للتجارة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "767942422": {
+  "id": "767942422",
+  "name": "ويذير",
+  "nameEn": "WeThere",
+  "company": "شركة الموقع الصاعد لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "770726777": {
+  "id": "770726777",
+  "name": "قلاري ERP",
+  "nameEn": "Glary ERP",
+  "company": "قلاري الإبداع لتقينة نظم المعلومات",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "771125765": {
+  "id": "771125765",
+  "name": "شركة كوربت",
+  "nameEn": "Corbit SMS",
+  "company": "شركة كوربت",
+  "categories": [
+   "الرسائل النصية"
+  ],
+  "status": "listed"
+ },
+ "773247913": {
+  "id": "773247913",
+  "name": "تواصل اشعارات واتساب",
+  "nameEn": "Tawasl WhatsApp",
+  "company": "عمر عبدالله يونس",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "779622886": {
+  "id": "779622886",
+  "name": "البيان للمحاسبة والمستودعات",
+  "nameEn": "Bayan for accounting",
+  "company": "البيان للمحاسية والمستودعات",
+  "categories": [
+   "التسويق",
+   "المحاسبة والمالية",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "781906318": {
+  "id": "781906318",
+  "name": "نوافذ الفيديو",
+  "nameEn": "Video popups",
+  "company": "Venofy فينوفاي",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "784063544": {
+  "id": "784063544",
+  "name": "تكامل سلة مع أودو",
+  "nameEn": "Salla and Odoo Integration",
+  "company": "OSIT",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "785638228": {
+  "id": "785638228",
+  "name": "تاجر توك - منصة ذكية للمبيعات",
+  "nameEn": "Tajir Talk - smart sales",
+  "company": "HumanEcho",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "790009216": {
+  "id": "790009216",
+  "name": "نوافذ نوتي فاي",
+  "nameEn": "Notify Windows",
+  "company": "Fatima Ali",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "793306019": {
+  "id": "793306019",
+  "name": "نبض للتواصل",
+  "nameEn": "Nabd Messaging",
+  "company": "Abdalrhman Mohamed Alkady",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "796585523": {
+  "id": "796585523",
+  "name": "مكسب بلس",
+  "nameEn": "Maksab plus",
+  "company": "نعناع للتطوير",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "800331746": {
+  "id": "800331746",
+  "name": "مساعد Ai",
+  "nameEn": "Mosaid AI",
+  "company": "احمد المصعبي",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "801106854": {
+  "id": "801106854",
+  "name": "اطاق اكسبريس",
+  "nameEn": "ATAQ Express",
+  "company": "موسسة اطاق لنقل الطرود",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "805124355": {
+  "id": "805124355",
+  "name": "نايف لوجستيك",
+  "nameEn": "Naif Logistics",
+  "company": "شركة نايف محمد للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "805535732": {
+  "id": "805535732",
+  "name": "كارفا",
+  "nameEn": "karva",
+  "company": "كارفا للنقل والتخزين",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "805615445": {
+  "id": "805615445",
+  "name": "بيفاتل بيزنس شات",
+  "nameEn": "Bevatel Business Chat",
+  "company": "مؤسسة الحديثة العالمية للاتصالات وتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "806937489": {
+  "id": "806937489",
+  "name": "علامة مائية لصورة المنتج",
+  "nameEn": "Product Image Watermark",
+  "company": "Coding Home LLC",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "807884500": {
+  "id": "807884500",
+  "name": "الربط الذكي مع دفترة",
+  "nameEn": "Daftra Sync Pro",
+  "company": "ROYALES TECH",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "810320149": {
+  "id": "810320149",
+  "name": "اكسيس للشحن والتخزين",
+  "nameEn": "AXIS Fulfillment Shipping",
+  "company": "AXIS Integrated Logistics Company",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "820155210": {
+  "id": "820155210",
+  "name": "فاليو فيرست",
+  "nameEn": "ValueFirst SMS",
+  "company": "ValueFirst",
+  "categories": [
+   "الرسائل النصية"
+  ],
+  "status": "listed"
+ },
+ "831404041": {
+  "id": "831404041",
+  "name": "Contact Form",
+  "nameEn": "Contact Form",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "833621790": {
+  "id": "833621790",
+  "name": "كوميرسيوم من كونستاكلاود",
+  "nameEn": "Commercium By ConstaCloud",
+  "company": "CONSTA CLOUD PRIVATE LIMITED",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "837285465": {
+  "id": "837285465",
+  "name": "Main Mile",
+  "nameEn": "Main Mile",
+  "company": "Main Mile Logistics",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "838328030": {
+  "id": "838328030",
+  "name": "ربط كلافيو بواسطة سكاليرا",
+  "nameEn": "Klaviyo connector by Scalera",
+  "company": "Scale Era Co",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "838607509": {
+  "id": "838607509",
+  "name": "تولفلاي موني",
+  "nameEn": "Toolfly Money",
+  "company": "Thabt Alghamdi",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "846816447": {
+  "id": "846816447",
+  "name": "سوميفاي",
+  "nameEn": "Sumify",
+  "company": "XY Data",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "846904320": {
+  "id": "846904320",
+  "name": "أوتو - بوابة الشحن الأفضل في المملكة",
+  "nameEn": "OTO - The Only Shipping Gateway You Need",
+  "company": "شركة أوتو جلوبال العربية لتقنية المعلومات",
+  "categories": [
+   "الشحن و التوصيل",
+   "الرسائل النصية",
+   "أخرى",
+   "الموقع الجغرافي"
+  ],
+  "status": "listed"
+ },
+ "851057819": {
+  "id": "851057819",
+  "name": "تطبيق دفترة",
+  "nameEn": "Daftra App",
+  "company": "Izam Inc",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "851138044": {
+  "id": "851138044",
+  "name": "Facebook Pixel",
+  "nameEn": "Facebook Pixel",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "853407611": {
+  "id": "853407611",
+  "name": "بروزه لحلول التسويق الذكيه",
+  "nameEn": "Barwazah Ai",
+  "company": "شركة البرواز الذكي",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "853747644": {
+  "id": "853747644",
+  "name": "كندي",
+  "nameEn": "Kindi",
+  "company": "Company NESMA ALDHAKIA Commercial",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "856803725": {
+  "id": "856803725",
+  "name": "فوكو ERP",
+  "nameEn": "Voko ERP",
+  "company": "شركة قبسات التجارية",
+  "categories": [
+   "المحاسبة والمالية",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "857091396": {
+  "id": "857091396",
+  "name": "Mouse Flow",
+  "nameEn": "Mouse Flow",
+  "company": "سلة",
+  "categories": [
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "857202777": {
+  "id": "857202777",
+  "name": "زر اليوتيوب",
+  "nameEn": "Youtube Button",
+  "company": "شركة المناخ المميزة التجارية شركة شخص واحد",
+  "categories": [
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "859360451": {
+  "id": "859360451",
+  "name": "هاردي",
+  "nameEn": "Hardy",
+  "company": "Hardy Cx",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "860188465": {
+  "id": "860188465",
+  "name": "SmartERP",
+  "nameEn": "SmartERP",
+  "company": "SmartLife",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "861510477": {
+  "id": "861510477",
+  "name": "ولاء اكس - نظام الولاء والمكافآت",
+  "nameEn": "Wala X - Loyalty and Rewards System",
+  "company": "وادي بلسم لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "البريد الالكتروني",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "864133974": {
+  "id": "864133974",
+  "name": "كرم - خدمة عملاء ذكية",
+  "nameEn": "Karam AI Assistant",
+  "company": "Karam AI",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "البريد الالكتروني",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "866609419": {
+  "id": "866609419",
+  "name": "ساند",
+  "nameEn": "sanid",
+  "company": "Ahmed Korany",
+  "categories": [
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "869275289": {
+  "id": "869275289",
+  "name": "رال",
+  "nameEn": "RAL",
+  "company": "Ral",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "870050397": {
+  "id": "870050397",
+  "name": "مدونة المتجر",
+  "nameEn": "E-store blog",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "صانع التطبيقات"
+  ],
+  "status": "listed"
+ },
+ "873658754": {
+  "id": "873658754",
+  "name": "فاست لوق",
+  "nameEn": "Fast Log",
+  "company": "فاست لوج لوجستيكس",
+  "categories": [
+   "الشحن و التوصيل",
+   "الرسائل النصية"
+  ],
+  "status": "listed"
+ },
+ "877322461": {
+  "id": "877322461",
+  "name": "شينزو",
+  "nameEn": "Shinzo Analytics",
+  "company": "مؤسسة التحليلات الحديثة لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "المحاسبة والمالية",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "879907018": {
+  "id": "879907018",
+  "name": "واتساب ابلوكسا",
+  "nameEn": "Whatsapp Apploxa",
+  "company": "متعة التقنية",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "885982882": {
+  "id": "885982882",
+  "name": "شركة ريمان شحن مبرد",
+  "nameEn": "Reman Refrigerated Logistics",
+  "company": "ريمان للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "888286488": {
+  "id": "888286488",
+  "name": "نيكسابوتس",
+  "nameEn": "NexaBots",
+  "company": "NexaBots",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "889866465": {
+  "id": "889866465",
+  "name": "دروب العناية للخدمات اللوجستية",
+  "nameEn": "Drob Alinayah for logistics services",
+  "company": "دروب العناية للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "895627836": {
+  "id": "895627836",
+  "name": "تطبيق طرود",
+  "nameEn": "Torod App",
+  "company": "شركة طرود لتقنية المعلومات",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "899441270": {
+  "id": "899441270",
+  "name": "سوبر مايل",
+  "nameEn": "Super mile",
+  "company": "Supermile",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "900356613": {
+  "id": "900356613",
+  "name": "Wisepops",
+  "nameEn": "Wisepops",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "906728208": {
+  "id": "906728208",
+  "name": "راسل واتساب إشعارات وسلات متروكة",
+  "nameEn": "Rasil WhatsApp Notifications and Abandoned Cart",
+  "company": "Mohamed Rafat",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "910259776": {
+  "id": "910259776",
+  "name": "ربط مع اودو - نكسا",
+  "nameEn": "Odoo Connector - NEXA",
+  "company": "NEXA Solutions",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "914306708": {
+  "id": "914306708",
+  "name": "البابطين اللوجستية",
+  "nameEn": "Albabtain Logistic",
+  "company": "AlBabtain Logistic",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "914781171": {
+  "id": "914781171",
+  "name": "سرى اكسبرس",
+  "nameEn": "SARAA Express",
+  "company": "مؤسسة سرا لنقل الطرود",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "918460143": {
+  "id": "918460143",
+  "name": "سلني - زر واتساب ذكي لمتجرك",
+  "nameEn": "Sallni - Smart WhatsApp button",
+  "company": "Yasser Abdulrahman",
+  "categories": [
+   "تحسين الموقع",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "920408355": {
+  "id": "920408355",
+  "name": "فيدفلو",
+  "nameEn": "FeedFlow",
+  "company": "وصول لخدمات المتاجر",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "921036091": {
+  "id": "921036091",
+  "name": "ويبك",
+  "nameEn": "Wepik",
+  "company": "Wepik Express",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "921790953": {
+  "id": "921790953",
+  "name": "دروب كارد للمنتجات والخدمات الرقمية",
+  "nameEn": "DropCard For Digital Products and Services",
+  "company": "مؤسسة انظمة رؤيا لتقنية نظم المعلومات",
+  "categories": [
+   "أخرى",
+   "الدروب شيبينق"
+  ],
+  "status": "listed"
+ },
+ "922277910": {
+  "id": "922277910",
+  "name": "وصلة اشعارات واتساب",
+  "nameEn": "WSLA Whatsapp Notifications",
+  "company": "وصلة  Wsla",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "922971942": {
+  "id": "922971942",
+  "name": "بريميوم للخدمات اللوجستية",
+  "nameEn": "Premium Logistics",
+  "company": "Premium Logisitcs",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "923885782": {
+  "id": "923885782",
+  "name": "here",
+  "nameEn": "here",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "الموقع الجغرافي",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "929458296": {
+  "id": "929458296",
+  "name": "مرجانة الساحل للشحن والتوصيل",
+  "nameEn": "Marjanat AlSahel shipping",
+  "company": "مؤسسة مرجانة الساحل للنقليات",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "930868245": {
+  "id": "930868245",
+  "name": "عارض ومحول ثلاثي الابعاد",
+  "nameEn": "3D and AR Viewer and Converter",
+  "company": "Stepinside Virtual Commerce",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "931067979": {
+  "id": "931067979",
+  "name": "أتمت شات ذكاء اصطناعي للواتساب",
+  "nameEn": "ATMET chat  - Ai for WhatsApp",
+  "company": "ATMET Establishment",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "931830113": {
+  "id": "931830113",
+  "name": "دفترة من في",
+  "nameEn": "Daftra from fai",
+  "company": "شركة شبكة عهد لتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "935928895": {
+  "id": "935928895",
+  "name": "انفوبوت",
+  "nameEn": "Invobot",
+  "company": "مؤسسة الابداع الرقمي لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "936971428": {
+  "id": "936971428",
+  "name": "Dreem Nest",
+  "nameEn": "Dreem Nest",
+  "company": "دريم نست",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "938713218": {
+  "id": "938713218",
+  "name": "صحصح كوبونات",
+  "nameEn": "Sahseh Coupons",
+  "company": "Sahseh LLC",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "939200655": {
+  "id": "939200655",
+  "name": "نوتي موني",
+  "nameEn": "Noti Money",
+  "company": "وادي بلسم لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "940314408": {
+  "id": "940314408",
+  "name": "محلك - شي إن",
+  "nameEn": "Mahalk - Shein",
+  "company": "مؤسسة فيصل العمري للتسويق الإلكتروني",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى",
+   "الدروب شيبينق"
+  ],
+  "status": "listed"
+ },
+ "943386434": {
+  "id": "943386434",
+  "name": "Insta Variant Swatches",
+  "nameEn": "Insta Variant Swatches",
+  "company": "Utkarsh Sharma",
+  "categories": [
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "944213936": {
+  "id": "944213936",
+  "name": "أي مكان",
+  "nameEn": "AyMakan",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "946909874": {
+  "id": "946909874",
+  "name": "سريع للخدمات اللوجستية",
+  "nameEn": "Sree for Logistics Services",
+  "company": "مؤسسة سريع التنفيذ للخدمات للنقل والتخزين",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "950634890": {
+  "id": "950634890",
+  "name": "ساعات عمل المتجر",
+  "nameEn": "Business Opening Hours",
+  "company": "TopSoft UG",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "950834656": {
+  "id": "950834656",
+  "name": "المسارات للخدمات اللوجستية",
+  "nameEn": "Modern Tracks Logistics",
+  "company": "شركة المسارات الحديثة للخدمات اللوجستيه",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "966611680": {
+  "id": "966611680",
+  "name": "ناجز اكسبريس",
+  "nameEn": "Najiz Express",
+  "company": "شركة ناجز للشحن",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "966990037": {
+  "id": "966990037",
+  "name": "Omniful",
+  "nameEn": "Omniful",
+  "company": "Omniful Saudi for Information Technology",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "985429283": {
+  "id": "985429283",
+  "name": "Eijack",
+  "nameEn": "Eijack",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "986496891": {
+  "id": "986496891",
+  "name": "وصول لوجستيك",
+  "nameEn": "Wosool Logistics",
+  "company": "Wosool Logistics",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "989448320": {
+  "id": "989448320",
+  "name": "عين لإدارة الأعمال",
+  "nameEn": "Eyeen",
+  "company": "Eyeen",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "990460187": {
+  "id": "990460187",
+  "name": "مدار اكسبرس",
+  "nameEn": "Madar Express",
+  "company": "مدار  الرياده",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "996829016": {
+  "id": "996829016",
+  "name": "كارتات إشعارات واتساب",
+  "nameEn": "Crtat WhatsApp notifications",
+  "company": "TARA APP COMPANY",
+  "categories": [
+   "التسويق",
+   "المحادثة",
+   "التحليل و الاحصاء",
+   "السلات المتروكة"
+  ],
+  "status": "listed"
+ },
+ "997551250": {
+  "id": "997551250",
+  "name": "Chatra",
+  "nameEn": "Chatra",
+  "company": "سلة",
+  "categories": [
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "997871581": {
+  "id": "997871581",
+  "name": "تجميعة",
+  "nameEn": "Tajmi3a",
+  "company": "Yamin Hassan Shatory",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "997951294": {
+  "id": "997951294",
+  "name": "روليت الكوبونات",
+  "nameEn": "coupons roulette",
+  "company": "مؤسسة ترميز لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "998832937": {
+  "id": "998832937",
+  "name": "دعن",
+  "nameEn": "DAN",
+  "company": "Dan Logistic company",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "999120096": {
+  "id": "999120096",
+  "name": "ازهلها",
+  "nameEn": "Ezhalha",
+  "company": "شركة ثمانية اعشار للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1003339443": {
+  "id": "1003339443",
+  "name": "الحركان",
+  "nameEn": "Harkan",
+  "company": "الحركان",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1005716042": {
+  "id": "1005716042",
+  "name": "مارقرو للبريد الإلكتروني",
+  "nameEn": "MarGrow for Email marketing",
+  "company": "مارقرو للتسويق بالبريد الإلكتروني",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "1007743635": {
+  "id": "1007743635",
+  "name": "فلاش بوكس",
+  "nameEn": "Flash Box",
+  "company": "مؤسسة الصندوق الفريد للتجارة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1015079996": {
+  "id": "1015079996",
+  "name": "وارد",
+  "nameEn": "Waared Express",
+  "company": "Waared",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1020154644": {
+  "id": "1020154644",
+  "name": "فلكستوك",
+  "nameEn": "Flextock",
+  "company": "Flextock Tech",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "1020876846": {
+  "id": "1020876846",
+  "name": "Tidio",
+  "nameEn": "Tidio",
+  "company": "سلة",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1022223933": {
+  "id": "1022223933",
+  "name": "أدوات المتجر - محسن السيو SEO",
+  "nameEn": "Store Tools - SEO Optimizer",
+  "company": "Ultra Tech Dynamics",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1030762418": {
+  "id": "1030762418",
+  "name": "نخلة الخليج",
+  "nameEn": "Gulf Palm",
+  "company": "الشركة نخلة الخليج للخدمات اللوجستيه",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1031329536": {
+  "id": "1031329536",
+  "name": "إيجكس",
+  "nameEn": "AJEX",
+  "company": "AJEX",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1031737260": {
+  "id": "1031737260",
+  "name": "عدسة تكبير الصورة",
+  "nameEn": "Magnifier Lens",
+  "company": "Maitham Alkhalifah",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1034360757": {
+  "id": "1034360757",
+  "name": "طيارة اكسبرس",
+  "nameEn": "tyara express",
+  "company": "TYARA",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1041653808": {
+  "id": "1041653808",
+  "name": "صانع العروض - لرفع قيمة السلة",
+  "nameEn": "Offers makers increase cart",
+  "company": "لينك كود",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "زيادة المبيعات"
+  ],
+  "status": "listed"
+ },
+ "1044378632": {
+  "id": "1044378632",
+  "name": "واتساب بوت و محادثة فورجوالي",
+  "nameEn": "whatsapp chatbot 4jawaly",
+  "company": "Innovate Studio LLC",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1044839262": {
+  "id": "1044839262",
+  "name": "الربط مع مايكروسوفت داينمك",
+  "nameEn": "Microsoft Dynamic",
+  "company": "Reachware",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1046700593": {
+  "id": "1046700593",
+  "name": "باثفيكس",
+  "nameEn": "Pathvex",
+  "company": "باثفكس",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1047911288": {
+  "id": "1047911288",
+  "name": "ليب واتساب شات بوت",
+  "nameEn": "LeapAI Whatsapp Chatbot",
+  "company": "ليب لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1052352394": {
+  "id": "1052352394",
+  "name": "قيود من في",
+  "nameEn": "Qoyod From Fai",
+  "company": "شركة شبكة عهد لتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1052552160": {
+  "id": "1052552160",
+  "name": "كنز by PurpleApps",
+  "nameEn": "Kanz by PurpleApps",
+  "company": "Utkarsh Sharma",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "زيادة المبيعات"
+  ],
+  "status": "listed"
+ },
+ "1053926054": {
+  "id": "1053926054",
+  "name": "MK By MilaKnight",
+  "nameEn": "MK By MilaKnight",
+  "company": "MilaKnights",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1059532780": {
+  "id": "1059532780",
+  "name": "تواصل بوت اشعارات واتساب",
+  "nameEn": "TWASL BOT WhatsApp Notifications",
+  "company": "Fatima Ali",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1060447132": {
+  "id": "1060447132",
+  "name": "مرسال شريط دعاية",
+  "nameEn": "Mirsal Announcement Bar",
+  "company": "Fady Ahmed",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1061194345": {
+  "id": "1061194345",
+  "name": "سلامات",
+  "nameEn": "sallamat",
+  "company": "Madar technical solutions",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1061969453": {
+  "id": "1061969453",
+  "name": "تأكيد الطلبات",
+  "nameEn": "Order Confirmation",
+  "company": "شركة سديم التقنيات للاتصالات وتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "الرسائل النصية",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1064384920": {
+  "id": "1064384920",
+  "name": "ايزي شيب",
+  "nameEn": "easyship",
+  "company": "مؤسسة ايزيشيب",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1065635515": {
+  "id": "1065635515",
+  "name": "تريب اكسبرس",
+  "nameEn": "TRIP EXPRESS",
+  "company": "TRIP EXPRESS",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1066321182": {
+  "id": "1066321182",
+  "name": "valid",
+  "nameEn": "VALID",
+  "company": "Valid ERP",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1068787254": {
+  "id": "1068787254",
+  "name": "التسويق الألي عبر الواتساب سوشيال بوت",
+  "nameEn": "Automated WhatsApp marketing Social Bot",
+  "company": "شركة برمجة المستقبل للإتصالات وتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "البريد الالكتروني",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1072489701": {
+  "id": "1072489701",
+  "name": "منصة سند",
+  "nameEn": "Sanad",
+  "company": "سهولة الوصول التجارية",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1072725042": {
+  "id": "1072725042",
+  "name": "قعود نجد فلاش",
+  "nameEn": "Qaoud Najd Flash",
+  "company": "مؤسسة قعود نجد للمواشي",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1079938211": {
+  "id": "1079938211",
+  "name": "شات جييت",
+  "nameEn": "CHAT GATE",
+  "company": "TAKARUB FIRST TECHNOLOGY",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1081313129": {
+  "id": "1081313129",
+  "name": "NS اسم التطبيق",
+  "nameEn": "NestAds",
+  "company": "NestScale",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1083284934": {
+  "id": "1083284934",
+  "name": "برنامج إنفينيتي جويليري",
+  "nameEn": "Infinity Jewellery ERP",
+  "company": "شركة الحل المتفوق لتقنیة نظم المعلومات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1084051850": {
+  "id": "1084051850",
+  "name": "Tawk",
+  "nameEn": "Tawk",
+  "company": "سلة",
+  "categories": [
+   "الرسائل النصية",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1086121171": {
+  "id": "1086121171",
+  "name": "النافذة المنبثقة لمؤقت العد التنازلي",
+  "nameEn": "Countdown Popup",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "1086241704": {
+  "id": "1086241704",
+  "name": "مقارن",
+  "nameEn": "moqaren",
+  "company": "محمد الرشيد",
+  "categories": [
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1088070887": {
+  "id": "1088070887",
+  "name": "سهل بوكس للمحاسبة المبسطة",
+  "nameEn": "SahelBooks For Simplified Accounting",
+  "company": "Xperience Consulting",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1090140720": {
+  "id": "1090140720",
+  "name": "علي اكسبريس - أوتو دروب",
+  "nameEn": "AliExpress - Auto Drop",
+  "company": "مؤسسة انظمة رؤيا لتقنية نظم المعلومات",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى",
+   "الدروب شيبينق"
+  ],
+  "status": "listed"
+ },
+ "1092474055": {
+  "id": "1092474055",
+  "name": "زد مبيعاتك",
+  "nameEn": "Increase Your Sales",
+  "company": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1096833637": {
+  "id": "1096833637",
+  "name": "تقرير",
+  "nameEn": "Taqrer",
+  "company": "شركة حلول الثقة لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1097121340": {
+  "id": "1097121340",
+  "name": "يم - نظام استرجاع و استرداد",
+  "nameEn": "Yamm - Return and Refund system",
+  "company": "يم",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1099604538": {
+  "id": "1099604538",
+  "name": "زيادة حجم السلة",
+  "nameEn": "Ziadah",
+  "company": "منصة زيادة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "الذكاء الاصطناعي",
+   "زيادة المبيعات"
+  ],
+  "status": "listed"
+ },
+ "1099812496": {
+  "id": "1099812496",
+  "name": "تقنية النسيج",
+  "nameEn": "Naseej Tech",
+  "company": "مؤسسة تقنية النسيج",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى",
+   "الدروب شيبينق"
+  ],
+  "status": "listed"
+ },
+ "1104465318": {
+  "id": "1104465318",
+  "name": "مادا إكسبريس",
+  "nameEn": "Mada Experess",
+  "company": "مادا اكسبريس",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1106782482": {
+  "id": "1106782482",
+  "name": "PopupSmart",
+  "nameEn": "PopupSmart",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "1107525773": {
+  "id": "1107525773",
+  "name": "بيننا",
+  "nameEn": "Baynna",
+  "company": "شركة بينك وبينه",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1119138743": {
+  "id": "1119138743",
+  "name": "لوجستيكو",
+  "nameEn": "Logistico",
+  "company": "LOGISTICO",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1129878048": {
+  "id": "1129878048",
+  "name": "Yandex Metrica",
+  "nameEn": "Yandex Metrica",
+  "company": "سلة",
+  "categories": [
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1132065886": {
+  "id": "1132065886",
+  "name": "احسب مقاسك",
+  "nameEn": "Calculate your size",
+  "company": "مؤسسة نجات أحمد علي صلوي للتجارة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1137334494": {
+  "id": "1137334494",
+  "name": "بكسل التتبع الشامل",
+  "nameEn": "Universal Pixel Tracker",
+  "company": "Evotik Innovations FZ LLC",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء",
+   "التتبع الذكي"
+  ],
+  "status": "listed"
+ },
+ "1138657050": {
+  "id": "1138657050",
+  "name": "رابح إكس",
+  "nameEn": "Rabehx",
+  "company": "Lexora",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1139998764": {
+  "id": "1139998764",
+  "name": "Telegram - Contact Us",
+  "nameEn": "Telegram - Contact Us",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1144296436": {
+  "id": "1144296436",
+  "name": "شركاء بلو ستور",
+  "nameEn": "Blue Store Partners",
+  "company": "هاني أل معينا",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1151632797": {
+  "id": "1151632797",
+  "name": "زاجيكس",
+  "nameEn": "ZAJEX",
+  "company": "ZAJEX",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1156218952": {
+  "id": "1156218952",
+  "name": "INVORA",
+  "nameEn": "INVORA",
+  "company": "شركة فاتورة ابتكارية لتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1156853793": {
+  "id": "1156853793",
+  "name": "وفرة إكس اب سل",
+  "nameEn": "WafraX Upsell",
+  "company": "Wafra X",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1161226861": {
+  "id": "1161226861",
+  "name": "اشعارات مباشر",
+  "nameEn": "Ish3rat Mubasher",
+  "company": "Hussein Zaher",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1162372102": {
+  "id": "1162372102",
+  "name": "ريد بوكس - سلاسة",
+  "nameEn": "RedBox-Salasa",
+  "company": "RedBox",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1167328572": {
+  "id": "1167328572",
+  "name": "عداد تخفيضات بوب أب سناب",
+  "nameEn": "Count Down Popupsnap",
+  "company": "جروفـلكس",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1168843213": {
+  "id": "1168843213",
+  "name": "Storage X Fulfillment",
+  "nameEn": "Storage X Fulfillment",
+  "company": "Storage Station",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1174528629": {
+  "id": "1174528629",
+  "name": "قارن - مقارنة المنتجات",
+  "nameEn": "Qaren - Compare products",
+  "company": "كرافو لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1177053719": {
+  "id": "1177053719",
+  "name": "Yandex Mail",
+  "nameEn": "Yandex Mail",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "1180703836": {
+  "id": "1180703836",
+  "name": "مشتري موثق",
+  "nameEn": "Moshtary Moathaq",
+  "company": "محمد العوذة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1181678710": {
+  "id": "1181678710",
+  "name": "شحنات بريدك للخدمات اللوجستية",
+  "nameEn": "SBL for Delivery and Storage",
+  "company": "شحنات بريدك",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1183075653": {
+  "id": "1183075653",
+  "name": "صفقة الفرصة الأخيرة",
+  "nameEn": "Urgency Deal",
+  "company": "TopSoft UG",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1186746465": {
+  "id": "1186746465",
+  "name": "ماندو",
+  "nameEn": "Mando CX",
+  "company": "Mando AI",
+  "categories": [
+   "المحادثة",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "1190766558": {
+  "id": "1190766558",
+  "name": "تالوس ميش",
+  "nameEn": "Talos Mesh",
+  "company": "Talos Mesh",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1192869515": {
+  "id": "1192869515",
+  "name": "عجلة الحظ من Smartarget",
+  "nameEn": "Smartarget Lucky Wheel",
+  "company": "TopSoft UG",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "1193815502": {
+  "id": "1193815502",
+  "name": "ثرو سفن",
+  "nameEn": "Thru 7",
+  "company": "مؤسسة مستثمر للتجارة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "الرسائل النصية",
+   "أخرى",
+   "البريد الالكتروني",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1198949169": {
+  "id": "1198949169",
+  "name": "بداية التوصيل",
+  "nameEn": "start delivery",
+  "company": "Start Delivery",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1210670531": {
+  "id": "1210670531",
+  "name": "بوت نبيه",
+  "nameEn": "Naabih Bot",
+  "company": "Abdullah Mohamed",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1211266568": {
+  "id": "1211266568",
+  "name": "Make",
+  "nameEn": "Make",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1218174991": {
+  "id": "1218174991",
+  "name": "الربط مع كلافيو بدقة",
+  "nameEn": "Connect with Klaviyo",
+  "company": "KHAZENA FZC LLC",
+  "categories": [
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "1218344689": {
+  "id": "1218344689",
+  "name": "UPS",
+  "nameEn": "UPS",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1222482723": {
+  "id": "1222482723",
+  "name": "تقييم بلس - ثقة تزيد مبيعاتك",
+  "nameEn": "RatingPlus - Trust that sells",
+  "company": "شركة كود النظم المتقدمة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1223110459": {
+  "id": "1223110459",
+  "name": "Heap",
+  "nameEn": "Heap",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1226566104": {
+  "id": "1226566104",
+  "name": "عمولات",
+  "nameEn": "Omolaat",
+  "company": "شركة المحيط الأبيض لتقنية المعلومات",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1227305125": {
+  "id": "1227305125",
+  "name": "باك جو",
+  "nameEn": "PACKGO",
+  "company": "شركة عظماء التسويق التجارية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1227393030": {
+  "id": "1227393030",
+  "name": "زيرو وحساب",
+  "nameEn": "Xero and hesaab",
+  "company": "حفظ الثروات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1229950812": {
+  "id": "1229950812",
+  "name": "سما اكسيبريس",
+  "nameEn": "sama express",
+  "company": "sama express",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1230465056": {
+  "id": "1230465056",
+  "name": "GSuite",
+  "nameEn": "GSuite",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "1233129405": {
+  "id": "1233129405",
+  "name": "نسري اكسبرس",
+  "nameEn": "Nasri Express",
+  "company": "نسري اكسبرس",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1233408884": {
+  "id": "1233408884",
+  "name": "عجلة المكافآت",
+  "nameEn": "Reward Wheel",
+  "company": "Venofy فينوفاي",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1240906135": {
+  "id": "1240906135",
+  "name": "هدايا بلس - بديل الإعلانات",
+  "nameEn": "Hdaia Plus  Promotion Without Ads",
+  "company": "شركة روض الخزامى للتجارة",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1243974782": {
+  "id": "1243974782",
+  "name": "تنبيهاتي - تنبيهات واتساب ذكية",
+  "nameEn": "Tnbihaty - Smart WhatsApp Alerts",
+  "company": "محمود محمد",
+  "categories": [
+   "التسويق",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1244055007": {
+  "id": "1244055007",
+  "name": "نيراشات بوت واتساب",
+  "nameEn": "NeraChat WhatsApp Bot",
+  "company": "مؤسسة الرقم السابع للتجارة",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1244174548": {
+  "id": "1244174548",
+  "name": "موال للخدمات اللوجستية",
+  "nameEn": "Mawal Logistics",
+  "company": "Mawal Logistics",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1248393831": {
+  "id": "1248393831",
+  "name": "وصل اشعارات واتساب",
+  "nameEn": "WASL WhatsApp Notifications",
+  "company": "Nawaf Alqhtani",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1256075157": {
+  "id": "1256075157",
+  "name": "شيبا ديليفري",
+  "nameEn": "Shipa Delivery",
+  "company": "Shipa Delivery",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1265323264": {
+  "id": "1265323264",
+  "name": "Market Link App",
+  "nameEn": "Market Link App",
+  "company": "شركة نجد الاولى لتقنية المعلومات",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1267488723": {
+  "id": "1267488723",
+  "name": "Pinterest",
+  "nameEn": "Pinterest",
+  "company": "سلة",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1267608232": {
+  "id": "1267608232",
+  "name": "التكامل والربط مع أودو - نقلة",
+  "nameEn": "Odoo Integration - NAQLAH",
+  "company": "Naqlah Tech",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1267835893": {
+  "id": "1267835893",
+  "name": "المسار الطائر",
+  "nameEn": "flying track",
+  "company": "المسار الطائر",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1268123532": {
+  "id": "1268123532",
+  "name": "سلة بوينت",
+  "nameEn": "Salla Point",
+  "company": "سلة",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1276525586": {
+  "id": "1276525586",
+  "name": "بي وان اكسبرس بوكس",
+  "nameEn": "BeOne Express Box",
+  "company": "بي وان اكسبرس",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1277840461": {
+  "id": "1277840461",
+  "name": "Button Builder",
+  "nameEn": "Button Builder",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1282695161": {
+  "id": "1282695161",
+  "name": "2 لويال",
+  "nameEn": "2Loyal",
+  "company": "INTEGRATEDSOLUTIONSGATE",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1283856315": {
+  "id": "1283856315",
+  "name": "سامبو - تسعير ديناميكي بالذكاء الاصطناعي",
+  "nameEn": "Sampo AI  AI-Powered Dynamic Pricing",
+  "company": "Sampo AI Ltd",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "المحاسبة والمالية",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1284431625": {
+  "id": "1284431625",
+  "name": "فيسبوك كونتاكت أس",
+  "nameEn": "Facebook - Contact Us",
+  "company": "TopSoft UG",
+  "categories": [
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1286413041": {
+  "id": "1286413041",
+  "name": "تيك توكارت - حول حسابك في تيك توك إلى أداة تسويقية",
+  "nameEn": "TikToCart - Shoppable TikTok Feed",
+  "company": "كثيب",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1289904781": {
+  "id": "1289904781",
+  "name": "Unifonic SMS",
+  "nameEn": "Unifonic SMS",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "الرسائل النصية"
+  ],
+  "status": "listed"
+ },
+ "1295518676": {
+  "id": "1295518676",
+  "name": "سبل",
+  "nameEn": "SPL",
+  "company": "SPL",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1299329755": {
+  "id": "1299329755",
+  "name": "واتسبوت",
+  "nameEn": "Whats Bot",
+  "company": "WhatsBot",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1301274177": {
+  "id": "1301274177",
+  "name": "إيزي كونكت",
+  "nameEn": "Easy Connect",
+  "company": "Raof AlShaafi",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "البريد الالكتروني",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1304916102": {
+  "id": "1304916102",
+  "name": "صدارة",
+  "nameEn": "Sadara",
+  "company": "HupFast",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1305927063": {
+  "id": "1305927063",
+  "name": "نشمي اكسبرس",
+  "nameEn": "nashmi Express",
+  "company": "نشمي",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1306865882": {
+  "id": "1306865882",
+  "name": "رابيت ديلفري",
+  "nameEn": "Rabbit Delivery",
+  "company": "مؤسسة رابيت لنقل الطرود",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1309742892": {
+  "id": "1309742892",
+  "name": "فاشن ڤيو",
+  "nameEn": "FashionVue",
+  "company": "FashionVue",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "1311345502": {
+  "id": "1311345502",
+  "name": "أرامكس",
+  "nameEn": "Aramex",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1311892438": {
+  "id": "1311892438",
+  "name": "طيار",
+  "nameEn": "Tayaar",
+  "company": "بيتا هاوس",
+  "categories": [
+   "تحسين الموقع",
+   "الشحن و التوصيل",
+   "المحاسبة والمالية",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1312587321": {
+  "id": "1312587321",
+  "name": "فور شيب",
+  "nameEn": "4SHIP",
+  "company": "شركة فورشيب للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1313533308": {
+  "id": "1313533308",
+  "name": "أوبكس - برنامج ولاء العملاء وإعادة الاستهداف",
+  "nameEn": "OPEX - Loyalty and Retention Platform",
+  "company": "OPEX Solutions",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "البريد الالكتروني",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1313614557": {
+  "id": "1313614557",
+  "name": "إنتلي فاي  بزنس شات",
+  "nameEn": "Intellivay Business Chat",
+  "company": "انتلي فاي",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1321126153": {
+  "id": "1321126153",
+  "name": "تطبيق لايف جولد لتحديث أسعار الذهب",
+  "nameEn": "Live Gold Price Update",
+  "company": "شركة لايف جولد لتقنية المعلومات",
+  "categories": [
+   "تحسين الموقع",
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1322153389": {
+  "id": "1322153389",
+  "name": "نيرابوس",
+  "nameEn": "NeraPOS",
+  "company": "مؤسسة الرقم السابع للتجارة",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1332405289": {
+  "id": "1332405289",
+  "name": "كرزون اشعارات واتساب",
+  "nameEn": "Karzoun WhatsApp Notifications",
+  "company": "Karzoun Media Marketing And Digital Services L.L.C",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة",
+   "السلات المتروكة"
+  ],
+  "status": "listed"
+ },
+ "1334121571": {
+  "id": "1334121571",
+  "name": "مرسال للخدمات اللوجستية",
+  "nameEn": "Marsal Logistic Services",
+  "company": "Marsal",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1334697457": {
+  "id": "1334697457",
+  "name": "حسب",
+  "nameEn": "HSSSP",
+  "company": "حسب",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1346357058": {
+  "id": "1346357058",
+  "name": "Dgtera Connector",
+  "nameEn": "DGTERA Connector",
+  "company": "شركة حلول متكاملة لتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1349253849": {
+  "id": "1349253849",
+  "name": "آبراج اللؤلؤة للخدمات اللوجستية",
+  "nameEn": "Pearl Towers for Logistic Services",
+  "company": "مؤسسة أبراج اللؤلؤة للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1351138261": {
+  "id": "1351138261",
+  "name": "تفاصيل",
+  "nameEn": "Tafaseel",
+  "company": "Masayef Company",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "1359839913": {
+  "id": "1359839913",
+  "name": "اليعسوب لوجيستيك",
+  "nameEn": "Yasoub logistics",
+  "company": "اليعسوب اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1361508646": {
+  "id": "1361508646",
+  "name": "استوديو المنتجات",
+  "nameEn": "Products Studio",
+  "company": "جروفـلكس",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1364145629": {
+  "id": "1364145629",
+  "name": "وصف المنتجات العائم Ai",
+  "nameEn": "AI Float Product Description",
+  "company": "لينك كود",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1367305560": {
+  "id": "1367305560",
+  "name": "Kayako",
+  "nameEn": "Kayako",
+  "company": "سلة",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1367412127": {
+  "id": "1367412127",
+  "name": "سيلنفو",
+  "nameEn": "SellEnvo",
+  "company": "Sellenvo",
+  "categories": [
+   "تحسين الموقع",
+   "المحاسبة والمالية",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1368415888": {
+  "id": "1368415888",
+  "name": "شركة نـب للخدمات اللوجستية",
+  "nameEn": "NIP Logistic Company",
+  "company": "شركة نب للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "1369221576": {
+  "id": "1369221576",
+  "name": "شيب فلو",
+  "nameEn": "ShipFlow",
+  "company": "Shipflow",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1374556032": {
+  "id": "1374556032",
+  "name": "مساعد الاتصال Xtra ERP",
+  "nameEn": "Xtra ERP Connection Helper",
+  "company": "EASYBOOKS DIS TICARET ITHALAT IHRACAT SANAYI TICARET LIMITEDSIRKETI",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1381162424": {
+  "id": "1381162424",
+  "name": "موفلي إكسبريس",
+  "nameEn": "Movely Expres",
+  "company": "شركة جسور التوزيع",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1385964258": {
+  "id": "1385964258",
+  "name": "ناقل اكسبريس",
+  "nameEn": "Naqel Express",
+  "company": "Naqel Express",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1387345320": {
+  "id": "1387345320",
+  "name": "الربط مع الشامل ويب",
+  "nameEn": "Alshamel Web",
+  "company": "شركة هديل علي موسى العبدلي التجارية",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1389067439": {
+  "id": "1389067439",
+  "name": "قعود نجد اكسبرس",
+  "nameEn": "Qaoud Najd Express",
+  "company": "مؤسسة قعود نجد للمواشي",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1390269462": {
+  "id": "1390269462",
+  "name": "شركة إيجاد الحلول الخدمات اللوجستية",
+  "nameEn": "Ejad solutions logistics  service",
+  "company": "شركة إيجاد الحلول للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1390929794": {
+  "id": "1390929794",
+  "name": "بريد إكس لخدمات الشحن",
+  "nameEn": "BaridX Shipping Services",
+  "company": "BaridX",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1391564667": {
+  "id": "1391564667",
+  "name": "ظهور - خبير السيو والوصف الذكي",
+  "nameEn": "Dohour - AI SEO and Content",
+  "company": "إنطلــق",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "1393579719": {
+  "id": "1393579719",
+  "name": "Fast Hub",
+  "nameEn": "Fast Hub",
+  "company": "FastHub",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "1395500068": {
+  "id": "1395500068",
+  "name": "حملات الايميل الاحترافية",
+  "nameEn": "Professional Email Campaigns",
+  "company": "لينك كود",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "1403066138": {
+  "id": "1403066138",
+  "name": "ماس للخدمات اللوجستية",
+  "nameEn": "MAS Logistics Service",
+  "company": "Mas logistics",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1403265904": {
+  "id": "1403265904",
+  "name": "OneSignal",
+  "nameEn": "OneSignal",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "الرسائل النصية",
+   "البريد الالكتروني",
+   "صانع التطبيقات"
+  ],
+  "status": "listed"
+ },
+ "1403673116": {
+  "id": "1403673116",
+  "name": "ان بي ان اكسبرس",
+  "nameEn": "NBN Express",
+  "company": "NBN Company",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1406425291": {
+  "id": "1406425291",
+  "name": "Hotjar",
+  "nameEn": "Hotjar",
+  "company": "سلة",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1407572580": {
+  "id": "1407572580",
+  "name": "قيمبول لبرامج الولاء والتلعيب",
+  "nameEn": "Gameball for Gamified Loyalty",
+  "company": "حلول تفاعل العملاء لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1408287678": {
+  "id": "1408287678",
+  "name": "Reviews",
+  "nameEn": "Reviews",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1409968037": {
+  "id": "1409968037",
+  "name": "Google Site Verification",
+  "nameEn": "Google Site Verification",
+  "company": "سلة",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء",
+   "التتبع الذكي"
+  ],
+  "status": "listed"
+ },
+ "1419800602": {
+  "id": "1419800602",
+  "name": "برنامج مداد المحاسبي",
+  "nameEn": "Medad Accounting",
+  "company": "Medad LLC",
+  "categories": [
+   "المحاسبة والمالية",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1422558086": {
+  "id": "1422558086",
+  "name": "اشعارات واتساب المؤسسي من فال",
+  "nameEn": "Faal Official Whatsapp Notifications",
+  "company": "شركة تقني للاتصالات وتقنية المعلومات",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1424507866": {
+  "id": "1424507866",
+  "name": "TNL",
+  "nameEn": "TNL",
+  "company": "الطرق الناقلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1425230612": {
+  "id": "1425230612",
+  "name": "دليل ستور ( أعمال)",
+  "nameEn": "DaleelBusiness",
+  "company": "DaleelStore",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1425630112": {
+  "id": "1425630112",
+  "name": "مكسب - دروبشبينج ذكي",
+  "nameEn": "Maxab.ai - Smart Dropshipping",
+  "company": "مؤسسة مكسب التقنية",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "الدروب شيبينق"
+  ],
+  "status": "listed"
+ },
+ "1428051416": {
+  "id": "1428051416",
+  "name": "سينك مي",
+  "nameEn": "SyncMe",
+  "company": "SyncMe",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1429225512": {
+  "id": "1429225512",
+  "name": "عابر السحاب",
+  "nameEn": "Aber Elsahab",
+  "company": "عابر السحاب لنقل الطرود",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1430260940": {
+  "id": "1430260940",
+  "name": "إتصل بالمتجر",
+  "nameEn": "Call us now",
+  "company": "شركة سديم التقنيات للاتصالات وتقنية المعلومات",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1433217710": {
+  "id": "1433217710",
+  "name": "تنبيهات رفد",
+  "nameEn": "Rafd Notify",
+  "company": "Ahmed Can",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1445860106": {
+  "id": "1445860106",
+  "name": "آي دبليو إكسبريس رابيت السعودية",
+  "nameEn": "IW Express Rabet KSA",
+  "company": "شركة رابط العالمية للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1450394443": {
+  "id": "1450394443",
+  "name": "عين الوفاق",
+  "nameEn": "Ain Alwifaq",
+  "company": "عين الوفاق للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1450881912": {
+  "id": "1450881912",
+  "name": "تفادي للحماية",
+  "nameEn": "Tafadi Protection",
+  "company": "تفادي للحماية",
+  "categories": [
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1451363543": {
+  "id": "1451363543",
+  "name": "ارابكس",
+  "nameEn": "ARABEX",
+  "company": "شركة منطقة العرب للخدمات اللوجستية ARABEX",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1451563789": {
+  "id": "1451563789",
+  "name": "يونيفونك كونيكت",
+  "nameEn": "Unifonic Connect",
+  "company": "Unifonic",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1452485821": {
+  "id": "1452485821",
+  "name": "انستافيد هايلات وبوستات",
+  "nameEn": "InstaFeed highlights and posts",
+  "company": "جروفـلكس",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1453173504": {
+  "id": "1453173504",
+  "name": "صلاحية -مراقبة صلاحية المنتجات",
+  "nameEn": "Product Expiry Monitoring",
+  "company": "Saad Abdullah Al Russini Establishment",
+  "categories": [
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1453513537": {
+  "id": "1453513537",
+  "name": "بليسر",
+  "nameEn": "PLACER",
+  "company": "تأيد للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1460353890": {
+  "id": "1460353890",
+  "name": "داز",
+  "nameEn": "Dazz",
+  "company": "Dazz",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1469240980": {
+  "id": "1469240980",
+  "name": "كارد زون",
+  "nameEn": "Cardzone",
+  "company": "The Amazing Team",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1473915552": {
+  "id": "1473915552",
+  "name": "iMile Delivery",
+  "nameEn": "iMile Delivery",
+  "company": "iMile",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1475576125": {
+  "id": "1475576125",
+  "name": "مزيد",
+  "nameEn": "mazeed",
+  "company": "Mazeed Accounting LLC",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1476888588": {
+  "id": "1476888588",
+  "name": "جافنا واتساب AI بوت",
+  "nameEn": "Javna WhatsApp AI Chatbot",
+  "company": "Javna",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1477088354": {
+  "id": "1477088354",
+  "name": "نافذة الفيديو العائم",
+  "nameEn": "Floating Video",
+  "company": "TopSoft UG",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "1480160412": {
+  "id": "1480160412",
+  "name": "رسالات",
+  "nameEn": "Rsalat",
+  "company": "ابيات الذكاء",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1482770012": {
+  "id": "1482770012",
+  "name": "نوادر للخدمات اللوجستية",
+  "nameEn": "Nawader Logistics",
+  "company": "نوادر للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1483057683": {
+  "id": "1483057683",
+  "name": "مرسل إشعارات واتساب",
+  "nameEn": "mursel WhatsApp notification sender",
+  "company": "murseell Notification",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1483625313": {
+  "id": "1483625313",
+  "name": "Facebook Messenger",
+  "nameEn": "Facebook Messenger",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1484468144": {
+  "id": "1484468144",
+  "name": "قائمة",
+  "nameEn": "qaema",
+  "company": "شركة التكنولوجيا الجديده للحلول البرمجيه شخص واحد",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1486671863": {
+  "id": "1486671863",
+  "name": "برو إكس لوجيستك",
+  "nameEn": "Brox Logistics",
+  "company": "شركة برو إكس بيزنس",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1488014089": {
+  "id": "1488014089",
+  "name": "اليمامة إكسبريس",
+  "nameEn": "Yamamah Express",
+  "company": "مؤسسة اليمامة لوسطاء الشحن",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1489728048": {
+  "id": "1489728048",
+  "name": "9CLOUD - للخدمات اللوجستية",
+  "nameEn": "9CLOUD",
+  "company": "9CLOUD",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "1499360948": {
+  "id": "1499360948",
+  "name": "إرم",
+  "nameEn": "Iram",
+  "company": "إرم",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1500733818": {
+  "id": "1500733818",
+  "name": "نبه - اشعارات مخصصة",
+  "nameEn": "Nabbih",
+  "company": "وكالة الريادة التاسعه",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1501903164": {
+  "id": "1501903164",
+  "name": "سبل الامداد الحديثة",
+  "nameEn": "Modern Supply Routes",
+  "company": "سبل الامداد الحديثة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1501984413": {
+  "id": "1501984413",
+  "name": "مساعد",
+  "nameEn": "Musaid",
+  "company": "شركة حلول مساعد",
+  "categories": [
+   "التسويق",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1502818988": {
+  "id": "1502818988",
+  "name": "سكاي لايت شات",
+  "nameEn": "Sky Light Chat",
+  "company": "Company Sky Light Ad Solutions",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1512175215": {
+  "id": "1512175215",
+  "name": "نخبة",
+  "nameEn": "Nokhbah",
+  "company": "Faleh Alsubaie",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1513385942": {
+  "id": "1513385942",
+  "name": "جواكسبريس",
+  "nameEn": "JOEEX",
+  "company": "Joeex",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1514331417": {
+  "id": "1514331417",
+  "name": "يزوون واتساب",
+  "nameEn": "Yazoun WhatsApp",
+  "company": "Amr Sohil",
+  "categories": [
+   "التسويق",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1514900071": {
+  "id": "1514900071",
+  "name": "توليفاي بلس",
+  "nameEn": "Tooliify Plus",
+  "company": "Madar technical solutions",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1518933997": {
+  "id": "1518933997",
+  "name": "TikTok - Follow Us",
+  "nameEn": "TikTok - Follow Us",
+  "company": "TopSoft UG",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1522871785": {
+  "id": "1522871785",
+  "name": "جهزها",
+  "nameEn": "Jahzha",
+  "company": "شركة جهزها",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1523358742": {
+  "id": "1523358742",
+  "name": "براق اشعارات واتساب",
+  "nameEn": "Buraq WhatsApp Notifcations",
+  "company": "شركة براق المتقدمة لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1528766151": {
+  "id": "1528766151",
+  "name": "اي ام اكس ديليفري",
+  "nameEn": "EMX Delivery",
+  "company": "EMX delivery",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1532783652": {
+  "id": "1532783652",
+  "name": "Listapro",
+  "nameEn": "Listapro",
+  "company": "Sellenvo",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "1534646039": {
+  "id": "1534646039",
+  "name": "واتيلي",
+  "nameEn": "Watily",
+  "company": "watily company",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1536617844": {
+  "id": "1536617844",
+  "name": "نزار لوجستك",
+  "nameEn": "NIZAR LOGISTIC",
+  "company": "nizar mathkur",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1541236691": {
+  "id": "1541236691",
+  "name": "سند ERP",
+  "nameEn": "snad ERP",
+  "company": "مؤسسة انظمة سديم",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1543771391": {
+  "id": "1543771391",
+  "name": "واتس لووب - تنبيهات واتساب",
+  "nameEn": "Go By Whatsloop",
+  "company": "شركة الخوادم الرقمية للاتصالات وتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1550834079": {
+  "id": "1550834079",
+  "name": "اشعارات واتساب و سلات متروكة بالذكاء الاصطناعي Ai",
+  "nameEn": "WhatsApp notifications and abandoned carts with Ai",
+  "company": "BOT FOR DIGITAL SOLUTIONS LIMITED",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "1551550169": {
+  "id": "1551550169",
+  "name": "درب",
+  "nameEn": "DRB",
+  "company": "شركة مسار الانجاز",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1553633803": {
+  "id": "1553633803",
+  "name": "ستارلينكس",
+  "nameEn": "Starlinks",
+  "company": "Starlinks",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1557859806": {
+  "id": "1557859806",
+  "name": "الاختيار الامن",
+  "nameEn": "Safe Choice",
+  "company": "Safe Choice Logistics Company",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1561220409": {
+  "id": "1561220409",
+  "name": "نورة بلس",
+  "nameEn": "Noura Plus",
+  "company": "مؤسسة النطاق الدقيق للاتصالات وتقنية المعلومات ـ مايكروباند",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1570315393": {
+  "id": "1570315393",
+  "name": "شيب تاق",
+  "nameEn": "ShipTag App",
+  "company": "ShipTag",
+  "categories": [
+   "الشحن و التوصيل",
+   "الرسائل النصية",
+   "أخرى",
+   "الموقع الجغرافي"
+  ],
+  "status": "listed"
+ },
+ "1573412430": {
+  "id": "1573412430",
+  "name": "هلاي",
+  "nameEn": "Halai Ai",
+  "company": "هلاي",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1575561976": {
+  "id": "1575561976",
+  "name": "يونيكس",
+  "nameEn": "UNIEX",
+  "company": "شركة تمام المتحدة للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1585260544": {
+  "id": "1585260544",
+  "name": "نافذة منبثقة",
+  "nameEn": "Popup",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1588412298": {
+  "id": "1588412298",
+  "name": "لوجيـكس",
+  "nameEn": "Logex",
+  "company": "شركة كلاس سريع للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1590241481": {
+  "id": "1590241481",
+  "name": "Delway",
+  "nameEn": "Delway",
+  "company": "Delway",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1597597134": {
+  "id": "1597597134",
+  "name": "Facebook - Instagram Catalog",
+  "nameEn": "Facebook - Instagram Catalog",
+  "company": "سلة",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1598057220": {
+  "id": "1598057220",
+  "name": "رن إكس",
+  "nameEn": "run-x",
+  "company": "رن إكس للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1601736224": {
+  "id": "1601736224",
+  "name": "فورسين",
+  "nameEn": "Foreseen",
+  "company": "Foreseen",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى",
+   "التحليل و الاحصاء",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "1602985795": {
+  "id": "1602985795",
+  "name": "شركة بندر للخدمات اللوجستية",
+  "nameEn": "BTC Express",
+  "company": "بندر التجارية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1608326908": {
+  "id": "1608326908",
+  "name": "بيان - خدمة عملاء ذكية",
+  "nameEn": "Bayan - AI customer service",
+  "company": "HumanEcho",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1608865171": {
+  "id": "1608865171",
+  "name": "ترانسكورب",
+  "nameEn": "Transcorp",
+  "company": "TRANSCORP INTERNATIONAL LOGISTICS COMPANY",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1610885719": {
+  "id": "1610885719",
+  "name": "ثندر",
+  "nameEn": "Thunder App",
+  "company": "شركة دهليز لتقنية نظم المعلومات",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء",
+   "التتبع الذكي"
+  ],
+  "status": "listed"
+ },
+ "1620259190": {
+  "id": "1620259190",
+  "name": "تريندو - ترينديول ماركت",
+  "nameEn": "Trendo - Trendyol Market",
+  "company": "Samir Ebrahim",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى",
+   "الدروب شيبينق"
+  ],
+  "status": "listed"
+ },
+ "1624565866": {
+  "id": "1624565866",
+  "name": "جي بي إل إكسبريس",
+  "nameEn": "Gplexpress",
+  "company": "شركة وجهتك الأخيرة  للخدمات اللوجيستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1625305975": {
+  "id": "1625305975",
+  "name": "برق العبور",
+  "nameEn": "Barq Alobor",
+  "company": "برج العبور للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1627439576": {
+  "id": "1627439576",
+  "name": "الربط مع نظام ألفا ERP",
+  "nameEn": "Integration with Alpha ERP",
+  "company": "شركة ألفا السعودية للكمبيوتر",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1628849525": {
+  "id": "1628849525",
+  "name": "سبين آند وين",
+  "nameEn": "Spin And Win",
+  "company": "Coding Home LLC",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1629676963": {
+  "id": "1629676963",
+  "name": "ولاء فاي - نظام الولاء والمكافآت",
+  "nameEn": "Loyalfy - Loyalty and Rewards",
+  "company": "Mohammed Abdullah",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "البريد الالكتروني",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1632668796": {
+  "id": "1632668796",
+  "name": "بوصلة",
+  "nameEn": "Bousla",
+  "company": "The Amazing Team",
+  "categories": [
+   "التسويق",
+   "المحاسبة والمالية",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1634096044": {
+  "id": "1634096044",
+  "name": "الربط مع برنامج المتكامل",
+  "nameEn": "Almotakamel ERP Salla Integration",
+  "company": "شركة ابراج التاج المحدوده",
+  "categories": [
+   "المحاسبة والمالية",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "1639339161": {
+  "id": "1639339161",
+  "name": "Google Ads",
+  "nameEn": "Google Ads",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء",
+   "التتبع الذكي"
+  ],
+  "status": "listed"
+ },
+ "1642554715": {
+  "id": "1642554715",
+  "name": "القصص التفاعلية",
+  "nameEn": "Interactive Stories",
+  "company": "Venofy فينوفاي",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "1645998395": {
+  "id": "1645998395",
+  "name": "تطبيق لوجيكس",
+  "nameEn": "Logix App",
+  "company": "Logix",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1646087836": {
+  "id": "1646087836",
+  "name": "برنامج فكره ERP المحاسبي",
+  "nameEn": "Fekra ERP accounting program",
+  "company": "فكره برمجيه لتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "1646745608": {
+  "id": "1646745608",
+  "name": "فلوشيب للشحن",
+  "nameEn": "Floship Logistics",
+  "company": "Floship Logistics",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1648895154": {
+  "id": "1648895154",
+  "name": "ISS صندوق",
+  "nameEn": "ISS SUNDOUQ",
+  "company": "مؤسسة الصندوق للنقل والتخزين",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1649450762": {
+  "id": "1649450762",
+  "name": "صوتك - تقييمات صوتية",
+  "nameEn": "Sawtk - Voice Reviews",
+  "company": "Mohammad Khalouf",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "1651680021": {
+  "id": "1651680021",
+  "name": "ديلفري زون",
+  "nameEn": "Delivery Zone",
+  "company": "Delivery Zone Logistics Services",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1655086242": {
+  "id": "1655086242",
+  "name": "لاست بوينت للتخزين والتوصيل",
+  "nameEn": "LastPoint Fulfillment",
+  "company": "Last Point",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "1659940398": {
+  "id": "1659940398",
+  "name": "كشاف لبلب",
+  "nameEn": "Kashaf Lableb",
+  "company": "لبلب",
+  "categories": [
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1660627633": {
+  "id": "1660627633",
+  "name": "سندك",
+  "nameEn": "Sanadk",
+  "company": "شركة سندك السحابية لتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1662840947": {
+  "id": "1662840947",
+  "name": "واتساب لاين",
+  "nameEn": "WhatsApp Line",
+  "company": "خط التسويق للاتصالات وتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1663988716": {
+  "id": "1663988716",
+  "name": "توليكس - شريط الشحن المجاني",
+  "nameEn": "Toolix - Free shipping bar",
+  "company": "Thamir Alharbi",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1666572825": {
+  "id": "1666572825",
+  "name": "رودلينك",
+  "nameEn": "RoadLink",
+  "company": "شركة الرسائل لنقل الطرود",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1668095658": {
+  "id": "1668095658",
+  "name": "فاست موف اكسبريس",
+  "nameEn": "Fast Move Express",
+  "company": "Fast Move Company",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1669980070": {
+  "id": "1669980070",
+  "name": "فيسبوك - فولو أس",
+  "nameEn": "Facebook - Follow Us",
+  "company": "TopSoft UG",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1673163477": {
+  "id": "1673163477",
+  "name": "هوكو  اكسبريس",
+  "nameEn": "HOKO EXPRESS",
+  "company": "شركة هوكو للنقل والتخزين",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1677069629": {
+  "id": "1677069629",
+  "name": "منصة رواء",
+  "nameEn": "Rewaa Platform",
+  "company": "Rewaa Tech",
+  "categories": [
+   "أخرى",
+   "الموقع الجغرافي",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1682106322": {
+  "id": "1682106322",
+  "name": "بوكس لوجيستيكس",
+  "nameEn": "boxlogistics",
+  "company": "بوكس لوجيستيكس",
+  "categories": [
+   "الشحن و التوصيل",
+   "الموقع الجغرافي"
+  ],
+  "status": "listed"
+ },
+ "1683195908": {
+  "id": "1683195908",
+  "name": "سمسا",
+  "nameEn": "SMSA Express",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1684742729": {
+  "id": "1684742729",
+  "name": "شاتي AI",
+  "nameEn": "Chatii AI",
+  "company": "Chatii",
+  "categories": [
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1685178316": {
+  "id": "1685178316",
+  "name": "دعم التوصيل تخزين",
+  "nameEn": "Delivery support fulfillment",
+  "company": "شركة دعم التوصيل للنقل",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1692056159": {
+  "id": "1692056159",
+  "name": "قعود نجد",
+  "nameEn": "Qaoud Najd",
+  "company": "مؤسسة قعود نجد للمواشي",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1692714443": {
+  "id": "1692714443",
+  "name": "صافي - احسب أرباح متجرك",
+  "nameEn": "Safi-Calculate Your Net Profit",
+  "company": "SahelBooks",
+  "categories": [
+   "المحاسبة والمالية",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1717307927": {
+  "id": "1717307927",
+  "name": "أضف قصص فيديو لمتجرك",
+  "nameEn": "Smart Stories - Video Story",
+  "company": "Smart Stories",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1722207615": {
+  "id": "1722207615",
+  "name": "إيه إف إي فاست لوجستيك",
+  "nameEn": "AFE Fast Logistics",
+  "company": "شركة نواف خالد الدوسري",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1722487094": {
+  "id": "1722487094",
+  "name": "نظام ايزسوفت المحاسبي",
+  "nameEn": "EzSoft ERP",
+  "company": "ترف البدر لتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1725848295": {
+  "id": "1725848295",
+  "name": "شركة  الربط الذكي للنقل و التخزين",
+  "nameEn": "Smartlink Fulfillment",
+  "company": "Smart Link",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1730997716": {
+  "id": "1730997716",
+  "name": "ريبليكس مساعد الواتساب الذكي",
+  "nameEn": "Replex Smart WhatsApp Assistant",
+  "company": "Replex",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1731713774": {
+  "id": "1731713774",
+  "name": "منصة سمعة",
+  "nameEn": "SOM3A",
+  "company": "Raad Alfaris Information Technology Co.",
+  "categories": [
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1732252037": {
+  "id": "1732252037",
+  "name": "انلايزر - اداة تحليل البيانات",
+  "nameEn": "analyzer",
+  "company": "شركة فالنتكا للحلول التقنية",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1732341478": {
+  "id": "1732341478",
+  "name": "قيود",
+  "nameEn": "Qoyod",
+  "company": "سلة",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1736693207": {
+  "id": "1736693207",
+  "name": "الربط مع ساب بزنس ون",
+  "nameEn": "Integration with SAP B1 ERP",
+  "company": "Reachware",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1737180612": {
+  "id": "1737180612",
+  "name": "أزير - شات وتسويق وإشعارات عبر الواتساب",
+  "nameEn": "Azeer - WhatsApp chat, marketing and notifications",
+  "company": "شركة رتوة لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1737468315": {
+  "id": "1737468315",
+  "name": "بوليصة",
+  "nameEn": "Bolesa",
+  "company": "شركة بيان الايصال لتقنية المعلومات",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1739685008": {
+  "id": "1739685008",
+  "name": "كونكتلي إي آي",
+  "nameEn": "Connectly AI",
+  "company": "WOW Digital Information Technology",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1740052872": {
+  "id": "1740052872",
+  "name": "وسيلة واتس آب",
+  "nameEn": "Wselah WhatsApp",
+  "company": "سليمان العويد",
+  "categories": [
+   "التسويق",
+   "الرسائل النصية",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1752754434": {
+  "id": "1752754434",
+  "name": "مستر تحصيل - لتحصيل المبالغ المعلقة والمرتجعات",
+  "nameEn": "Mr Tahseel",
+  "company": "KonHub",
+  "categories": [
+   "المحاسبة والمالية",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1753153966": {
+  "id": "1753153966",
+  "name": "بايونيرز - ربط مع داينامكس 365",
+  "nameEn": "PIT Dynamics 365 CRM Connector",
+  "company": "شركة الرواد الفريدة لتقنية المعلومات المحدودة",
+  "categories": [
+   "التسويق",
+   "المحاسبة والمالية",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1753429719": {
+  "id": "1753429719",
+  "name": "أطبع لي - الطباعة حسب الطلب",
+  "nameEn": "Printitle - Print On Demand",
+  "company": "مطابع نقاء للطباعه",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى",
+   "الدروب شيبينق"
+  ],
+  "status": "listed"
+ },
+ "1755785655": {
+  "id": "1755785655",
+  "name": "نوبتكس الربط مع اودو",
+  "nameEn": "Noptechs Odoo Integration",
+  "company": "Noptechs",
+  "categories": [
+   "المحاسبة والمالية",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "1756420496": {
+  "id": "1756420496",
+  "name": "العنوان الوطني المختصر",
+  "nameEn": "Short National Address",
+  "company": "لينك كود",
+  "categories": [
+   "تحسين الموقع",
+   "الشحن و التوصيل",
+   "أخرى",
+   "الموقع الجغرافي"
+  ],
+  "status": "listed"
+ },
+ "1756989182": {
+  "id": "1756989182",
+  "name": "أهلا - فيديو ترحيبي",
+  "nameEn": "Ahlan - Welcome Video",
+  "company": "كرافو لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1758342349": {
+  "id": "1758342349",
+  "name": "رفيق المساعد الذكي",
+  "nameEn": "Rafeq Smart Assistant",
+  "company": "ريان بن مشعل",
+  "categories": [
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1764088319": {
+  "id": "1764088319",
+  "name": "بوينتس - نظام ولاء متكامل",
+  "nameEn": "Points - Full loyalty system",
+  "company": "تطبيق Points",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1764455703": {
+  "id": "1764455703",
+  "name": "Browsee",
+  "nameEn": "browsee",
+  "company": "سلة",
+  "categories": [
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1767847036": {
+  "id": "1767847036",
+  "name": "الربط مع سي كيس",
+  "nameEn": "CCase Connecter",
+  "company": "Camel Case",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1770758172": {
+  "id": "1770758172",
+  "name": "اكتفيد - فيديو تفاعلي",
+  "nameEn": "ActiVide - interactive videos",
+  "company": "Saad Mohammed",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1771600939": {
+  "id": "1771600939",
+  "name": "باز بيب",
+  "nameEn": "BuzzBip",
+  "company": "BuzzBip",
+  "categories": [
+   "التسويق",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1773342729": {
+  "id": "1773342729",
+  "name": "اي كيو فولفيلمنت",
+  "nameEn": "IQ Fulfillment",
+  "company": "IQ Fulfillment",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1774038124": {
+  "id": "1774038124",
+  "name": "ريفورا AI",
+  "nameEn": "Revora AI",
+  "company": "Alice Labs Pte Ltd",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1776360085": {
+  "id": "1776360085",
+  "name": "غاية اكسبرس",
+  "nameEn": "Gaya Express",
+  "company": "شركة غاية التميز اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1777047288": {
+  "id": "1777047288",
+  "name": "Rokon AI Studio",
+  "nameEn": "Rokon AI Studio",
+  "company": "Ibrahim Salah",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1781872030": {
+  "id": "1781872030",
+  "name": "شركة كنوز المتميزون KML",
+  "nameEn": "KML LOGISTICS",
+  "company": "كنوز المتميزون للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1793309669": {
+  "id": "1793309669",
+  "name": "الأبراج الأفقية",
+  "nameEn": "Horizontal Towers",
+  "company": "الابراج الافقية للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1793876851": {
+  "id": "1793876851",
+  "name": "LocationIQ",
+  "nameEn": "LocationIQ",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "الموقع الجغرافي"
+  ],
+  "status": "listed"
+ },
+ "1795730461": {
+  "id": "1795730461",
+  "name": "حلول",
+  "nameEn": "Hulul",
+  "company": "شركة رقميات الحلول الذكية",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1800229735": {
+  "id": "1800229735",
+  "name": "رابط نمذجة مع نظام اودو",
+  "nameEn": "Ptec Odoo Salla Connector",
+  "company": "نمذجة لتقنية المعلومات",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "1803221536": {
+  "id": "1803221536",
+  "name": "sarj.ai",
+  "nameEn": "sarj.ai",
+  "company": "شركة سرج الرقمية لتقنية المعلومات",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1805593385": {
+  "id": "1805593385",
+  "name": "لأجلك للخدمات اللوجستية",
+  "nameEn": "Leajlak Logistics",
+  "company": "Leajlak",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1806332470": {
+  "id": "1806332470",
+  "name": "يورومارشيه لوجستك",
+  "nameEn": "Euromarche Logistics",
+  "company": "يورومارشيه لوجستك",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1807794781": {
+  "id": "1807794781",
+  "name": "شرنك ات",
+  "nameEn": "Shrink It",
+  "company": "Appgain",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "1809692647": {
+  "id": "1809692647",
+  "name": "دليفرست",
+  "nameEn": "Deliverist",
+  "company": "Deliverist",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1818267596": {
+  "id": "1818267596",
+  "name": "ايديكس اكسبريس",
+  "nameEn": "Edex express",
+  "company": "شركة ايديكس اكسبريس للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1819242470": {
+  "id": "1819242470",
+  "name": "وايزون واتساب بالذكاء الاصطناعي",
+  "nameEn": "wayzon WhatsApp AI",
+  "company": "wayzon ai",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "1820838699": {
+  "id": "1820838699",
+  "name": "وصل نوتي",
+  "nameEn": "Wasl NOTY",
+  "company": "Nawaf Alqhtani",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1822248136": {
+  "id": "1822248136",
+  "name": "راصـــــد مـراقب التخفيضات",
+  "nameEn": "RASSED - Price Drop Tracker",
+  "company": "Abdulaziz mohammadi",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1824398194": {
+  "id": "1824398194",
+  "name": "AtUrHome",
+  "nameEn": "AtUrHome",
+  "company": "عند بيتك",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1830511004": {
+  "id": "1830511004",
+  "name": "Get Button",
+  "nameEn": "Get Button",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1830970578": {
+  "id": "1830970578",
+  "name": "الربط مع إدارة",
+  "nameEn": "Edara connector",
+  "company": "EDRAK Software",
+  "categories": [
+   "المحاسبة والمالية",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "1835108612": {
+  "id": "1835108612",
+  "name": "اس اس لوجيستك",
+  "nameEn": "SSL Logistic",
+  "company": "Standard Solutions for Logistics Company",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1840553511": {
+  "id": "1840553511",
+  "name": "SLS",
+  "nameEn": "SLS",
+  "company": "Shams Logistics Services",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1848327374": {
+  "id": "1848327374",
+  "name": "بروشيب إكسبرس",
+  "nameEn": "ProShip",
+  "company": "Barq Express Parcel delivery",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1850189729": {
+  "id": "1850189729",
+  "name": "واتسنا",
+  "nameEn": "whatsna",
+  "company": "mtt",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1852546689": {
+  "id": "1852546689",
+  "name": "الشحن النخبة",
+  "nameEn": "Elite Shipping",
+  "company": "Elite Express Cargo LLC",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1852862223": {
+  "id": "1852862223",
+  "name": "Freshworks",
+  "nameEn": "Freshworks",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1853943696": {
+  "id": "1853943696",
+  "name": "طرد السريع",
+  "nameEn": "Tard bullet",
+  "company": "شركة النقطة الأمامية للتجارة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1860717689": {
+  "id": "1860717689",
+  "name": "سيلز بار",
+  "nameEn": "sales bar",
+  "company": "Yasser Abdulrahman",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1862733765": {
+  "id": "1862733765",
+  "name": "تريك",
+  "nameEn": "Treek",
+  "company": "ترييك",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1864683033": {
+  "id": "1864683033",
+  "name": "X Pixel - Catalog",
+  "nameEn": "X Pixel - Catalog",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء",
+   "التتبع الذكي"
+  ],
+  "status": "listed"
+ },
+ "1870984478": {
+  "id": "1870984478",
+  "name": "الاستعلام عن المنتج والمحادثة عبر WhatsApp",
+  "nameEn": "Product Inquiry And WhatsApp Chat",
+  "company": "Coding Home LLC",
+  "categories": [
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1873053735": {
+  "id": "1873053735",
+  "name": "سالي اكسبريس",
+  "nameEn": "Sally Express",
+  "company": "SALLY EXPREES",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1874743707": {
+  "id": "1874743707",
+  "name": "شهادات العملاء - UGC",
+  "nameEn": "Customer Testimonials",
+  "company": "شركة روض الخزامى للتجارة",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1876325559": {
+  "id": "1876325559",
+  "name": "خربش واربح",
+  "nameEn": "Scratch and Win",
+  "company": "Venofy فينوفاي",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1876613198": {
+  "id": "1876613198",
+  "name": "بلاجن سوفت",
+  "nameEn": "Plugin Soft",
+  "company": "مؤسسة خطوة ذكية",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1877073796": {
+  "id": "1877073796",
+  "name": "سويفتلي",
+  "nameEn": "Swiftli",
+  "company": "Hisham Alghamdi",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1881729279": {
+  "id": "1881729279",
+  "name": "مؤشر الذهب",
+  "nameEn": "Gold Index",
+  "company": "Establishment Pure Sparkle",
+  "categories": [
+   "المحاسبة والمالية",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1882364120": {
+  "id": "1882364120",
+  "name": "شرارة مداد, منتجات أفضل",
+  "nameEn": "Shrarat Midad, Better Products",
+  "company": "شرارة مداد",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1883591634": {
+  "id": "1883591634",
+  "name": "قيم",
+  "nameEn": "Qayem",
+  "company": "Abdullah Al Katheri",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "1885341616": {
+  "id": "1885341616",
+  "name": "الزاجل",
+  "nameEn": "Zagel",
+  "company": "مؤسسة سديم الحل لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1885461125": {
+  "id": "1885461125",
+  "name": "نعناع - انعش مبيعاتك بالفيديو",
+  "nameEn": "Na3na3 - Refresh Your Sales with Video",
+  "company": "صعودك",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1886236233": {
+  "id": "1886236233",
+  "name": "الربط مع ميزان",
+  "nameEn": "Mezan Connector",
+  "company": "شركة ميزان التقنية",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1887832974": {
+  "id": "1887832974",
+  "name": "سيلر لينك",
+  "nameEn": "SellerLink",
+  "company": "Noura Sky Ltd",
+  "categories": [
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1888120645": {
+  "id": "1888120645",
+  "name": "سما للخدمات اللوجستية",
+  "nameEn": "Sama Logistics Service",
+  "company": "مؤسسة سما السريعه للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1890270159": {
+  "id": "1890270159",
+  "name": "أي مكان تخزين",
+  "nameEn": "Aymakan Fulfillment",
+  "company": "AyMakan",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1893342185": {
+  "id": "1893342185",
+  "name": "ان تي إكسبريس",
+  "nameEn": "NT-EXPRESS",
+  "company": "مسارات الوطن",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1896937617": {
+  "id": "1896937617",
+  "name": "ERP نظام ديسم المحاسبي",
+  "nameEn": "Daysum ERP",
+  "company": "ديسم",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1898084874": {
+  "id": "1898084874",
+  "name": "تيم فور",
+  "nameEn": "TM4",
+  "company": "TM4 EXPRESS",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1898373057": {
+  "id": "1898373057",
+  "name": "جي بي إي للخدمات اللوجستية",
+  "nameEn": "GBE Logistics",
+  "company": "GBE Logistics",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1905242708": {
+  "id": "1905242708",
+  "name": "نايتروس",
+  "nameEn": "Nitros",
+  "company": "nitros",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1909380230": {
+  "id": "1909380230",
+  "name": "درج السلة - سلة جانبية",
+  "nameEn": "Cart Drawer - Cart Upsell",
+  "company": "Fady Ahmed",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1910472440": {
+  "id": "1910472440",
+  "name": "ريد بوكس",
+  "nameEn": "RedBox",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1910930446": {
+  "id": "1910930446",
+  "name": "كاشيرك",
+  "nameEn": "Cashierk",
+  "company": "طريق الأنظمة",
+  "categories": [
+   "المحاسبة والمالية",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1911130212": {
+  "id": "1911130212",
+  "name": "التوصيل السهل",
+  "nameEn": "Easy Delivery",
+  "company": "مؤسسة التوصيل السهل الدولي للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1911330010": {
+  "id": "1911330010",
+  "name": "فاست اكسس - خزائن ريدبوكس",
+  "nameEn": "FastAccess - Redbox points",
+  "company": "Fast Access Fulfillment",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1912452256": {
+  "id": "1912452256",
+  "name": "تريجز  (مساعد متجرك الذكي)",
+  "nameEn": "Trigz (Your Store Smart Assistant)",
+  "company": "2559099 Ontario Inc",
+  "categories": [
+   "أخرى",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "1914207020": {
+  "id": "1914207020",
+  "name": "قارن بين المنتجات",
+  "nameEn": "Compare Between products",
+  "company": "Abdullah Al Katheri",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "1914573892": {
+  "id": "1914573892",
+  "name": "نانو بوكس",
+  "nameEn": "NANOBOX",
+  "company": "NANOBOX",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "1916036203": {
+  "id": "1916036203",
+  "name": "Google Merchant Center",
+  "nameEn": "Google Merchant Center",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "التتبع الذكي"
+  ],
+  "status": "listed"
+ },
+ "1918018131": {
+  "id": "1918018131",
+  "name": "اليمامة إكسبريس للتخزين",
+  "nameEn": "Yamamah Express Fulfillment",
+  "company": "مؤسسة اليمامة لوسطاء الشحن",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1927052624": {
+  "id": "1927052624",
+  "name": "انفو سندر",
+  "nameEn": "INFO SENDER",
+  "company": "مؤسسة مرسل المعلومات",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1927252358": {
+  "id": "1927252358",
+  "name": "Stape Server GTM",
+  "nameEn": "Stape Conversion Tracking",
+  "company": "Stape Inc.",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1930333482": {
+  "id": "1930333482",
+  "name": "فيم كوم",
+  "nameEn": "FeYum COM",
+  "company": "شركة غسان القابضة",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "1930761901": {
+  "id": "1930761901",
+  "name": "عداء الطرق للنقليات",
+  "nameEn": "Rod Runner",
+  "company": "مؤسسة عداء الطرق للنقليات",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1932075272": {
+  "id": "1932075272",
+  "name": "مهارة التوصيل",
+  "nameEn": "mhareteltwseel",
+  "company": "مهارة التوصيل",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1934025052": {
+  "id": "1934025052",
+  "name": "كويك ناو للخدمات اللوجستية",
+  "nameEn": "Quick Now Express Logistics Services",
+  "company": "بسرعة الان للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1937778955": {
+  "id": "1937778955",
+  "name": "روز اكسبرس",
+  "nameEn": "ROZ Express Delivery",
+  "company": "ROZ EXPRESS",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1944068071": {
+  "id": "1944068071",
+  "name": "BOND IT نظام ولاء",
+  "nameEn": "BOND IT Loyalty System",
+  "company": "شركة بوصلة العملاء الرقمية",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1946662814": {
+  "id": "1946662814",
+  "name": "اسناد - خزائن ذكية",
+  "nameEn": "ISNAAD - Smart Lockers",
+  "company": "Isnaad",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1948412796": {
+  "id": "1948412796",
+  "name": "جرين بيل",
+  "nameEn": "Greenbill",
+  "company": "شركة الايصال الذكي",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "1949099999": {
+  "id": "1949099999",
+  "name": "سمارت واتساب بوت - اشعارات واتساب و سلات متروكة",
+  "nameEn": "SmartWats App Abandoned Cart Bot",
+  "company": "SmartWats Bot LLC",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "الرسائل النصية",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1963224351": {
+  "id": "1963224351",
+  "name": "ديليفريبولت للنقل المبرد",
+  "nameEn": "DeliveryBolt Logistics Company",
+  "company": "DeliveryBolt",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1964020666": {
+  "id": "1964020666",
+  "name": "استلام",
+  "nameEn": "ISTILAM",
+  "company": "شركة استلام التجارية",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "1964915315": {
+  "id": "1964915315",
+  "name": "النوافذ المنبثقة بوب اب سناب",
+  "nameEn": "Pop-ups PopupSnap",
+  "company": "جروفـلكس",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "1965255348": {
+  "id": "1965255348",
+  "name": "أوت لوك",
+  "nameEn": "Outlook",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "1965941015": {
+  "id": "1965941015",
+  "name": "Upp Rewards",
+  "nameEn": "Upp Rewards",
+  "company": "Related DMCC",
+  "categories": [
+   "التسويق",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1969593180": {
+  "id": "1969593180",
+  "name": "كانفا لينك - ربط مع كانفا",
+  "nameEn": "Canva lenk - link with canva",
+  "company": "لينك كود",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1974401158": {
+  "id": "1974401158",
+  "name": "انترستي إكسبرس",
+  "nameEn": "InterCityXpress Premium Logistics",
+  "company": "InterCityXpress",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "1975863469": {
+  "id": "1975863469",
+  "name": "الربط مع اودو",
+  "nameEn": "Odoo Connector",
+  "company": "TECFY",
+  "categories": [
+   "المحاسبة والمالية",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "1986541740": {
+  "id": "1986541740",
+  "name": "باي كارد",
+  "nameEn": "Pay Card",
+  "company": "paycard",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1988426152": {
+  "id": "1988426152",
+  "name": "أي ماكس برو",
+  "nameEn": "IMAX PRO",
+  "company": "aljazeera soft",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "1990375932": {
+  "id": "1990375932",
+  "name": "Message Bar",
+  "nameEn": "Message Bar",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "1995370355": {
+  "id": "1995370355",
+  "name": "بي وان اكسبرس للشحن  و التخزين",
+  "nameEn": "BeOne Express",
+  "company": "بي وان اكسبرس",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "1998590147": {
+  "id": "1998590147",
+  "name": "الازرق للخدمات اللوجيستيه",
+  "nameEn": "Blue logistic",
+  "company": "الازرق",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "1999485852": {
+  "id": "1999485852",
+  "name": "قياسات (المقاس المثالي)",
+  "nameEn": "Qiasat (Perfect Fit)",
+  "company": "QUANTIX Team",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "2002437281": {
+  "id": "2002437281",
+  "name": "نقرات",
+  "nameEn": "Naqrat",
+  "company": "نقرات لتحليل البيانات",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء",
+   "التتبع الذكي"
+  ],
+  "status": "listed"
+ },
+ "2002897911": {
+  "id": "2002897911",
+  "name": "ثيرد مايل",
+  "nameEn": "3rdMile",
+  "company": "شركة الأميال الثلاثة لنقل الطرود",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2004587307": {
+  "id": "2004587307",
+  "name": "Social Follow Us",
+  "nameEn": "Social Follow Us",
+  "company": "TopSoft UG",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "2006470695": {
+  "id": "2006470695",
+  "name": "Intercom",
+  "nameEn": "Intercom",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "المحادثة",
+   "صانع التطبيقات"
+  ],
+  "status": "listed"
+ },
+ "2010810063": {
+  "id": "2010810063",
+  "name": "بينجو لوجيستك",
+  "nameEn": "Pingo Logistic",
+  "company": "بينجو لوجيستك",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2011556316": {
+  "id": "2011556316",
+  "name": "تاب - بناء الوكلاء الذكيين",
+  "nameEn": "TAB - The Agent Builder",
+  "company": "NTG Clarity Networks",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "2013245744": {
+  "id": "2013245744",
+  "name": "كويك ماسج",
+  "nameEn": "Quick MESG",
+  "company": "غيم سوفت لتقنية المعلومات",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "2016220316": {
+  "id": "2016220316",
+  "name": "ومضة للشحن",
+  "nameEn": "WMDHA Shipping",
+  "company": "Ai Horizon Establishment",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2017142796": {
+  "id": "2017142796",
+  "name": "دسباتش خزائن ذكية",
+  "nameEn": "Dispatch Smart Lockers",
+  "company": "الحلول الخليجية للنقل والتخزين",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "2020040579": {
+  "id": "2020040579",
+  "name": "حوافز - أب سيل كروس سيل",
+  "nameEn": "Hwafez - Upsell and Cross sell",
+  "company": "شركة كود النظم المتقدمة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "زيادة المبيعات"
+  ],
+  "status": "listed"
+ },
+ "2020954931": {
+  "id": "2020954931",
+  "name": "برايت بوكز أودو سينك",
+  "nameEn": "BrightBooks Odoo Sync",
+  "company": "brightbooks",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "2025396037": {
+  "id": "2025396037",
+  "name": "Upsell محرك المبيعات الذكي",
+  "nameEn": "UpsellSA Smart Sales Engine for Salla",
+  "company": "ماريكو Mareco",
+  "categories": [
+   "التسويق"
+  ],
+  "status": "listed"
+ },
+ "2029215308": {
+  "id": "2029215308",
+  "name": "اكسيس دارك ستورز",
+  "nameEn": "Axis Dark Stores",
+  "company": "AXIS Integrated Logistics Company",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2031140983": {
+  "id": "2031140983",
+  "name": "براء فاست لوجستيك",
+  "nameEn": "Bara Fast Logistics",
+  "company": "مؤسسة براء فاست لنقل الطرود",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2032743529": {
+  "id": "2032743529",
+  "name": "بلو سكاي إكسبريس",
+  "nameEn": "Blue Sky Express",
+  "company": "Blue Sky Express",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2033986372": {
+  "id": "2033986372",
+  "name": "n8n ai",
+  "nameEn": "n8n ai",
+  "company": "POWERFUL EBIKES LLC",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "2044276274": {
+  "id": "2044276274",
+  "name": "شركة ديلكس",
+  "nameEn": "Delex Company",
+  "company": "Delex",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2045421995": {
+  "id": "2045421995",
+  "name": "الشروق إكسبريس",
+  "nameEn": "Alshrouq Express",
+  "company": "ALShrouq Express",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2047255992": {
+  "id": "2047255992",
+  "name": "Exit Popup",
+  "nameEn": "Exit Popup",
+  "company": "TopSoft UG",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "2050328018": {
+  "id": "2050328018",
+  "name": "Fastlo",
+  "nameEn": "Fastlo",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2050360134": {
+  "id": "2050360134",
+  "name": "كونسنت آد",
+  "nameEn": "Consent Ad",
+  "company": "Mazen Aloteibi",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "2051962744": {
+  "id": "2051962744",
+  "name": "ناول للتخزين",
+  "nameEn": "Nawel Fulfillment",
+  "company": "Nawel",
+  "categories": [
+   "الشحن و التوصيل",
+   "ادارة المخزون"
+  ],
+  "status": "listed"
+ },
+ "2055995646": {
+  "id": "2055995646",
+  "name": "Convert Flow",
+  "nameEn": "Convert Flow",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "2056204116": {
+  "id": "2056204116",
+  "name": "اد واتس",
+  "nameEn": "AdWhats",
+  "company": "مؤسسة النطاق الدقيق للاتصالات وتقنية المعلومات ـ مايكروباند",
+  "categories": [
+   "التسويق",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "2056551286": {
+  "id": "2056551286",
+  "name": "سكاكر - برنامج ولاء للعملاء",
+  "nameEn": "Skakir - Customer Loyality App",
+  "company": "تطبيق سكاكر",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "2059527726": {
+  "id": "2059527726",
+  "name": "SIDEUP",
+  "nameEn": "Tracking Experts (SIDEUP)",
+  "company": "SIDEUP",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2060333446": {
+  "id": "2060333446",
+  "name": "فور دستنيشنز",
+  "nameEn": "FOUR DESTINATIONS",
+  "company": "four destinations logistic",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "2062283226": {
+  "id": "2062283226",
+  "name": "السيح الذهبي",
+  "nameEn": "Golden Sieeh",
+  "company": "السيح الذهبي",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2070386092": {
+  "id": "2070386092",
+  "name": "جسور للتخزين",
+  "nameEn": "Jusoor Fulfillment",
+  "company": "jusoor hub",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2072071794": {
+  "id": "2072071794",
+  "name": "ALMRAKB LOGESTIC",
+  "nameEn": "ALMRAKB LOGESTIC",
+  "company": "المراكب العربية للشحن",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2072271528": {
+  "id": "2072271528",
+  "name": "نظام الاستبدال والاسترجاع",
+  "nameEn": "Return and Exchange System",
+  "company": "شركة اسطنبول ديناميكس التقنية",
+  "categories": [
+   "الشحن و التوصيل",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "2074539047": {
+  "id": "2074539047",
+  "name": "أمنيات الزوار",
+  "nameEn": "Guest Wishlist",
+  "company": "سلة",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "2074708713": {
+  "id": "2074708713",
+  "name": "smartlook",
+  "nameEn": "smartlook",
+  "company": "سلة",
+  "categories": [
+   "التحليل و الاحصاء",
+   "صانع التطبيقات"
+  ],
+  "status": "listed"
+ },
+ "2074738845": {
+  "id": "2074738845",
+  "name": "او بي بي لوجيستك",
+  "nameEn": "OBB Logistics",
+  "company": "شركة أو بي بي للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "2074906975": {
+  "id": "2074906975",
+  "name": "الربط مع نتسويت.",
+  "nameEn": "Integration of NetSuite ERP",
+  "company": "Reachware",
+  "categories": [
+   "المحاسبة والمالية",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "2076369254": {
+  "id": "2076369254",
+  "name": "الربط مع أمان سوفت",
+  "nameEn": "Aman Soft Connector",
+  "company": "شركة أمان الحديثة للتقنية",
+  "categories": [
+   "المحاسبة والمالية",
+   "انظمة ERP"
+  ],
+  "status": "listed"
+ },
+ "2085261305": {
+  "id": "2085261305",
+  "name": "سين",
+  "nameEn": "Seen",
+  "company": "Seen",
+  "categories": [
+   "التسويق",
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "2085775581": {
+  "id": "2085775581",
+  "name": "Mailchimp",
+  "nameEn": "Mailchimp",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "البريد الالكتروني"
+  ],
+  "status": "listed"
+ },
+ "2086841621": {
+  "id": "2086841621",
+  "name": "اتصال للخدمات اللوجستية و نقل الطرود",
+  "nameEn": "Etesal for logistic and shipment services",
+  "company": "مؤسسة اتصال للخدمات اللوجستية و نقل الطرود",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2089693707": {
+  "id": "2089693707",
+  "name": "نافذة الأسئلة السريعة",
+  "nameEn": "Quiz Popup",
+  "company": "TopSoft UG",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "2099547131": {
+  "id": "2099547131",
+  "name": "Fetcher",
+  "nameEn": "Fetcher",
+  "company": "سلة",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2110554272": {
+  "id": "2110554272",
+  "name": "شركة  كويك سلفر لخدمات الشحن",
+  "nameEn": "Quick Silver Shipping Services",
+  "company": "Quick Silver",
+  "categories": [
+   "الشحن و التوصيل"
+  ],
+  "status": "listed"
+ },
+ "2115381062": {
+  "id": "2115381062",
+  "name": "الدعم الطبي للخدمات اللوجستية",
+  "nameEn": "Medical Support For Logistics",
+  "company": "شركة الدعم المتطور للخدمات اللوجستية",
+  "categories": [
+   "الشحن و التوصيل",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "2122798704": {
+  "id": "2122798704",
+  "name": "ADRoll",
+  "nameEn": "ADRoll",
+  "company": "سلة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "2127423663": {
+  "id": "2127423663",
+  "name": "فيلينتس إجينت",
+  "nameEn": "Velents Agent",
+  "company": "Velents AI",
+  "categories": [
+   "أخرى",
+   "المحادثة"
+  ],
+  "status": "listed"
+ },
+ "2129494008": {
+  "id": "2129494008",
+  "name": "خياط",
+  "nameEn": "Khayat Application",
+  "company": "شركة التكنولوجيا الماسية لتقنية المعلومات",
+  "categories": [
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "2130208562": {
+  "id": "2130208562",
+  "name": "ممكن",
+  "nameEn": "Momaken",
+  "company": "Momaken",
+  "categories": [
+   "الشحن و التوصيل",
+   "المحاسبة والمالية",
+   "الموقع الجغرافي",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "2131020119": {
+  "id": "2131020119",
+  "name": "كوارتز",
+  "nameEn": "Quartz",
+  "company": "شركة البدائل لخدمات الأعمال شخص واحد",
+  "categories": [
+   "التسويق",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "2133169601": {
+  "id": "2133169601",
+  "name": "اشعارات واتساب - واتس بوت AI",
+  "nameEn": "AI WhatsBot - WhatsApp Notifications",
+  "company": "mohamed montaser",
+  "categories": [
+   "التسويق",
+   "الرسائل النصية",
+   "أخرى",
+   "المحادثة",
+   "التحليل و الاحصاء",
+   "الذكاء الاصطناعي"
+  ],
+  "status": "listed"
+ },
+ "2135039156": {
+  "id": "2135039156",
+  "name": "الملاذ ERP",
+  "nameEn": "Resort ERP",
+  "company": "شركة المتكامل العالمي للتجارة والمقاولات",
+  "categories": [
+   "المحاسبة والمالية"
+  ],
+  "status": "listed"
+ },
+ "2136848637": {
+  "id": "2136848637",
+  "name": "ستريم - تسوق بالفيديو",
+  "nameEn": "Stream",
+  "company": "شركة كود النظم المتقدمة",
+  "categories": [
+   "التسويق",
+   "تحسين الموقع",
+   "أخرى",
+   "التحليل و الاحصاء"
+  ],
+  "status": "listed"
+ },
+ "2145101366": {
+  "id": "2145101366",
+  "name": "لايف جولد - شريط الأسعار",
+  "nameEn": "Live Gold - Price Bar",
+  "company": "شركة لايف جولد لتقنية المعلومات",
+  "categories": [
+   "تحسين الموقع"
+  ],
+  "status": "listed"
+ },
+ "2145441399": {
+  "id": "2145441399",
+  "name": "شريط أسعار الذهب",
+  "nameEn": "Gold prices bar",
+  "company": "شركة فالنتكا للحلول التقنية",
+  "categories": [
+   "تحسين الموقع",
+   "أخرى"
+  ],
+  "status": "listed"
+ },
+ "unknown:observer": {
+  "id": "unknown:observer",
+  "name": "أوبزرفر — تتبع تسويقي",
+  "nameEn": "Observer",
+  "status": "unidentified"
+ }
+}

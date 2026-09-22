@@ -1,0 +1,1490 @@
+[
+ {
+  "id": "service:google_analytics",
+  "kind": "service",
+  "pattern": "google_analytics",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "165566897"
+  }
+ },
+ {
+  "id": "service:facebook_pixel",
+  "kind": "service",
+  "pattern": "facebook_pixel",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "851138044"
+  }
+ },
+ {
+  "id": "service:adwords",
+  "kind": "service",
+  "pattern": "adwords",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "1639339161"
+  }
+ },
+ {
+  "id": "service:addon-microsoft-clarity",
+  "kind": "service",
+  "pattern": "addon-microsoft-clarity",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "471536295"
+  }
+ },
+ {
+  "id": "service:hotjar",
+  "kind": "service",
+  "pattern": "hotjar",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "1406425291"
+  }
+ },
+ {
+  "id": "service:yandex_metrica",
+  "kind": "service",
+  "pattern": "yandex_metrica",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "1129878048"
+  }
+ },
+ {
+  "id": "service:twitter_pixel",
+  "kind": "service",
+  "pattern": "twitter_pixel",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "530601311"
+  }
+ },
+ {
+  "id": "service:get_button",
+  "kind": "service",
+  "pattern": "get_button",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "1830511004"
+  }
+ },
+ {
+  "id": "service:addon-klaviyo",
+  "kind": "service",
+  "pattern": "addon-klaviyo",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "318582389"
+  }
+ },
+ {
+  "id": "service:wisepops",
+  "kind": "service",
+  "pattern": "wisepops",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "900356613"
+  }
+ },
+ {
+  "id": "service:addon-convert-flow",
+  "kind": "service",
+  "pattern": "addon-convert-flow",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "2055995646"
+  }
+ },
+ {
+  "id": "service:pinterest_tag",
+  "kind": "service",
+  "pattern": "pinterest_tag",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "1267488723"
+  }
+ },
+ {
+  "id": "service:freshworks",
+  "kind": "service",
+  "pattern": "freshworks",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "1852862223"
+  }
+ },
+ {
+  "id": "service:facebook_messenger",
+  "kind": "service",
+  "pattern": "facebook_messenger",
+  "strength": "decisive",
+  "target": {
+   "type": "app",
+   "appId": "1483625313"
+  }
+ },
+ {
+  "id": "domain:tooliify.com",
+  "kind": "domain",
+  "pattern": "tooliify.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1514900071"
+  }
+ },
+ {
+  "id": "domain:sallamaat.com",
+  "kind": "domain",
+  "pattern": "sallamaat.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1061194345"
+  }
+ },
+ {
+  "id": "domain:matajertech.com",
+  "kind": "domain",
+  "pattern": "matajertech.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "361979609"
+  }
+ },
+ {
+  "id": "inline-token:matajer_settings",
+  "kind": "inline-token",
+  "pattern": "matajer_settings",
+  "strength": "medium",
+  "target": {
+   "type": "app",
+   "appId": "361979609"
+  }
+ },
+ {
+  "id": "domain:notimoney.com",
+  "kind": "domain",
+  "pattern": "notimoney.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "939200655"
+  }
+ },
+ {
+  "id": "domain:nerachat.com",
+  "kind": "domain",
+  "pattern": "nerachat.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1244055007"
+  }
+ },
+ {
+  "id": "domain:karzoun.app",
+  "kind": "domain",
+  "pattern": "karzoun.app",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1332405289"
+  }
+ },
+ {
+  "id": "domain:cartat.net",
+  "kind": "domain",
+  "pattern": "cartat.net",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "996829016"
+  }
+ },
+ {
+  "id": "host:cartat.ams3.digitaloceanspaces.com",
+  "kind": "host",
+  "pattern": "cartat.ams3.digitaloceanspaces.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "996829016"
+  }
+ },
+ {
+  "id": "host:cartat.ams3.cdn.digitaloceanspaces.com",
+  "kind": "host",
+  "pattern": "cartat.ams3.cdn.digitaloceanspaces.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "996829016"
+  }
+ },
+ {
+  "id": "inline-token:cartat_source",
+  "kind": "inline-token",
+  "pattern": "cartat_source",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "996829016"
+  }
+ },
+ {
+  "id": "inline-token:cartat_source_id",
+  "kind": "inline-token",
+  "pattern": "cartat_source_id",
+  "strength": "medium",
+  "target": {
+   "type": "app",
+   "appId": "996829016"
+  }
+ },
+ {
+  "id": "domain:businesschat.io",
+  "kind": "domain",
+  "pattern": "businesschat.io",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "338190499"
+  }
+ },
+ {
+  "id": "domain:bc-cdn.net",
+  "kind": "domain",
+  "pattern": "bc-cdn.net",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "338190499"
+  }
+ },
+ {
+  "id": "host:client-do9.pages.dev",
+  "kind": "host",
+  "pattern": "client-do9.pages.dev",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "unknown:observer"
+  }
+ },
+ {
+  "id": "domain:observer.marketing",
+  "kind": "domain",
+  "pattern": "observer.marketing",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "unknown:observer"
+  }
+ },
+ {
+  "id": "inline-token:observerEvents",
+  "kind": "inline-token",
+  "pattern": "observerEvents",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "unknown:observer"
+  }
+ },
+ {
+  "id": "inline-marker:=== app settings ===",
+  "kind": "inline-marker",
+  "pattern": "=== app settings ===",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "347973230"
+  }
+ },
+ {
+  "id": "inline-token:whatsappln_icon_status",
+  "kind": "inline-token",
+  "pattern": "whatsappln_icon_status",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1662840947"
+  }
+ },
+ {
+  "id": "domain:loyalfy.io",
+  "kind": "domain",
+  "pattern": "loyalfy.io",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1629676963"
+  }
+ },
+ {
+  "id": "host:loyalfy-storage.fra1.cdn.digitaloceanspaces.com",
+  "kind": "host",
+  "pattern": "loyalfy-storage.fra1.cdn.digitaloceanspaces.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1629676963"
+  }
+ },
+ {
+  "id": "dom-id:walaa-panel",
+  "kind": "dom-id",
+  "pattern": "walaa-panel",
+  "strength": "medium",
+  "target": {
+   "type": "app",
+   "appId": "1629676963"
+  }
+ },
+ {
+  "id": "domain:walax.co",
+  "kind": "domain",
+  "pattern": "walax.co",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "861510477"
+  }
+ },
+ {
+  "id": "domain:smartlook.com",
+  "kind": "domain",
+  "pattern": "smartlook.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "2074708713"
+  }
+ },
+ {
+  "id": "domain:browsee.io",
+  "kind": "domain",
+  "pattern": "browsee.io",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1764455703"
+  }
+ },
+ {
+  "id": "product-image-host:d1gpzof0viq1mp.cloudfront.net",
+  "kind": "product-image-host",
+  "pattern": "d1gpzof0viq1mp.cloudfront.net",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "610038364"
+  }
+ },
+ {
+  "id": "product-sku-prefix:ADAE1005",
+  "kind": "product-sku-prefix",
+  "pattern": "ADAE1005",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1090140720"
+  }
+ },
+ {
+  "id": "product-image-host:ae01.alicdn.com",
+  "kind": "product-image-host",
+  "pattern": "ae01.alicdn.com",
+  "strength": "medium",
+  "target": {
+   "type": "app",
+   "appId": "1090140720"
+  }
+ },
+ {
+  "id": "product-image-host:cdn.dsmcdn.com",
+  "kind": "product-image-host",
+  "pattern": "cdn.dsmcdn.com",
+  "strength": "medium",
+  "target": {
+   "type": "app",
+   "appId": "940314408"
+  }
+ },
+ {
+  "id": "product-image-host:img.ltwebstatic.com",
+  "kind": "product-image-host",
+  "pattern": "img.ltwebstatic.com",
+  "strength": "medium",
+  "target": {
+   "type": "app",
+   "appId": "940314408"
+  }
+ },
+ {
+  "id": "product-image-host:f.nooncdn.com",
+  "kind": "product-image-host",
+  "pattern": "f.nooncdn.com",
+  "strength": "medium",
+  "target": {
+   "type": "app",
+   "appId": "940314408"
+  }
+ },
+ {
+  "id": "dev-domain:abkhus.com",
+  "kind": "domain",
+  "pattern": "abkhus.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "479795680"
+  }
+ },
+ {
+  "id": "dev-domain:adjust.com",
+  "kind": "domain",
+  "pattern": "adjust.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "181225593"
+  }
+ },
+ {
+  "id": "dev-domain:adroll.com",
+  "kind": "domain",
+  "pattern": "adroll.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "2122798704"
+  }
+ },
+ {
+  "id": "dev-domain:adwhats.net",
+  "kind": "domain",
+  "pattern": "adwhats.net",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "2056204116"
+  }
+ },
+ {
+  "id": "dev-domain:alfinder.ai",
+  "kind": "domain",
+  "pattern": "alfinder.ai",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "210017680"
+  }
+ },
+ {
+  "id": "dev-domain:apploxa.com",
+  "kind": "domain",
+  "pattern": "apploxa.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "879907018"
+  }
+ },
+ {
+  "id": "dev-domain:apptest.com",
+  "kind": "domain",
+  "pattern": "apptest.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1268123532"
+  }
+ },
+ {
+  "id": "dev-domain:appunits.com",
+  "kind": "domain",
+  "pattern": "appunits.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "71232877"
+  }
+ },
+ {
+  "id": "dev-domain:autodrop.me",
+  "kind": "domain",
+  "pattern": "autodrop.me",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1090140720"
+  }
+ },
+ {
+  "id": "dev-domain:azeer.com",
+  "kind": "domain",
+  "pattern": "azeer.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1737180612"
+  }
+ },
+ {
+  "id": "dev-domain:bevatel.com",
+  "kind": "domain",
+  "pattern": "bevatel.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "805615445"
+  }
+ },
+ {
+  "id": "dev-domain:canarysa.com",
+  "kind": "domain",
+  "pattern": "canarysa.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "417472257"
+  }
+ },
+ {
+  "id": "dev-domain:chaport.com",
+  "kind": "domain",
+  "pattern": "chaport.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "491483052"
+  }
+ },
+ {
+  "id": "dev-domain:chatbot.com",
+  "kind": "domain",
+  "pattern": "chatbot.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "472282548"
+  }
+ },
+ {
+  "id": "dev-domain:chatra.com",
+  "kind": "domain",
+  "pattern": "chatra.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "997551250"
+  }
+ },
+ {
+  "id": "dev-domain:codemap.me",
+  "kind": "domain",
+  "pattern": "codemap.me",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "163669479"
+  }
+ },
+ {
+  "id": "dev-domain:crazyegg.com",
+  "kind": "domain",
+  "pattern": "crazyegg.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "112155496"
+  }
+ },
+ {
+  "id": "dev-domain:crisp.chat",
+  "kind": "domain",
+  "pattern": "crisp.chat",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "714297540"
+  }
+ },
+ {
+  "id": "dev-domain:daftra.com",
+  "kind": "domain",
+  "pattern": "daftra.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "851057819"
+  }
+ },
+ {
+  "id": "dev-domain:daleelstore.com",
+  "kind": "domain",
+  "pattern": "daleelstore.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1425230612"
+  }
+ },
+ {
+  "id": "dev-domain:dl1s.co",
+  "kind": "domain",
+  "pattern": "dl1s.co",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "5406261"
+  }
+ },
+ {
+  "id": "dev-domain:dropcard.net",
+  "kind": "domain",
+  "pattern": "dropcard.net",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "921790953"
+  }
+ },
+ {
+  "id": "dev-domain:easyconnectapp.com",
+  "kind": "domain",
+  "pattern": "easyconnectapp.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1301274177"
+  }
+ },
+ {
+  "id": "dev-domain:erad.co",
+  "kind": "domain",
+  "pattern": "erad.co",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "627060499"
+  }
+ },
+ {
+  "id": "dev-domain:eyeen.net",
+  "kind": "domain",
+  "pattern": "eyeen.net",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "989448320"
+  }
+ },
+ {
+  "id": "dev-domain:fd-serv.com",
+  "kind": "domain",
+  "pattern": "fd-serv.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "72407549"
+  }
+ },
+ {
+  "id": "dev-domain:fomoo.net",
+  "kind": "domain",
+  "pattern": "fomoo.net",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "205657791"
+  }
+ },
+ {
+  "id": "dev-domain:freshworks.com",
+  "kind": "domain",
+  "pattern": "freshworks.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1852862223"
+  }
+ },
+ {
+  "id": "dev-domain:game4station.com",
+  "kind": "domain",
+  "pattern": "game4station.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "669023635"
+  }
+ },
+ {
+  "id": "dev-domain:gameball.co",
+  "kind": "domain",
+  "pattern": "gameball.co",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1407572580"
+  }
+ },
+ {
+  "id": "dev-domain:getbutton.io",
+  "kind": "domain",
+  "pattern": "getbutton.io",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1830511004"
+  }
+ },
+ {
+  "id": "dev-domain:getsociallab.com",
+  "kind": "domain",
+  "pattern": "getsociallab.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "412425472"
+  }
+ },
+ {
+  "id": "dev-domain:grovlix.com",
+  "kind": "domain",
+  "pattern": "grovlix.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1964915315"
+  }
+ },
+ {
+  "id": "dev-domain:here.com",
+  "kind": "domain",
+  "pattern": "here.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "923885782"
+  }
+ },
+ {
+  "id": "dev-domain:intercom.com",
+  "kind": "domain",
+  "pattern": "intercom.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "2006470695"
+  }
+ },
+ {
+  "id": "dev-domain:jawalbsms.ws",
+  "kind": "domain",
+  "pattern": "jawalbsms.ws",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "385383879"
+  }
+ },
+ {
+  "id": "dev-domain:justuno.com",
+  "kind": "domain",
+  "pattern": "justuno.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "367799454"
+  }
+ },
+ {
+  "id": "dev-domain:karamai.co",
+  "kind": "domain",
+  "pattern": "karamai.co",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "864133974"
+  }
+ },
+ {
+  "id": "dev-domain:katheeb.net",
+  "kind": "domain",
+  "pattern": "katheeb.net",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1286413041"
+  }
+ },
+ {
+  "id": "dev-domain:lemoscribe.com",
+  "kind": "domain",
+  "pattern": "lemoscribe.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "706164864"
+  }
+ },
+ {
+  "id": "dev-domain:lenkwhats.com",
+  "kind": "domain",
+  "pattern": "lenkwhats.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "701774205"
+  }
+ },
+ {
+  "id": "dev-domain:letsbot.net",
+  "kind": "domain",
+  "pattern": "letsbot.net",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1550834079"
+  }
+ },
+ {
+  "id": "dev-domain:line.sa",
+  "kind": "domain",
+  "pattern": "line.sa",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1662840947"
+  }
+ },
+ {
+  "id": "dev-domain:live.com",
+  "kind": "domain",
+  "pattern": "live.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1965255348"
+  }
+ },
+ {
+  "id": "dev-domain:livechat.com",
+  "kind": "domain",
+  "pattern": "livechat.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "258560542"
+  }
+ },
+ {
+  "id": "dev-domain:livegold.sa",
+  "kind": "domain",
+  "pattern": "livegold.sa",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1321126153"
+  }
+ },
+ {
+  "id": "dev-domain:locationiq.com",
+  "kind": "domain",
+  "pattern": "locationiq.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1793876851"
+  }
+ },
+ {
+  "id": "dev-domain:m5azn.com",
+  "kind": "domain",
+  "pattern": "m5azn.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "610038364"
+  }
+ },
+ {
+  "id": "dev-domain:mahalkshein.com",
+  "kind": "domain",
+  "pattern": "mahalkshein.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "940314408"
+  }
+ },
+ {
+  "id": "dev-domain:mailchimp.com",
+  "kind": "domain",
+  "pattern": "mailchimp.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "2085775581"
+  }
+ },
+ {
+  "id": "dev-domain:make.com",
+  "kind": "domain",
+  "pattern": "make.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1211266568"
+  }
+ },
+ {
+  "id": "dev-domain:mazeed.com",
+  "kind": "domain",
+  "pattern": "mazeed.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1475576125"
+  }
+ },
+ {
+  "id": "dev-domain:moatmt.sa",
+  "kind": "domain",
+  "pattern": "moatmt.sa",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "240202805"
+  }
+ },
+ {
+  "id": "dev-domain:mozdaher.net",
+  "kind": "domain",
+  "pattern": "mozdaher.net",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "95641499"
+  }
+ },
+ {
+  "id": "dev-domain:mrtahseel.com",
+  "kind": "domain",
+  "pattern": "mrtahseel.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1752754434"
+  }
+ },
+ {
+  "id": "dev-domain:msegat.com",
+  "kind": "domain",
+  "pattern": "msegat.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "434594320"
+  }
+ },
+ {
+  "id": "dev-domain:murseell.com",
+  "kind": "domain",
+  "pattern": "murseell.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1483057683"
+  }
+ },
+ {
+  "id": "dev-domain:naqrat.sa",
+  "kind": "domain",
+  "pattern": "naqrat.sa",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "2002437281"
+  }
+ },
+ {
+  "id": "dev-domain:nerapos.com",
+  "kind": "domain",
+  "pattern": "nerapos.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1322153389"
+  }
+ },
+ {
+  "id": "dev-domain:nit.sa",
+  "kind": "domain",
+  "pattern": "nit.sa",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "134555705"
+  }
+ },
+ {
+  "id": "dev-domain:numoo.app",
+  "kind": "domain",
+  "pattern": "numoo.app",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "169103247"
+  }
+ },
+ {
+  "id": "dev-domain:onesignal.com",
+  "kind": "domain",
+  "pattern": "onesignal.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1403265904"
+  }
+ },
+ {
+  "id": "dev-domain:oursms.com",
+  "kind": "domain",
+  "pattern": "oursms.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "118100208"
+  }
+ },
+ {
+  "id": "dev-domain:popupsnap.com",
+  "kind": "domain",
+  "pattern": "popupsnap.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1964915315"
+  }
+ },
+ {
+  "id": "dev-domain:privy.com",
+  "kind": "domain",
+  "pattern": "privy.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "302543170"
+  }
+ },
+ {
+  "id": "dev-domain:qoyod.com",
+  "kind": "domain",
+  "pattern": "qoyod.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1732341478"
+  }
+ },
+ {
+  "id": "dev-domain:rasil.io",
+  "kind": "domain",
+  "pattern": "rasil.io",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "906728208"
+  }
+ },
+ {
+  "id": "dev-domain:rewaatech.com",
+  "kind": "domain",
+  "pattern": "rewaatech.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1677069629"
+  }
+ },
+ {
+  "id": "dev-domain:salla.partners",
+  "kind": "domain",
+  "pattern": "salla.partners",
+  "strength": "strong",
+  "target": {
+   "type": "company",
+   "company": "سلة",
+   "appIds": [
+    "181225593",
+    "18835730",
+    "691365818"
+   ]
+  }
+ },
+ {
+  "id": "dev-domain:smartarget.online",
+  "kind": "domain",
+  "pattern": "smartarget.online",
+  "strength": "strong",
+  "target": {
+   "type": "company",
+   "company": "TopSoft UG",
+   "appIds": [
+    "1086121171",
+    "1139998764",
+    "1192869515",
+    "1408287678",
+    "1518933997",
+    "1585260544",
+    "182148585",
+    "2004587307",
+    "2047255992",
+    "296491938",
+    "299275781",
+    "441340947",
+    "831404041"
+   ]
+  }
+ },
+ {
+  "id": "dev-domain:smartwats.com",
+  "kind": "domain",
+  "pattern": "smartwats.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1949099999"
+  }
+ },
+ {
+  "id": "dev-domain:social-bot.io",
+  "kind": "domain",
+  "pattern": "social-bot.io",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1068787254"
+  }
+ },
+ {
+  "id": "dev-domain:sociallab.sa",
+  "kind": "domain",
+  "pattern": "sociallab.sa",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "412425472"
+  }
+ },
+ {
+  "id": "dev-domain:station4game.com",
+  "kind": "domain",
+  "pattern": "station4game.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "669023635"
+  }
+ },
+ {
+  "id": "dev-domain:suoodq.com",
+  "kind": "domain",
+  "pattern": "suoodq.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "542868434"
+  }
+ },
+ {
+  "id": "dev-domain:taqnyat.sa",
+  "kind": "domain",
+  "pattern": "taqnyat.sa",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "238620953"
+  }
+ },
+ {
+  "id": "dev-domain:tawasl-sa.com",
+  "kind": "domain",
+  "pattern": "tawasl-sa.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "773247913"
+  }
+ },
+ {
+  "id": "dev-domain:tawk.to",
+  "kind": "domain",
+  "pattern": "tawk.to",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1084051850"
+  }
+ },
+ {
+  "id": "dev-domain:tecfy.co",
+  "kind": "domain",
+  "pattern": "tecfy.co",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1975863469"
+  }
+ },
+ {
+  "id": "dev-domain:termsfeed.com",
+  "kind": "domain",
+  "pattern": "termsfeed.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "706164864"
+  }
+ },
+ {
+  "id": "dev-domain:tidio.net",
+  "kind": "domain",
+  "pattern": "tidio.net",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1020876846"
+  }
+ },
+ {
+  "id": "dev-domain:trendoo-ksa.com",
+  "kind": "domain",
+  "pattern": "trendoo-ksa.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1620259190"
+  }
+ },
+ {
+  "id": "dev-domain:trythunder.com",
+  "kind": "domain",
+  "pattern": "trythunder.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1610885719"
+  }
+ },
+ {
+  "id": "dev-domain:twaslbot.com",
+  "kind": "domain",
+  "pattern": "twaslbot.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1059532780"
+  }
+ },
+ {
+  "id": "dev-domain:twerlo.com",
+  "kind": "domain",
+  "pattern": "twerlo.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1737180612"
+  }
+ },
+ {
+  "id": "dev-domain:ultratechdynamics.com",
+  "kind": "domain",
+  "pattern": "ultratechdynamics.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "709062167"
+  }
+ },
+ {
+  "id": "dev-domain:unifonic.com",
+  "kind": "domain",
+  "pattern": "unifonic.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1289904781"
+  }
+ },
+ {
+  "id": "dev-domain:wazen.sa",
+  "kind": "domain",
+  "pattern": "wazen.sa",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "476989300"
+  }
+ },
+ {
+  "id": "dev-domain:whatsbot.org",
+  "kind": "domain",
+  "pattern": "whatsbot.org",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "2133169601"
+  }
+ },
+ {
+  "id": "dev-domain:whatssharebot.com",
+  "kind": "domain",
+  "pattern": "whatssharebot.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "383146492"
+  }
+ },
+ {
+  "id": "dev-domain:wisepops.com",
+  "kind": "domain",
+  "pattern": "wisepops.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "900356613"
+  }
+ },
+ {
+  "id": "dev-domain:wselah.net",
+  "kind": "domain",
+  "pattern": "wselah.net",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1740052872"
+  }
+ },
+ {
+  "id": "dev-domain:wthere.com",
+  "kind": "domain",
+  "pattern": "wthere.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "767942422"
+  }
+ },
+ {
+  "id": "dev-domain:yahoo.com",
+  "kind": "domain",
+  "pattern": "yahoo.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "675177809"
+  }
+ },
+ {
+  "id": "dev-domain:yandex.com",
+  "kind": "domain",
+  "pattern": "yandex.com",
+  "strength": "strong",
+  "target": {
+   "type": "company",
+   "company": "سلة",
+   "appIds": [
+    "1129878048",
+    "1177053719"
+   ]
+  }
+ },
+ {
+  "id": "dev-domain:zaboon.app",
+  "kind": "domain",
+  "pattern": "zaboon.app",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "320228521"
+  }
+ },
+ {
+  "id": "dev-domain:zapier.com",
+  "kind": "domain",
+  "pattern": "zapier.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "554657544"
+  }
+ },
+ {
+  "id": "dev-domain:zatca.gov.sa",
+  "kind": "domain",
+  "pattern": "zatca.gov.sa",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "747360824"
+  }
+ },
+ {
+  "id": "dev-domain:ziadah.app",
+  "kind": "domain",
+  "pattern": "ziadah.app",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "1099604538"
+  }
+ },
+ {
+  "id": "dev-domain:zoho.com",
+  "kind": "domain",
+  "pattern": "zoho.com",
+  "strength": "strong",
+  "target": {
+   "type": "company",
+   "company": "سلة",
+   "appIds": [
+    "321743738",
+    "442263939"
+   ]
+  }
+ },
+ {
+  "id": "dev-domain:zudapp.com",
+  "kind": "domain",
+  "pattern": "zudapp.com",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "542868434"
+  }
+ }
+]
