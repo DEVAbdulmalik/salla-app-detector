@@ -9,6 +9,8 @@ const config: NextConfig = {
     "@salla-app-detector/salla",
     "@salla-app-detector/shared",
   ],
+  // Next writes assistant instruction files into the project unless this is off.
+  agentRules: false,
   poweredByHeader: false,
   reactStrictMode: true,
 };

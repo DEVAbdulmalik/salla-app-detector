@@ -25,12 +25,18 @@ export async function POST(request: Request): Promise<Response> {
     return Response.json({ error: "invalid" }, { status: 400 });
   }
 
-  const result = await scan(parsed.data.url, clientIp(request));
-  if (!result.ok) {
-    return Response.json({ error: result.error }, { status: STATUS_BY_ERROR[result.error] ?? 400 });
+  try {
+    const result = await scan(parsed.data.url, clientIp(request));
+    if (!result.ok) {
+      return Response.json(
+        { error: result.error },
+        { status: STATUS_BY_ERROR[result.error] ?? 400 },
+      );
+    }
+    return Response.json({ host: result.host, status: result.report.status });
+  } catch {
+    return Response.json({ error: "unknown" }, { status: 500 });
   }
-
-  return Response.json({ host: result.host, status: result.report.status });
 }
 
 /** The first hop in the forwarding chain is the visitor; the rest are proxies. */

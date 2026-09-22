@@ -8,7 +8,10 @@ import {
 import { scanStore } from "@salla-app-detector/jobs";
 import { seedKnowledge, type KnowledgeRepository } from "@salla-app-detector/knowledge";
 import { SallaClient } from "@salla-app-detector/salla";
+import { createLogger } from "@salla-app-detector/shared";
 import { getRepository } from "./database";
+
+const logger = createLogger({ level: "info", bindings: { component: "scan" } });
 
 export type ScanError =
   "empty" | "invalid" | "platform" | "rate-limited" | "unreachable" | "unknown";
@@ -42,12 +45,12 @@ export async function scan(input: string, clientIp: string | undefined): Promise
   const repository = getRepository();
   if (repository && clientIp !== undefined) {
     const bucket = `scan:${createHash("sha256").update(clientIp).digest("hex").slice(0, 32)}`;
-    const limit = await repository.consumeRateLimit(
-      bucket,
-      RATE_LIMIT.requests,
-      RATE_LIMIT.windowSeconds,
+    const limit = await tolerate("rate-limit", () =>
+      repository.consumeRateLimit(bucket, RATE_LIMIT.requests, RATE_LIMIT.windowSeconds),
     );
-    if (!limit.allowed) {
+    // An unreachable database must not become an outage: the limit simply cannot be
+    // enforced for this request, which is preferable to refusing every visitor.
+    if (limit?.allowed === false) {
       return { ok: false, error: "rate-limited" };
     }
   }
@@ -83,7 +86,7 @@ async function readCache(
   if (!repository) {
     return undefined;
   }
-  const recent = await repository.recentScan(host, CACHE_MINUTES);
+  const recent = await tolerate("cache-read", () => repository.recentScan(host, CACHE_MINUTES));
   if (!recent) {
     return undefined;
   }
@@ -117,7 +120,7 @@ async function runScan(
   const scannedAt = new Date();
 
   if (repository) {
-    await persist(repository, report, Date.now() - startedAt);
+    await tolerate("persist", () => persist(repository, report, Date.now() - startedAt));
   }
 
   return { ok: true, report, host: report.target.host, scannedAt, fromCache: false };
@@ -159,10 +162,26 @@ async function loadKnowledge(
   if (knowledgeCache && Date.now() - knowledgeCache.loadedAt < KNOWLEDGE_TTL_MS) {
     return knowledgeCache.value;
   }
-  const snapshot = repository ? await repository.loadSnapshot() : seedKnowledge;
-  const compiled = compileKnowledge(snapshot);
+  const stored = repository
+    ? await tolerate("knowledge-load", () => repository.loadSnapshot())
+    : undefined;
+  // Falling back to the bundled knowledge keeps detection working, with fewer fingerprints.
+  const compiled = compileKnowledge(stored ?? seedKnowledge);
   knowledgeCache = { value: compiled, loadedAt: Date.now() };
   return compiled;
+}
+
+/** Runs a database call that the scan can live without, reporting failures rather than raising them. */
+async function tolerate<T>(operation: string, work: () => Promise<T>): Promise<T | undefined> {
+  try {
+    return await work();
+  } catch (error) {
+    logger.error("database unavailable", {
+      operation,
+      error: error instanceof Error ? error : new Error(String(error)),
+    });
+    return undefined;
+  }
 }
 
 function toInputError(code: string): ScanError {
