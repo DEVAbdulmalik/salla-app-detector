@@ -54,6 +54,27 @@ export interface AppDomains {
   readonly domains: string[];
 }
 
+export interface ScanRecord {
+  readonly storeHost: string;
+  readonly storeId?: number;
+  readonly status: string;
+  readonly report: unknown;
+  readonly engineVersion: string;
+  readonly knowledgeVersion: string;
+  readonly durationMs: number;
+}
+
+export interface StoredScan {
+  readonly report: unknown;
+  readonly scannedAt: Date;
+}
+
+export interface RateLimit {
+  readonly allowed: boolean;
+  readonly hits: number;
+  readonly remaining: number;
+}
+
 export interface JobState {
   readonly cursor: Record<string, unknown>;
   readonly lastRunAt?: Date;
@@ -160,6 +181,101 @@ export class KnowledgeRepository {
          updated_at = now()
        where id = $1`,
       [appId, domains, fetchedAt, company ?? null],
+    );
+  }
+
+  /**
+   * Stores a finished scan. The report is kept whole so a shared link can be rendered
+   * later without scanning again, and so a past result stays explainable.
+   */
+  async recordScan(entry: ScanRecord): Promise<void> {
+    await this.#db.query(
+      `insert into scans (store_host, store_id, status, report, engine_version, knowledge_version, duration_ms)
+       values ($1, $2, $3, $4::text::jsonb, $5, $6, $7)`,
+      [
+        entry.storeHost,
+        entry.storeId ?? null,
+        entry.status,
+        JSON.stringify(entry.report),
+        entry.engineVersion,
+        entry.knowledgeVersion,
+        entry.durationMs,
+      ],
+    );
+  }
+
+  async recentScan(storeHost: string, maxAgeMinutes: number): Promise<StoredScan | undefined> {
+    const rows = await this.#db.query<{ report: unknown; scanned_at: Date }>(
+      `select report, scanned_at from scans
+       where store_host = $1 and scanned_at > now() - make_interval(mins => $2)
+       order by scanned_at desc
+       limit 1`,
+      [storeHost, maxAgeMinutes],
+    );
+    const row = rows[0];
+    return row === undefined ? undefined : { report: row.report, scannedAt: row.scanned_at };
+  }
+
+  /** Signals a scan could not explain, which the learning loop later clusters. */
+  async recordObservations(
+    storeHost: string,
+    signals: readonly { kind: string; value: string; sample?: string }[],
+  ): Promise<void> {
+    if (signals.length === 0) {
+      return;
+    }
+    await this.#db.query(
+      `insert into observations (signal_kind, signal_value, store_host, sample)
+       select signal_kind, signal_value, $2, sample
+       from jsonb_to_recordset($1::text::jsonb) as incoming(signal_kind text, signal_value text, sample text)
+       on conflict (signal_kind, signal_value, store_host) do update set last_seen_at = now()`,
+      [
+        JSON.stringify(
+          signals.map((signal) => ({
+            signal_kind: signal.kind,
+            signal_value: signal.value,
+            sample: signal.sample ?? null,
+          })),
+        ),
+        storeHost,
+      ],
+    );
+  }
+
+  /** Builds the index that lets a review avatar be traced back to the store behind it. */
+  async rememberStoreCode(code: string, storeId: number | undefined, host: string): Promise<void> {
+    await this.#db.query(
+      `insert into store_codes (code, store_id, store_host)
+       values ($1, $2, $3)
+       on conflict (code) do update set
+         store_id = coalesce(excluded.store_id, store_codes.store_id),
+         store_host = excluded.store_host,
+         seen_at = now()`,
+      [code, storeId ?? null, host],
+    );
+  }
+
+  /**
+   * Counts one request against a fixed window and reports whether it is allowed. The
+   * insert settles the count in a single statement, so simultaneous requests cannot slip
+   * past the limit between a read and a write.
+   */
+  async consumeRateLimit(bucket: string, limit: number, windowSeconds: number): Promise<RateLimit> {
+    const rows = await this.#db.query<{ hits: number }>(
+      `insert into rate_limits (bucket, window_start, hits)
+       values ($1, to_timestamp(floor(extract(epoch from now()) / $2::int) * $2::int), 1)
+       on conflict (bucket, window_start) do update set hits = rate_limits.hits + 1
+       returning hits`,
+      [bucket, windowSeconds],
+    );
+    const hits = rows[0]?.hits ?? 1;
+    return { allowed: hits <= limit, hits, remaining: Math.max(0, limit - hits) };
+  }
+
+  async forgetOldRateLimits(olderThanSeconds: number): Promise<void> {
+    await this.#db.query(
+      "delete from rate_limits where window_start < now() - make_interval(secs => $1)",
+      [olderThanSeconds],
     );
   }
 

@@ -5,6 +5,7 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
+    "./migrate": "./src/db/migrate.ts",
     "./testing": "./src/db/pglite.ts"
   },
   "scripts": {

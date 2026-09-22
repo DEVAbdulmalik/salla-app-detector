@@ -2,7 +2,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import type { Database } from "./executor";
 
-const MIGRATIONS_DIR = join(import.meta.dirname, "..", "..", "migrations");
+const migrationsDirectory = (): string => join(import.meta.dirname, "..", "..", "migrations");
 
 export interface MigrationResult {
   readonly applied: readonly string[];
@@ -15,7 +15,7 @@ export interface MigrationResult {
  */
 export async function migrate(
   database: Database,
-  directory = MIGRATIONS_DIR,
+  directory = migrationsDirectory(),
 ): Promise<MigrationResult> {
   await database.query(`
     create table if not exists schema_migrations (

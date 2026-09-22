@@ -1,4 +1,5 @@
-import { importSeed, migrate } from "@salla-app-detector/knowledge";
+import { importSeed } from "@salla-app-detector/knowledge";
+import { migrate } from "@salla-app-detector/knowledge/migrate";
 import { openDatabase } from "../context";
 
 export const DATABASE_USAGE = `Usage: pnpm cli db <migrate|import|snapshot>

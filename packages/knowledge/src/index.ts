@@ -31,8 +31,6 @@ export { GENERIC_DEVELOPER_DOMAINS } from "./generic-domains";
 
 export { connect } from "./db/postgres";
 export type { ConnectOptions } from "./db/postgres";
-export { migrate } from "./db/migrate";
-export type { MigrationResult } from "./db/migrate";
 export { KnowledgeRepository } from "./db/repository";
 export type {
   AppDomains,
@@ -43,7 +41,10 @@ export type {
   JobState,
   NoiseKind,
   NoiseUpsert,
+  RateLimit,
+  ScanRecord,
   StaleApp,
+  StoredScan,
 } from "./db/repository";
 export type { Database } from "./db/executor";
 export { importSeed } from "./import-seed";

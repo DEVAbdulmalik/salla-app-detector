@@ -1,5 +1,6 @@
 import { createEmbeddedDatabase } from "@salla-app-detector/knowledge/testing";
-import { KnowledgeRepository, migrate, type Database } from "@salla-app-detector/knowledge";
+import { KnowledgeRepository, type Database } from "@salla-app-detector/knowledge";
+import { migrate } from "@salla-app-detector/knowledge/migrate";
 import type { ApiFailure, AppDetails, CatalogApp } from "@salla-app-detector/salla";
 import { err, ok, type Result } from "@salla-app-detector/shared";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";

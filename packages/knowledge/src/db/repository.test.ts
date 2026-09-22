@@ -267,3 +267,81 @@ describe("ground truth", () => {
     expect(rows[0]?.app_id).toBe("1");
   });
 });
+
+describe("scans and observations", () => {
+  const report = { status: "live", apps: [{ appId: "1" }] };
+
+  it("returns a recent scan and ignores an expired one", async () => {
+    await repository.recordScan({
+      storeHost: "mahwous.com",
+      storeId: 986119567,
+      status: "live",
+      report,
+      engineVersion: "1.0.0",
+      knowledgeVersion: "db-1",
+      durationMs: 900,
+    });
+
+    const fresh = await repository.recentScan("mahwous.com", 360);
+    const expired = await repository.recentScan("mahwous.com", 0);
+    const other = await repository.recentScan("other.com", 360);
+
+    expect(fresh?.report).toEqual(report);
+    expect(expired).toBeUndefined();
+    expect(other).toBeUndefined();
+  });
+
+  it("keeps one row per signal and store, refreshing when seen again", async () => {
+    await repository.recordObservations("a.com", [
+      { kind: "domain", value: "vendor.example", sample: "script" },
+    ]);
+    await repository.recordObservations("a.com", [{ kind: "domain", value: "vendor.example" }]);
+    await repository.recordObservations("b.com", [{ kind: "domain", value: "vendor.example" }]);
+
+    const rows = await database.query<{ store_host: string; sample: string | null }>(
+      "select store_host, sample from observations order by store_host",
+    );
+
+    expect(rows.map((row) => row.store_host)).toEqual(["a.com", "b.com"]);
+    expect(rows[0]?.sample).toBe("script");
+  });
+
+  it("remembers the code Salla uses for a store's assets", async () => {
+    await repository.rememberStoreCode("QNvEG", 986119567, "mahwous.com");
+    await repository.rememberStoreCode("QNvEG", undefined, "mahwous.com");
+
+    const rows = await database.query<{ store_id: string | number | null }>(
+      "select store_id from store_codes where code = 'QNvEG'",
+    );
+
+    expect(rows).toHaveLength(1);
+    expect(String(rows[0]?.store_id)).toBe("986119567");
+  });
+});
+
+describe("rate limiting", () => {
+  it("allows requests up to the limit and refuses the rest", async () => {
+    const attempts = [];
+    for (let index = 0; index < 4; index += 1) {
+      attempts.push(await repository.consumeRateLimit("ip:abc", 3, 60));
+    }
+
+    expect(attempts.map((attempt) => attempt.allowed)).toEqual([true, true, true, false]);
+    expect(attempts[2]?.remaining).toBe(0);
+  });
+
+  it("counts each caller separately", async () => {
+    await repository.consumeRateLimit("ip:one", 1, 60);
+    const other = await repository.consumeRateLimit("ip:two", 1, 60);
+
+    expect(other.allowed).toBe(true);
+  });
+
+  it("clears windows that have passed", async () => {
+    await repository.consumeRateLimit("ip:abc", 5, 60);
+    await repository.forgetOldRateLimits(0);
+
+    const rows = await database.query("select 1 from rate_limits");
+    expect(rows).toEqual([]);
+  });
+});
