@@ -1,0 +1,103 @@
+{
+  "site": {
+    "name": "كاشف تطبيقات سلة",
+    "tagline": "اعرف التطبيقات المستخدمة في أي متجر",
+    "description": "ضع رابط متجر على منصة سلة، واحصل على التطبيقات المستخدمة فيه مع الدليل على كل نتيجة.",
+    "independent": "هذه الأداة مستقلة وغير تابعة لمنصة سلة."
+  },
+  "form": {
+    "label": "رابط المتجر",
+    "placeholder": "mahwous.com",
+    "submit": "افحص المتجر",
+    "working": "جارٍ الفحص",
+    "hint": "يعمل مع دومين المتجر، أو رابط منتج، أو رابط salla.sa",
+    "errors": {
+      "empty": "اكتب رابط المتجر أولاً",
+      "invalid": "الرابط غير صالح",
+      "platform": "هذا رابط صفحة من سلة نفسها، مو متجر",
+      "rateLimited": "وصلت للحد المسموح من الفحوصات. جرّب بعد دقيقة",
+      "unreachable": "ما قدرنا نفتح المتجر. تأكد من الرابط وحاول مرة ثانية",
+      "unknown": "صار خطأ غير متوقع. حاول مرة ثانية"
+    }
+  },
+  "status": {
+    "notSalla": {
+      "title": "هذا الموقع ليس متجر سلة",
+      "body": "ما لقينا علامات منصة سلة في الصفحة. تأكد أن المتجر مبني على سلة."
+    },
+    "closed": {
+      "title": "المتجر مغلق",
+      "body": "المتجر لم يعد متاحاً، فما فيه بيانات نفحصها."
+    },
+    "maintenance": {
+      "title": "المتجر تحت الصيانة",
+      "body": "صفحة الصيانة ما تحتوي على أي تطبيقات. جرّب لاحقاً."
+    },
+    "blocked": {
+      "title": "الوصول محجوب مؤقتاً",
+      "body": "المتجر رفض الطلب. جرّب بعد شوي."
+    },
+    "unsupported": {
+      "title": "صفحة غير مدعومة",
+      "body": "هذا متجر سلة، لكن شكل صفحته غير متوقع. سجّلنا الحالة للمراجعة."
+    }
+  },
+  "report": {
+    "apps": "التطبيقات المرصودة",
+    "appsEmpty": "ما رصدنا أي تطبيق له أثر في الواجهة.",
+    "dropshipping": "الدروبشيبنق",
+    "integrations": "الربط المدمج",
+    "integrationsEmpty": "ما فيه ربط مدمج مفعّل.",
+    "payments": "الدفع",
+    "installments": "التقسيط",
+    "unknown": "آثار غير معروفة",
+    "unknownBody": "آثار لم نتعرف عليها بعد، ونراجعها لتحسين الكشف.",
+    "evidence": "الدليل",
+    "theme": "الثيم",
+    "storeId": "رقم المتجر",
+    "scannedAt": "وقت الفحص",
+    "another": "افحص متجراً آخر",
+    "disclaimer": "التطبيقات التي تعمل بين سلة وخادم المزوّد فقط، مثل الشحن والمحاسبة والرسائل، لا تترك أثراً عاماً. لذلك «لم يُرصد» لا تعني «غير مثبّت».",
+    "confidence": {
+      "confirmed": "مؤكد",
+      "strong": "قوي",
+      "possible": "محتمل"
+    },
+    "flags": {
+      "preinstalled": "مثبّت افتراضياً",
+      "delisted": "محذوف من متجر التطبيقات",
+      "unidentified": "غير معروف الهوية",
+      "company": "أحد تطبيقات هذه الشركة"
+    },
+    "appStore": "صفحة التطبيق",
+    "paymentNames": {
+      "mada": "مدى",
+      "credit_card": "بطاقة ائتمانية",
+      "bank": "تحويل بنكي",
+      "stc_pay": "STC Pay",
+      "apple_pay": "Apple Pay",
+      "cod": "الدفع عند الاستلام",
+      "customer_wallet": "محفظة العميل",
+      "tabby_installment": "تابي",
+      "tamara_installment": "تمارا",
+      "emkan_installment": "إمكان",
+      "madfu_installment": "مدفوع",
+      "tabby": "تابي",
+      "tamara": "تمارا",
+      "emkan": "إمكان",
+      "madfu": "مدفوع"
+    },
+    "integrationNames": {
+      "tiktok_pixel": "TikTok Pixel",
+      "snapchat_pixel": "Snapchat Pixel",
+      "firebase": "Firebase",
+      "addon-whatsapp-chat": "محادثة واتساب",
+      "addon-whatsapp": "واتساب",
+      "salla-ads-google-conversion": "إعلانات سلة — Google",
+      "salla-ads-tiktok-capi": "إعلانات سلة — TikTok",
+      "addon-twitter-pixel-v2": "X Pixel",
+      "get_button": "Get Button",
+      "facebook_messenger": "Messenger"
+    }
+  }
+}

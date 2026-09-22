@@ -28,3 +28,6 @@ pnpm-debug.log*
 !.vscode/extensions.json
 .DS_Store
 Thumbs.db
+
+# Next.js build output lives inside the app
+apps/web/.next/
