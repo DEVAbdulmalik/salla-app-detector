@@ -1,0 +1,317 @@
+{
+  "hits": [
+    {
+      "id": "542868434",
+      "name": {
+        "ar": "زود, زد مبيعاتك وارفع متوسط قيمة الطلب",
+        "en": "Zud, Increase Average Order Value"
+      },
+      "short_description": {
+        "ar": "زد مبيعاتك بسهولة مع العروض والباقات والبيع التكاملي (كروس سيل)",
+        "en": "Boost your sales effortlessly with smart offers, bundles, and cross-selling."
+      },
+      "type": "app",
+      "logo": "https://cdn.portal.files.salla.network/uploads/1rkMX8BZGmXy3b34ee44sgk6WjqrLWzfPzTSWsef.png",
+      "embedded_image": "https://cdn.portal.files.salla.network/uploads/sJgE8Yi1EMghQAlHY6nzrS1tr8sCYFLSiuG4etQq.png",
+      "plan": {
+        "type": "recurring",
+        "old_price": {
+          "amount": 99,
+          "currency": "SAR"
+        },
+        "price": {
+          "amount": 69,
+          "currency": "SAR",
+          "recurring": "monthly",
+          "on_demand": false
+        },
+        "has_multiple": true,
+        "is_free": false,
+        "trial_days": 30,
+        "discount_percentage": 30.3
+      },
+      "reviews": {
+        "avg": 5,
+        "count": 23
+      },
+      "installs_count": 1722,
+      "is_salla": false,
+      "is_embedded": true,
+      "hidden": false,
+      "company": {
+        "id": "1863638844",
+        "name": {
+          "en": "صعودك",
+          "ar": "صعودك"
+        }
+      },
+      "updated_at": 1787591436000,
+      "categories": [
+        {
+          "id": "1617628556",
+          "name": {
+            "ar": "التسويق",
+            "en": "Marketing"
+          }
+        },
+        {
+          "id": "2038173539",
+          "name": {
+            "ar": "تحسين الموقع",
+            "en": "Site Optimization"
+          }
+        },
+        {
+          "id": "1480788116",
+          "name": {
+            "ar": "أخرى",
+            "en": "Others"
+          }
+        },
+        {
+          "id": "70191848",
+          "name": {
+            "ar": "التحليل و الاحصاء",
+            "en": "Analytics"
+          }
+        }
+      ],
+      "app_themes": [
+        {
+          "id": "2119052929",
+          "name": {
+            "ar": "حوّل الزوار إلى مشترين",
+            "en": "Convert visitors into buyers"
+          }
+        },
+        {
+          "id": "759769406",
+          "name": {
+            "ar": "كبّر قيمة كل سلة",
+            "en": "Increase AOV"
+          }
+        },
+        {
+          "id": "36841469",
+          "name": {
+            "ar": "وسّع متجرك بالذكاء الاصطناعي",
+            "en": "Grow with AI"
+          }
+        }
+      ],
+      "offer": null,
+      "countries": [
+        {
+          "code": "all",
+          "name": {
+            "ar": "كل الدول",
+            "en": "All countries"
+          }
+        }
+      ],
+      "search_terms": [
+        "زيادة المبيعات",
+        "رفع متوسط قيمة الطلب",
+        "البيع التكاملي",
+        "كروس سيل",
+        "أب سيل",
+        "الباقات",
+        "اشترِ أكثر وفّر أكثر",
+        "العروض والخصومات",
+        "الشحن المجاني",
+        "توصيات المنتجات",
+        "الذكاء الاصطناعي",
+        "منتجات مكملة",
+        "كوّن باقتك",
+        "عداد التخفيضات",
+        "قرب النفاد",
+        "زيادة حجم السلة",
+        "تحسين معدل التحويل",
+        "بدون كود",
+        "AI recommendations",
+        "buy more save more"
+      ],
+      "search_options": [],
+      "meta": {
+        "promo_level": 1,
+        "promo_tag": null
+      },
+      "_timestamp": 1787580638652,
+      "_collections": [
+        "Build for salla",
+        "[kit] Smart Sales Boost Apps",
+        "[section] Increase the value of every cart"
+      ],
+      "objectID": "542868434"
+    },
+    {
+      "id": "361979609",
+      "name": {
+        "ar": "باقات العروض أب سيل و كروس سيل",
+        "en": "Offers Bundles Upsell Cross sell"
+      },
+      "short_description": {
+        "ar": "كبّر سلّة عميلك وارفع متوسط قيمة الطلب مع باقات العروض. جمّع خصومات الكميّة، الإضافات داخل صفحة المنتج، وحزم المنتجات الجاهزة في عروض جذّابة تشجّع العميل يشتري أكثر.",
+        "en": "Boost every cart and lift your average order value with Offers Bundles. Turn quantity discounts, on‑page add‑ons, and ready‑made product bundles into irresistible deals that inspire customers to buy m"
+      },
+      "type": "app",
+      "logo": "https://cdn.portal.files.salla.network/uploads/B3R9WwP4x8MGn3JrLfPmnCQRQzC2Ksi8PUqDM0Er.png",
+      "embedded_image": "https://cdn.portal.files.salla.network/uploads/UlkWJUusBFT2UyqBmBew0ZHfZX7vZCyVKLyDNZGv.jpg",
+      "plan": {
+        "type": "recurring",
+        "old_price": {
+          "amount": 0,
+          "currency": "SAR"
+        },
+        "price": {
+          "amount": 49,
+          "currency": "SAR",
+          "recurring": "monthly",
+          "on_demand": false
+        },
+        "has_multiple": true,
+        "is_free": false,
+        "trial_days": 30,
+        "discount_percentage": null
+      },
+      "reviews": {
+        "avg": 4.89,
+        "count": 151
+      },
+      "installs_count": 2464,
+      "is_salla": false,
+      "is_embedded": true,
+      "hidden": false,
+      "company": {
+        "id": "1326703993",
+        "name": {
+          "en": "Fady Ahmed",
+          "ar": "Fady Ahmed"
+        }
+      },
+      "updated_at": 1788716994000,
+      "categories": [
+        {
+          "id": "1617628556",
+          "name": {
+            "ar": "التسويق",
+            "en": "Marketing"
+          }
+        },
+        {
+          "id": "2038173539",
+          "name": {
+            "ar": "تحسين الموقع",
+            "en": "Site Optimization"
+          }
+        },
+        {
+          "id": "1480788116",
+          "name": {
+            "ar": "أخرى",
+            "en": "Others"
+          }
+        },
+        {
+          "id": "1907628011",
+          "name": {
+            "ar": "زيادة المبيعات",
+            "en": "Cross/up sell"
+          }
+        }
+      ],
+      "app_themes": [
+        {
+          "id": "2119052929",
+          "name": {
+            "ar": "حوّل الزوار إلى مشترين",
+            "en": "Convert visitors into buyers"
+          }
+        },
+        {
+          "id": "759769406",
+          "name": {
+            "ar": "كبّر قيمة كل سلة",
+            "en": "Increase AOV"
+          }
+        }
+      ],
+      "offer": null,
+      "countries": [
+        {
+          "code": "all",
+          "name": {
+            "ar": "كل الدول",
+            "en": "All countries"
+          }
+        }
+      ],
+      "search_terms": [
+        "باقات العروض",
+        "خصومات الكميات",
+        "العروض الخاصة",
+        "عروض الهدايا",
+        "اشترِ واحصل",
+        "زيادة المبيعات",
+        "تحسين المبيعات",
+        "زيادة قيمة الطلب",
+        "خصومات مجمعة",
+        "تسويق المتجر",
+        "تخفيضات على الكميات",
+        "offers bundles",
+        "volume discounts",
+        "gift offers",
+        "buy x get y",
+        "increase sales",
+        "boost sales",
+        "increase order value",
+        "special offers",
+        "bundled discounts",
+        "promotional offers",
+        "quantity break",
+        "quantity discounts",
+        "percentage discounts",
+        "tiered pricing",
+        "discounts",
+        "BOGO",
+        "bulk pricing",
+        "upsell bundles",
+        "upsell",
+        "cross-sell bundles",
+        "خصومات النسبة المئوية",
+        "خصومات متدرجة",
+        "تسعير متدرج",
+        "خصومات",
+        "خصومات ثابتة",
+        "اشترِ واحدة واحصل على أخرى",
+        "تسعير بالجملة",
+        "باقات الترقية",
+        "ترقية البيع",
+        "باقات البيع المتقاطع",
+        "الارتقاء بالصفقة",
+        "الارتقاء بالمبيعات",
+        "البيع التكميلي",
+        "البيع المكمل",
+        "كروس سيل",
+        "corss sell",
+        "البيع المتقاطع"
+      ],
+      "search_options": [],
+      "meta": {
+        "promo_level": 1,
+        "promo_tag": null
+      },
+      "_timestamp": 1788706196372,
+      "_collections": [
+        "Build for salla",
+        "[kit] Smart Sales Boost Apps",
+        "[section] Increase the value of every cart"
+      ],
+      "objectID": "361979609"
+    }
+  ],
+  "nbHits": 797,
+  "nbPages": 399,
+  "page": 0,
+  "hitsPerPage": 2
+}

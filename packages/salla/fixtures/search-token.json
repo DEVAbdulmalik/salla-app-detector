@@ -1,0 +1,11 @@
+{
+  "status": 200,
+  "success": true,
+  "data": {
+    "token": "REDACTED-TEST-TOKEN",
+    "expires_at": "2026-09-29 18:31:15",
+    "user_id": null,
+    "store_id": null,
+    "index": "apps_index"
+  }
+}
