@@ -8,6 +8,7 @@
   },
   "scripts": {
     "typecheck": "tsc --noEmit -p tsconfig.json && pnpm --recursive run typecheck",
+    "cli": "tsx tools/cli/src/main.ts",
     "lint": "eslint . --max-warnings 0",
     "format": "prettier . --write",
     "format:check": "prettier . --check",

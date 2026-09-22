@@ -1,0 +1,16 @@
+{
+  "name": "@salla-app-detector/cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@salla-app-detector/engine": "workspace:*",
+    "@salla-app-detector/jobs": "workspace:*",
+    "@salla-app-detector/knowledge": "workspace:*",
+    "@salla-app-detector/salla": "workspace:*",
+    "@salla-app-detector/shared": "workspace:*"
+  }
+}

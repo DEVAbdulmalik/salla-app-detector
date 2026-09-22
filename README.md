@@ -11,7 +11,8 @@ means "not installed".
 
 ## Status
 
-Under construction. The foundation is in place; the detection engine is next.
+Under construction. Detection works end to end from the terminal; the knowledge base still
+ships as a static seed, and the web front end is next.
 
 ## Layout
 
@@ -25,10 +26,12 @@ Under construction. The foundation is in place; the detection engine is next.
 | `apps/web`           | Next.js front end, public API, admin                                |
 | `tools/cli`          | Local commands for scanning and maintaining the knowledge base      |
 
-Only `packages/shared` exists today; the rest arrive with the work that needs them.
+`apps/web` arrives with the work that needs it.
 
 The engine never performs I/O. It takes a page and a knowledge snapshot and returns a
-report, which keeps the whole detection path testable offline against saved pages.
+report, which keeps the whole detection path testable offline against saved pages. Fetching
+lives in `packages/salla`, where requests are restricted to public addresses and every
+response is validated against a schema.
 
 ## Requirements
 
@@ -43,17 +46,27 @@ cp .env.example .env.local
 pnpm check
 ```
 
+## Scanning a store
+
+```bash
+pnpm cli scan mahwous.com          # readable summary
+pnpm cli scan mahwous.com --json   # the full report
+```
+
+Any link to the store works: its own domain, a `salla.sa` handle, or a product page.
+
 ## Scripts
 
-| Command              | Description                          |
-| -------------------- | ------------------------------------ |
-| `pnpm check`         | Types, lint, formatting, and tests   |
-| `pnpm typecheck`     | TypeScript across every package      |
-| `pnpm lint`          | ESLint, warnings treated as failures |
-| `pnpm format`        | Apply Prettier                       |
-| `pnpm test`          | Vitest once                          |
-| `pnpm test:watch`    | Vitest in watch mode                 |
-| `pnpm test:coverage` | Vitest with coverage                 |
+| Command               | Description                          |
+| --------------------- | ------------------------------------ |
+| `pnpm check`          | Types, lint, formatting, and tests   |
+| `pnpm cli scan <url>` | Scan one store from the terminal     |
+| `pnpm typecheck`      | TypeScript across every package      |
+| `pnpm lint`           | ESLint, warnings treated as failures |
+| `pnpm format`         | Apply Prettier                       |
+| `pnpm test`           | Vitest once                          |
+| `pnpm test:watch`     | Vitest in watch mode                 |
+| `pnpm test:coverage`  | Vitest with coverage                 |
 
 ## Note
 
