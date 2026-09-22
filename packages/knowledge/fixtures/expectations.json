@@ -1,0 +1,839 @@
+[
+ {
+  "file": "store-1011295892.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1011295892,
+  "apps": [
+   "347973230",
+   "691365818",
+   "939200655",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "google_analytics",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-1115212126.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1115212126,
+  "apps": [
+   "169103247",
+   "691365818",
+   "939200655",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-twitter-pixel-v2",
+   "adwords",
+   "google_analytics",
+   "snapchat_pixel",
+   "tiktok_pixel",
+   "twitter_pixel"
+  ]
+ },
+ {
+  "file": "store-1139642123.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1139642123,
+  "apps": [
+   "2074708713",
+   "347973230",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "facebook_pixel",
+   "google_analytics",
+   "hotjar",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-1227895684.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1227895684,
+  "apps": [
+   "1764455703",
+   "258560542",
+   "347973230",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-microsoft-clarity",
+   "crazy_egg",
+   "facebook_messenger",
+   "facebook_pixel",
+   "google_analytics",
+   "hotjar",
+   "hubspot",
+   "livechat",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-1233817732.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1233817732,
+  "apps": [
+   "1514900071",
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": []
+ },
+ {
+  "file": "store-1288940964.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1288940964,
+  "apps": [
+   "1662840947",
+   "2085775581",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-microsoft-clarity",
+   "google_analytics",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-1292945142.html.gz",
+  "httpStatus": 200,
+  "status": "unsupported",
+  "apps": [],
+  "dropshipping": [],
+  "integrations": []
+ },
+ {
+  "file": "store-1328842359.html.gz",
+  "httpStatus": 200,
+  "status": "not-salla",
+  "apps": [],
+  "dropshipping": [],
+  "integrations": []
+ },
+ {
+  "file": "store-1342554438.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1342554438,
+  "apps": [
+   "1061194345",
+   "1514900071",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": []
+ },
+ {
+  "file": "store-1494664408.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1494664408,
+  "apps": [
+   "347973230",
+   "542868434",
+   "691365818",
+   "996829016",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "google_analytics",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-1498520261.html.gz",
+  "httpStatus": 200,
+  "status": "unsupported",
+  "apps": [],
+  "dropshipping": [],
+  "integrations": []
+ },
+ {
+  "file": "store-1505106443.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1505106443,
+  "apps": [
+   "347973230",
+   "542868434",
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "facebook_pixel",
+   "google_analytics",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-1514824166.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1514824166,
+  "apps": [
+   "1061194345",
+   "1514900071",
+   "1949099999",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "facebook_pixel",
+   "google_analytics",
+   "hotjar",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-1616857828.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1616857828,
+  "apps": [
+   "1180703836",
+   "347973230",
+   "361979609",
+   "691365818",
+   "861510477",
+   "939200655",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "facebook_pixel",
+   "google_analytics",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-1672218314.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1672218314,
+  "apps": [
+   "302543170",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-twitter-pixel-v2",
+   "google_analytics",
+   "snapchat_pixel",
+   "twitter_pixel"
+  ]
+ },
+ {
+  "file": "store-176901647.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 176901647,
+  "apps": [
+   "1222482723",
+   "691365818",
+   "996829016",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "adwords",
+   "facebook_pixel",
+   "google_analytics",
+   "hotjar",
+   "salla-ads-google-conversion",
+   "salla-ads-tiktok-capi",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-1848814601.html.gz",
+  "httpStatus": 200,
+  "status": "not-salla",
+  "apps": [],
+  "dropshipping": [],
+  "integrations": []
+ },
+ {
+  "file": "store-1881200579.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1881200579,
+  "apps": [
+   "1949099999",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "adwords",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-1909496949.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1909496949,
+  "apps": [
+   "302543170",
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-whatsapp",
+   "snapchat_pixel"
+  ]
+ },
+ {
+  "file": "store-2029424581.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 2029424581,
+  "apps": [
+   "1332405289",
+   "361979609",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "adwords",
+   "facebook_pixel",
+   "google_analytics",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-2034846558.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 2034846558,
+  "apps": [
+   "1764455703",
+   "347973230",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": []
+ },
+ {
+  "file": "store-2099434498.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 2099434498,
+  "apps": [
+   "1332405289",
+   "240202805",
+   "691365818",
+   "939200655",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-whatsapp-chat",
+   "adwords",
+   "google_analytics",
+   "hotjar",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-2123933851.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 2123933851,
+  "apps": [
+   "240202805",
+   "691365818",
+   "939200655",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-whatsapp-chat",
+   "facebook_pixel",
+   "google_analytics",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-351351499.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 351351499,
+  "apps": [
+   "1286413041",
+   "1610885719",
+   "320228521",
+   "361979609",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-microsoft-clarity",
+   "adwords",
+   "facebook_pixel",
+   "freshworks",
+   "google_analytics",
+   "hotjar",
+   "intercom",
+   "snapchat_pixel",
+   "tiktok_pixel",
+   "yandex_metrica"
+  ]
+ },
+ {
+  "file": "store-474359886.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 474359886,
+  "apps": [
+   "1610885719",
+   "338190499",
+   "361979609",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "adwords",
+   "facebook_pixel",
+   "google_analytics",
+   "snapchat_pixel",
+   "tiktok_pixel",
+   "yandex_metrica"
+  ]
+ },
+ {
+  "file": "store-504871843.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 504871843,
+  "apps": [
+   "210017680",
+   "361979609",
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "adwords",
+   "crazy_egg",
+   "firebase"
+  ]
+ },
+ {
+  "file": "store-556168209.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 556168209,
+  "apps": [
+   "1099604538",
+   "691365818",
+   "939200655",
+   "996829016",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-microsoft-clarity",
+   "facebook_pixel",
+   "google_analytics",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-878058349.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 878058349,
+  "apps": [
+   "1099604538",
+   "1332405289",
+   "1649450762",
+   "361979609",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-whatsapp",
+   "facebook_pixel",
+   "google_analytics",
+   "hotjar",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-988990080.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 988990080,
+  "apps": [
+   "1514900071",
+   "2085775581",
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": []
+ },
+ {
+  "file": "store-abayeat-odela.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1746707855,
+  "apps": [
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "salla-ads-tiktok-capi"
+  ]
+ },
+ {
+  "file": "store-abo-yasir.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 705234153,
+  "apps": [
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "google_analytics"
+  ]
+ },
+ {
+  "file": "store-aen-perfume1.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1187241913,
+  "apps": [
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-microsoft-clarity",
+   "adwords",
+   "facebook_pixel",
+   "google_analytics",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-aksswarat-brandat.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1905385042,
+  "apps": [
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": []
+ },
+ {
+  "file": "store-alassalah.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 256308271,
+  "apps": [
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "adwords",
+   "facebook_pixel",
+   "google_analytics",
+   "snapchat_pixel",
+   "tiktok_pixel",
+   "yandex_metrica"
+  ]
+ },
+ {
+  "file": "store-albustan-shop.html.gz",
+  "httpStatus": 200,
+  "status": "maintenance",
+  "apps": [],
+  "dropshipping": [],
+  "integrations": []
+ },
+ {
+  "file": "store-aljoud-perfumes.html.gz",
+  "httpStatus": 200,
+  "status": "maintenance",
+  "apps": [],
+  "dropshipping": [],
+  "integrations": []
+ },
+ {
+  "file": "store-almutamayiz-lllktrwnyeat.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1029102434,
+  "apps": [
+   "347973230",
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "google_analytics",
+   "hotjar",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-alshoog.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1957904008,
+  "apps": [
+   "691365818",
+   "939200655",
+   "996829016",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-microsoft-clarity",
+   "adwords",
+   "facebook_pixel",
+   "google_analytics",
+   "salla-ads-tiktok-capi",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-amazon-pet-shop.html.gz",
+  "httpStatus": 200,
+  "status": "maintenance",
+  "apps": [],
+  "dropshipping": [],
+  "integrations": []
+ },
+ {
+  "file": "store-ateralhrm.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 411934091,
+  "apps": [
+   "1332405289",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "adwords",
+   "google_analytics",
+   "hotjar",
+   "snapchat_pixel"
+  ]
+ },
+ {
+  "file": "store-chinatown.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1482597151,
+  "apps": [
+   "347973230",
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-whatsapp-chat",
+   "freshworks",
+   "google_analytics",
+   "tiktok_pixel",
+   "twitter_pixel"
+  ]
+ },
+ {
+  "file": "store-coffee-souq.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1658035366,
+  "apps": [
+   "1629676963",
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "adwords",
+   "google_analytics",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-coffeepurity.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1589938414,
+  "apps": [
+   "338190499",
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-whatsapp",
+   "addon-whatsapp-chat",
+   "facebook_pixel",
+   "google_analytics",
+   "hotjar",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-fuelupstore.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1099827764,
+  "apps": [
+   "338190499",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-microsoft-clarity",
+   "adwords",
+   "facebook_pixel",
+   "google_analytics",
+   "hotjar",
+   "pinterest_tag",
+   "snapchat_pixel",
+   "tiktok_pixel",
+   "twitter_pixel",
+   "yandex_metrica"
+  ]
+ },
+ {
+  "file": "store-medhaloud-com.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 1962283619,
+  "apps": [
+   "338190499",
+   "691365818",
+   "996829016"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-microsoft-clarity",
+   "adwords",
+   "facebook_pixel",
+   "google_analytics",
+   "snapchat_pixel",
+   "tiktok_pixel",
+   "yandex_metrica"
+  ]
+ },
+ {
+  "file": "store-mkm6366.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 175755988,
+  "apps": [
+   "1244055007",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-microsoft-clarity",
+   "addon-whatsapp-chat",
+   "google_analytics",
+   "snapchat_pixel",
+   "tiktok_pixel",
+   "yandex_metrica"
+  ]
+ },
+ {
+  "file": "store-my-mobile-accessories-store.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 204559445,
+  "apps": [
+   "1244055007",
+   "2074708713",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-microsoft-clarity",
+   "addon-whatsapp",
+   "addon-whatsapp-chat",
+   "adwords",
+   "facebook_pixel",
+   "google_analytics",
+   "salla-ads-google-conversion",
+   "snapchat_pixel",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-mzarat.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 803272727,
+  "apps": [
+   "1662840947",
+   "347973230",
+   "691365818",
+   "unknown:observer"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "addon-microsoft-clarity",
+   "facebook_pixel",
+   "google_analytics",
+   "tiktok_pixel"
+  ]
+ },
+ {
+  "file": "store-qartasia-alqalam-almobda.html.gz",
+  "httpStatus": 200,
+  "status": "live",
+  "storeId": 290914682,
+  "apps": [
+   "1332405289",
+   "691365818"
+  ],
+  "dropshipping": [],
+  "integrations": [
+   "google_analytics",
+   "tiktok_pixel"
+  ]
+ }
+]
