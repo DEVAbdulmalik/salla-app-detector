@@ -2,4 +2,7 @@ coverage/
 .next/
 dist/
 pnpm-lock.yaml
-*.html.gz
+
+# Generated data and captured pages
+packages/knowledge/src/data/
+packages/knowledge/fixtures/

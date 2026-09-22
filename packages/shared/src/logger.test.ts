@@ -1,7 +1,11 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { createLogger, type LogRecord } from "./logger";
 
 const FIXED_TIME = new Date("2026-09-22T10:00:00.000Z");
+
+afterEach(() => {
+  vi.restoreAllMocks();
+});
 
 function recordingLogger(level?: "debug" | "info" | "warn" | "error") {
   const records: LogRecord[] = [];
@@ -70,6 +74,22 @@ describe("createLogger", () => {
       message: "upstream unavailable",
       cause: { name: "TypeError", message: "socket hang up" },
     });
+  });
+
+  it("writes one JSON line per record, sending warnings and errors to stderr", () => {
+    const out = vi.spyOn(console, "log").mockImplementation(() => undefined);
+    const error = vi.spyOn(console, "error").mockImplementation(() => undefined);
+
+    const logger = createLogger({ now: () => FIXED_TIME });
+    logger.info("started", { port: 3000 });
+    logger.error("crashed");
+
+    expect(out).toHaveBeenCalledWith(
+      '{"time":"2026-09-22T10:00:00.000Z","level":"info","msg":"started","port":3000}',
+    );
+    expect(error).toHaveBeenCalledWith(
+      '{"time":"2026-09-22T10:00:00.000Z","level":"error","msg":"crashed"}',
+    );
   });
 
   it("never lets fields overwrite the reserved keys", () => {
