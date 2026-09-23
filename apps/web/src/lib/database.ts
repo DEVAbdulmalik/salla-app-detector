@@ -21,6 +21,7 @@ export function getRepository(): KnowledgeRepository | undefined {
 }
 
 function createPool(url: string): { database: Database; repository: KnowledgeRepository } {
-  const database = connect({ url, maxConnections: 2, connectTimeoutSeconds: 5 });
+  // Four, because a scan now sends its writes together; fewer would serialise them again.
+  const database = connect({ url, maxConnections: 4, connectTimeoutSeconds: 5 });
   return { database, repository: new KnowledgeRepository(database) };
 }

@@ -76,19 +76,26 @@ export async function scan(input: string, clientIp: string | undefined): Promise
   }
 
   const repository = getRepository();
-  if (repository && clientIp !== undefined) {
-    const bucket = `scan:${createHash("sha256").update(clientIp).digest("hex").slice(0, 32)}`;
-    const limit = await tolerate("rate-limit", () =>
-      repository.consumeRateLimit(bucket, RATE_LIMIT.requests, RATE_LIMIT.windowSeconds),
-    );
-    // An unreachable database must not become an outage: the limit simply cannot be
-    // enforced for this request, which is preferable to refusing every visitor.
-    if (limit?.allowed === false) {
-      return { ok: false, error: "rate-limited" };
-    }
-  }
+  // Both answers come from the same database and neither depends on the other, so they
+  // travel together: a round trip to the database is the slowest part of a warm scan.
+  const [limit, cached] = await Promise.all([
+    repository && clientIp !== undefined
+      ? tolerate("rate-limit", () =>
+          repository.consumeRateLimit(
+            `scan:${createHash("sha256").update(clientIp).digest("hex").slice(0, 32)}`,
+            RATE_LIMIT.requests,
+            RATE_LIMIT.windowSeconds,
+          ),
+        )
+      : undefined,
+    readCache(repository, target.value.key),
+  ]);
 
-  const cached = await readCache(repository, target.value.key);
+  // An unreachable database must not become an outage: the limit simply cannot be
+  // enforced for this request, which is preferable to refusing every visitor.
+  if (limit?.allowed === false) {
+    return { ok: false, error: "rate-limited" };
+  }
   if (cached) {
     return cached;
   }

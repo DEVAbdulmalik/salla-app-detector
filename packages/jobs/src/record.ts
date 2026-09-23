@@ -11,7 +11,7 @@ export async function recordScanOutcome(
   report: ScanReport,
   durationMs: number,
 ): Promise<void> {
-  await repository.recordScan({
+  const scan = repository.recordScan({
     storeKey: report.target.key,
     ...(report.store === undefined ? {} : { storeId: report.store.id }),
     status: report.status,
@@ -22,25 +22,29 @@ export async function recordScanOutcome(
   });
 
   if (report.status !== "live") {
+    await scan;
     return;
   }
 
-  await repository.recordFingerprintMatches(
-    report.apps.flatMap((app) =>
-      app.evidence.map((item) => ({ kind: item.kind, value: item.value })),
+  // None of these writes reads what the others write, and the database may be a continent
+  // away, so they go together rather than one round trip after another.
+  await Promise.all([
+    scan,
+    repository.recordFingerprintMatches(
+      report.apps.flatMap((app) =>
+        app.evidence.map((item) => ({ kind: item.kind, value: item.value })),
+      ),
     ),
-  );
-
-  if (report.store?.assetCode !== undefined) {
-    await repository.rememberStoreCode(report.store.assetCode, report.store.id, report.target.key);
-  }
-
-  await repository.recordObservations(
-    report.target.key,
-    report.unknownSignals.map((signal) => ({
-      kind: signal.kind,
-      value: signal.value,
-      ...(signal.detail === undefined ? {} : { sample: signal.detail }),
-    })),
-  );
+    report.store?.assetCode === undefined
+      ? Promise.resolve()
+      : repository.rememberStoreCode(report.store.assetCode, report.store.id, report.target.key),
+    repository.recordObservations(
+      report.target.key,
+      report.unknownSignals.map((signal) => ({
+        kind: signal.kind,
+        value: signal.value,
+        ...(signal.detail === undefined ? {} : { sample: signal.detail }),
+      })),
+    ),
+  ]);
 }
