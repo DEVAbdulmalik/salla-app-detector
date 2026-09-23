@@ -75,6 +75,41 @@ export interface RateLimit {
   readonly remaining: number;
 }
 
+export interface SignalCluster {
+  readonly signalKind: string;
+  readonly signalValue: string;
+  readonly storeCount: number;
+  readonly sample?: string;
+}
+
+export interface CandidateUpsert {
+  readonly signalKind: string;
+  readonly signalValue: string;
+  readonly storeCount: number;
+  readonly suggestedAppId?: string;
+  readonly sample?: string;
+}
+
+export interface CandidateRow extends SignalCluster {
+  readonly status: string;
+  readonly suggestedAppId?: string;
+  readonly suggestedAppName?: string;
+}
+
+export interface HealthEvent {
+  readonly kind: string;
+  readonly severity: "info" | "warning" | "critical";
+  readonly detail?: Record<string, unknown>;
+}
+
+export interface HealthEventRow {
+  readonly id: string;
+  readonly kind: string;
+  readonly severity: string;
+  readonly detail: Record<string, unknown>;
+  readonly createdAt: Date;
+}
+
 export interface JobState {
   readonly cursor: Record<string, unknown>;
   readonly lastRunAt?: Date;
@@ -276,6 +311,129 @@ export class KnowledgeRepository {
     await this.#db.query(
       "delete from rate_limits where window_start < now() - make_interval(secs => $1)",
       [olderThanSeconds],
+    );
+  }
+
+  /** Signals seen across enough distinct stores to be worth investigating. */
+  async signalClusters(minimumStores: number): Promise<SignalCluster[]> {
+    return this.#db.query<SignalCluster>(
+      `select signal_kind as "signalKind",
+              signal_value as "signalValue",
+              count(distinct store_host)::int as "storeCount",
+              min(sample) as sample
+       from observations
+       group by signal_kind, signal_value
+       having count(distinct store_host) >= $1
+       order by count(distinct store_host) desc`,
+      [minimumStores],
+    );
+  }
+
+  async recentScanCount(days: number): Promise<number> {
+    const rows = await this.#db.query<{ count: string }>(
+      `select count(distinct store_host)::text as count from scans
+       where scanned_at > now() - make_interval(days => $1::int) and status = 'live'`,
+      [days],
+    );
+    return Number(rows[0]?.count ?? 0);
+  }
+
+  /** Developer domains mapped to the apps that claim them. */
+  async domainOwners(): Promise<Map<string, string[]>> {
+    const rows = await this.#db.query<{ domain: string; app_ids: string[] }>(
+      `select domain, array_agg(id order by id) as app_ids
+       from apps, unnest(developer_domains) as domain
+       group by domain`,
+    );
+    return new Map(rows.map((row) => [row.domain, row.app_ids]));
+  }
+
+  async upsertCandidates(candidates: readonly CandidateUpsert[]): Promise<void> {
+    if (candidates.length === 0) {
+      return;
+    }
+    await this.#db.query(
+      `insert into candidates (signal_kind, signal_value, store_count, suggested_app_id, sample)
+       select signal_kind, signal_value, store_count, suggested_app_id, sample
+       from jsonb_to_recordset($1::text::jsonb) as incoming(
+         signal_kind text, signal_value text, store_count int, suggested_app_id text, sample text
+       )
+       on conflict (signal_kind, signal_value) do update set
+         store_count = excluded.store_count,
+         -- A decision already made by a person is never overwritten by a later run.
+         suggested_app_id = coalesce(candidates.suggested_app_id, excluded.suggested_app_id),
+         sample = coalesce(candidates.sample, excluded.sample),
+         updated_at = now()`,
+      [
+        JSON.stringify(
+          candidates.map((candidate) => ({
+            signal_kind: candidate.signalKind,
+            signal_value: candidate.signalValue,
+            store_count: candidate.storeCount,
+            suggested_app_id: candidate.suggestedAppId ?? null,
+            sample: candidate.sample ?? null,
+          })),
+        ),
+      ],
+    );
+  }
+
+  async listCandidates(status: string, limit = 50): Promise<CandidateRow[]> {
+    const rows = await this.#db.query<{
+      signalKind: string;
+      signalValue: string;
+      storeCount: number;
+      status: string;
+      sample: string | null;
+      suggestedAppId: string | null;
+      suggestedAppName: string | null;
+    }>(
+      `select c.signal_kind as "signalKind",
+              c.signal_value as "signalValue",
+              c.store_count as "storeCount",
+              c.status,
+              c.sample,
+              c.suggested_app_id as "suggestedAppId",
+              a.name as "suggestedAppName"
+       from candidates c
+       left join apps a on a.id = c.suggested_app_id
+       where c.status = $1
+       order by c.store_count desc
+       limit $2`,
+      [status, limit],
+    );
+
+    // Absent columns come back as null; the domain types use optional fields instead.
+    return rows.map((row) => ({
+      signalKind: row.signalKind,
+      signalValue: row.signalValue,
+      storeCount: row.storeCount,
+      status: row.status,
+      ...(row.sample === null ? {} : { sample: row.sample }),
+      ...(row.suggestedAppId === null ? {} : { suggestedAppId: row.suggestedAppId }),
+      ...(row.suggestedAppName === null ? {} : { suggestedAppName: row.suggestedAppName }),
+    }));
+  }
+
+  async setCandidateStatus(signalKind: string, signalValue: string, status: string): Promise<void> {
+    await this.#db.query(
+      "update candidates set status = $3, updated_at = now() where signal_kind = $1 and signal_value = $2",
+      [signalKind, signalValue, status],
+    );
+  }
+
+  async recentHealthEvents(limit: number): Promise<HealthEventRow[]> {
+    return this.#db.query<HealthEventRow>(
+      `select id::text as id, kind, severity, detail, created_at as "createdAt"
+       from health_events order by created_at desc limit $1`,
+      [limit],
+    );
+  }
+
+  async recordHealthEvent(event: HealthEvent): Promise<void> {
+    await this.#db.query(
+      "insert into health_events (kind, severity, detail) values ($1, $2, $3::text::jsonb)",
+      [event.kind, event.severity, JSON.stringify(event.detail ?? {})],
     );
   }
 
