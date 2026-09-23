@@ -383,3 +383,70 @@ describe("published snapshot", () => {
     expect(rows).toHaveLength(3);
   });
 });
+
+describe("fingerprint upkeep", () => {
+  beforeEach(async () => {
+    await repository.upsertApps([{ id: "1", name: "وِدجت" }]);
+    await repository.upsertFingerprints([
+      {
+        id: "manual:domain:vendor.example",
+        kind: "domain",
+        pattern: "vendor.example",
+        strength: "strong",
+        source: "manual",
+        appId: "1",
+      },
+      {
+        id: "manual:service:hotjar",
+        kind: "service",
+        pattern: "hotjar",
+        strength: "decisive",
+        source: "manual",
+        appId: "1",
+      },
+    ]);
+  });
+
+  it("counts the fingerprints a scan matched and leaves the rest alone", async () => {
+    await repository.recordFingerprintMatches([
+      { kind: "domain", value: "vendor.example" },
+      { kind: "domain", value: "never-seeded.example" },
+    ]);
+    await repository.recordFingerprintMatches([{ kind: "domain", value: "vendor.example" }]);
+
+    const rows = await repository.searchFingerprints("");
+    const counts = Object.fromEntries(rows.map((row) => [row.pattern, row.matchCount]));
+
+    expect(counts).toEqual({ "vendor.example": 2, hotjar: 0 });
+    expect(rows.find((row) => row.pattern === "vendor.example")?.lastMatchedAt).toBeInstanceOf(
+      Date,
+    );
+  });
+
+  it("finds a fingerprint by its pattern or by the app behind it", async () => {
+    expect((await repository.searchFingerprints("vendor")).map((row) => row.pattern)).toEqual([
+      "vendor.example",
+    ]);
+    expect((await repository.searchFingerprints("وِدجت")).map((row) => row.appName)).toEqual([
+      "وِدجت",
+      "وِدجت",
+    ]);
+  });
+
+  it("disables a fingerprint without losing it, then removes it", async () => {
+    await repository.setFingerprintState("manual:service:hotjar", { status: "disabled" });
+    const disabled = await repository.searchFingerprints("hotjar");
+    expect(disabled[0]?.status).toBe("disabled");
+
+    await repository.deleteFingerprint("manual:service:hotjar");
+    expect(await repository.searchFingerprints("hotjar")).toEqual([]);
+  });
+
+  it("drops a noise rule a person decided was not noise", async () => {
+    await repository.upsertNoiseRules([{ kind: "domains", pattern: "cdn.example" }]);
+    expect((await repository.noiseRules()).map((rule) => rule.pattern)).toEqual(["cdn.example"]);
+
+    await repository.deleteNoiseRule("domains", "cdn.example");
+    expect(await repository.noiseRules()).toEqual([]);
+  });
+});

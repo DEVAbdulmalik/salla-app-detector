@@ -164,6 +164,12 @@ async function persist(
     return;
   }
 
+  await repository.recordFingerprintMatches(
+    report.apps.flatMap((app) =>
+      app.evidence.map((item) => ({ kind: item.kind, value: item.value })),
+    ),
+  );
+
   if (report.store?.assetCode !== undefined) {
     await repository.rememberStoreCode(report.store.assetCode, report.store.id, report.target.host);
   }

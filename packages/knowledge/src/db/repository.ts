@@ -557,6 +557,26 @@ export class KnowledgeRepository {
     }));
   }
 
+  /**
+   * Counts the fingerprints a scan matched. It is what tells a stale fingerprint from an
+   * unpopular one: both find nothing today, but only one of them used to find something.
+   */
+  async recordFingerprintMatches(
+    signals: readonly { readonly kind: string; readonly value: string }[],
+  ): Promise<void> {
+    if (signals.length === 0) {
+      return;
+    }
+    await this.#db.query(
+      `update fingerprints f set
+         match_count = f.match_count + 1,
+         last_matched_at = now()
+       from jsonb_to_recordset($1::text::jsonb) as matched(kind text, pattern text)
+       where f.kind = matched.kind and f.pattern = matched.pattern`,
+      [JSON.stringify(signals.map((signal) => ({ kind: signal.kind, pattern: signal.value })))],
+    );
+  }
+
   /** Disabling is preferred to deleting: a fingerprint that once matched is evidence. */
   async setFingerprintState(
     id: string,
