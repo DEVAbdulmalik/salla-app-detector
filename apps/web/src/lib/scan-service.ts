@@ -28,6 +28,13 @@ export type ScanOutcome =
   ({ readonly ok: true } & ScanSuccess) | { readonly ok: false; readonly error: ScanError };
 
 const CACHE_MINUTES = 360;
+/**
+ * How long a result that says more about us than about the store may be reused. A block
+ * or an unreadable page is often momentary, and serving it for hours hides a store that
+ * came back minutes later.
+ */
+const TRANSIENT_CACHE_MINUTES = 10;
+const TRANSIENT_STATUSES = new Set(["blocked", "unsupported"]);
 /** A visitor waits for a page, not for a stubborn store. */
 const SCAN_DEADLINE_MS = 25_000;
 const REQUEST_TIMEOUT_MS = 10_000;
@@ -103,9 +110,16 @@ async function readCache(
   if (!recent) {
     return undefined;
   }
+
+  const report = recent.report as ScanReport;
+  const ageMinutes = (Date.now() - recent.scannedAt.getTime()) / 60_000;
+  if (TRANSIENT_STATUSES.has(report.status) && ageMinutes > TRANSIENT_CACHE_MINUTES) {
+    return undefined;
+  }
+
   return {
     ok: true,
-    report: recent.report as ScanReport,
+    report,
     key,
     scannedAt: recent.scannedAt,
     fromCache: true,
