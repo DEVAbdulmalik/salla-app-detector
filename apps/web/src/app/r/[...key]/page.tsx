@@ -35,7 +35,7 @@ export default async function ReportPage({ params }: PageProps) {
     notFound();
   }
 
-  const notice = noticeFor(result.report.status, messages);
+  const notice = noticeFor(result.report.status, storeKey, messages);
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12 sm:py-16">
@@ -77,6 +77,7 @@ async function load(storeKey: string): Promise<ScanSuccess | undefined> {
 
 function noticeFor(
   status: PageStatus,
+  storeKey: string,
   messages: ReturnType<typeof getMessages>,
 ): { title: string; body: string } | undefined {
   switch (status) {
@@ -89,7 +90,9 @@ function noticeFor(
     case "maintenance":
       return messages.status.maintenance;
     case "blocked":
-      return messages.status.blocked;
+      // A key with a handle in it means the store has no domain of its own, and the
+      // platform's own host is what refused us, which the visitor can act on.
+      return storeKey.includes("/") ? messages.status.blockedHandle : messages.status.blocked;
     case "unsupported":
       return messages.status.unsupported;
   }
