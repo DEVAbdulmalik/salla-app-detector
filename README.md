@@ -9,11 +9,6 @@ level. Apps that run only between Salla and a vendor's server (shipping, account
 messaging) leave no public trace and are out of scope, so a result of "not detected" never
 means "not installed".
 
-## Status
-
-Under construction. Detection works end to end from the terminal; the knowledge base still
-ships as a static seed, and the web front end is next.
-
 ## Layout
 
 | Path                 | Purpose                                                             |
@@ -25,8 +20,6 @@ ships as a static seed, and the web front end is next.
 | `packages/jobs`      | Scanning, catalog sync, learning loop, health checks                |
 | `apps/web`           | Next.js front end, public API, admin                                |
 | `tools/cli`          | Local commands for scanning and maintaining the knowledge base      |
-
-`apps/web` arrives with the work that needs it.
 
 The engine never performs I/O. It takes a page and a knowledge snapshot and returns a
 report, which keeps the whole detection path testable offline against saved pages. Fetching
@@ -71,6 +64,36 @@ pnpm cli sync catalog    # refresh the catalogue and regenerate fingerprints
 `sync catalog` works within a time budget and saves its place, so a large refresh can span
 several scheduled runs. Set `DATABASE_URL` in `.env.local`; see `.env.example`.
 
+## Running it in production
+
+The web app is deployed on Vercel and the database is Supabase. Two schedules keep the
+knowledge current: the catalogue sync at 02:00 and the learning loop at 03:00, which also
+runs the monitoring checks. Both endpoints require the `CRON_SECRET` bearer token.
+
+Keep the serverless functions in the same region as the database. A scan that crosses
+continents spends most of its time waiting on the network rather than on the store.
+
+```bash
+pnpm cli health                  # run the monitoring checks now
+pnpm cli canary <url> ...        # watch a store whose apps are known
+pnpm cli canary --list
+pnpm cli quality-report          # measure detection against known installations
+pnpm cli validate <signal> --app <id>   # check a proposed fingerprint
+```
+
+### What the alerts mean
+
+| Alert                  | Reading                                                                                                                                                                              |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `canary-missing-app`   | One store lost one app: that app's fingerprint is probably stale. Scan the store, look at what changed, and promote a replacement from the candidate queue.                          |
+| `canary-sweep`         | Several canaries lost apps at once: Salla changed something structural. Compare a saved page with a fresh one before touching any fingerprint.                                       |
+| `blocked-rate`         | A quarter of recent scans came back blocked. Usually the hosting provider's addresses are being challenged; check from a different network before assuming the detector is at fault. |
+| `fingerprint-silent`   | An app detected across several stores last week and none this week. Treat like a stale fingerprint.                                                                                  |
+| `unmapped-service-key` | Salla added a built-in integration. Map the key to an app in the services table.                                                                                                     |
+
+The canary expectation is whatever detection finds on the day the canary is added, so add
+canaries only from stores you have looked at.
+
 ## Scripts
 
 | Command               | Description                          |
@@ -83,6 +106,7 @@ several scheduled runs. Set `DATABASE_URL` in `.env.local`; see `.env.example`.
 | `pnpm test`           | Vitest once                          |
 | `pnpm test:watch`     | Vitest in watch mode                 |
 | `pnpm test:coverage`  | Vitest with coverage                 |
+| `pnpm cli health`     | Run the monitoring checks            |
 
 ## Note
 
