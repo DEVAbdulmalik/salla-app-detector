@@ -50,14 +50,19 @@ function CandidateCard({
   const m = messages.admin.candidates;
   const [appId, setAppId] = useState(candidate.suggestedAppId ?? "");
   const [done, setDone] = useState<Decision | undefined>(undefined);
+  const [error, setError] = useState<string | undefined>(undefined);
   const [pending, startTransition] = useTransition();
 
   const decide = (decision: Decision): void => {
+    setError(undefined);
     startTransition(async () => {
       const result = await onDecide(candidate.signalKind, candidate.signalValue, decision, appId);
       if (result.ok) {
         setDone(decision);
+        return;
       }
+      const reasons: Record<string, string> = m.errors;
+      setError(reasons[result.error ?? "unknown"] ?? m.errors.unknown);
     });
   };
 
@@ -127,6 +132,8 @@ function CandidateCard({
           {m.ignore}
         </button>
       </div>
+
+      {error !== undefined && <p className="mt-3 text-sm text-caution">{error}</p>}
     </article>
   );
 }
