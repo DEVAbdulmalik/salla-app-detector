@@ -114,6 +114,36 @@ export interface GroundTruthRow {
   readonly storeId: string;
 }
 
+export interface FingerprintRow {
+  readonly id: string;
+  readonly kind: string;
+  readonly pattern: string;
+  readonly strength: FingerprintStrength;
+  readonly source: FingerprintSource;
+  readonly status: FingerprintStatus;
+  readonly appId?: string;
+  readonly appName?: string;
+  readonly company?: string;
+  readonly matchCount: number;
+  readonly lastMatchedAt?: Date;
+}
+
+export interface NoiseRow {
+  readonly kind: string;
+  readonly pattern: string;
+  readonly reason?: string;
+}
+
+export interface ScanRow {
+  readonly id: string;
+  readonly storeHost: string;
+  readonly status: string;
+  readonly appCount: number;
+  readonly unknownCount: number;
+  readonly durationMs: number;
+  readonly scannedAt: Date;
+}
+
 export interface StatusShare {
   readonly status: string;
   readonly stores: number;
@@ -483,6 +513,118 @@ export class KnowledgeRepository {
       "update candidates set status = $3, updated_at = now() where signal_kind = $1 and signal_value = $2",
       [signalKind, signalValue, status],
     );
+  }
+
+  /** Everything the panel needs to review one fingerprint, newest matches first. */
+  async searchFingerprints(term: string, limit = 60): Promise<FingerprintRow[]> {
+    const rows = await this.#db.query<{
+      id: string;
+      kind: string;
+      pattern: string;
+      strength: FingerprintStrength;
+      source: FingerprintSource;
+      status: FingerprintStatus;
+      app_id: string | null;
+      app_name: string | null;
+      company: string | null;
+      match_count: string;
+      last_matched_at: Date | null;
+    }>(
+      `select f.id, f.kind, f.pattern, f.strength, f.source, f.status,
+              f.app_id, a.name as app_name, f.company,
+              f.match_count::text, f.last_matched_at
+       from fingerprints f
+       left join apps a on a.id = f.app_id
+       where $1 = '' or f.pattern ilike '%' || $1 || '%' or a.name ilike '%' || $1 || '%'
+          or f.app_id = $1 or f.company ilike '%' || $1 || '%'
+       order by f.status, f.match_count desc, f.pattern
+       limit $2`,
+      [term, limit],
+    );
+
+    return rows.map((row) => ({
+      id: row.id,
+      kind: row.kind,
+      pattern: row.pattern,
+      strength: row.strength,
+      source: row.source,
+      status: row.status,
+      ...(row.app_id === null ? {} : { appId: row.app_id }),
+      ...(row.app_name === null ? {} : { appName: row.app_name }),
+      ...(row.company === null ? {} : { company: row.company }),
+      matchCount: Number(row.match_count),
+      ...(row.last_matched_at === null ? {} : { lastMatchedAt: row.last_matched_at }),
+    }));
+  }
+
+  /** Disabling is preferred to deleting: a fingerprint that once matched is evidence. */
+  async setFingerprintState(
+    id: string,
+    state: { status?: FingerprintStatus; strength?: FingerprintStrength },
+  ): Promise<void> {
+    await this.#db.query(
+      `update fingerprints set
+         status = coalesce($2, status),
+         strength = coalesce($3, strength),
+         updated_at = now()
+       where id = $1`,
+      [id, state.status ?? null, state.strength ?? null],
+    );
+  }
+
+  async deleteFingerprint(id: string): Promise<void> {
+    await this.#db.query("delete from fingerprints where id = $1", [id]);
+  }
+
+  async noiseRules(): Promise<NoiseRow[]> {
+    const rows = await this.#db.query<{ kind: string; pattern: string; reason: string | null }>(
+      "select kind, pattern, reason from noise_rules order by kind, pattern",
+    );
+    return rows.map((row) => ({
+      kind: row.kind,
+      pattern: row.pattern,
+      ...(row.reason === null ? {} : { reason: row.reason }),
+    }));
+  }
+
+  async deleteNoiseRule(kind: string, pattern: string): Promise<void> {
+    await this.#db.query("delete from noise_rules where kind = $1 and pattern = $2", [
+      kind,
+      pattern,
+    ]);
+  }
+
+  /** The scan history, for looking at what detection did on a particular store. */
+  async recentScans(limit: number, term = ""): Promise<ScanRow[]> {
+    const rows = await this.#db.query<{
+      id: string;
+      store_host: string;
+      status: string;
+      app_count: number;
+      unknown_count: number;
+      duration_ms: number;
+      scanned_at: Date;
+    }>(
+      `select id::text, store_host, status,
+              jsonb_array_length(coalesce(report->'apps', '[]'::jsonb)) as app_count,
+              jsonb_array_length(coalesce(report->'unknownSignals', '[]'::jsonb)) as unknown_count,
+              duration_ms, scanned_at
+       from scans
+       where $2 = '' or store_host ilike '%' || $2 || '%'
+       order by scanned_at desc
+       limit $1`,
+      [limit, term],
+    );
+
+    return rows.map((row) => ({
+      id: row.id,
+      storeHost: row.store_host,
+      status: row.status,
+      appCount: row.app_count,
+      unknownCount: row.unknown_count,
+      durationMs: row.duration_ms,
+      scannedAt: row.scanned_at,
+    }));
   }
 
   /** Stores with a known set of apps, scanned daily to notice detection going quiet. */
