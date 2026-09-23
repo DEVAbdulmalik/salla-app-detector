@@ -23,10 +23,12 @@ export async function GET(request: Request): Promise<Response> {
 
   // Timing the calls a scan makes shows which one is slow in a deployed environment.
   if (deep && repository && database === "ok") {
+    let knowledgeVersion = "none";
     timings.snapshot = await timed(async () => {
-      const snapshot = await repository.loadSnapshot();
-      return Object.keys(snapshot.apps).length;
+      const snapshot = await repository.readPublishedSnapshot();
+      knowledgeVersion = snapshot?.version ?? "none";
     });
+    timings.knowledgeVersion = knowledgeVersion;
     timings.recentScan = await timed(() => repository.recentScan("example.test", 360));
     timings.rateLimit = await timed(() => repository.consumeRateLimit("health", 1000, 60));
   }
