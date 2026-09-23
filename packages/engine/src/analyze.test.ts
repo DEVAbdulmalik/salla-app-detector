@@ -182,6 +182,12 @@ describe("analyzeStore", () => {
     expect(report.unknownSignals.some((signal) => signal.kind === "host")).toBe(false);
   });
 
+  it("keeps the store's CDN code, which ties review avatars back to this storefront", () => {
+    const report = scan(page(`<img src="https://cdn.salla.sa/QNvEG/logo.png">`));
+
+    expect(report.store?.assetCode).toBe("QNvEG");
+  });
+
   it("returns an empty report for a page that is not a live store", () => {
     const report = scan("<html><body>a plain page</body></html>");
 

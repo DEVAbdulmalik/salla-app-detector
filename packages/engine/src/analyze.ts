@@ -44,7 +44,9 @@ export function analyzeStore(input: AnalyzeInput, knowledge: CompiledKnowledge):
   return buildReport({
     target: input.target,
     status: classification.status,
-    ...(storeConfig === undefined ? {} : { store: summarize(storeConfig) }),
+    ...(storeConfig === undefined
+      ? {}
+      : { store: summarize(storeConfig, document.storeAssetCode) }),
     matches,
     unmatched: [...unmatched, ...products.unknownImageHosts],
     payments: {
@@ -55,9 +57,10 @@ export function analyzeStore(input: AnalyzeInput, knowledge: CompiledKnowledge):
   });
 }
 
-function summarize(config: StoreConfig): StoreSummary {
+function summarize(config: StoreConfig, assetCode: string | undefined): StoreSummary {
   return {
     id: config.storeId,
+    ...(assetCode === undefined ? {} : { assetCode }),
     ...(config.storeName === undefined ? {} : { name: config.storeName }),
     ...(config.username === undefined ? {} : { username: config.username }),
     ...(config.themeName === undefined ? {} : { theme: config.themeName }),

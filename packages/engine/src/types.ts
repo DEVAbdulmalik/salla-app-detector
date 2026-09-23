@@ -114,6 +114,8 @@ export interface StoreSummary {
   readonly username?: string;
   readonly theme?: string;
   readonly twilightVersion?: string;
+  /** The store's CDN folder, which ties a review avatar back to this storefront. */
+  readonly assetCode?: string;
 }
 
 export interface PaymentSummary {

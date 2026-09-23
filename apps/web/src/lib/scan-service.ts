@@ -164,6 +164,10 @@ async function persist(
     return;
   }
 
+  if (report.store?.assetCode !== undefined) {
+    await repository.rememberStoreCode(report.store.assetCode, report.store.id, report.target.host);
+  }
+
   await repository.recordObservations(
     report.target.host,
     report.unknownSignals.map((signal) => ({
