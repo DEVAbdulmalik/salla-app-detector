@@ -58,6 +58,8 @@ export interface AppReviewer {
   readonly storeName: string;
   /** Present when the avatar reveals which store left the review. */
   readonly storeId?: string;
+  /** The other avatar form: a CDN code that the scan index can turn into a host. */
+  readonly storeCode?: string;
   readonly date?: string;
 }
 
@@ -92,6 +94,7 @@ export interface SallaClientOptions {
 }
 
 const AVATAR_STORE_ID = /\/theme\/(\d+)\//;
+const AVATAR_STORE_CODE = /cdn\.salla\.sa\/([A-Za-z0-9_-]{4,12})\//;
 
 export class SallaClient {
   readonly #fetchPage: PageFetcher;
@@ -197,10 +200,12 @@ export class SallaClient {
 
     const reviewers = payload.value.data.map((review): AppReviewer => {
       const storeId = storeIdFromAvatar(review);
+      const storeCode = storeCodeFromAvatar(review);
       return {
         reviewId: String(review.id),
         storeName: review.name,
         ...(storeId === undefined ? {} : { storeId }),
+        ...(storeCode === undefined ? {} : { storeCode }),
         ...(typeof review.date === "string" ? { date: review.date } : {}),
       };
     });
@@ -362,6 +367,12 @@ function toCatalogApp(hit: CatalogHit): CatalogApp {
 function storeIdFromAvatar(review: AppReviewPayload): string | undefined {
   return typeof review.avatar === "string"
     ? (AVATAR_STORE_ID.exec(review.avatar)?.[1] ?? undefined)
+    : undefined;
+}
+
+function storeCodeFromAvatar(review: AppReviewPayload): string | undefined {
+  return typeof review.avatar === "string"
+    ? (AVATAR_STORE_CODE.exec(review.avatar)?.[1] ?? undefined)
     : undefined;
 }
 

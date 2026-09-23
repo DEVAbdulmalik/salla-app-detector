@@ -290,6 +290,19 @@ export class KnowledgeRepository {
     );
   }
 
+  /** The other direction: avatar codes back to the storefronts a scan has already seen. */
+  async storeHostsByCode(codes: readonly string[]): Promise<Map<string, string>> {
+    if (codes.length === 0) {
+      return new Map();
+    }
+    const rows = await this.#db.query<{ code: string; store_host: string }>(
+      `select code, store_host from store_codes
+        where store_host is not null and code = any($1::text[])`,
+      [codes],
+    );
+    return new Map(rows.map((row) => [row.code, row.store_host]));
+  }
+
   /**
    * Counts one request against a fixed window and reports whether it is allowed. The
    * insert settles the count in a single statement, so simultaneous requests cannot slip
@@ -327,6 +340,33 @@ export class KnowledgeRepository {
        order by count(distinct store_host) desc`,
       [minimumStores],
     );
+  }
+
+  /**
+   * How often a signal shows up across recently scanned stores. A fingerprint is only
+   * worth having when it is common in one app's stores and rare in everyone else's.
+   */
+  async signalShareAcrossScans(
+    signalKind: string,
+    signalValue: string,
+    days: number,
+  ): Promise<number> {
+    const rows = await this.#db.query<{ share: string }>(
+      `with scanned as (
+         select distinct store_host from scans
+         where scanned_at > now() - make_interval(days => $3::int) and status = 'live'
+       ), carrying as (
+         select distinct store_host from observations
+         where signal_kind = $1 and signal_value = $2
+           and store_host in (select store_host from scanned)
+       )
+       select coalesce(
+         (select count(*)::numeric from carrying) / nullif((select count(*) from scanned), 0),
+         0
+       )::text as share`,
+      [signalKind, signalValue, days],
+    );
+    return Number(rows[0]?.share ?? 0);
   }
 
   async recentScanCount(days: number): Promise<number> {

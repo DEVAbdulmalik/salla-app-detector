@@ -1,6 +1,7 @@
 import { DATABASE_USAGE, databaseCommand } from "./commands/database";
 import { SCAN_USAGE, scanCommand } from "./commands/scan";
 import { SYNC_USAGE, syncCommand } from "./commands/sync";
+import { VALIDATE_USAGE, validateCommand } from "./commands/validate";
 import { loadEnvironment } from "./context";
 
 const USAGE = `Usage: pnpm cli <command>
@@ -8,10 +9,12 @@ const USAGE = `Usage: pnpm cli <command>
   scan <store-url>   detect the apps a store uses
   db <action>        manage the knowledge database
   sync catalog       refresh the app catalogue from Salla
+  validate <signal>  check a proposed fingerprint against reviewer stores
 
 ${SCAN_USAGE}
 ${DATABASE_USAGE}
-${SYNC_USAGE}`;
+${SYNC_USAGE}
+${VALIDATE_USAGE}`;
 
 async function main(argv: readonly string[]): Promise<number> {
   loadEnvironment();
@@ -27,6 +30,8 @@ async function main(argv: readonly string[]): Promise<number> {
       return databaseCommand(rest);
     case "sync":
       return syncCommand(rest);
+    case "validate":
+      return validateCommand(rest);
     default:
       process.stdout.write(USAGE);
       return command === "--help" ? 0 : 1;
