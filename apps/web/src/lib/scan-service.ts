@@ -181,7 +181,7 @@ async function loadKnowledge(
     return knowledgeCache.value;
   }
   const stored = repository
-    ? await tolerate("knowledge-load", () => repository.loadSnapshot())
+    ? await tolerate("knowledge-load", () => repository.readPublishedSnapshot())
     : undefined;
   // Falling back to the bundled knowledge keeps detection working, with fewer fingerprints.
   const compiled = compileKnowledge(stored ?? seedKnowledge);

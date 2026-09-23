@@ -127,6 +127,7 @@ export async function syncCatalog(
   // picture is incomplete, and removing what is missing from it would discard knowledge.
   const stillPending = await options.repository.appsPendingDetails(staleBefore);
   const generated = await rebuildDomainFingerprints(options.repository, stillPending === 0);
+  await options.repository.publishSnapshot();
   const completed = stillPending === 0;
 
   await options.repository.saveJobState(

@@ -455,6 +455,35 @@ export class KnowledgeRepository {
     );
   }
 
+  /**
+   * Stores the assembled knowledge so readers do not have to rebuild it. Called after any
+   * job that changes apps, fingerprints or noise.
+   */
+  async publishSnapshot(): Promise<KnowledgeSnapshot> {
+    const snapshot = await this.loadSnapshot();
+    await this.#db.query(
+      `insert into knowledge_snapshots (version, document)
+       values ($1, $2::text::jsonb)
+       on conflict (version) do update set built_at = now()`,
+      [snapshot.version, JSON.stringify(snapshot)],
+    );
+    await this.#db.query(
+      `delete from knowledge_snapshots
+       where version not in (
+         select version from knowledge_snapshots order by built_at desc limit 3
+       )`,
+    );
+    return snapshot;
+  }
+
+  /** The published knowledge, read in one row. Falls back to assembling it when absent. */
+  async readPublishedSnapshot(): Promise<KnowledgeSnapshot | undefined> {
+    const rows = await this.#db.query<{ document: KnowledgeSnapshot }>(
+      "select document from knowledge_snapshots order by built_at desc limit 1",
+    );
+    return rows[0]?.document;
+  }
+
   /** Assembles everything the engine needs for a scan, with a version derived from it. */
   async loadSnapshot(): Promise<KnowledgeSnapshot> {
     const [appRows, fingerprintRows, noiseRows] = await Promise.all([

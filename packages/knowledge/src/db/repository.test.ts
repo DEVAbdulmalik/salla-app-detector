@@ -345,3 +345,41 @@ describe("rate limiting", () => {
     expect(rows).toEqual([]);
   });
 });
+
+describe("published snapshot", () => {
+  it("serves the assembled knowledge from a single row", async () => {
+    await repository.upsertApps([{ id: "1", name: "app" }]);
+    await repository.upsertFingerprints([
+      {
+        id: "domain:a.example",
+        kind: "domain",
+        pattern: "a.example",
+        strength: "strong",
+        source: "manual",
+        appId: "1",
+      },
+    ]);
+
+    const published = await repository.publishSnapshot();
+    const read = await repository.readPublishedSnapshot();
+
+    expect(read?.version).toBe(published.version);
+    expect(read?.fingerprints).toHaveLength(1);
+    expect(Object.keys(read?.apps ?? {})).toEqual(["1"]);
+  });
+
+  it("has nothing to serve before anything is published", async () => {
+    expect(await repository.readPublishedSnapshot()).toBeUndefined();
+  });
+
+  it("keeps only the last few builds", async () => {
+    for (const name of ["one", "two", "three", "four", "five"]) {
+      await repository.upsertApps([{ id: name, name }]);
+      await repository.publishSnapshot();
+    }
+
+    const rows = await database.query("select version from knowledge_snapshots");
+
+    expect(rows).toHaveLength(3);
+  });
+});

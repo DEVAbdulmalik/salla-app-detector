@@ -58,6 +58,7 @@ export async function importSeed(
       patterns.map((pattern) => ({ kind: kind as NoiseKind, pattern, reason: "seed" })),
   );
   await repository.upsertNoiseRules(noiseRules);
+  await repository.publishSnapshot();
 
   return {
     apps: apps.length,
