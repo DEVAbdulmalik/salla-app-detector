@@ -160,6 +160,27 @@ describe("health", () => {
     expect(silent?.detail).toEqual({ apps: [{ appId: "app-1", was: 3 }] });
   });
 
+  it("sends what deserves attention and keeps running when the channel fails", async () => {
+    await repository.upsertCanaries([
+      { storeUrl: "https://one.test/", expectedAppIds: ["a", "b"], expectedServices: [] },
+    ]);
+    const sent: string[][] = [];
+
+    const result = await health({
+      repository,
+      client,
+      knowledge,
+      scan: scanner({ "https://one.test/": ["a"] }),
+      notify: (events) => {
+        sent.push(events.map((event) => event.kind));
+        return Promise.reject(new Error("channel down"));
+      },
+    });
+
+    expect(sent).toEqual([["canary-missing-app"]]);
+    expect(result.canariesChecked).toBe(1);
+  });
+
   it("keeps the events it raised", async () => {
     await repository.upsertCanaries([
       { storeUrl: "https://one.test/", expectedAppIds: ["a"], expectedServices: [] },

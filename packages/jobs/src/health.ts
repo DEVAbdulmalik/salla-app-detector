@@ -14,6 +14,8 @@ export interface HealthOptions {
   readonly minimumScansForRates?: number;
   readonly logger?: Logger;
   readonly now?: () => Date;
+  /** Sends what deserves attention somewhere a person will see it tonight. */
+  readonly notify?: (events: readonly HealthEvent[]) => Promise<void>;
   readonly scan?: (
     url: string,
     knowledge: CompiledKnowledge,
@@ -69,6 +71,16 @@ export async function health(options: HealthOptions): Promise<HealthResult> {
 
   for (const event of events) {
     await options.repository.recordHealthEvent(event);
+  }
+
+  const worthSending = events.filter((event) => event.severity !== "info");
+  if (options.notify && worthSending.length > 0) {
+    try {
+      await options.notify(worthSending);
+    } catch (error) {
+      // A silent alert channel must not fail the checks that found something.
+      options.logger?.error("alert delivery failed", { error: String(error) });
+    }
   }
 
   const intact = outcomes.filter(
