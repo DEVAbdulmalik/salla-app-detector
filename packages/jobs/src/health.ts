@@ -9,6 +9,8 @@ export interface HealthOptions {
   readonly knowledge: CompiledKnowledge;
   /** Canaries are scanned one by one; the cron budget decides how many fit. */
   readonly maxCanaries?: number;
+  /** Salla's endpoints are undocumented, so each one we depend on is called and checked. */
+  readonly contracts?: readonly ApiContract[];
   /** Share of scans ending in "blocked" that means we are being kept out, not the store. */
   readonly blockedShare?: number;
   readonly minimumScansForRates?: number;
@@ -21,6 +23,12 @@ export interface HealthOptions {
     knowledge: CompiledKnowledge,
     client: ScanClient,
   ) => Promise<Result<ScanOutcome, ScanFailure>>;
+}
+
+export interface ApiContract {
+  readonly name: string;
+  /** Any call whose response is validated; a schema mismatch is what we are watching for. */
+  readonly probe: () => Promise<Result<unknown, { readonly code: string }>>;
 }
 
 export interface CanaryOutcome {
@@ -66,6 +74,7 @@ export async function health(options: HealthOptions): Promise<HealthResult> {
   }
 
   events.push(...canaryEvents(outcomes));
+  events.push(...(await contractEvents(options)));
   events.push(...(await rateEvents(options)));
   events.push(...(await staleFingerprintEvents(options)));
 
@@ -165,6 +174,22 @@ function canaryEvents(outcomes: readonly CanaryOutcome[]): HealthEvent[] {
       severity: unreachable.length === outcomes.length ? "critical" : "info",
       detail: { stores: unreachable.map((outcome) => outcome.storeUrl) },
     });
+  }
+  return events;
+}
+
+/** A changed response shape is worth knowing about before it becomes a wrong report. */
+async function contractEvents(options: HealthOptions): Promise<HealthEvent[]> {
+  const events: HealthEvent[] = [];
+  for (const contract of options.contracts ?? []) {
+    const result = await contract.probe();
+    if (!result.ok) {
+      events.push({
+        kind: "api-contract",
+        severity: result.error.code === "schema-drift" ? "critical" : "warning",
+        detail: { api: contract.name, code: result.error.code },
+      });
+    }
   }
   return events;
 }

@@ -1,4 +1,4 @@
-import { health } from "@salla-app-detector/jobs";
+import { health, sallaContracts } from "@salla-app-detector/jobs";
 import { SallaClient } from "@salla-app-detector/salla";
 import { createLogger } from "@salla-app-detector/shared";
 import { loadKnowledge, openDatabase } from "../context";
@@ -13,9 +13,11 @@ export async function healthCommand(): Promise<number> {
   const { database, repository } = openDatabase();
   try {
     const knowledge = await loadKnowledge(false);
+    const client = new SallaClient({ timeoutMs: 20_000 });
     const result = await health({
       repository,
-      client: new SallaClient({ timeoutMs: 20_000 }),
+      client,
+      contracts: sallaContracts(client),
       knowledge: knowledge.knowledge,
       logger: createLogger({ level: "info", bindings: { job: "health" } }),
     });

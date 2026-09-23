@@ -6,7 +6,7 @@ import {
 import { KnowledgeRepository, seedKnowledge, type Database } from "@salla-app-detector/knowledge";
 import { migrate } from "@salla-app-detector/knowledge/migrate";
 import { createEmbeddedDatabase } from "@salla-app-detector/knowledge/testing";
-import { ok } from "@salla-app-detector/shared";
+import { err, ok } from "@salla-app-detector/shared";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { health } from "./health";
 import type { ScanClient, ScanOutcome } from "./scan-store";
@@ -179,6 +179,32 @@ describe("health", () => {
 
     expect(sent).toEqual([["canary-missing-app"]]);
     expect(result.canariesChecked).toBe(1);
+  });
+
+  it("raises a critical alert when an API stops matching its schema", async () => {
+    const result = await health({
+      repository,
+      client,
+      knowledge,
+      scan: scanner({}),
+      contracts: [
+        { name: "marketplace/search", probe: () => Promise.resolve(ok(undefined)) },
+        {
+          name: "marketplace/apps/{id}",
+          probe: () => Promise.resolve(err({ code: "schema-drift" })),
+        },
+        { name: "storefront/products", probe: () => Promise.resolve(err({ code: "http" })) },
+      ],
+    });
+
+    expect(
+      result.events
+        .filter((event) => event.kind === "api-contract")
+        .map((event) => [event.severity, event.detail?.api]),
+    ).toEqual([
+      ["critical", "marketplace/apps/{id}"],
+      ["warning", "storefront/products"],
+    ]);
   });
 
   it("keeps the events it raised", async () => {

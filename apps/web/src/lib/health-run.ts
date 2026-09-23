@@ -1,5 +1,5 @@
 import { compileKnowledge } from "@salla-app-detector/engine";
-import { health, type HealthResult } from "@salla-app-detector/jobs";
+import { health, sallaContracts, type HealthResult } from "@salla-app-detector/jobs";
 import { seedKnowledge } from "@salla-app-detector/knowledge";
 import { SallaClient } from "@salla-app-detector/salla";
 import type { Logger } from "@salla-app-detector/shared";
@@ -13,9 +13,12 @@ export async function runHealth(logger: Logger): Promise<HealthResult> {
   const repository = requireRepository();
   const snapshot = await repository.readPublishedSnapshot();
 
+  const client = new SallaClient({ timeoutMs: REQUEST_TIMEOUT_MS });
+
   return health({
     repository,
-    client: new SallaClient({ timeoutMs: REQUEST_TIMEOUT_MS }),
+    client,
+    contracts: sallaContracts(client),
     knowledge: compileKnowledge(snapshot ?? seedKnowledge),
     notify: (events) => sendAlert(events, logger),
     logger,
