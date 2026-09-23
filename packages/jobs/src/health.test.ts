@@ -85,6 +85,7 @@ describe("health", () => {
       repository,
       client,
       knowledge,
+      expectedJobs: [],
       scan: scanner({ "https://one.test/": ["a"], "https://two.test/": ["a"] }),
     });
 
@@ -111,6 +112,7 @@ describe("health", () => {
       repository,
       client,
       knowledge,
+      expectedJobs: [],
       scan: scanner({
         "https://one.test/": [],
         "https://two.test/": [],
@@ -170,6 +172,7 @@ describe("health", () => {
       repository,
       client,
       knowledge,
+      expectedJobs: [],
       scan: scanner({ "https://one.test/": ["a"] }),
       notify: (events) => {
         sent.push(events.map((event) => event.kind));
@@ -186,6 +189,7 @@ describe("health", () => {
       repository,
       client,
       knowledge,
+      expectedJobs: [],
       scan: scanner({}),
       contracts: [
         { name: "marketplace/search", probe: () => Promise.resolve(ok(undefined)) },
@@ -207,6 +211,39 @@ describe("health", () => {
     ]);
   });
 
+  it("raises an alert for a schedule that has stopped running", async () => {
+    await repository.saveJobState("catalog-sync", {}, "completed", new Date(Date.now() - 864e5));
+
+    const result = await health({
+      repository,
+      client,
+      knowledge,
+      scan: scanner({}),
+      expectedJobs: ["catalog-sync", "learn"],
+      staleJobHours: 36,
+    });
+    const silent = result.events.find((event) => event.kind === "job-not-running");
+
+    // The catalogue sync ran yesterday, which is fine; learning has never run at all.
+    expect(silent?.severity).toBe("critical");
+    expect(silent?.detail).toEqual({ jobs: [{ job: "learn" }] });
+  });
+
+  it("stays quiet while every schedule is keeping up", async () => {
+    await repository.saveJobState("catalog-sync", {}, "completed", new Date());
+    await repository.saveJobState("learn", {}, "completed", new Date());
+
+    const result = await health({
+      repository,
+      client,
+      knowledge,
+      scan: scanner({}),
+      expectedJobs: ["catalog-sync", "learn"],
+    });
+
+    expect(result.events.some((event) => event.kind === "job-not-running")).toBe(false);
+  });
+
   it("keeps the events it raised", async () => {
     await repository.upsertCanaries([
       { storeUrl: "https://one.test/", expectedAppIds: ["a"], expectedServices: [] },
@@ -215,7 +252,7 @@ describe("health", () => {
     await health({ repository, client, knowledge, scan: scanner({}) });
 
     const events = await repository.recentHealthEvents(5);
-    expect(events.map((event) => event.kind)).toEqual(["canary-unreachable"]);
+    expect(events.map((event) => event.kind)).toContain("canary-unreachable");
     expect((await repository.jobState("health"))?.lastStatus).toBe("completed");
   });
 });

@@ -921,6 +921,20 @@ export class KnowledgeRepository {
     );
   }
 
+  /** When each scheduled job last finished, so a schedule that stopped can be noticed. */
+  async jobRuns(): Promise<{ job: string; lastRunAt?: Date; lastStatus?: string }[]> {
+    const rows = await this.#db.query<{
+      job: string;
+      last_run_at: Date | null;
+      last_status: string | null;
+    }>("select job, last_run_at, last_status from job_state order by job");
+    return rows.map((row) => ({
+      job: row.job,
+      ...(row.last_run_at === null ? {} : { lastRunAt: row.last_run_at }),
+      ...(row.last_status === null ? {} : { lastStatus: row.last_status }),
+    }));
+  }
+
   async jobState(job: string): Promise<JobState | undefined> {
     const rows = await this.#db.query<{
       cursor: Record<string, unknown>;

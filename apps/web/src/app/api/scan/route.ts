@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { reportError } from "@/lib/report-error";
 import { scan } from "@/lib/scan-service";
 
 export const runtime = "nodejs";
@@ -35,7 +36,8 @@ export async function POST(request: Request): Promise<Response> {
       );
     }
     return Response.json({ store: result.key, status: result.report.status });
-  } catch {
+  } catch (cause) {
+    await reportError("scan-failed", cause, { url: parsed.data.url });
     return Response.json({ error: "unknown" }, { status: 500 });
   }
 }

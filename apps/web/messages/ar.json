@@ -153,7 +153,11 @@
         "canary-unreachable": "ما قدرنا نوصل متجر مراقبة",
         "blocked-rate": "نسبة الفحوصات المحظورة مرتفعة",
         "fingerprint-silent": "بصمة توقفت عن المطابقة هذا الأسبوع",
-        "unmapped-service-key": "مفتاح تكامل جديد من سلة"
+        "unmapped-service-key": "مفتاح تكامل جديد من سلة",
+        "job-not-running": "مهمة مجدولة توقفت عن العمل",
+        "request-failed": "خطأ غير متوقع في الموقع",
+        "scan-failed": "فشل فحص بشكل غير متوقع",
+        "api-contract": "رد من سلة ما عاد يطابق ما نقرأه"
       }
     },
     "signInErrors": {
