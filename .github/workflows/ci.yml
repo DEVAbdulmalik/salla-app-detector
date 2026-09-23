@@ -27,4 +27,8 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      # The runner is dedicated to this job, so the page-analysis budget is asserted here
+      # rather than on whatever else a developer's machine happens to be doing.
       - run: pnpm check
+        env:
+          BENCH: "1"

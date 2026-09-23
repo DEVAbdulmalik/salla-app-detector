@@ -7,6 +7,11 @@ const underCoverage = process.argv.includes("--coverage");
 export default defineConfig({
   test: {
     include: ["{packages,apps,tools}/*/src/**/*.test.ts"],
+    // Tests that need a database boot an embedded Postgres per file, which takes seconds
+    // on a machine that is also building or indexing. The default would report that as a
+    // failure rather than as the fixture cost it is.
+    testTimeout: 30_000,
+    hookTimeout: 30_000,
     env: { COVERAGE_RUN: underCoverage ? "1" : "0" },
     coverage: {
       provider: "v8",
