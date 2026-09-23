@@ -22,6 +22,7 @@ describe("normalizeTarget", () => {
     expect(target("mahwous.com")).toEqual({
       url: "https://mahwous.com/",
       host: "mahwous.com",
+      key: "mahwous.com",
       kind: "custom-domain",
     });
   });
@@ -36,9 +37,16 @@ describe("normalizeTarget", () => {
     expect(target("https://salla.sa/coffee_souq/category/abc")).toEqual({
       url: "https://salla.sa/coffee_souq",
       host: "salla.sa",
+      key: "salla.sa/coffee_souq",
       kind: "salla-slug",
       slug: "coffee_souq",
     });
+  });
+
+  it("gives two stores on the same host different keys", () => {
+    // Every store without its own domain answers on salla.sa, so the host alone would
+    // make them one store: one report, one cache entry, one row of observations.
+    expect(target("salla.sa/daryen.1").key).not.toBe(target("salla.sa/zohal-sa").key);
   });
 
   it("looks past a locale prefix", () => {

@@ -89,7 +89,7 @@ async function fromRecentScans(
 ): Promise<CanaryStore[]> {
   const stores = await repository.storesWithConfirmedApps(Number.isFinite(limit) ? limit : 12);
   return stores.map((store) => ({
-    storeUrl: `https://${store.storeHost}/`,
+    storeUrl: `https://${store.storeKey}/`,
     expectedAppIds: store.appIds,
     expectedServices: [],
   }));

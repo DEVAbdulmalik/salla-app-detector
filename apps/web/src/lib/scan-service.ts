@@ -5,7 +5,7 @@ import {
   type CompiledKnowledge,
   type ScanReport,
 } from "@salla-app-detector/engine";
-import { scanStore } from "@salla-app-detector/jobs";
+import { recordScanOutcome, scanStore } from "@salla-app-detector/jobs";
 import { seedKnowledge, type KnowledgeRepository } from "@salla-app-detector/knowledge";
 import { SallaClient } from "@salla-app-detector/salla";
 import { createLogger } from "@salla-app-detector/shared";
@@ -18,7 +18,8 @@ export type ScanError =
 
 export interface ScanSuccess {
   readonly report: ScanReport;
-  readonly host: string;
+  /** Identifies the store: its domain, or salla.sa/handle for a store without one. */
+  readonly key: string;
   readonly scannedAt: Date;
   readonly fromCache: boolean;
 }
@@ -33,7 +34,7 @@ const REQUEST_TIMEOUT_MS = 10_000;
 const RATE_LIMIT = { requests: 10, windowSeconds: 60 } as const;
 const PRODUCT_SAMPLE = 30;
 
-/** In-flight scans per host, so a burst on one store results in a single fetch. */
+/** In-flight scans per store, so a burst on one store results in a single fetch. */
 const running = new Map<string, Promise<ScanOutcome>>();
 
 let knowledgeCache: { value: CompiledKnowledge; loadedAt: number } | undefined;
@@ -67,7 +68,7 @@ export async function scan(input: string, clientIp: string | undefined): Promise
     }
   }
 
-  const cached = await readCache(repository, target.value.host);
+  const cached = await readCache(repository, target.value.key);
   if (cached) {
     return cached;
   }
@@ -85,27 +86,27 @@ export async function scan(input: string, clientIp: string | undefined): Promise
 }
 
 /** Reads a stored report for a shared link without scanning again. */
-export async function storedReport(host: string): Promise<ScanSuccess | undefined> {
+export async function storedReport(key: string): Promise<ScanSuccess | undefined> {
   const repository = getRepository();
-  const cached = await readCache(repository, host);
+  const cached = await readCache(repository, key);
   return cached?.ok === true ? cached : undefined;
 }
 
 async function readCache(
   repository: KnowledgeRepository | undefined,
-  host: string,
+  key: string,
 ): Promise<(ScanOutcome & { ok: true }) | undefined> {
   if (!repository) {
     return undefined;
   }
-  const recent = await tolerate("cache-read", () => repository.recentScan(host, CACHE_MINUTES));
+  const recent = await tolerate("cache-read", () => repository.recentScan(key, CACHE_MINUTES));
   if (!recent) {
     return undefined;
   }
   return {
     ok: true,
     report: recent.report as ScanReport,
-    host,
+    key,
     scannedAt: recent.scannedAt,
     fromCache: true,
   };
@@ -138,50 +139,10 @@ async function runScan(
   const scannedAt = new Date();
 
   if (repository) {
-    await tolerate("persist", () => persist(repository, report, Date.now() - startedAt));
+    await tolerate("persist", () => recordScanOutcome(repository, report, Date.now() - startedAt));
   }
 
-  return { ok: true, report, host: report.target.host, scannedAt, fromCache: false };
-}
-
-/** Scans feed the learning loop: what was not explained is worth collecting. */
-async function persist(
-  repository: KnowledgeRepository,
-  report: ScanReport,
-  durationMs: number,
-): Promise<void> {
-  await repository.recordScan({
-    storeHost: report.target.host,
-    ...(report.store === undefined ? {} : { storeId: report.store.id }),
-    status: report.status,
-    report,
-    engineVersion: report.meta.engineVersion,
-    knowledgeVersion: report.meta.knowledgeVersion,
-    durationMs,
-  });
-
-  if (report.status !== "live") {
-    return;
-  }
-
-  await repository.recordFingerprintMatches(
-    report.apps.flatMap((app) =>
-      app.evidence.map((item) => ({ kind: item.kind, value: item.value })),
-    ),
-  );
-
-  if (report.store?.assetCode !== undefined) {
-    await repository.rememberStoreCode(report.store.assetCode, report.store.id, report.target.host);
-  }
-
-  await repository.recordObservations(
-    report.target.host,
-    report.unknownSignals.map((signal) => ({
-      kind: signal.kind,
-      value: signal.value,
-      ...(signal.detail === undefined ? {} : { sample: signal.detail }),
-    })),
-  );
+  return { ok: true, report, key: report.target.key, scannedAt, fromCache: false };
 }
 
 async function loadKnowledge(

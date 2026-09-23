@@ -18,7 +18,7 @@ import type {
 import { ENGINE_VERSION } from "./version";
 
 export interface ReportInput {
-  readonly target: { readonly url: string; readonly host: string };
+  readonly target: { readonly url: string; readonly host: string; readonly key: string };
   readonly status: PageStatus;
   readonly store?: StoreSummary;
   readonly matches: readonly Match[];

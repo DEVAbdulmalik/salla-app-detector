@@ -68,7 +68,7 @@ async function baseline(signalStores: number, otherStores: number): Promise<void
   for (let index = 0; index < signalStores + otherStores; index += 1) {
     const host = `baseline-${String(index)}.test`;
     await repository.recordScan({
-      storeHost: host,
+      storeKey: host,
       status: "live",
       report: {},
       engineVersion: "1.0.0",

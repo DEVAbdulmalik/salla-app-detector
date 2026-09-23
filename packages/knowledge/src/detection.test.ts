@@ -37,7 +37,7 @@ function scan(expectation: Expectation): { report: ScanReport; durationMs: numbe
   const started = performance.now();
   const report = analyzeStore(
     {
-      target: { url: `https://${host}/`, host },
+      target: { url: `https://${host}/`, host, key: host },
       page: { status: expectation.httpStatus, finalUrl: `https://${host}/`, html },
     },
     knowledge,

@@ -94,7 +94,11 @@ function page(body: string, config: unknown = CONFIG): string {
 function scan(html: string, products: { sku?: string; imageUrls: string[] }[] = []) {
   return analyzeStore(
     {
-      target: { url: "https://test-store.example/", host: "test-store.example" },
+      target: {
+        url: "https://test-store.example/",
+        host: "test-store.example",
+        key: "test-store.example",
+      },
       page: { status: 200, finalUrl: "https://test-store.example/", html },
       products,
     },

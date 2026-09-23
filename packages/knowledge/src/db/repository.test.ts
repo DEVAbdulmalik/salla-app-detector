@@ -273,7 +273,7 @@ describe("scans and observations", () => {
 
   it("returns a recent scan and ignores an expired one", async () => {
     await repository.recordScan({
-      storeHost: "mahwous.com",
+      storeKey: "mahwous.com",
       storeId: 986119567,
       status: "live",
       report,
@@ -298,11 +298,11 @@ describe("scans and observations", () => {
     await repository.recordObservations("a.com", [{ kind: "domain", value: "vendor.example" }]);
     await repository.recordObservations("b.com", [{ kind: "domain", value: "vendor.example" }]);
 
-    const rows = await database.query<{ store_host: string; sample: string | null }>(
-      "select store_host, sample from observations order by store_host",
+    const rows = await database.query<{ store_key: string; sample: string | null }>(
+      "select store_key, sample from observations order by store_key",
     );
 
-    expect(rows.map((row) => row.store_host)).toEqual(["a.com", "b.com"]);
+    expect(rows.map((row) => row.store_key)).toEqual(["a.com", "b.com"]);
     expect(rows[0]?.sample).toBe("script");
   });
 

@@ -12,7 +12,7 @@ import type { ScanReport, StoreSummary } from "./types";
 import { ENGINE_VERSION } from "./version";
 
 export interface AnalyzeInput {
-  readonly target: { readonly url: string; readonly host: string };
+  readonly target: { readonly url: string; readonly host: string; readonly key: string };
   readonly page: PageInput;
   /** Sample from the store's public product listing, used for dropshipping signals. */
   readonly products?: readonly ProductSample[];

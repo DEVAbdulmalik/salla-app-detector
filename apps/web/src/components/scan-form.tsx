@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { Messages } from "@/lib/messages";
+import { reportPath } from "@/lib/site";
 
 type ErrorKey = keyof Messages["form"]["errors"];
 
@@ -41,15 +42,15 @@ export function ScanForm({ messages }: { messages: Messages }) {
         body: JSON.stringify({ url }),
         signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
       });
-      const body = (await response.json()) as { host?: string; error?: string };
+      const body = (await response.json()) as { store?: string; error?: string };
 
-      if (!response.ok || body.host === undefined) {
+      if (!response.ok || body.store === undefined) {
         setError(ERROR_BY_CODE[body.error ?? ""] ?? "unknown");
         setBusy(false);
         return;
       }
 
-      router.push(`/r/${encodeURIComponent(body.host)}`);
+      router.push(reportPath(body.store));
     } catch (cause) {
       setError(
         cause instanceof DOMException && cause.name === "TimeoutError" ? "unreachable" : "unknown",

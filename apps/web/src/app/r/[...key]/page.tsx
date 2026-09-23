@@ -10,13 +10,12 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 interface PageProps {
-  readonly params: Promise<{ host: string }>;
+  readonly params: Promise<{ key: string[] }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { host } = await params;
   const messages = getMessages();
-  const title = `${decodeURIComponent(host)} — ${messages.site.name}`;
+  const title = `${storeKeyOf(await params)} — ${messages.site.name}`;
 
   return {
     title,
@@ -29,9 +28,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ReportPage({ params }: PageProps) {
   const messages = getMessages();
-  const host = decodeURIComponent((await params).host);
+  const storeKey = storeKeyOf(await params);
 
-  const result = await load(host);
+  const result = await load(storeKey);
   if (result === undefined) {
     notFound();
   }
@@ -45,7 +44,7 @@ export default async function ReportPage({ params }: PageProps) {
           <h1 className="text-xl font-semibold">{notice.title}</h1>
           <p className="mt-2 leading-7 text-muted">{notice.body}</p>
           <p className="mt-4 text-sm text-muted" dir="ltr">
-            {host}
+            {storeKey}
           </p>
         </section>
       ) : (
@@ -62,12 +61,17 @@ export default async function ReportPage({ params }: PageProps) {
 }
 
 /** A shared link works for anyone: serve the stored report, or scan once and store it. */
-async function load(host: string): Promise<ScanSuccess | undefined> {
-  const stored = await storedReport(host);
+/** The route carries the key in segments: one for a domain, two for salla.sa/handle. */
+function storeKeyOf(params: { key: string[] }): string {
+  return params.key.map((segment) => decodeURIComponent(segment)).join("/");
+}
+
+async function load(storeKey: string): Promise<ScanSuccess | undefined> {
+  const stored = await storedReport(storeKey);
   if (stored) {
     return stored;
   }
-  const fresh = await scan(host, undefined);
+  const fresh = await scan(storeKey, undefined);
   return fresh.ok ? fresh : undefined;
 }
 

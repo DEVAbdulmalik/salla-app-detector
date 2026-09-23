@@ -1,4 +1,5 @@
 export { scanStore } from "./scan-store";
+export { recordScanOutcome } from "./record";
 export type { ScanClient, ScanFailure, ScanOptions, ScanOutcome } from "./scan-store";
 
 export { syncCatalog } from "./catalog-sync";

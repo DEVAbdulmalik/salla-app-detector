@@ -28,7 +28,7 @@ async function observe(signalValue: string, stores: readonly string[], kind = "d
 async function recordScans(count: number): Promise<void> {
   for (let index = 0; index < count; index += 1) {
     await repository.recordScan({
-      storeHost: `store-${String(index)}.test`,
+      storeKey: `store-${String(index)}.test`,
       status: "live",
       report: {},
       engineVersion: "1.0.0",

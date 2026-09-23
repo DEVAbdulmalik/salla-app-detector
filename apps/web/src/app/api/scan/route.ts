@@ -33,7 +33,7 @@ export async function POST(request: Request): Promise<Response> {
         { status: STATUS_BY_ERROR[result.error] ?? 400 },
       );
     }
-    return Response.json({ host: result.host, status: result.report.status });
+    return Response.json({ store: result.key, status: result.report.status });
   } catch {
     return Response.json({ error: "unknown" }, { status: 500 });
   }

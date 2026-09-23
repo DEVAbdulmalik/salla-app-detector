@@ -55,7 +55,7 @@ export interface AppDomains {
 }
 
 export interface ScanRecord {
-  readonly storeHost: string;
+  readonly storeKey: string;
   readonly storeId?: number;
   readonly status: string;
   readonly report: unknown;
@@ -104,7 +104,7 @@ export interface CanaryStore {
 }
 
 export interface StoreDetections {
-  readonly storeHost: string;
+  readonly storeKey: string;
   readonly appIds: readonly string[];
 }
 
@@ -136,7 +136,7 @@ export interface NoiseRow {
 
 export interface ScanRow {
   readonly id: string;
-  readonly storeHost: string;
+  readonly storeKey: string;
   readonly status: string;
   readonly appCount: number;
   readonly unknownCount: number;
@@ -278,10 +278,10 @@ export class KnowledgeRepository {
    */
   async recordScan(entry: ScanRecord): Promise<void> {
     await this.#db.query(
-      `insert into scans (store_host, store_id, status, report, engine_version, knowledge_version, duration_ms)
+      `insert into scans (store_key, store_id, status, report, engine_version, knowledge_version, duration_ms)
        values ($1, $2, $3, $4::text::jsonb, $5, $6, $7)`,
       [
-        entry.storeHost,
+        entry.storeKey,
         entry.storeId ?? null,
         entry.status,
         JSON.stringify(entry.report),
@@ -292,13 +292,13 @@ export class KnowledgeRepository {
     );
   }
 
-  async recentScan(storeHost: string, maxAgeMinutes: number): Promise<StoredScan | undefined> {
+  async recentScan(storeKey: string, maxAgeMinutes: number): Promise<StoredScan | undefined> {
     const rows = await this.#db.query<{ report: unknown; scanned_at: Date }>(
       `select report, scanned_at from scans
-       where store_host = $1 and scanned_at > now() - make_interval(mins => $2)
+       where store_key = $1 and scanned_at > now() - make_interval(mins => $2)
        order by scanned_at desc
        limit 1`,
-      [storeHost, maxAgeMinutes],
+      [storeKey, maxAgeMinutes],
     );
     const row = rows[0];
     return row === undefined ? undefined : { report: row.report, scannedAt: row.scanned_at };
@@ -306,17 +306,17 @@ export class KnowledgeRepository {
 
   /** Signals a scan could not explain, which the learning loop later clusters. */
   async recordObservations(
-    storeHost: string,
+    storeKey: string,
     signals: readonly { kind: string; value: string; sample?: string }[],
   ): Promise<void> {
     if (signals.length === 0) {
       return;
     }
     await this.#db.query(
-      `insert into observations (signal_kind, signal_value, store_host, sample)
+      `insert into observations (signal_kind, signal_value, store_key, sample)
        select signal_kind, signal_value, $2, sample
        from jsonb_to_recordset($1::text::jsonb) as incoming(signal_kind text, signal_value text, sample text)
-       on conflict (signal_kind, signal_value, store_host) do update set last_seen_at = now()`,
+       on conflict (signal_kind, signal_value, store_key) do update set last_seen_at = now()`,
       [
         JSON.stringify(
           signals.map((signal) => ({
@@ -325,7 +325,7 @@ export class KnowledgeRepository {
             sample: signal.sample ?? null,
           })),
         ),
-        storeHost,
+        storeKey,
       ],
     );
   }
@@ -333,27 +333,27 @@ export class KnowledgeRepository {
   /** Builds the index that lets a review avatar be traced back to the store behind it. */
   async rememberStoreCode(code: string, storeId: number | undefined, host: string): Promise<void> {
     await this.#db.query(
-      `insert into store_codes (code, store_id, store_host)
+      `insert into store_codes (code, store_id, store_key)
        values ($1, $2, $3)
        on conflict (code) do update set
          store_id = coalesce(excluded.store_id, store_codes.store_id),
-         store_host = excluded.store_host,
+         store_key = excluded.store_key,
          seen_at = now()`,
       [code, storeId ?? null, host],
     );
   }
 
   /** The other direction: avatar codes back to the storefronts a scan has already seen. */
-  async storeHostsByCode(codes: readonly string[]): Promise<Map<string, string>> {
+  async storeKeysByCode(codes: readonly string[]): Promise<Map<string, string>> {
     if (codes.length === 0) {
       return new Map();
     }
-    const rows = await this.#db.query<{ code: string; store_host: string }>(
-      `select code, store_host from store_codes
-        where store_host is not null and code = any($1::text[])`,
+    const rows = await this.#db.query<{ code: string; store_key: string }>(
+      `select code, store_key from store_codes
+        where store_key is not null and code = any($1::text[])`,
       [codes],
     );
-    return new Map(rows.map((row) => [row.code, row.store_host]));
+    return new Map(rows.map((row) => [row.code, row.store_key]));
   }
 
   /**
@@ -385,12 +385,12 @@ export class KnowledgeRepository {
     return this.#db.query<SignalCluster>(
       `select signal_kind as "signalKind",
               signal_value as "signalValue",
-              count(distinct store_host)::int as "storeCount",
+              count(distinct store_key)::int as "storeCount",
               min(sample) as sample
        from observations
        group by signal_kind, signal_value
-       having count(distinct store_host) >= $1
-       order by count(distinct store_host) desc`,
+       having count(distinct store_key) >= $1
+       order by count(distinct store_key) desc`,
       [minimumStores],
     );
   }
@@ -406,12 +406,12 @@ export class KnowledgeRepository {
   ): Promise<number> {
     const rows = await this.#db.query<{ share: string }>(
       `with scanned as (
-         select distinct store_host from scans
+         select distinct store_key from scans
          where scanned_at > now() - make_interval(days => $3::int) and status = 'live'
        ), carrying as (
-         select distinct store_host from observations
+         select distinct store_key from observations
          where signal_kind = $1 and signal_value = $2
-           and store_host in (select store_host from scanned)
+           and store_key in (select store_key from scanned)
        )
        select coalesce(
          (select count(*)::numeric from carrying) / nullif((select count(*) from scanned), 0),
@@ -424,7 +424,7 @@ export class KnowledgeRepository {
 
   async recentScanCount(days: number): Promise<number> {
     const rows = await this.#db.query<{ count: string }>(
-      `select count(distinct store_host)::text as count from scans
+      `select count(distinct store_key)::text as count from scans
        where scanned_at > now() - make_interval(days => $1::int) and status = 'live'`,
       [days],
     );
@@ -618,19 +618,19 @@ export class KnowledgeRepository {
   async recentScans(limit: number, term = ""): Promise<ScanRow[]> {
     const rows = await this.#db.query<{
       id: string;
-      store_host: string;
+      store_key: string;
       status: string;
       app_count: number;
       unknown_count: number;
       duration_ms: number;
       scanned_at: Date;
     }>(
-      `select id::text, store_host, status,
+      `select id::text, store_key, status,
               jsonb_array_length(coalesce(report->'apps', '[]'::jsonb)) as app_count,
               jsonb_array_length(coalesce(report->'unknownSignals', '[]'::jsonb)) as unknown_count,
               duration_ms, scanned_at
        from scans
-       where $2 = '' or store_host ilike '%' || $2 || '%'
+       where $2 = '' or store_key ilike '%' || $2 || '%'
        order by scanned_at desc
        limit $1`,
       [limit, term],
@@ -638,7 +638,7 @@ export class KnowledgeRepository {
 
     return rows.map((row) => ({
       id: row.id,
-      storeHost: row.store_host,
+      storeKey: row.store_key,
       status: row.status,
       appCount: row.app_count,
       unknownCount: row.unknown_count,
@@ -702,13 +702,13 @@ export class KnowledgeRepository {
    */
   async storesWithConfirmedApps(limit: number, days = 30): Promise<StoreDetections[]> {
     return this.#db.query<StoreDetections>(
-      `select store_host as "storeHost",
+      `select store_key as "storeKey",
               array_agg(distinct app->>'appId') as "appIds"
        from scans, jsonb_array_elements(report->'apps') as app
        where status = 'live'
          and app->>'confidence' = 'confirmed'
          and scanned_at > now() - make_interval(days => $2::int)
-       group by store_host
+       group by store_key
        having count(distinct app->>'appId') >= 2
        order by max(scanned_at) desc
        limit $1`,
@@ -730,11 +730,11 @@ export class KnowledgeRepository {
   /** How scans ended over a window, which is how a platform-wide block shows itself. */
   async statusShares(hours: number): Promise<StatusShare[]> {
     return this.#db.query<StatusShare>(
-      `select status, count(distinct store_host)::int as stores
+      `select status, count(distinct store_key)::int as stores
        from scans
        where scanned_at > now() - make_interval(hours => $1::int)
        group by status
-       order by count(distinct store_host) desc`,
+       order by count(distinct store_key) desc`,
       [hours],
     );
   }
@@ -745,7 +745,7 @@ export class KnowledgeRepository {
    */
   async appDetectionCounts(days: number, endingDaysAgo = 0): Promise<Map<string, number>> {
     const rows = await this.#db.query<{ app_id: string; stores: number }>(
-      `select app->>'appId' as app_id, count(distinct store_host)::int as stores
+      `select app->>'appId' as app_id, count(distinct store_key)::int as stores
        from scans, jsonb_array_elements(report->'apps') as app
        where status = 'live'
          and scanned_at > now() - make_interval(days => $1::int + $2::int)

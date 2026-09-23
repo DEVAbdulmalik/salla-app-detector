@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { AdminNav } from "@/components/admin-nav";
+import { reportPath } from "@/lib/site";
 import { getRepository } from "@/lib/database";
 import { getMessages } from "@/lib/messages";
 import { isAdminEmail } from "@/lib/supabase/config";
@@ -59,11 +60,11 @@ export default async function ScansPage({
               className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 rounded-xl border border-line bg-surface px-4 py-3"
             >
               <Link
-                href={`/r/${encodeURIComponent(scan.storeHost)}`}
+                href={reportPath(scan.storeKey)}
                 dir="ltr"
                 className="font-mono text-sm break-all text-accent underline-offset-4 hover:underline"
               >
-                {scan.storeHost}
+                {scan.storeKey}
               </Link>
               <span className="flex flex-wrap items-baseline gap-x-3 text-xs text-muted">
                 <span>{statuses[scan.status] ?? scan.status}</span>

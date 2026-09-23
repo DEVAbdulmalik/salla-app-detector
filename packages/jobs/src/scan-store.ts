@@ -69,6 +69,9 @@ export async function scanStore(
   const html = page.value.body;
   const finalUrl = page.value.finalUrl;
   const host = hostOf(finalUrl) ?? target.value.host;
+  // A handle that redirects to the store's own domain is identified by that domain; one
+  // that stays on salla.sa keeps the handle, because the host alone names every such store.
+  const key = host === target.value.host ? target.value.key : host;
   const config = extractStoreConfig(html);
 
   let products: readonly ProductSample[] = [];
@@ -93,7 +96,7 @@ export async function scanStore(
 
   const report = analyzeStore(
     {
-      target: { url: finalUrl, host },
+      target: { url: finalUrl, host, key },
       page: {
         status: page.value.status,
         finalUrl,

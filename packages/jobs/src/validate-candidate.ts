@@ -152,7 +152,7 @@ async function reviewerStores(options: ValidateOptions): Promise<ReviewerStore[]
     }
   }
 
-  const hosts = await options.repository.storeHostsByCode(codes);
+  const hosts = await options.repository.storeKeysByCode(codes);
   for (const host of new Set(hosts.values())) {
     found.push({ url: `https://${host}/` });
   }
@@ -177,7 +177,7 @@ async function storeCarriesSignal(
   const host = new URL(page.value.finalUrl).hostname;
   const report = analyzeStore(
     {
-      target: { url: page.value.finalUrl, host },
+      target: { url: page.value.finalUrl, host, key: host },
       page: {
         status: page.value.status,
         finalUrl: page.value.finalUrl,

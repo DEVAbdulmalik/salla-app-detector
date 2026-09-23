@@ -124,7 +124,7 @@ export interface PaymentSummary {
 }
 
 export interface ScanReport {
-  readonly target: { readonly url: string; readonly host: string };
+  readonly target: { readonly url: string; readonly host: string; readonly key: string };
   readonly status: PageStatus;
   /** Why the page ended up with this status, kept for health monitoring. */
   readonly statusDetail?: string;

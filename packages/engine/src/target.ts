@@ -6,6 +6,11 @@ export interface StoreTarget {
   /** Root page to fetch. */
   readonly url: string;
   readonly host: string;
+  /**
+   * What identifies this store. Stores on their own domain are their host, but stores
+   * served from a salla.sa path all share one host, so the handle belongs in the key.
+   */
+  readonly key: string;
   readonly kind: StoreTargetKind;
   /** Store handle, only for stores served from a salla.sa path. */
   readonly slug?: string;
@@ -93,12 +98,13 @@ export function normalizeTarget(input: string): Result<StoreTarget, TargetError>
     return ok({
       url: `https://${canonicalHost}/${slug}`,
       host: canonicalHost,
+      key: `${canonicalHost}/${slug}`,
       kind: "salla-slug",
       slug,
     });
   }
 
-  return ok({ url: `https://${host}/`, host, kind: "custom-domain" });
+  return ok({ url: `https://${host}/`, host, key: host, kind: "custom-domain" });
 }
 
 function parseUrl(input: string): URL | undefined {

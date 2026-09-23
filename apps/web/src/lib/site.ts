@@ -13,3 +13,8 @@ export function siteUrl(): URL {
     vercel === undefined || vercel === "" ? "http://localhost:3000" : `https://${vercel}`,
   );
 }
+
+/** A store key can carry a handle, so each segment is encoded but the slash is kept. */
+export function reportPath(storeKey: string): string {
+  return `/r/${storeKey.split("/").map(encodeURIComponent).join("/")}`;
+}

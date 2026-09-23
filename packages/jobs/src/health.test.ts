@@ -36,14 +36,14 @@ function scanner(stores: Record<string, string[] | "unreachable">) {
       return Promise.resolve(
         ok({
           report: reportFor(url, [], "blocked"),
-          target: { url, host: new URL(url).hostname },
+          target: { url, host: new URL(url).hostname, key: new URL(url).hostname },
         } as ScanOutcome),
       );
     }
     return Promise.resolve(
       ok({
         report: reportFor(url, found, "live"),
-        target: { url, host: new URL(url).hostname },
+        target: { url, host: new URL(url).hostname, key: new URL(url).hostname },
       } as ScanOutcome),
     );
   };
@@ -51,7 +51,7 @@ function scanner(stores: Record<string, string[] | "unreachable">) {
 
 function reportFor(url: string, appIds: readonly string[], status: string): ScanReport {
   return {
-    target: { url, host: new URL(url).hostname },
+    target: { url, host: new URL(url).hostname, key: new URL(url).hostname },
     status,
     apps: appIds.map((appId) => ({ appId, name: appId, confidence: "confirmed", evidence: [] })),
     integrations: [],
@@ -64,7 +64,7 @@ function reportFor(url: string, appIds: readonly string[], status: string): Scan
 async function scansWithStatus(status: string, count: number, offset = 0): Promise<void> {
   for (let index = 0; index < count; index += 1) {
     await repository.recordScan({
-      storeHost: `${status}-${String(index + offset)}.test`,
+      storeKey: `${status}-${String(index + offset)}.test`,
       status,
       report: {},
       engineVersion: "1.0.0",
@@ -147,7 +147,7 @@ describe("health", () => {
     await repository.upsertApps([{ id: "app-1", name: "widget" }]);
     for (const index of [0, 1, 2]) {
       await database.query(
-        `insert into scans (store_host, status, report, engine_version, knowledge_version, duration_ms, scanned_at)
+        `insert into scans (store_key, status, report, engine_version, knowledge_version, duration_ms, scanned_at)
          values ($1, 'live', $2::text::jsonb, '1.0.0', 'test', 5, now() - interval '10 days')`,
         [`old-${String(index)}.test`, JSON.stringify({ apps: [{ appId: "app-1" }] })],
       );
