@@ -1,4 +1,5 @@
 import { databaseUrl, getRepository } from "@/lib/database";
+import { supabaseConfig } from "@/lib/supabase/config";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -38,9 +39,28 @@ export async function GET(request: Request): Promise<Response> {
     region: process.env.VERCEL_REGION ?? "local",
     databaseConfigured: databaseUrl() !== undefined,
     database,
-    ...(deep ? { timings } : {}),
+    ...(deep ? { timings, settings: settingsReport() } : {}),
     checkedInMs: Date.now() - startedAt,
   });
+}
+
+/**
+ * Which optional settings this deployment actually received. Only whether a value is
+ * present is reported: an absent cron secret closes the scheduled endpoints rather than
+ * opening them, so there is nothing here worth hiding.
+ */
+function settingsReport(): Record<string, boolean | number> {
+  const admins = (process.env.ADMIN_EMAILS ?? "")
+    .split(",")
+    .map((entry) => entry.trim())
+    .filter((entry) => entry !== "");
+
+  return {
+    supabaseAuth: supabaseConfig() !== undefined,
+    adminEmails: admins.length,
+    cronSecret: (process.env.CRON_SECRET ?? "") !== "",
+    alertWebhook: (process.env.ALERT_WEBHOOK_URL ?? "") !== "",
+  };
 }
 
 async function timed(work: () => Promise<unknown>): Promise<number | string> {
