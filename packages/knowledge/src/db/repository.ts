@@ -96,6 +96,29 @@ export interface CandidateRow extends SignalCluster {
   readonly suggestedAppName?: string;
 }
 
+export interface CanaryStore {
+  readonly storeUrl: string;
+  readonly expectedAppIds: readonly string[];
+  readonly expectedServices: readonly string[];
+  readonly note?: string;
+}
+
+export interface StoreDetections {
+  readonly storeHost: string;
+  readonly appIds: readonly string[];
+}
+
+export interface GroundTruthRow {
+  readonly appId: string;
+  readonly appName: string;
+  readonly storeId: string;
+}
+
+export interface StatusShare {
+  readonly status: string;
+  readonly stores: number;
+}
+
 export interface HealthEvent {
   readonly kind: string;
   readonly severity: "info" | "warning" | "critical";
@@ -460,6 +483,115 @@ export class KnowledgeRepository {
       "update candidates set status = $3, updated_at = now() where signal_kind = $1 and signal_value = $2",
       [signalKind, signalValue, status],
     );
+  }
+
+  /** Stores with a known set of apps, scanned daily to notice detection going quiet. */
+  async canaries(): Promise<CanaryStore[]> {
+    const rows = await this.#db.query<{
+      store_url: string;
+      expected_app_ids: string[];
+      expected_services: string[];
+      note: string | null;
+    }>(
+      `select store_url, expected_app_ids, expected_services, note
+       from canaries order by store_url`,
+    );
+    return rows.map((row) => ({
+      storeUrl: row.store_url,
+      expectedAppIds: row.expected_app_ids,
+      expectedServices: row.expected_services,
+      ...(row.note === null ? {} : { note: row.note }),
+    }));
+  }
+
+  async upsertCanaries(canaries: readonly CanaryStore[]): Promise<void> {
+    if (canaries.length === 0) {
+      return;
+    }
+    await this.#db.query(
+      `insert into canaries (store_url, expected_app_ids, expected_services, note)
+       select store_url,
+              coalesce(expected_app_ids, '{}'),
+              coalesce(expected_services, '{}'),
+              note
+       from jsonb_to_recordset($1::text::jsonb) as incoming(
+         store_url text, expected_app_ids text[], expected_services text[], note text
+       )
+       on conflict (store_url) do update set
+         expected_app_ids = excluded.expected_app_ids,
+         expected_services = excluded.expected_services,
+         note = coalesce(excluded.note, canaries.note)`,
+      [
+        JSON.stringify(
+          canaries.map((canary) => ({
+            store_url: canary.storeUrl,
+            expected_app_ids: canary.expectedAppIds,
+            expected_services: canary.expectedServices,
+            note: canary.note ?? null,
+          })),
+        ),
+      ],
+    );
+  }
+
+  /**
+   * Stores whose last scan found several apps outright. They make good canaries: if a
+   * fingerprint goes stale, one of these stores is where it shows first.
+   */
+  async storesWithConfirmedApps(limit: number, days = 30): Promise<StoreDetections[]> {
+    return this.#db.query<StoreDetections>(
+      `select store_host as "storeHost",
+              array_agg(distinct app->>'appId') as "appIds"
+       from scans, jsonb_array_elements(report->'apps') as app
+       where status = 'live'
+         and app->>'confidence' = 'confirmed'
+         and scanned_at > now() - make_interval(days => $2::int)
+       group by store_host
+       having count(distinct app->>'appId') >= 2
+       order by max(scanned_at) desc
+       limit $1`,
+      [limit, days],
+    );
+  }
+
+  /** Stores we know run an app, which is what a quality report measures detection against. */
+  async groundTruth(limit: number): Promise<GroundTruthRow[]> {
+    return this.#db.query<GroundTruthRow>(
+      `select g.app_id as "appId", g.store_id::text as "storeId", a.name as "appName"
+       from ground_truth g join apps a on a.id = g.app_id
+       order by g.app_id, g.store_id
+       limit $1`,
+      [limit],
+    );
+  }
+
+  /** How scans ended over a window, which is how a platform-wide block shows itself. */
+  async statusShares(hours: number): Promise<StatusShare[]> {
+    return this.#db.query<StatusShare>(
+      `select status, count(distinct store_host)::int as stores
+       from scans
+       where scanned_at > now() - make_interval(hours => $1::int)
+       group by status
+       order by count(distinct store_host) desc`,
+      [hours],
+    );
+  }
+
+  /**
+   * Stores each app was detected in, per window. A fingerprint that stops matching from
+   * one week to the next is usually stale rather than uninstalled everywhere at once.
+   */
+  async appDetectionCounts(days: number, endingDaysAgo = 0): Promise<Map<string, number>> {
+    const rows = await this.#db.query<{ app_id: string; stores: number }>(
+      `select app->>'appId' as app_id, count(distinct store_host)::int as stores
+       from scans, jsonb_array_elements(report->'apps') as app
+       where status = 'live'
+         and scanned_at > now() - make_interval(days => $1::int + $2::int)
+         and scanned_at <= now() - make_interval(days => $2::int)
+       group by app->>'appId'`,
+      [days, endingDaysAgo],
+    );
+    return new Map(rows.map((row) => [row.app_id, row.stores]));
   }
 
   async recentHealthEvents(limit: number): Promise<HealthEventRow[]> {

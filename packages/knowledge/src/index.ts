@@ -35,9 +35,13 @@ export { KnowledgeRepository } from "./db/repository";
 export type {
   AppDomains,
   AppUpsert,
+  CanaryStore,
   CandidateRow,
   CandidateUpsert,
+  GroundTruthRow,
   HealthEvent,
+  StatusShare,
+  StoreDetections,
   HealthEventRow,
   SignalCluster,
   FingerprintSource,
