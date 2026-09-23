@@ -45,6 +45,7 @@ const KNOWLEDGE_TTL_MS = 10 * 60 * 1000;
  * and scanning continues on the bundled knowledge.
  */
 const DATABASE_PAUSE_MS = 60_000;
+const DATABASE_CALL_TIMEOUT_MS = 8_000;
 let databasePausedUntil = 0;
 
 export async function scan(input: string, clientIp: string | undefined): Promise<ScanOutcome> {
@@ -205,7 +206,7 @@ async function tolerate<T>(operation: string, work: () => Promise<T>): Promise<T
     return undefined;
   }
   try {
-    return await work();
+    return await Promise.race([work(), rejectAfter(DATABASE_CALL_TIMEOUT_MS, operation)]);
   } catch (error) {
     databasePausedUntil = Date.now() + DATABASE_PAUSE_MS;
     logger.error("database unavailable", {
@@ -214,6 +215,14 @@ async function tolerate<T>(operation: string, work: () => Promise<T>): Promise<T
     });
     return undefined;
   }
+}
+
+function rejectAfter(ms: number, operation: string): Promise<never> {
+  return new Promise((_resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error(`${operation} exceeded ${String(ms)}ms`));
+    }, ms);
+  });
 }
 
 function toInputError(code: string): ScanError {
