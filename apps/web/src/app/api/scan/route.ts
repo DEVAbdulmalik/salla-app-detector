@@ -8,6 +8,7 @@ const requestSchema = z.object({ url: z.string().min(1).max(2048) });
 
 const STATUS_BY_ERROR: Record<string, number> = {
   "rate-limited": 429,
+  busy: 503,
   unreachable: 502,
   unknown: 500,
 };

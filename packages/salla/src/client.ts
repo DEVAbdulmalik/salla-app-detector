@@ -1,5 +1,6 @@
 import { err, ok, type Result } from "@salla-app-detector/shared";
 import type { z } from "zod";
+import type { HostLimiter } from "./limiter";
 import {
   safeFetch,
   type FetchFailure,
@@ -88,6 +89,8 @@ export interface SallaClientOptions {
   readonly timeoutMs?: number;
   /** Retries double the wait for a host that is refusing us, so callers can opt out. */
   readonly attempts?: number;
+  /** Paces requests so a burst against one host is queued rather than refused. */
+  readonly limiter?: HostLimiter;
   /** Replaced in tests so the client can be exercised without network access. */
   readonly fetchPage?: PageFetcher;
   readonly now?: () => Date;
@@ -101,6 +104,7 @@ export class SallaClient {
   readonly #userAgent: string;
   readonly #timeoutMs: number | undefined;
   readonly #attempts: number | undefined;
+  readonly #limiter: HostLimiter | undefined;
   readonly #now: () => Date;
   #searchToken: { value: string; expiresAt: Date } | undefined;
 
@@ -109,6 +113,7 @@ export class SallaClient {
     this.#userAgent = options.userAgent ?? DEFAULT_USER_AGENT;
     this.#timeoutMs = options.timeoutMs;
     this.#attempts = options.attempts;
+    this.#limiter = options.limiter;
     this.#now = options.now ?? (() => new Date());
   }
 
@@ -323,6 +328,7 @@ export class SallaClient {
     return {
       ...(this.#timeoutMs === undefined ? {} : { timeoutMs: this.#timeoutMs }),
       ...(this.#attempts === undefined ? {} : { attempts: this.#attempts }),
+      ...(this.#limiter === undefined ? {} : { limiter: this.#limiter }),
     };
   }
 

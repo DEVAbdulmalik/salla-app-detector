@@ -14,6 +14,7 @@ const ERROR_BY_CODE: Record<string, ErrorKey> = {
   invalid: "invalid",
   platform: "platform",
   "rate-limited": "rateLimited",
+  busy: "busy",
   unreachable: "unreachable",
 };
 

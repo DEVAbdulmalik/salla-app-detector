@@ -10,6 +10,9 @@ export type {
   SallaClientOptions,
 } from "./client";
 
+export { HostLimiter } from "./limiter";
+export type { LimiterOptions, LimiterRefusal } from "./limiter";
+
 export { safeFetch } from "./safe-fetch";
 export type { FetchFailure, FetchedPage, SafeFetchOptions } from "./safe-fetch";
 

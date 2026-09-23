@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { parseArgs } from "node:util";
 import { recordScanOutcome, scanStore } from "@salla-app-detector/jobs";
-import { SallaClient } from "@salla-app-detector/salla";
+import { HostLimiter, SallaClient } from "@salla-app-detector/salla";
 import { loadKnowledge, openDatabase } from "../context";
 
 export const CRAWL_USAGE = `Usage: pnpm cli crawl [<store-url> ...] [options]
@@ -30,7 +30,12 @@ export async function crawlCommand(argv: readonly string[]): Promise<number> {
   const { database, repository } = openDatabase();
   try {
     const knowledge = await loadKnowledge(false);
-    const client = new SallaClient({ timeoutMs: 20_000 });
+    // Stores without a domain of their own all answer on one host, so a wide crawl lands
+    // on the platform as a burst unless it is paced.
+    const client = new SallaClient({
+      timeoutMs: 20_000,
+      limiter: new HostLimiter({ concurrency: 2, minIntervalMs: 500, maxWaitMs: 60_000 }),
+    });
     const queue = [...urls];
     const tally = { live: 0, other: 0, failed: 0 };
 

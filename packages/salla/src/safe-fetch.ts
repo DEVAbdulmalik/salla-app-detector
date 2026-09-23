@@ -4,8 +4,11 @@ import { err, ok, type Result } from "@salla-app-detector/shared";
 // comes from this same copy of undici, and the global fetch rejects a foreign dispatcher.
 import { Agent, fetch as undiciFetch, type Response as UndiciResponse } from "undici";
 import { isBlockedAddress } from "./addresses";
+import type { HostLimiter } from "./limiter";
 
 export type FetchFailure =
+  | { readonly code: "busy"; readonly host: string }
+  | { readonly code: "cooling-down"; readonly host: string }
   | { readonly code: "invalid-url"; readonly url: string }
   | { readonly code: "unsupported-scheme"; readonly scheme: string }
   | { readonly code: "blocked-address"; readonly host: string }
@@ -33,6 +36,13 @@ export interface SafeFetchOptions {
   readonly attempts?: number;
   /** Only for tests that talk to a local server. Never enable in a deployed environment. */
   readonly allowPrivateAddresses?: boolean;
+  /** Paces requests to one host; omit to send without waiting for a turn. */
+  readonly limiter?: HostLimiter;
+}
+
+/** A host that answers this way is refusing us, not reporting on the page. */
+function isRefusal(result: Result<FetchedPage, FetchFailure>): boolean {
+  return result.ok && (result.value.status === 403 || result.value.status === 429);
 }
 
 const DEFAULTS = {
@@ -44,6 +54,14 @@ const DEFAULTS = {
 
 const RETRY_DELAY_MS = 400;
 
+function hostOf(url: string): string | undefined {
+  try {
+    return new URL(url).hostname.toLowerCase();
+  } catch {
+    return undefined;
+  }
+}
+
 /**
  * Fetches a URL that someone else chose. Requests can only reach public addresses, the
  * check is applied again at connection time so a hostname cannot resolve to something
@@ -53,6 +71,24 @@ const RETRY_DELAY_MS = 400;
 export async function safeFetch(
   url: string,
   options: SafeFetchOptions = {},
+): Promise<Result<FetchedPage, FetchFailure>> {
+  const limiter = options.limiter;
+  if (limiter === undefined) {
+    return sendWithRetries(url, options);
+  }
+
+  const host = hostOf(url);
+  if (host === undefined) {
+    return sendWithRetries(url, options);
+  }
+
+  const turn = await limiter.run(host, () => sendWithRetries(url, options), isRefusal);
+  return turn.ok ? turn.value : err({ code: turn.reason, host });
+}
+
+async function sendWithRetries(
+  url: string,
+  options: SafeFetchOptions,
 ): Promise<Result<FetchedPage, FetchFailure>> {
   const attempts = options.attempts ?? DEFAULTS.attempts;
   let lastFailure: FetchFailure = { code: "network", message: "request was never attempted" };

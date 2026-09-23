@@ -5,16 +5,16 @@ import {
   type CompiledKnowledge,
   type ScanReport,
 } from "@salla-app-detector/engine";
-import { recordScanOutcome, scanStore } from "@salla-app-detector/jobs";
+import { recordScanOutcome, scanStore, type ScanFailure } from "@salla-app-detector/jobs";
 import { seedKnowledge, type KnowledgeRepository } from "@salla-app-detector/knowledge";
-import { SallaClient } from "@salla-app-detector/salla";
+import { HostLimiter, SallaClient } from "@salla-app-detector/salla";
 import { createLogger } from "@salla-app-detector/shared";
 import { getRepository } from "./database";
 
 const logger = createLogger({ level: "info", bindings: { component: "scan" } });
 
 export type ScanError =
-  "empty" | "invalid" | "platform" | "rate-limited" | "unreachable" | "unknown";
+  "empty" | "invalid" | "platform" | "rate-limited" | "busy" | "unreachable" | "unknown";
 
 export interface ScanSuccess {
   readonly report: ScanReport;
@@ -39,6 +39,19 @@ const TRANSIENT_STATUSES = new Set(["blocked", "unsupported"]);
 const SCAN_DEADLINE_MS = 25_000;
 const REQUEST_TIMEOUT_MS = 10_000;
 const RATE_LIMIT = { requests: 10, windowSeconds: 60 } as const;
+
+/**
+ * Our own pace towards each store's host, shared by every scan this instance serves. A
+ * burst against the platform reads as an attack and gets challenged, and then nobody's
+ * scan works; a visitor waiting a moment in a queue is the cheaper outcome by far.
+ */
+const limiter = new HostLimiter({
+  concurrency: 2,
+  minIntervalMs: 400,
+  maxWaitMs: 6_000,
+  breakerFailures: 3,
+  breakerCooldownMs: 60_000,
+});
 const PRODUCT_SAMPLE = 30;
 
 /** In-flight scans per store, so a burst on one store results in a single fetch. */
@@ -135,7 +148,7 @@ async function runScan(
 
   const result = await withDeadline(
     scanStore(url, {
-      client: new SallaClient({ timeoutMs: REQUEST_TIMEOUT_MS, attempts: 1 }),
+      client: new SallaClient({ timeoutMs: REQUEST_TIMEOUT_MS, attempts: 1, limiter }),
       knowledge,
       productSampleSize: PRODUCT_SAMPLE,
     }),
@@ -146,7 +159,7 @@ async function runScan(
     return { ok: false, error: "unreachable" };
   }
   if (!result.ok) {
-    return { ok: false, error: result.error.code === "invalid-input" ? "invalid" : "unreachable" };
+    return { ok: false, error: toScanError(result.error) };
   }
 
   const { report } = result.value;
@@ -157,6 +170,14 @@ async function runScan(
   }
 
   return { ok: true, report, key: report.target.key, scannedAt, fromCache: false };
+}
+
+function toScanError(failure: ScanFailure): ScanError {
+  if (failure.code === "invalid-input") {
+    return "invalid";
+  }
+  const reason = failure.reason.code;
+  return reason === "busy" || reason === "cooling-down" ? "busy" : "unreachable";
 }
 
 async function loadKnowledge(
