@@ -16,9 +16,14 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { host } = await params;
   const messages = getMessages();
+  const title = `${decodeURIComponent(host)} — ${messages.site.name}`;
+
   return {
-    title: `${decodeURIComponent(host)} — ${messages.site.name}`,
+    title,
     description: messages.site.description,
+    openGraph: { title, description: messages.site.description },
+    // A report describes someone else's store; it is meant to be shared, not indexed.
+    robots: { index: false, follow: true },
   };
 }
 
