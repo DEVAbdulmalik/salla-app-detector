@@ -1,5 +1,8 @@
 import { DATABASE_USAGE, databaseCommand } from "./commands/database";
 import { SCAN_USAGE, scanCommand } from "./commands/scan";
+import { CANARY_USAGE, canaryCommand } from "./commands/canary";
+import { HEALTH_USAGE, healthCommand } from "./commands/health";
+import { QUALITY_USAGE, qualityCommand } from "./commands/quality";
 import { SYNC_USAGE, syncCommand } from "./commands/sync";
 import { VALIDATE_USAGE, validateCommand } from "./commands/validate";
 import { loadEnvironment } from "./context";
@@ -10,11 +13,17 @@ const USAGE = `Usage: pnpm cli <command>
   db <action>        manage the knowledge database
   sync catalog       refresh the app catalogue from Salla
   validate <signal>  check a proposed fingerprint against reviewer stores
+  canary             manage the stores the health check watches
+  health             run the monitoring checks now
+  quality-report     measure detection against known installations
 
 ${SCAN_USAGE}
 ${DATABASE_USAGE}
 ${SYNC_USAGE}
-${VALIDATE_USAGE}`;
+${VALIDATE_USAGE}
+${CANARY_USAGE}
+${HEALTH_USAGE}
+${QUALITY_USAGE}`;
 
 async function main(argv: readonly string[]): Promise<number> {
   loadEnvironment();
@@ -32,6 +41,12 @@ async function main(argv: readonly string[]): Promise<number> {
       return syncCommand(rest);
     case "validate":
       return validateCommand(rest);
+    case "canary":
+      return canaryCommand(rest);
+    case "health":
+      return healthCommand();
+    case "quality-report":
+      return qualityCommand(rest);
     default:
       process.stdout.write(USAGE);
       return command === "--help" ? 0 : 1;
