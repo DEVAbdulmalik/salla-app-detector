@@ -1,6 +1,7 @@
 import { learn } from "@salla-app-detector/jobs";
 import { createLogger } from "@salla-app-detector/shared";
 import { isAuthorized, requireRepository } from "@/lib/cron";
+import { runHealth } from "@/lib/health-run";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -11,10 +12,15 @@ export async function GET(request: Request): Promise<Response> {
     return new Response("unauthorized", { status: 401 });
   }
 
-  const result = await learn({
+  const learned = await learn({
     repository: requireRepository(),
     logger: createLogger({ level: "info", bindings: { job: "learn" } }),
   });
 
-  return Response.json(result);
+  // The nightly monitoring runs here rather than on a schedule of its own: the plan allows
+  // two daily crons and the catalogue sync holds the other one. It runs after learning so
+  // the checks see the knowledge that was just published.
+  const checked = await runHealth(createLogger({ level: "info", bindings: { job: "health" } }));
+
+  return Response.json({ learned, health: checked });
 }
