@@ -6,6 +6,8 @@ import type { Messages } from "@/lib/messages";
 
 type ErrorKey = keyof Messages["form"]["errors"];
 
+const REQUEST_TIMEOUT_MS = 45_000;
+
 const ERROR_BY_CODE: Record<string, ErrorKey> = {
   empty: "empty",
   invalid: "invalid",
@@ -37,6 +39,7 @@ export function ScanForm({ messages }: { messages: Messages }) {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ url }),
+        signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
       });
       const body = (await response.json()) as { host?: string; error?: string };
 
@@ -47,8 +50,10 @@ export function ScanForm({ messages }: { messages: Messages }) {
       }
 
       router.push(`/r/${encodeURIComponent(body.host)}`);
-    } catch {
-      setError("unknown");
+    } catch (cause) {
+      setError(
+        cause instanceof DOMException && cause.name === "TimeoutError" ? "unreachable" : "unknown",
+      );
       setBusy(false);
     }
   };

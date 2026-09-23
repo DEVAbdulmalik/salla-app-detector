@@ -36,6 +36,14 @@ const running = new Map<string, Promise<ScanOutcome>>();
 let knowledgeCache: { value: CompiledKnowledge; loadedAt: number } | undefined;
 const KNOWLEDGE_TTL_MS = 10 * 60 * 1000;
 
+/**
+ * When the database is unreachable, every call would otherwise wait for its own connection
+ * timeout and a scan would crawl. After a failure the database is left alone for a while
+ * and scanning continues on the bundled knowledge.
+ */
+const DATABASE_PAUSE_MS = 60_000;
+let databasePausedUntil = 0;
+
 export async function scan(input: string, clientIp: string | undefined): Promise<ScanOutcome> {
   const target = normalizeTarget(input);
   if (!target.ok) {
@@ -173,9 +181,13 @@ async function loadKnowledge(
 
 /** Runs a database call that the scan can live without, reporting failures rather than raising them. */
 async function tolerate<T>(operation: string, work: () => Promise<T>): Promise<T | undefined> {
+  if (Date.now() < databasePausedUntil) {
+    return undefined;
+  }
   try {
     return await work();
   } catch (error) {
+    databasePausedUntil = Date.now() + DATABASE_PAUSE_MS;
     logger.error("database unavailable", {
       operation,
       error: error instanceof Error ? error : new Error(String(error)),

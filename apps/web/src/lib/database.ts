@@ -21,6 +21,6 @@ export function getRepository(): KnowledgeRepository | undefined {
 }
 
 function createPool(url: string): { database: Database; repository: KnowledgeRepository } {
-  const database = connect({ url, maxConnections: 2 });
+  const database = connect({ url, maxConnections: 2, connectTimeoutSeconds: 5 });
   return { database, repository: new KnowledgeRepository(database) };
 }
