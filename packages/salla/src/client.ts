@@ -84,6 +84,8 @@ export type PageFetcher = (
 export interface SallaClientOptions {
   readonly userAgent?: string;
   readonly timeoutMs?: number;
+  /** Retries double the wait for a host that is refusing us, so callers can opt out. */
+  readonly attempts?: number;
   /** Replaced in tests so the client can be exercised without network access. */
   readonly fetchPage?: PageFetcher;
   readonly now?: () => Date;
@@ -95,6 +97,7 @@ export class SallaClient {
   readonly #fetchPage: PageFetcher;
   readonly #userAgent: string;
   readonly #timeoutMs: number | undefined;
+  readonly #attempts: number | undefined;
   readonly #now: () => Date;
   #searchToken: { value: string; expiresAt: Date } | undefined;
 
@@ -102,6 +105,7 @@ export class SallaClient {
     this.#fetchPage = options.fetchPage ?? safeFetch;
     this.#userAgent = options.userAgent ?? DEFAULT_USER_AGENT;
     this.#timeoutMs = options.timeoutMs;
+    this.#attempts = options.attempts;
     this.#now = options.now ?? (() => new Date());
   }
 
@@ -311,7 +315,10 @@ export class SallaClient {
   }
 
   #common(): SafeFetchOptions {
-    return this.#timeoutMs === undefined ? {} : { timeoutMs: this.#timeoutMs };
+    return {
+      ...(this.#timeoutMs === undefined ? {} : { timeoutMs: this.#timeoutMs }),
+      ...(this.#attempts === undefined ? {} : { attempts: this.#attempts }),
+    };
   }
 
   #storeHeaders(storeId: number): Record<string, string> {

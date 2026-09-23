@@ -27,6 +27,9 @@ export type ScanOutcome =
   ({ readonly ok: true } & ScanSuccess) | { readonly ok: false; readonly error: ScanError };
 
 const CACHE_MINUTES = 360;
+/** A visitor waits for a page, not for a stubborn store. */
+const SCAN_DEADLINE_MS = 25_000;
+const REQUEST_TIMEOUT_MS = 10_000;
 const RATE_LIMIT = { requests: 10, windowSeconds: 60 } as const;
 const PRODUCT_SAMPLE = 30;
 
@@ -114,12 +117,18 @@ async function runScan(
   const knowledge = await loadKnowledge(repository);
   const startedAt = Date.now();
 
-  const result = await scanStore(url, {
-    client: new SallaClient({ timeoutMs: 20_000 }),
-    knowledge,
-    productSampleSize: PRODUCT_SAMPLE,
-  });
+  const result = await withDeadline(
+    scanStore(url, {
+      client: new SallaClient({ timeoutMs: REQUEST_TIMEOUT_MS, attempts: 1 }),
+      knowledge,
+      productSampleSize: PRODUCT_SAMPLE,
+    }),
+  );
 
+  if (result === undefined) {
+    logger.warn("scan exceeded its deadline", { url });
+    return { ok: false, error: "unreachable" };
+  }
   if (!result.ok) {
     return { ok: false, error: result.error.code === "invalid-input" ? "invalid" : "unreachable" };
   }
@@ -177,6 +186,17 @@ async function loadKnowledge(
   const compiled = compileKnowledge(stored ?? seedKnowledge);
   knowledgeCache = { value: compiled, loadedAt: Date.now() };
   return compiled;
+}
+
+function withDeadline<T>(work: Promise<T>): Promise<T | undefined> {
+  return Promise.race([
+    work,
+    new Promise<undefined>((resolve) =>
+      setTimeout(() => {
+        resolve(undefined);
+      }, SCAN_DEADLINE_MS),
+    ),
+  ]);
 }
 
 /** Runs a database call that the scan can live without, reporting failures rather than raising them. */
