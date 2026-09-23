@@ -22,3 +22,9 @@ minimumReleaseAgeExclude:
   - "@next/swc-win32-arm64-msvc@16.3.6"
   - "@next/swc-win32-x64-msvc@16.3.6"
   - next@16.3.6
+  - "@supabase/auth-js@2.117.0"
+  - "@supabase/functions-js@2.117.0"
+  - "@supabase/postgrest-js@2.117.0"
+  - "@supabase/realtime-js@2.117.0"
+  - "@supabase/storage-js@2.117.0"
+  - "@supabase/supabase-js@2.117.0"

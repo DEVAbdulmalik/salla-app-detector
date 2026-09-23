@@ -99,5 +99,40 @@
       "get_button": "Get Button",
       "facebook_messenger": "Messenger"
     }
+  },
+  "admin": {
+    "title": "لوحة الإدارة",
+    "signIn": "تسجيل الدخول",
+    "signInHint": "أدخل بريدك، ويصلك رابط دخول.",
+    "signInSent": "أرسلنا لك رابط الدخول. افتحه من بريدك.",
+    "signOut": "خروج",
+    "notAllowed": "هذا الحساب غير مصرّح له.",
+    "email": "البريد الإلكتروني",
+    "stats": {
+      "title": "نظرة عامة",
+      "apps": "التطبيقات",
+      "fingerprints": "البصمات",
+      "scans": "فحوصات آخر ٣٠ يوم",
+      "candidates": "مرشّحون بانتظار المراجعة",
+      "knowledge": "إصدار المعرفة"
+    },
+    "candidates": {
+      "title": "المرشّحون",
+      "empty": "ما فيه مرشّحون جدد.",
+      "signal": "الأثر",
+      "stores": "عدد المتاجر",
+      "suggestion": "الترشيح",
+      "noSuggestion": "بدون ترشيح",
+      "sample": "عيّنة",
+      "promote": "اعتماد كبصمة",
+      "ignore": "تجاهل",
+      "promoted": "تم الاعتماد",
+      "ignored": "تم التجاهل",
+      "appId": "رقم التطبيق"
+    },
+    "health": {
+      "title": "أحداث الصحة",
+      "empty": "ما فيه أحداث."
+    }
   }
 }
