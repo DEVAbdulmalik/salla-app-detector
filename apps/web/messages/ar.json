@@ -7,7 +7,7 @@
   },
   "form": {
     "label": "رابط المتجر",
-    "placeholder": "mahwous.com",
+    "placeholder": "example.com",
     "submit": "افحص المتجر",
     "working": "جارٍ الفحص",
     "hint": "يعمل مع دومين المتجر، أو رابط منتج، أو رابط salla.sa",
