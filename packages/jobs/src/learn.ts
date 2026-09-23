@@ -66,10 +66,16 @@ export async function learn(options: LearnOptions): Promise<LearnResult> {
     });
   }
 
+  // Read before writing: a key already in the queue was reported when it first appeared,
+  // and repeating the alert every night would bury the one that is actually new.
+  const knownServiceKeys = await options.repository.candidateSignalValues("service");
   await options.repository.upsertCandidates(candidates);
 
   const newServiceKeys = remaining
-    .filter((cluster) => cluster.signalKind === "service")
+    .filter(
+      (cluster) =>
+        cluster.signalKind === "service" && !knownServiceKeys.includes(cluster.signalValue),
+    )
     .map((cluster) => cluster.signalValue);
   for (const key of newServiceKeys) {
     options.logger?.warn("unmapped integration key", { key });

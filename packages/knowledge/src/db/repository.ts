@@ -508,6 +508,15 @@ export class KnowledgeRepository {
     }));
   }
 
+  /** Signals already in the queue, whatever a reviewer decided about them. */
+  async candidateSignalValues(kind: string): Promise<string[]> {
+    const rows = await this.#db.query<{ signal_value: string }>(
+      "select signal_value from candidates where signal_kind = $1",
+      [kind],
+    );
+    return rows.map((row) => row.signal_value);
+  }
+
   async setCandidateStatus(signalKind: string, signalValue: string, status: string): Promise<void> {
     await this.#db.query(
       "update candidates set status = $3, updated_at = now() where signal_kind = $1 and signal_value = $2",

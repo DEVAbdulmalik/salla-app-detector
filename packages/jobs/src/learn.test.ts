@@ -117,6 +117,20 @@ describe("learn", () => {
     expect(events[0]).toMatchObject({ kind: "unmapped-service-key", severity: "warning" });
   });
 
+  it("reports an integration key once, not on every run", async () => {
+    await observe("brand_new_pixel", stores(5), "service");
+
+    const first = await learn({ repository });
+    const second = await learn({ repository });
+    const events = await database.query<{ n: string }>(
+      "select count(*)::text as n from health_events where kind = 'unmapped-service-key'",
+    );
+
+    expect(first.newServiceKeys).toEqual(["brand_new_pixel"]);
+    expect(second.newServiceKeys).toEqual([]);
+    expect(events[0]?.n).toBe("1");
+  });
+
   it("keeps a decision a person already made", async () => {
     await observe("vendor.example", stores(5));
     await learn({ repository });

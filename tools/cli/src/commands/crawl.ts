@@ -53,7 +53,7 @@ export async function crawlCommand(argv: readonly string[]): Promise<number> {
           tally.other += 1;
         }
         process.stdout.write(
-          `${report.target.host.padEnd(42)} ${report.status.padEnd(12)} ` +
+          `${report.target.key.padEnd(42)} ${report.status.padEnd(12)} ` +
             `${String(report.apps.length)} apps, ${String(report.unknownSignals.length)} unknown\n`,
         );
       }
