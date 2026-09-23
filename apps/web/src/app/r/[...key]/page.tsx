@@ -30,7 +30,7 @@ export default async function ReportPage({ params }: PageProps) {
   const messages = getMessages();
   const storeKey = storeKeyOf(await params);
 
-  const result = await load(storeKey);
+  const result = storeKey === "" ? undefined : await load(storeKey);
   if (result === undefined) {
     notFound();
   }
@@ -61,9 +61,22 @@ export default async function ReportPage({ params }: PageProps) {
 }
 
 /** A shared link works for anyone: serve the stored report, or scan once and store it. */
-/** The route carries the key in segments: one for a domain, two for salla.sa/handle. */
+/**
+ * The route carries the key in segments: one for a domain, two for salla.sa/handle. A
+ * segment that is not valid percent-encoding cannot name a store, so it reads as empty
+ * and the page answers "not found" rather than failing.
+ */
 function storeKeyOf(params: { key: string[] }): string {
-  return params.key.map((segment) => decodeURIComponent(segment)).join("/");
+  const segments = params.key.map(decodeSegment);
+  return segments.includes(undefined) ? "" : segments.join("/");
+}
+
+function decodeSegment(segment: string): string | undefined {
+  try {
+    return decodeURIComponent(segment);
+  } catch {
+    return undefined;
+  }
 }
 
 async function load(storeKey: string): Promise<ScanSuccess | undefined> {
