@@ -49,6 +49,7 @@ export type {
   AppStatus,
   Confidence,
   DetectedApp,
+  DetectedTheme,
   Evidence,
   EvidenceKind,
   Fingerprint,

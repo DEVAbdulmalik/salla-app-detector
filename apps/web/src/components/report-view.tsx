@@ -1,4 +1,4 @@
-import type { DetectedApp, ScanReport } from "@salla-app-detector/engine";
+import type { DetectedApp, DetectedTheme, ScanReport } from "@salla-app-detector/engine";
 import { integrationLabel, paymentLabel } from "@/lib/labels";
 import type { Messages } from "@/lib/messages";
 
@@ -22,6 +22,12 @@ export function ReportView({
   return (
     <div className="rise space-y-10">
       <StoreHeader report={report} messages={messages} scannedAt={scannedAt} />
+
+      {report.theme !== undefined && (
+        <Section title={m.themeSection}>
+          <ThemeRow theme={report.theme} messages={messages} />
+        </Section>
+      )}
 
       <Section title={m.apps}>
         {report.apps.length === 0 ? (
@@ -116,7 +122,6 @@ function StoreHeader({
       </p>
       <dl className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
         {store !== undefined && <Fact label={messages.report.storeId} value={String(store.id)} />}
-        {store?.theme !== undefined && <Fact label={messages.report.theme} value={store.theme} />}
         <Fact
           label={messages.report.scannedAt}
           value={new Intl.DateTimeFormat("ar-SA", {
@@ -126,6 +131,62 @@ function StoreHeader({
         />
       </dl>
     </header>
+  );
+}
+
+/**
+ * The store declares its theme rather than leaving traces of it, so this card carries no
+ * confidence badge: there is nothing to be uncertain about beyond whether the catalogue
+ * knows the name.
+ */
+function ThemeRow({ theme, messages }: { theme: DetectedTheme; messages: Messages }) {
+  const m = messages.report;
+  const behind =
+    theme.installedVersion !== undefined &&
+    theme.latestVersion !== undefined &&
+    theme.installedVersion !== theme.latestVersion;
+
+  return (
+    <article className="rounded-xl border border-line bg-surface p-4 sm:p-5">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
+        <h3 className="text-base font-medium">{theme.name ?? m.themeUnknown}</h3>
+        {theme.rating !== undefined && (
+          <span className="text-sm text-muted">
+            <span dir="ltr">★ {theme.rating.toFixed(1)}</span>
+            {theme.ratingsCount !== undefined && ` (${theme.ratingsCount.toLocaleString("ar-SA")})`}
+          </span>
+        )}
+      </div>
+
+      <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted">
+        {theme.developer !== undefined && <span>{theme.developer}</span>}
+        {theme.installedVersion !== undefined && (
+          <span dir="ltr">
+            {m.themeVersion} {theme.installedVersion}
+          </span>
+        )}
+        {behind && (
+          <Flag text={`${m.themeOutdated}: ${theme.latestVersion ?? ""}`} tone="caution" />
+        )}
+        {theme.isBeta === true && <Flag text={m.themeBeta} />}
+        {theme.listingId !== undefined && (
+          <a
+            href={`https://salla.com/themes/${theme.listingId}`}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-accent underline-offset-4 hover:underline"
+          >
+            {m.themeStore}
+          </a>
+        )}
+      </div>
+
+      {theme.name === undefined && <p className="mt-2 text-sm text-muted">{m.themeUnknownHint}</p>}
+
+      <p dir="ltr" className="mt-3 font-mono text-xs text-muted">
+        theme = {theme.id}
+      </p>
+    </article>
   );
 }
 

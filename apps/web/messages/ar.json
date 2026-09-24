@@ -103,7 +103,14 @@
       "addon-twitter-pixel-v2": "X Pixel",
       "get_button": "Get Button",
       "facebook_messenger": "Messenger"
-    }
+    },
+    "themeSection": "الثيم",
+    "themeUnknown": "ثيم غير معروف",
+    "themeUnknownHint": "هذا الثيم غير مدرج في متجر ثيمات سلة — غالباً مخصّص أو مسحوب.",
+    "themeVersion": "الإصدار",
+    "themeOutdated": "فيه إصدار أحدث",
+    "themeStore": "صفحة الثيم",
+    "themeBeta": "تجريبي"
   },
   "admin": {
     "title": "لوحة الإدارة",
