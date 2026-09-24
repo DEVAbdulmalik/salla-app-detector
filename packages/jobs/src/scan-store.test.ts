@@ -7,6 +7,7 @@ import { scanStore, type ScanClient } from "./scan-store";
 const knowledge = compileKnowledge({
   version: "test",
   apps: { "1514900071": { id: "1514900071", name: "توليفاي بلس", status: "listed" } },
+  themes: {},
   fingerprints: [
     {
       id: "domain:tooliify.com",

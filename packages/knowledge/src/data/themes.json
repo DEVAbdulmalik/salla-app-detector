@@ -1,0 +1,2324 @@
+{
+  "1008412554": {
+    "id": "1008412554",
+    "name": "افق",
+    "listingId": "172375371",
+    "developer": "nasser alharbi",
+    "version": "1.24.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1011904236": {
+    "id": "1011904236",
+    "name": "ثراء",
+    "listingId": "1609470678",
+    "developer": "احمد بن رابح",
+    "version": "1.13.0",
+    "isBeta": true
+  },
+  "1012024533": {
+    "id": "1012024533",
+    "name": "أثر",
+    "listingId": "1336359266",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.15.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1025934295": {
+    "id": "1025934295",
+    "name": "جلوبى",
+    "listingId": "236711270",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.44.0",
+    "rating": 3.5,
+    "ratingsCount": 13
+  },
+  "1026736459": {
+    "id": "1026736459",
+    "name": "بهيج",
+    "listingId": "202083242",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.15.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1031643154": {
+    "id": "1031643154",
+    "name": "أيقونة",
+    "listingId": "1592567471",
+    "developer": "mustafa osman",
+    "version": "1.39.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1035638734": {
+    "id": "1035638734",
+    "name": "فكرة",
+    "listingId": "1710906910",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.20.0"
+  },
+  "1044254287": {
+    "id": "1044254287",
+    "name": "توابل",
+    "listingId": "265353937",
+    "developer": "ADtopia",
+    "version": "1.18.0"
+  },
+  "1054311438": {
+    "id": "1054311438",
+    "name": "ميتا",
+    "listingId": "1756128301",
+    "developer": "عبدالله عبدالسلام",
+    "version": "1.54.0",
+    "rating": 5,
+    "ratingsCount": 4
+  },
+  "1070340943": {
+    "id": "1070340943",
+    "name": "ليما",
+    "listingId": "505311441",
+    "developer": "عبدالله عبدالسلام",
+    "version": "1.221.0",
+    "rating": 5,
+    "ratingsCount": 41
+  },
+  "1082927289": {
+    "id": "1082927289",
+    "name": "ريبو",
+    "listingId": "1873032143",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.18.0",
+    "rating": 1,
+    "ratingsCount": 1
+  },
+  "1091447523": {
+    "id": "1091447523",
+    "name": "زيروكس",
+    "listingId": "1167647193",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.6.0"
+  },
+  "1111978021": {
+    "id": "1111978021",
+    "name": "جــلــــــــو",
+    "listingId": "1260343119",
+    "developer": "مسار تك",
+    "version": "1.15.0"
+  },
+  "1112365672": {
+    "id": "1112365672",
+    "name": "فنجال",
+    "listingId": "2113118697",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.23.0"
+  },
+  "1115973291": {
+    "id": "1115973291",
+    "name": "ترف",
+    "listingId": "186469831",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.19.0",
+    "rating": 1,
+    "ratingsCount": 2
+  },
+  "1127205829": {
+    "id": "1127205829",
+    "name": "سريع",
+    "listingId": "1477558347",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.21.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1130931637": {
+    "id": "1130931637",
+    "name": "ملاك",
+    "listingId": "1499917793",
+    "developer": "أفتر أدز",
+    "version": "1.174.0",
+    "rating": 4.9,
+    "ratingsCount": 1048
+  },
+  "1135067888": {
+    "id": "1135067888",
+    "name": "كيان",
+    "listingId": "71816946",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.147.0",
+    "rating": 4.7,
+    "ratingsCount": 69
+  },
+  "1137527267": {
+    "id": "1137527267",
+    "name": "جمعنا",
+    "listingId": "1205405433",
+    "developer": "Thabit Almutairi",
+    "version": "1.2.0"
+  },
+  "1138809668": {
+    "id": "1138809668",
+    "name": "نقطة",
+    "listingId": "400813388",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.4.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1143234642": {
+    "id": "1143234642",
+    "name": "تمور",
+    "listingId": "827512043",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.23.0"
+  },
+  "1149013149": {
+    "id": "1149013149",
+    "name": "مرمـــوق",
+    "listingId": "2013693328",
+    "developer": "Ahmed Mostafa",
+    "version": "1.8.0"
+  },
+  "115440136": {
+    "id": "115440136",
+    "name": "رواسي",
+    "listingId": "1439851883",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.55.0",
+    "rating": 1,
+    "ratingsCount": 2
+  },
+  "1162333087": {
+    "id": "1162333087",
+    "name": "شوبنج",
+    "listingId": "1438308585",
+    "developer": "باسم تركي",
+    "version": "1.99.0",
+    "rating": 4.6,
+    "ratingsCount": 54
+  },
+  "1170969954": {
+    "id": "1170969954",
+    "name": "سيرا",
+    "listingId": "1151757442",
+    "developer": "وكالة تركي محمود العنزي التجارية",
+    "version": "1.9.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1171649893": {
+    "id": "1171649893",
+    "name": "وصلة",
+    "listingId": "1728575038",
+    "developer": "وصلة لتقنية المعلومات",
+    "version": "1.34.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "1178451532": {
+    "id": "1178451532",
+    "name": "ليالي",
+    "listingId": "241705472",
+    "developer": "Codely Company",
+    "version": "1.11.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1182063247": {
+    "id": "1182063247",
+    "name": "سكر",
+    "listingId": "684445625",
+    "developer": "وصلة لتقنية المعلومات",
+    "version": "1.20.0",
+    "rating": 4,
+    "ratingsCount": 4
+  },
+  "1187243978": {
+    "id": "1187243978",
+    "name": "طموح",
+    "listingId": "945394616",
+    "developer": "محمد شاهين",
+    "version": "1.14.0"
+  },
+  "1193832010": {
+    "id": "1193832010",
+    "name": "أروماتك",
+    "listingId": "1777895842",
+    "developer": "أحمد عبدالغني",
+    "version": "1.6.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1194706764": {
+    "id": "1194706764",
+    "name": "بيتس",
+    "listingId": "883419887",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.5.0"
+  },
+  "1197414793": {
+    "id": "1197414793",
+    "name": "رحلة",
+    "listingId": "1856514085",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.67.0",
+    "rating": 4.8,
+    "ratingsCount": 9
+  },
+  "1206731543": {
+    "id": "1206731543",
+    "name": "حرير",
+    "listingId": "72816152",
+    "developer": "mustafa osman",
+    "version": "1.57.0",
+    "rating": 4,
+    "ratingsCount": 9
+  },
+  "121210699": {
+    "id": "121210699",
+    "name": "أكتيف",
+    "listingId": "306573680",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.25.0"
+  },
+  "1213608966": {
+    "id": "1213608966",
+    "name": "مواسم",
+    "listingId": "1657417794",
+    "developer": "Washaq Agency",
+    "version": "1.156.0",
+    "rating": 4.9,
+    "ratingsCount": 35
+  },
+  "1219318081": {
+    "id": "1219318081",
+    "name": "فلوريزا",
+    "listingId": "1776892441",
+    "developer": "ESLAM FARAG",
+    "version": "1.21.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "1222933900": {
+    "id": "1222933900",
+    "name": "نسيج",
+    "listingId": "1869037131",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.8.0"
+  },
+  "123405666": {
+    "id": "123405666",
+    "name": "عناية",
+    "listingId": "1906295848",
+    "developer": "Mazen Aloteibi",
+    "version": "1.22.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "1236831254": {
+    "id": "1236831254",
+    "name": "الروضة",
+    "listingId": "341287471",
+    "developer": "Mohamed Taha",
+    "version": "1.16.0"
+  },
+  "1237892238": {
+    "id": "1237892238",
+    "name": "رهيب",
+    "listingId": "2028197543",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.54.0",
+    "rating": 4.4,
+    "ratingsCount": 15
+  },
+  "1243047413": {
+    "id": "1243047413",
+    "name": "قصص",
+    "listingId": "471614860",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.103.0",
+    "rating": 4.8,
+    "ratingsCount": 77
+  },
+  "124822422": {
+    "id": "124822422",
+    "name": "جوري",
+    "listingId": "1202092916",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.42.0"
+  },
+  "1252437875": {
+    "id": "1252437875",
+    "name": "فارماسال",
+    "listingId": "836284701",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.27.0"
+  },
+  "1258146750": {
+    "id": "1258146750",
+    "name": "أثينا",
+    "listingId": "428970927",
+    "developer": "Mohamed  Hassanein",
+    "version": "1.89.0",
+    "rating": 4.7,
+    "ratingsCount": 33
+  },
+  "1289015776": {
+    "id": "1289015776",
+    "name": "سامكس",
+    "listingId": "355471260",
+    "developer": "AHMED FARAG",
+    "version": "1.3.0"
+  },
+  "1298054240": {
+    "id": "1298054240",
+    "name": "مزيج",
+    "listingId": "229630703",
+    "developer": "Mohammed Tarek",
+    "version": "1.27.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "1298199463": {
+    "id": "1298199463",
+    "name": "رائد",
+    "listingId": "277388345",
+    "developer": "سلة",
+    "version": "1.377.0",
+    "rating": 4.9,
+    "ratingsCount": 3547
+  },
+  "1307983149": {
+    "id": "1307983149",
+    "name": "فاشون",
+    "listingId": "362055121",
+    "developer": "جميلة عوض الله",
+    "version": "1.12.0"
+  },
+  "1314842132": {
+    "id": "1314842132",
+    "name": "ستره",
+    "listingId": "806201263",
+    "developer": "Mohamed Taha",
+    "version": "1.7.0",
+    "rating": 1,
+    "ratingsCount": 1
+  },
+  "1324101522": {
+    "id": "1324101522",
+    "name": "جرانيت",
+    "listingId": "232849167",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.28.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1345871747": {
+    "id": "1345871747",
+    "name": "رقمي",
+    "listingId": "1587789257",
+    "developer": "سلة",
+    "version": "1.102.0",
+    "rating": 5,
+    "ratingsCount": 11
+  },
+  "1359390292": {
+    "id": "1359390292",
+    "name": "درب",
+    "listingId": "1814171761",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.22.0"
+  },
+  "1365099159": {
+    "id": "1365099159",
+    "name": "نقي",
+    "listingId": "294427253",
+    "developer": "وصلة لتقنية المعلومات",
+    "version": "1.14.0"
+  },
+  "1368715218": {
+    "id": "1368715218",
+    "name": "رانيورا",
+    "listingId": "1849589563",
+    "developer": "HOUSSEM EDDINE EL AMRI",
+    "version": "1.10.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "137408960": {
+    "id": "137408960",
+    "name": "قمة",
+    "listingId": "1269077688",
+    "developer": "محمد شاهين",
+    "version": "1.76.0",
+    "rating": 5,
+    "ratingsCount": 6
+  },
+  "1384696568": {
+    "id": "1384696568",
+    "name": "روح",
+    "listingId": "1803069319",
+    "developer": "ZIDLIX",
+    "version": "1.57.0",
+    "rating": 4.6,
+    "ratingsCount": 10
+  },
+  "1385308371": {
+    "id": "1385308371",
+    "name": "كسوة",
+    "listingId": "550116287",
+    "developer": "Mohammed Tarek",
+    "version": "1.17.0",
+    "rating": 5,
+    "ratingsCount": 4,
+    "isBeta": true
+  },
+  "1388828475": {
+    "id": "1388828475",
+    "name": "نسيج",
+    "listingId": "2026274221",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.16.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1394537542": {
+    "id": "1394537542",
+    "name": "رالي",
+    "listingId": "619807266",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.16.0"
+  },
+  "1398083713": {
+    "id": "1398083713",
+    "name": "كاكاو",
+    "listingId": "1576058571",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.29.0"
+  },
+  "1403796940": {
+    "id": "1403796940",
+    "name": "سمة",
+    "listingId": "1146562717",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.74.0",
+    "rating": 5,
+    "ratingsCount": 5
+  },
+  "1411953639": {
+    "id": "1411953639",
+    "name": "علا",
+    "listingId": "85911406",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.116.0",
+    "rating": 4.6,
+    "ratingsCount": 85
+  },
+  "1425349032": {
+    "id": "1425349032",
+    "name": "بايرلين",
+    "listingId": "1622993825",
+    "developer": "Nadeem Hassan",
+    "version": "1.2.0"
+  },
+  "1431054059": {
+    "id": "1431054059",
+    "name": "سهم",
+    "listingId": "1716187027",
+    "developer": "وصلة لتقنية المعلومات",
+    "version": "1.25.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "1442053675": {
+    "id": "1442053675",
+    "name": "سليك",
+    "listingId": "1646976115",
+    "developer": "ABDELRAHMAN NADER",
+    "version": "1.16.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1452600164": {
+    "id": "1452600164",
+    "name": "تُراث",
+    "listingId": "1792626049",
+    "developer": "وصلة لتقنية المعلومات",
+    "version": "1.4.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1460496474": {
+    "id": "1460496474",
+    "name": "ديجيتال",
+    "listingId": "1655837332",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.47.0"
+  },
+  "147641223": {
+    "id": "147641223",
+    "name": "جميل",
+    "listingId": "1369573297",
+    "developer": "Alienzhouse LTD",
+    "version": "1.110.0",
+    "rating": 4.3,
+    "ratingsCount": 40
+  },
+  "1485939862": {
+    "id": "1485939862",
+    "name": "ساجي",
+    "listingId": "188267752",
+    "developer": "Ahmed Abdel Hamid",
+    "version": "1.357.0",
+    "rating": 5,
+    "ratingsCount": 197
+  },
+  "1495789084": {
+    "id": "1495789084",
+    "name": "أصيل",
+    "listingId": "2056709289",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.34.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1498729748": {
+    "id": "1498729748",
+    "name": "لايف واي",
+    "listingId": "1303730295",
+    "developer": "Kazi Mohammed Erfan",
+    "version": "1.4.0"
+  },
+  "1505040282": {
+    "id": "1505040282",
+    "name": "ماتشا",
+    "listingId": "36774673",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.30.0",
+    "rating": 5,
+    "ratingsCount": 10
+  },
+  "152389999": {
+    "id": "152389999",
+    "name": "بروفا",
+    "listingId": "321407598",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.5.0"
+  },
+  "1530870798": {
+    "id": "1530870798",
+    "name": "مذاق",
+    "listingId": "2040982333",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.39.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1534482761": {
+    "id": "1534482761",
+    "name": "رُقي",
+    "listingId": "1075950900",
+    "developer": "ESLAM FARAG",
+    "version": "1.159.0",
+    "rating": 4.9,
+    "ratingsCount": 33
+  },
+  "1540187540": {
+    "id": "1540187540",
+    "name": "تراڤو",
+    "listingId": "916432083",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.4.0"
+  },
+  "1548352431": {
+    "id": "1548352431",
+    "name": "مُختلف",
+    "listingId": "520022191",
+    "developer": "سلة",
+    "version": "1.127.0",
+    "rating": 4.9,
+    "ratingsCount": 34
+  },
+  "1551898858": {
+    "id": "1551898858",
+    "name": "ريس",
+    "listingId": "1768635143",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.129.0",
+    "rating": 4.3,
+    "ratingsCount": 55
+  },
+  "1561739888": {
+    "id": "1561739888",
+    "name": "براند",
+    "listingId": "535882890",
+    "developer": "Sara aldbian",
+    "version": "1.268.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "156376333": {
+    "id": "156376333",
+    "name": "بهجة",
+    "listingId": "1540192910",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.47.0",
+    "rating": 4.5,
+    "ratingsCount": 6
+  },
+  "1592433390": {
+    "id": "1592433390",
+    "name": "محرك",
+    "listingId": "1412350850",
+    "developer": "Washaq Agency",
+    "version": "1.10.0"
+  },
+  "1594758736": {
+    "id": "1594758736",
+    "name": "محصول",
+    "listingId": "1076597327",
+    "developer": "عبدالعزيز العنزي",
+    "version": "1.12.0"
+  },
+  "1596045023": {
+    "id": "1596045023",
+    "name": "سديم",
+    "listingId": "1569251916",
+    "developer": "Khaled Eissa",
+    "version": "1.18.0"
+  },
+  "1596952674": {
+    "id": "1596952674",
+    "name": "إسبارك",
+    "listingId": "1844786845",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.32.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "1600568493": {
+    "id": "1600568493",
+    "name": "ريترو",
+    "listingId": "1187766038",
+    "developer": "Aisha Basalam",
+    "version": "1.20.0",
+    "rating": 4.5,
+    "ratingsCount": 2
+  },
+  "1606277608": {
+    "id": "1606277608",
+    "name": "إشراقة",
+    "listingId": "56006245",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.8.0"
+  },
+  "1613154975": {
+    "id": "1613154975",
+    "name": "رابـــِــح",
+    "listingId": "667468690",
+    "developer": "ESLAM FARAG",
+    "version": "1.129.0",
+    "rating": 5,
+    "ratingsCount": 56
+  },
+  "162085448": {
+    "id": "162085448",
+    "name": "أريكة",
+    "listingId": "1810145234",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.25.0"
+  },
+  "162838631": {
+    "id": "162838631",
+    "name": "الأمل",
+    "listingId": "666019119",
+    "developer": "Mohamed Taha",
+    "version": "1.10.0"
+  },
+  "1641439138": {
+    "id": "1641439138",
+    "name": "أُنس",
+    "listingId": "1110782388",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.11.0",
+    "rating": 1,
+    "ratingsCount": 2
+  },
+  "16435258": {
+    "id": "16435258",
+    "name": "نقاء",
+    "listingId": "1562132387",
+    "developer": "mustafa osman",
+    "version": "1.56.0",
+    "rating": 4.6,
+    "ratingsCount": 7
+  },
+  "1651844564": {
+    "id": "1651844564",
+    "name": "سينس",
+    "listingId": "72072550",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.21.0",
+    "rating": 5,
+    "ratingsCount": 3
+  },
+  "1662746176": {
+    "id": "1662746176",
+    "name": "نغم",
+    "listingId": "870249084",
+    "developer": "Washaq Agency",
+    "version": "1.12.0"
+  },
+  "1666737366": {
+    "id": "1666737366",
+    "name": "تريندي",
+    "listingId": "503223439",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.43.0",
+    "rating": 4.2,
+    "ratingsCount": 5
+  },
+  "1670414609": {
+    "id": "1670414609",
+    "name": "اكسترا",
+    "listingId": "218597294",
+    "developer": "تريزا فرج الله",
+    "version": "1.8.0"
+  },
+  "167609359": {
+    "id": "167609359",
+    "name": "فولت",
+    "listingId": "1123944071",
+    "developer": "أيمن عثمان",
+    "version": "1.16.0",
+    "isBeta": true
+  },
+  "1679109875": {
+    "id": "1679109875",
+    "name": "بيكسل",
+    "listingId": "1611479049",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.25.0",
+    "rating": 5,
+    "ratingsCount": 11
+  },
+  "1688811500": {
+    "id": "1688811500",
+    "name": "سينهايزر",
+    "listingId": "928436091",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.6.0"
+  },
+  "1694002685": {
+    "id": "1694002685",
+    "name": "ماركت",
+    "listingId": "1355517291",
+    "developer": "سلة",
+    "version": "1.86.0",
+    "rating": 4.9,
+    "ratingsCount": 20
+  },
+  "1697679928": {
+    "id": "1697679928",
+    "name": "الأصايل",
+    "listingId": "1626859476",
+    "developer": "عناقيد التطبيقات",
+    "version": "1.23.0"
+  },
+  "1707520902": {
+    "id": "1707520902",
+    "name": "فاتن",
+    "listingId": "1995586709",
+    "developer": "وصلة لتقنية المعلومات",
+    "version": "1.24.0",
+    "rating": 3,
+    "ratingsCount": 2
+  },
+  "1723506348": {
+    "id": "1723506348",
+    "name": "امتياز",
+    "listingId": "546250460",
+    "developer": "سلة",
+    "version": "1.183.0",
+    "rating": 4.6,
+    "ratingsCount": 90
+  },
+  "1732827178": {
+    "id": "1732827178",
+    "name": "خيال",
+    "listingId": "2106001860",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.44.0",
+    "rating": 4.8,
+    "ratingsCount": 22
+  },
+  "1736959349": {
+    "id": "1736959349",
+    "name": "تاج",
+    "listingId": "114290089",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.26.0",
+    "rating": 1,
+    "ratingsCount": 1
+  },
+  "1742602672": {
+    "id": "1742602672",
+    "name": "سيري",
+    "listingId": "1121878777",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.26.0",
+    "rating": 3,
+    "ratingsCount": 2
+  },
+  "1755193314": {
+    "id": "1755193314",
+    "name": "ازال",
+    "listingId": "1277951693",
+    "developer": "Sara aldbian",
+    "version": "1.277.0"
+  },
+  "1756478327": {
+    "id": "1756478327",
+    "name": "جاليري",
+    "listingId": "2021956076",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.16.0",
+    "rating": 4.5,
+    "ratingsCount": 2
+  },
+  "1764372897": {
+    "id": "1764372897",
+    "name": "واثق",
+    "listingId": "74755272",
+    "developer": "سلة",
+    "version": "1.207.0",
+    "rating": 4.6,
+    "ratingsCount": 70
+  },
+  "1773372150": {
+    "id": "1773372150",
+    "name": "فائق",
+    "listingId": "340159887",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.17.0"
+  },
+  "1778394134": {
+    "id": "1778394134",
+    "name": "ايكو",
+    "listingId": "708045532",
+    "developer": "جميلة عوض الله",
+    "version": "1.15.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "1779591097": {
+    "id": "1779591097",
+    "name": "كانفاس",
+    "listingId": "2024464185",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.12.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1781859086": {
+    "id": "1781859086",
+    "name": "مكسيم",
+    "listingId": "1944598902",
+    "developer": "Mohamed  Hassanein",
+    "version": "1.6.0"
+  },
+  "1784627537": {
+    "id": "1784627537",
+    "name": "بيور",
+    "listingId": "1029861527",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.18.0"
+  },
+  "1803201694": {
+    "id": "1803201694",
+    "name": "مبدع",
+    "listingId": "2138435713",
+    "developer": "kyrillos ezzat",
+    "version": "1.57.0",
+    "rating": 4.4,
+    "ratingsCount": 19
+  },
+  "1806813657": {
+    "id": "1806813657",
+    "name": "رناواي",
+    "listingId": "1448593138",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.135.0",
+    "rating": 4.7,
+    "ratingsCount": 88
+  },
+  "1815500475": {
+    "id": "1815500475",
+    "name": "سفرة",
+    "listingId": "1497101358",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.23.0"
+  },
+  "1821209542": {
+    "id": "1821209542",
+    "name": "ستايل",
+    "listingId": "1964931661",
+    "developer": "عبدالعزيز العنزي",
+    "version": "1.26.0",
+    "rating": 5,
+    "ratingsCount": 3
+  },
+  "1839783683": {
+    "id": "1839783683",
+    "name": "مسالم",
+    "listingId": "1676649302",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.24.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "1869152498": {
+    "id": "1869152498",
+    "name": "بلور",
+    "listingId": "1248491026",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.78.0",
+    "rating": 4.6,
+    "ratingsCount": 101
+  },
+  "1872768317": {
+    "id": "1872768317",
+    "name": "جوتراد",
+    "listingId": "711242178",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.48.0",
+    "rating": 5,
+    "ratingsCount": 3
+  },
+  "1879001720": {
+    "id": "1879001720",
+    "name": "ليله",
+    "listingId": "821326355",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.27.0"
+  },
+  "1881742892": {
+    "id": "1881742892",
+    "name": "جميلة",
+    "listingId": "1024934588",
+    "developer": "المهاكود لخدمات الاعمال WeOryx",
+    "version": "1.5.0"
+  },
+  "1892323543": {
+    "id": "1892323543",
+    "name": "بصمة",
+    "listingId": "1767707222",
+    "developer": "Mazen Aloteibi",
+    "version": "1.5.0"
+  },
+  "1895195893": {
+    "id": "1895195893",
+    "name": "تَميّم",
+    "listingId": "132854727",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.61.0",
+    "rating": 4.6,
+    "ratingsCount": 9
+  },
+  "1904840339": {
+    "id": "1904840339",
+    "name": "رؤية",
+    "listingId": "361577722",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.15.0"
+  },
+  "1906029328": {
+    "id": "1906029328",
+    "name": "تابي",
+    "listingId": "1412444137",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.21.0"
+  },
+  "1914793182": {
+    "id": "1914793182",
+    "name": "غنا",
+    "listingId": "959367057",
+    "developer": "مريم الجميعة",
+    "version": "0.38.0",
+    "rating": 4.1,
+    "ratingsCount": 16
+  },
+  "191523647": {
+    "id": "191523647",
+    "name": "لمسة",
+    "listingId": "2110799310",
+    "developer": "جميلة عوض الله",
+    "version": "1.13.0",
+    "rating": 5,
+    "ratingsCount": 9
+  },
+  "1920567577": {
+    "id": "1920567577",
+    "name": "رونق",
+    "listingId": "1262492737",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.74.0",
+    "rating": 5,
+    "ratingsCount": 12
+  },
+  "1929087811": {
+    "id": "1929087811",
+    "name": "هدية",
+    "listingId": "576689358",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.4.0"
+  },
+  "1930408679": {
+    "id": "1930408679",
+    "name": "بارت",
+    "listingId": "2047933257",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.24.0",
+    "rating": 4.8,
+    "ratingsCount": 5
+  },
+  "1946828947": {
+    "id": "1946828947",
+    "name": "برايم",
+    "listingId": "1693337710",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.11.0"
+  },
+  "1947759104": {
+    "id": "1947759104",
+    "name": "ليجو",
+    "listingId": "959849717",
+    "developer": "جميلة عوض الله",
+    "version": "1.10.0"
+  },
+  "1951440707": {
+    "id": "1951440707",
+    "name": "جوي توي",
+    "listingId": "485056801",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.36.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "195201146": {
+    "id": "195201146",
+    "name": "وهج",
+    "listingId": "1138588187",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.80.0",
+    "rating": 5,
+    "ratingsCount": 8
+  },
+  "1961285833": {
+    "id": "1961285833",
+    "name": "طلة",
+    "listingId": "1973930642",
+    "developer": "وكالة الشخصية العربية",
+    "version": "1.10.0"
+  },
+  "1965539759": {
+    "id": "1965539759",
+    "name": "مَخْمَل",
+    "listingId": "1035387226",
+    "developer": "أيمن عثمان",
+    "version": "1.27.0"
+  },
+  "1976109003": {
+    "id": "1976109003",
+    "name": "آرت",
+    "listingId": "1235953374",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.116.0",
+    "rating": 4.4,
+    "ratingsCount": 67
+  },
+  "1986588029": {
+    "id": "1986588029",
+    "name": "ماكس",
+    "listingId": "1791753848",
+    "developer": "تريزا فرج الله",
+    "version": "v1.7.0",
+    "rating": 5,
+    "ratingsCount": 6
+  },
+  "1990658488": {
+    "id": "1990658488",
+    "name": "مليكة",
+    "listingId": "1107969023",
+    "developer": "أحمد محمد",
+    "version": "1.74.0",
+    "rating": 5,
+    "ratingsCount": 17
+  },
+  "1996363515": {
+    "id": "1996363515",
+    "name": "الماس",
+    "listingId": "1180000192",
+    "developer": "أحمد محمد",
+    "version": "1.59.0",
+    "rating": 4.8,
+    "ratingsCount": 22
+  },
+  "200905861": {
+    "id": "200905861",
+    "name": "تميز",
+    "listingId": "1783846755",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.56.0"
+  },
+  "2014008853": {
+    "id": "2014008853",
+    "name": "وعد",
+    "listingId": "2053832936",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.30.0"
+  },
+  "2031135933": {
+    "id": "2031135933",
+    "name": "عبق",
+    "listingId": "146864721",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.12.0"
+  },
+  "2037369336": {
+    "id": "2037369336",
+    "name": "لوميير",
+    "listingId": "926239421",
+    "developer": "AHMED FARAG",
+    "version": "1.70.0",
+    "rating": 5,
+    "ratingsCount": 12
+  },
+  "2046553023": {
+    "id": "2046553023",
+    "name": "عطاء",
+    "listingId": "1661298851",
+    "developer": "سلة",
+    "version": "1.125.0",
+    "rating": 4.9,
+    "ratingsCount": 28
+  },
+  "204824683": {
+    "id": "204824683",
+    "name": "عظمة",
+    "listingId": "891671759",
+    "developer": "Salah Badawy",
+    "version": "1.12.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "2070349802": {
+    "id": "2070349802",
+    "name": "عبايات",
+    "listingId": "2099475335",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.26.0",
+    "rating": 5,
+    "ratingsCount": 13
+  },
+  "2071023639": {
+    "id": "2071023639",
+    "name": "تويز",
+    "listingId": "669538392",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.5.0"
+  },
+  "2079924624": {
+    "id": "2079924624",
+    "name": "بوم",
+    "listingId": "1776025336",
+    "developer": "محمد شاهين",
+    "version": "1.14.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "2087831307": {
+    "id": "2087831307",
+    "name": "نجم",
+    "listingId": "1713412270",
+    "developer": "مؤسسة عادل الجهمي لتقنية المعلومات",
+    "version": "1.44.0",
+    "rating": 5,
+    "ratingsCount": 25
+  },
+  "2091969152": {
+    "id": "2091969152",
+    "name": "دومارياني",
+    "listingId": "1258276029",
+    "developer": "مؤسسة الوتين السعودية التجارية",
+    "version": "1.1.0"
+  },
+  "2093540438": {
+    "id": "2093540438",
+    "name": "ريأكت",
+    "listingId": "598004948",
+    "developer": "Washaq Agency",
+    "version": "1.23.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "2097610897": {
+    "id": "2097610897",
+    "name": "ألوان",
+    "listingId": "1360460532",
+    "developer": "أيمن عثمان",
+    "version": "1.29.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "2112507795": {
+    "id": "2112507795",
+    "name": "بيلا",
+    "listingId": "1503494162",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.92.0",
+    "rating": 4.7,
+    "ratingsCount": 33
+  },
+  "2117208314": {
+    "id": "2117208314",
+    "name": "ياسمين",
+    "listingId": "1582918665",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.108.0",
+    "rating": 4.8,
+    "ratingsCount": 21
+  },
+  "2122913029": {
+    "id": "2122913029",
+    "name": "اليف",
+    "listingId": "129351180",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.33.0",
+    "rating": 4,
+    "ratingsCount": 6
+  },
+  "213071771": {
+    "id": "213071771",
+    "name": "يافا",
+    "listingId": "1894386675",
+    "developer": "BAYO LTD",
+    "version": "1.126.0",
+    "rating": 4.2,
+    "ratingsCount": 152
+  },
+  "2132762243": {
+    "id": "2132762243",
+    "name": "بن",
+    "listingId": "430685046",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.59.0",
+    "rating": 3,
+    "ratingsCount": 4
+  },
+  "2136374222": {
+    "id": "2136374222",
+    "name": "وصال",
+    "listingId": "2002844737",
+    "developer": "Washaq Agency",
+    "version": "1.9.0",
+    "rating": 3,
+    "ratingsCount": 1
+  },
+  "2145623437": {
+    "id": "2145623437",
+    "name": "متجر",
+    "listingId": "1948506485",
+    "developer": "باسم تركي",
+    "version": "1.213.0",
+    "rating": 4.9,
+    "ratingsCount": 192
+  },
+  "218780710": {
+    "id": "218780710",
+    "name": "رحيق",
+    "listingId": "118505321",
+    "developer": "kyrillos ezzat",
+    "version": "1.19.0",
+    "rating": 4.2,
+    "ratingsCount": 5,
+    "isBeta": true
+  },
+  "222392673": {
+    "id": "222392673",
+    "name": "زينة",
+    "listingId": "534943613",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.74.0",
+    "rating": 4.7,
+    "ratingsCount": 15
+  },
+  "228171180": {
+    "id": "228171180",
+    "name": "أمان",
+    "listingId": "2091965330",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.23.0"
+  },
+  "235400060": {
+    "id": "235400060",
+    "name": "تمارا",
+    "listingId": "1822696805",
+    "developer": "عبدالله عبدالسلام",
+    "version": "1.28.0",
+    "rating": 5,
+    "ratingsCount": 7
+  },
+  "239035350": {
+    "id": "239035350",
+    "name": "ساند",
+    "listingId": "428628067",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.24.0",
+    "rating": 4.2,
+    "ratingsCount": 5
+  },
+  "246711701": {
+    "id": "246711701",
+    "name": "بوتيك",
+    "listingId": "1549101659",
+    "developer": "باسم تركي",
+    "version": "1.87.0",
+    "rating": 4.9,
+    "ratingsCount": 60
+  },
+  "25751936": {
+    "id": "25751936",
+    "name": "جوهرة",
+    "listingId": "312769175",
+    "developer": "وصلة لتقنية المعلومات",
+    "version": "1.25.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "266864793": {
+    "id": "266864793",
+    "name": "رشفة",
+    "listingId": "121889458",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.4.0"
+  },
+  "270196045": {
+    "id": "270196045",
+    "name": "شهد",
+    "listingId": "1797146889",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.32.0"
+  },
+  "273807752": {
+    "id": "273807752",
+    "name": "ريان",
+    "listingId": "1005311180",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.30.0"
+  },
+  "29826755": {
+    "id": "29826755",
+    "name": "جلوي",
+    "listingId": "791554492",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.74.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "322729604": {
+    "id": "322729604",
+    "name": "موعد",
+    "listingId": "1248180887",
+    "developer": "سلة",
+    "version": "1.87.0",
+    "rating": 4.5,
+    "ratingsCount": 4
+  },
+  "328342258": {
+    "id": "328342258",
+    "name": "ثريا",
+    "listingId": "1494458822",
+    "developer": "Khaled Eissa",
+    "version": "1.12.0",
+    "rating": 1,
+    "ratingsCount": 1
+  },
+  "336146593": {
+    "id": "336146593",
+    "name": "بيتسي",
+    "listingId": "777330487",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.27.0",
+    "rating": 2,
+    "ratingsCount": 1
+  },
+  "339762668": {
+    "id": "339762668",
+    "name": "نوتة",
+    "listingId": "334439216",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.32.0",
+    "rating": 5,
+    "ratingsCount": 11
+  },
+  "342604235": {
+    "id": "342604235",
+    "name": "ميرا",
+    "listingId": "541351107",
+    "developer": "سيف علاء",
+    "version": "1.37.0",
+    "rating": 5,
+    "ratingsCount": 5
+  },
+  "344285718": {
+    "id": "344285718",
+    "name": "مهرة",
+    "listingId": "1173391414",
+    "developer": "عبدالله عبدالسلام",
+    "version": "1.45.0",
+    "rating": 5,
+    "ratingsCount": 5
+  },
+  "349994915": {
+    "id": "349994915",
+    "name": "وسام",
+    "listingId": "216406170",
+    "developer": "سلة",
+    "version": "1.344.0",
+    "rating": 4.9,
+    "ratingsCount": 166
+  },
+  "364562036": {
+    "id": "364562036",
+    "name": "أناقة",
+    "listingId": "1865839635",
+    "developer": "عقبة لعويسي",
+    "version": "1.40.0",
+    "rating": 5,
+    "ratingsCount": 4
+  },
+  "369266515": {
+    "id": "369266515",
+    "name": "طراز",
+    "listingId": "54522868",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.20.0",
+    "rating": 1,
+    "ratingsCount": 1
+  },
+  "374975390": {
+    "id": "374975390",
+    "name": "رويال",
+    "listingId": "1440982161",
+    "developer": "جميلة عوض الله",
+    "version": "1.18.0"
+  },
+  "37846187": {
+    "id": "37846187",
+    "name": "روز",
+    "listingId": "63647655",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.12.0"
+  },
+  "383245398": {
+    "id": "383245398",
+    "name": "سهرة",
+    "listingId": "2097224080",
+    "developer": "وصلة لتقنية المعلومات",
+    "version": "1.6.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "388819608": {
+    "id": "388819608",
+    "name": "إلكترون",
+    "listingId": "1259694136",
+    "developer": "أسامة الطعمة",
+    "version": "0.5.0",
+    "rating": 4.6,
+    "ratingsCount": 25
+  },
+  "394000347": {
+    "id": "394000347",
+    "name": "عُود",
+    "listingId": "1138132945",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.47.0",
+    "rating": 4.8,
+    "ratingsCount": 15
+  },
+  "397546598": {
+    "id": "397546598",
+    "name": "نايس",
+    "listingId": "112830492",
+    "developer": "محمد الشمراني",
+    "version": "1.12.0",
+    "rating": 5,
+    "ratingsCount": 4
+  },
+  "40297589": {
+    "id": "40297589",
+    "name": "روعة",
+    "listingId": "369981367",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.34.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "406521109": {
+    "id": "406521109",
+    "name": "ألوري",
+    "listingId": "1576449274",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.80.0",
+    "rating": 4.5,
+    "ratingsCount": 13
+  },
+  "412851802": {
+    "id": "412851802",
+    "name": "ريتش",
+    "listingId": "911535560",
+    "developer": "Hana Moussa",
+    "version": "1.38.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "415846035": {
+    "id": "415846035",
+    "name": "كونسبت",
+    "listingId": "1795084159",
+    "developer": "وصلة لتقنية المعلومات",
+    "version": "1.25.0",
+    "rating": 5,
+    "ratingsCount": 5
+  },
+  "433367768": {
+    "id": "433367768",
+    "name": "قهوة",
+    "listingId": "1200545514",
+    "developer": "Mazen Al-Ashbi",
+    "version": "1.14.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "439571207": {
+    "id": "439571207",
+    "name": "شيك",
+    "listingId": "1723503526",
+    "developer": "مريم الجميعة",
+    "version": "1.69.0",
+    "rating": 5,
+    "ratingsCount": 6
+  },
+  "445280322": {
+    "id": "445280322",
+    "name": "فلورا",
+    "listingId": "1185257977",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.51.0"
+  },
+  "448961677": {
+    "id": "448961677",
+    "name": "تسالي",
+    "listingId": "961305940",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.29.0",
+    "isBeta": true
+  },
+  "476218804": {
+    "id": "476218804",
+    "name": "كلاسيك",
+    "listingId": "1947889931",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.28.0",
+    "rating": 1,
+    "ratingsCount": 1
+  },
+  "482201019": {
+    "id": "482201019",
+    "name": "شمس",
+    "listingId": "454420300",
+    "developer": "محمد شاهين",
+    "version": "1.12.0"
+  },
+  "491648532": {
+    "id": "491648532",
+    "name": "سوكيت",
+    "listingId": "1999630113",
+    "developer": "Washaq Agency",
+    "version": "1.11.0"
+  },
+  "49415732": {
+    "id": "49415732",
+    "name": "لاڤيلا",
+    "listingId": "533144402",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.31.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "495772145": {
+    "id": "495772145",
+    "name": "لوفيزا",
+    "listingId": "468249652",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.95.0",
+    "rating": 4.8,
+    "ratingsCount": 282
+  },
+  "505657115": {
+    "id": "505657115",
+    "name": "اثاث",
+    "listingId": "815073532",
+    "developer": "AHMED FARAG",
+    "version": "1.106.0",
+    "rating": 4.8,
+    "ratingsCount": 18,
+    "isBeta": true
+  },
+  "511366054": {
+    "id": "511366054",
+    "name": "فخر",
+    "listingId": "39105770",
+    "developer": "عبدالعزيز العنزي",
+    "version": "1.111.0",
+    "rating": 5,
+    "ratingsCount": 10
+  },
+  "533945390": {
+    "id": "533945390",
+    "name": "سمو",
+    "listingId": "796092836",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.26.0",
+    "rating": 4.2,
+    "ratingsCount": 5
+  },
+  "546531864": {
+    "id": "546531864",
+    "name": "سيمتا",
+    "listingId": "793227524",
+    "developer": "عبير الغامدي",
+    "version": "1.10.0"
+  },
+  "549472528": {
+    "id": "549472528",
+    "name": "زينك",
+    "listingId": "529688432",
+    "developer": "Kazi Mohammed Erfan",
+    "version": "1.10.0"
+  },
+  "552236891": {
+    "id": "552236891",
+    "name": "طيف",
+    "listingId": "1017065877",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.12.0"
+  },
+  "5541564": {
+    "id": "5541564",
+    "name": "كليك",
+    "listingId": "946727618",
+    "developer": "سلة",
+    "version": "1.131.0",
+    "rating": 4.9,
+    "ratingsCount": 1140
+  },
+  "569758432": {
+    "id": "569758432",
+    "name": "جلامور",
+    "listingId": "137195413",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.303.0",
+    "rating": 4.7,
+    "ratingsCount": 815
+  },
+  "579173609": {
+    "id": "579173609",
+    "name": "هيبة",
+    "listingId": "1218934590",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.17.0"
+  },
+  "580171786": {
+    "id": "580171786",
+    "name": "ستوريا",
+    "listingId": "341473709",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.30.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "582361391": {
+    "id": "582361391",
+    "name": "قافلة",
+    "listingId": "426911968",
+    "developer": "Abdullah Al Katheri",
+    "version": "1.87.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "58740658": {
+    "id": "58740658",
+    "name": "سينت",
+    "listingId": "238641881",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.7.0"
+  },
+  "594611923": {
+    "id": "594611923",
+    "name": "بلاك",
+    "listingId": "939826692",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.20.0",
+    "rating": 5,
+    "ratingsCount": 4
+  },
+  "612881422": {
+    "id": "612881422",
+    "name": "وسن",
+    "listingId": "2145627315",
+    "developer": "احمد القرشي",
+    "version": "1.13.0"
+  },
+  "615201350": {
+    "id": "615201350",
+    "name": "تفاحة",
+    "listingId": "952467661",
+    "developer": "Mohammad Khalouf",
+    "version": "1.5.0"
+  },
+  "618326719": {
+    "id": "618326719",
+    "name": "ديمة",
+    "listingId": "1910425985",
+    "developer": "سيف علاء",
+    "version": "1.34.0",
+    "rating": 5,
+    "ratingsCount": 4
+  },
+  "621934586": {
+    "id": "621934586",
+    "name": "كفو",
+    "listingId": "198846974",
+    "developer": "Washaq Agency",
+    "version": "1.34.0",
+    "rating": 1,
+    "ratingsCount": 3
+  },
+  "632105401": {
+    "id": "632105401",
+    "name": "سيليا",
+    "listingId": "1399399001",
+    "developer": "Selia Tech",
+    "version": "1.218.0",
+    "rating": 5,
+    "ratingsCount": 1377
+  },
+  "635713220": {
+    "id": "635713220",
+    "name": "ثمن",
+    "listingId": "1248306400",
+    "developer": "Abdullah Al Katheri",
+    "version": "1.82.0",
+    "rating": 5,
+    "ratingsCount": 15
+  },
+  "647699566": {
+    "id": "647699566",
+    "name": "بروتال",
+    "listingId": "1057953436",
+    "developer": "Aisha Basalam",
+    "version": "1.21.0"
+  },
+  "647836379": {
+    "id": "647836379",
+    "name": "أنجز",
+    "listingId": "794100045",
+    "developer": "Mazen Aloteibi",
+    "version": "1.19.0",
+    "rating": 5,
+    "ratingsCount": 6
+  },
+  "64974077": {
+    "id": "64974077",
+    "name": "شهرة",
+    "listingId": "1588660248",
+    "developer": "عبدالله عبدالسلام",
+    "version": "1.131.0",
+    "rating": 5,
+    "ratingsCount": 14
+  },
+  "660965367": {
+    "id": "660965367",
+    "name": "خديجة",
+    "listingId": "1191451924",
+    "developer": "وكالة تركي محمود العنزي التجارية",
+    "version": "1.4.0"
+  },
+  "66193474": {
+    "id": "66193474",
+    "name": "البركة",
+    "listingId": "1247918317",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.23.0",
+    "rating": 5,
+    "ratingsCount": 3
+  },
+  "670926070": {
+    "id": "670926070",
+    "name": "كراون",
+    "listingId": "1392562329",
+    "developer": "عقبة لعويسي",
+    "version": "v1.170.0",
+    "rating": 4.8,
+    "ratingsCount": 42
+  },
+  "683512352": {
+    "id": "683512352",
+    "name": "سكري",
+    "listingId": "1011547371",
+    "developer": "عقبة لعويسي",
+    "version": "v1.63.0",
+    "rating": 4.8,
+    "ratingsCount": 11
+  },
+  "687128419": {
+    "id": "687128419",
+    "name": "لونا",
+    "listingId": "483392774",
+    "developer": "وصلة لتقنية المعلومات",
+    "version": "1.46.0",
+    "rating": 5,
+    "ratingsCount": 6
+  },
+  "692313006": {
+    "id": "692313006",
+    "name": "هنا",
+    "listingId": "1327703065",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.21.0"
+  },
+  "698022121": {
+    "id": "698022121",
+    "name": "بيوتي",
+    "listingId": "134547371",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.20.0",
+    "rating": 4.7,
+    "ratingsCount": 6
+  },
+  "716562642": {
+    "id": "716562642",
+    "name": "ذهب",
+    "listingId": "746751763",
+    "developer": "شركة الاعمال الابداعية التجارية شخص واحد",
+    "version": "1.13.0",
+    "rating": 3,
+    "ratingsCount": 2
+  },
+  "718880774": {
+    "id": "718880774",
+    "name": "ايكونيك",
+    "listingId": "1589851785",
+    "developer": "Kazi Mohammed Erfan",
+    "version": "1.11.0"
+  },
+  "727394904": {
+    "id": "727394904",
+    "name": "عِنان",
+    "listingId": "1825202310",
+    "developer": "مؤسسة سكوب النخبة للتسويق الالكتروني",
+    "version": "1.50.0",
+    "rating": 5,
+    "ratingsCount": 11
+  },
+  "731002523": {
+    "id": "731002523",
+    "name": "ترحال",
+    "listingId": "912045670",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.37.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "73130640": {
+    "id": "73130640",
+    "name": "عالي",
+    "listingId": "3401524",
+    "developer": "مؤسسة عادل الجهمي لتقنية المعلومات",
+    "version": "1.166.0",
+    "rating": 5,
+    "ratingsCount": 1505
+  },
+  "735922552": {
+    "id": "735922552",
+    "name": "أوت فيت",
+    "listingId": "2036175977",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.15.0"
+  },
+  "740215998": {
+    "id": "740215998",
+    "name": "بريستيج",
+    "listingId": "491378254",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.130.0",
+    "rating": 4.6,
+    "ratingsCount": 112
+  },
+  "742496169": {
+    "id": "742496169",
+    "name": "نكسترون",
+    "listingId": "298299284",
+    "developer": "AHMED FARAG",
+    "version": "1.43.0",
+    "rating": 4.3,
+    "ratingsCount": 6
+  },
+  "743827961": {
+    "id": "743827961",
+    "name": "سمارت",
+    "listingId": "622265059",
+    "developer": "باسم تركي",
+    "version": "1.77.0",
+    "rating": 4.8,
+    "ratingsCount": 40
+  },
+  "748602519": {
+    "id": "748602519",
+    "name": "براكتس",
+    "listingId": "184625517",
+    "developer": "مؤسسة سكوب النخبة للتسويق الالكتروني",
+    "version": "1.9.0"
+  },
+  "749532676": {
+    "id": "749532676",
+    "name": "جليمر",
+    "listingId": "1540051911",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.49.0",
+    "rating": 2.7,
+    "ratingsCount": 3
+  },
+  "754651975": {
+    "id": "754651975",
+    "name": "تسوق",
+    "listingId": "842694915",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.71.0",
+    "rating": 4.3,
+    "ratingsCount": 6
+  },
+  "758267778": {
+    "id": "758267778",
+    "name": "نايا",
+    "listingId": "2046993724",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.24.0",
+    "rating": 5,
+    "ratingsCount": 3
+  },
+  "76681171": {
+    "id": "76681171",
+    "name": "مرح",
+    "listingId": "24019615",
+    "developer": "جميلة عوض الله",
+    "version": "1.35.0",
+    "rating": 4.9,
+    "ratingsCount": 8
+  },
+  "773200552": {
+    "id": "773200552",
+    "name": "فخامة",
+    "listingId": "1556551807",
+    "developer": "الشريف بونعاس",
+    "version": "1.107.0",
+    "rating": 4.7,
+    "ratingsCount": 262
+  },
+  "778905579": {
+    "id": "778905579",
+    "name": "خطوه",
+    "listingId": "1838332838",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.119.0",
+    "rating": 4.7,
+    "ratingsCount": 64
+  },
+  "782517302": {
+    "id": "782517302",
+    "name": "بـريـسـتـا",
+    "listingId": "1171905417",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.32.0"
+  },
+  "787702129": {
+    "id": "787702129",
+    "name": "طيبة",
+    "listingId": "1068142312",
+    "developer": "عبدالعزيز الغامدي",
+    "version": "1.24.0",
+    "rating": 5,
+    "ratingsCount": 16
+  },
+  "793102041": {
+    "id": "793102041",
+    "name": "بيوند",
+    "listingId": "352800848",
+    "developer": "مؤسسة وراء للدعاية والاعلان",
+    "version": "1.16.0"
+  },
+  "793480636": {
+    "id": "793480636",
+    "name": "وجهة",
+    "listingId": "485674501",
+    "developer": "عبدالله عبدالسلام",
+    "version": "1.196.0",
+    "rating": 4.9,
+    "ratingsCount": 23
+  },
+  "797092607": {
+    "id": "797092607",
+    "name": "راحه",
+    "listingId": "1695616881",
+    "developer": "Washaq Agency",
+    "version": "1.16.0"
+  },
+  "806067182": {
+    "id": "806067182",
+    "name": "أجواء",
+    "listingId": "1531227964",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.28.0"
+  },
+  "809944061": {
+    "id": "809944061",
+    "name": "زينتي",
+    "listingId": "1013940809",
+    "developer": "Mohamed Taha",
+    "version": "1.28.0"
+  },
+  "814202285": {
+    "id": "814202285",
+    "name": "زين",
+    "listingId": "170177462",
+    "developer": "سلة",
+    "version": "1.141.0",
+    "rating": 4.9,
+    "ratingsCount": 45
+  },
+  "815383924": {
+    "id": "815383924",
+    "name": "قمر",
+    "listingId": "1784367541",
+    "developer": "BINARYMOON",
+    "version": "1.28.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "818719597": {
+    "id": "818719597",
+    "name": "بريق",
+    "listingId": "1051240297",
+    "developer": "Washaq Agency",
+    "version": "1.8.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "829162614": {
+    "id": "829162614",
+    "name": "تكنو",
+    "listingId": "1351879850",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.29.0"
+  },
+  "837963260": {
+    "id": "837963260",
+    "name": "زاد",
+    "listingId": "2033592170",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.147.0",
+    "rating": 5,
+    "ratingsCount": 1
+  },
+  "852895898": {
+    "id": "852895898",
+    "name": "منيو",
+    "listingId": "1307231275",
+    "developer": "سلة",
+    "version": "1.8.0",
+    "rating": 4.9,
+    "ratingsCount": 11,
+    "isBeta": true
+  },
+  "858600741": {
+    "id": "858600741",
+    "name": "فريشمارت",
+    "listingId": "397069316",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.76.0",
+    "rating": 4.7,
+    "ratingsCount": 13
+  },
+  "86002009": {
+    "id": "86002009",
+    "name": "فيو",
+    "listingId": "2140366990",
+    "developer": "مؤسسة عبقرية الخليج لتقنية المعلومات",
+    "version": "1.63.0",
+    "rating": 4.4,
+    "ratingsCount": 7
+  },
+  "862212704": {
+    "id": "862212704",
+    "name": "الكترا",
+    "listingId": "1107658876",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.17.0"
+  },
+  "880152961": {
+    "id": "880152961",
+    "name": "أكاسيا",
+    "listingId": "482992669",
+    "developer": "أسامة الطعمة",
+    "version": "1.4.0",
+    "rating": 4.6,
+    "ratingsCount": 43
+  },
+  "894662730": {
+    "id": "894662730",
+    "name": "بِينْك",
+    "listingId": "302961717",
+    "developer": "باسم تركي",
+    "version": "1.54.0",
+    "rating": 5,
+    "ratingsCount": 17,
+    "isBeta": true
+  },
+  "904045008": {
+    "id": "904045008",
+    "name": "كسرة",
+    "listingId": "1393479380",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.21.0",
+    "rating": 5,
+    "ratingsCount": 7
+  },
+  "918981886": {
+    "id": "918981886",
+    "name": "نماء",
+    "listingId": "1115712149",
+    "developer": "جروفـلكس",
+    "version": "1.66.0",
+    "rating": 4.1,
+    "ratingsCount": 34
+  },
+  "92231140": {
+    "id": "92231140",
+    "name": "إتقان",
+    "listingId": "1376187488",
+    "developer": "Art Zone",
+    "version": "1.33.0",
+    "rating": 4.9,
+    "ratingsCount": 15
+  },
+  "924690745": {
+    "id": "924690745",
+    "name": "نوڤا",
+    "listingId": "53940386",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.46.0",
+    "rating": 3.7,
+    "ratingsCount": 7
+  },
+  "928298564": {
+    "id": "928298564",
+    "name": "لافندر",
+    "listingId": "1598371733",
+    "developer": "BAYO LTD",
+    "version": "1.38.0",
+    "rating": 1,
+    "ratingsCount": 3
+  },
+  "939196354": {
+    "id": "939196354",
+    "name": "لاميرا",
+    "listingId": "1241146825",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.19.0",
+    "rating": 5,
+    "ratingsCount": 5
+  },
+  "940884918": {
+    "id": "940884918",
+    "name": "وشاح",
+    "listingId": "1464234984",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.48.0"
+  },
+  "944268032": {
+    "id": "944268032",
+    "name": "فيكسو",
+    "listingId": "1187768578",
+    "developer": "مسار تك",
+    "version": "1.9.0"
+  },
+  "946069745": {
+    "id": "946069745",
+    "name": "هيرب",
+    "listingId": "1005793568",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.17.0",
+    "rating": 5,
+    "ratingsCount": 3
+  },
+  "959852531": {
+    "id": "959852531",
+    "name": "ابداع",
+    "listingId": "924425499",
+    "developer": "كود لوب لتقنية المعلومات",
+    "version": "1.168.0",
+    "rating": 4.7,
+    "ratingsCount": 95
+  },
+  "969173369": {
+    "id": "969173369",
+    "name": "ترس",
+    "listingId": "1556066333",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.35.0",
+    "rating": 1.5,
+    "ratingsCount": 2
+  },
+  "973124442": {
+    "id": "973124442",
+    "name": "ترف",
+    "listingId": "1535487380",
+    "developer": "كرافو لتقنية المعلومات",
+    "version": "1.16.0",
+    "rating": 5,
+    "ratingsCount": 2
+  },
+  "989286562": {
+    "id": "989286562",
+    "name": "فريد",
+    "listingId": "1411086427",
+    "developer": "سلة",
+    "version": "1.366.0",
+    "rating": 4.8,
+    "ratingsCount": 51,
+    "isBeta": true
+  },
+  "998677032": {
+    "id": "998677032",
+    "name": "سبورتفاي",
+    "listingId": "1999106787",
+    "developer": "Madar Technical Solutions FZC",
+    "version": "1.35.0",
+    "rating": 1,
+    "ratingsCount": 1
+  }
+}

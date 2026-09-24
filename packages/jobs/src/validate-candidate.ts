@@ -221,6 +221,7 @@ function emptyKnowledge(): KnowledgeSnapshot {
   return {
     version: "empty",
     apps: {},
+    themes: {},
     fingerprints: [],
     noise: {
       hosts: [],

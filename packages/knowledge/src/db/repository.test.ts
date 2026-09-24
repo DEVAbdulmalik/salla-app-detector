@@ -450,3 +450,66 @@ describe("fingerprint upkeep", () => {
     expect(await repository.noiseRules()).toEqual([]);
   });
 });
+
+describe("themes", () => {
+  it("keeps a theme catalogue and serves it in the snapshot", async () => {
+    await repository.upsertThemes([
+      {
+        id: "1298199463",
+        name: "رائد",
+        developer: "سلة",
+        version: "1.377.0",
+        rating: 4.9,
+        ratingsCount: 3547,
+        listingId: "277388345",
+      },
+      { id: "632105401", name: "سيليا", developer: "Selia Tech" },
+    ]);
+
+    const snapshot = await repository.loadSnapshot();
+
+    expect(snapshot.themes["1298199463"]).toEqual({
+      id: "1298199463",
+      name: "رائد",
+      developer: "سلة",
+      version: "1.377.0",
+      rating: 4.9,
+      ratingsCount: 3547,
+      listingId: "277388345",
+    });
+    expect(snapshot.themes["632105401"]?.name).toBe("سيليا");
+  });
+
+  it("refreshes what a theme's author changed and keeps what the refresh left out", async () => {
+    await repository.upsertThemes([{ id: "1", name: "قديم", developer: "مطوّر", listingId: "99" }]);
+    await repository.upsertThemes([{ id: "1", name: "جديد", version: "2.0.0" }]);
+
+    const theme = (await repository.loadSnapshot()).themes["1"];
+
+    expect(theme).toMatchObject({
+      name: "جديد",
+      version: "2.0.0",
+      developer: "مطوّر",
+      listingId: "99",
+    });
+  });
+
+  it("marks a theme the catalogue no longer lists without forgetting it", async () => {
+    await repository.upsertThemes([
+      { id: "1", name: "باقٍ" },
+      { id: "2", name: "مسحوب" },
+    ]);
+
+    const delisted = await repository.markThemesMissingFromCatalog(["1"]);
+    const rows = await database.query<{ id: string; status: string }>(
+      "select id, status from themes order by id",
+    );
+
+    // Stores still running it deserve its name, so the row stays and only its status moves.
+    expect(delisted).toBe(1);
+    expect(rows).toEqual([
+      { id: "1", status: "listed" },
+      { id: "2", status: "delisted" },
+    ]);
+  });
+});

@@ -23,6 +23,7 @@ const fingerprints: Fingerprint[] = [
 const knowledge = compileKnowledge({
   version: "test",
   apps: {},
+  themes: {},
   fingerprints,
   noise: {
     hosts: [],

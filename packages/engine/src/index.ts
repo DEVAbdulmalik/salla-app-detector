@@ -45,6 +45,7 @@ export { ENGINE_VERSION } from "./version";
 
 export type {
   AppInfo,
+  ThemeInfo,
   AppStatus,
   Confidence,
   DetectedApp,

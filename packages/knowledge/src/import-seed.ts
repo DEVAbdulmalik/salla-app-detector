@@ -9,6 +9,7 @@ import { seedKnowledge } from "./index";
 
 export interface ImportSummary {
   readonly apps: number;
+  readonly themes: number;
   readonly fingerprints: number;
   readonly noiseRules: number;
 }
@@ -32,6 +33,20 @@ export async function importSeed(
       categories: app.categories ?? [],
       status: app.status,
       ...(app.isDefault === undefined ? {} : { isDefault: app.isDefault }),
+    })),
+  );
+
+  const themes = Object.values(snapshot.themes);
+  await repository.upsertThemes(
+    themes.map((theme) => ({
+      id: theme.id,
+      name: theme.name,
+      ...(theme.developer === undefined ? {} : { developer: theme.developer }),
+      ...(theme.version === undefined ? {} : { version: theme.version }),
+      ...(theme.rating === undefined ? {} : { rating: theme.rating }),
+      ...(theme.ratingsCount === undefined ? {} : { ratingsCount: theme.ratingsCount }),
+      ...(theme.isBeta === undefined ? {} : { isBeta: theme.isBeta }),
+      ...(theme.listingId === undefined ? {} : { listingId: theme.listingId }),
     })),
   );
 
@@ -62,6 +77,7 @@ export async function importSeed(
 
   return {
     apps: apps.length,
+    themes: themes.length,
     fingerprints: snapshot.fingerprints.length,
     noiseRules: noiseRules.length,
   };

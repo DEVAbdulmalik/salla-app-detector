@@ -7,6 +7,7 @@ import {
   type FingerprintStrength,
   type KnowledgeSnapshot,
   type NoiseRules,
+  type ThemeInfo,
 } from "@salla-app-detector/engine";
 import type { Database } from "./executor";
 
@@ -112,6 +113,17 @@ export interface GroundTruthRow {
   readonly appId: string;
   readonly appName: string;
   readonly storeId: string;
+}
+
+export interface ThemeUpsert {
+  readonly id: string;
+  readonly name: string;
+  readonly developer?: string;
+  readonly version?: string;
+  readonly rating?: number;
+  readonly ratingsCount?: number;
+  readonly isBeta?: boolean;
+  readonly listingId?: string;
 }
 
 export interface FingerprintRow {
@@ -823,6 +835,55 @@ export class KnowledgeRepository {
     return rows.map((row) => row.pattern);
   }
 
+  async upsertThemes(themes: readonly ThemeUpsert[]): Promise<void> {
+    if (themes.length === 0) {
+      return;
+    }
+    await this.#db.query(
+      `insert into themes (id, name, developer, version, rating, ratings_count, is_beta, listing_id)
+       select id, name, developer, version, rating, ratings_count, coalesce(is_beta, false), listing_id
+       from jsonb_to_recordset($1::text::jsonb) as incoming(
+         id text, name text, developer text, version text,
+         rating real, ratings_count int, is_beta boolean, listing_id text
+       )
+       on conflict (id) do update set
+         name = excluded.name,
+         developer = coalesce(excluded.developer, themes.developer),
+         version = coalesce(excluded.version, themes.version),
+         rating = excluded.rating,
+         ratings_count = excluded.ratings_count,
+         is_beta = excluded.is_beta,
+         listing_id = coalesce(excluded.listing_id, themes.listing_id),
+         status = 'listed',
+         updated_at = now()`,
+      [
+        JSON.stringify(
+          themes.map((theme) => ({
+            id: theme.id,
+            name: theme.name,
+            developer: theme.developer ?? null,
+            version: theme.version ?? null,
+            rating: theme.rating ?? null,
+            ratings_count: theme.ratingsCount ?? null,
+            is_beta: theme.isBeta ?? false,
+            listing_id: theme.listingId ?? null,
+          })),
+        ),
+      ],
+    );
+  }
+
+  /** A theme that leaves the store keeps its row: stores still running it deserve a name. */
+  async markThemesMissingFromCatalog(seenIds: readonly string[]): Promise<number> {
+    const rows = await this.#db.query<{ id: string }>(
+      `update themes set status = 'delisted', updated_at = now()
+       where status = 'listed' and not (id = any($1::text[]))
+       returning id`,
+      [seenIds],
+    );
+    return rows.length;
+  }
+
   async upsertFingerprints(fingerprints: readonly FingerprintUpsert[]): Promise<void> {
     if (fingerprints.length === 0) {
       return;
@@ -1001,7 +1062,7 @@ export class KnowledgeRepository {
 
   /** Assembles everything the engine needs for a scan, with a version derived from it. */
   async loadSnapshot(): Promise<KnowledgeSnapshot> {
-    const [appRows, fingerprintRows, noiseRows] = await Promise.all([
+    const [appRows, themeRows, fingerprintRows, noiseRows] = await Promise.all([
       this.#db.query<{
         id: string;
         name: string;
@@ -1011,6 +1072,19 @@ export class KnowledgeRepository {
         status: AppStatus;
         is_default: boolean;
       }>("select id, name, name_en, company, categories, status, is_default from apps order by id"),
+      this.#db.query<{
+        id: string;
+        name: string;
+        developer: string | null;
+        version: string | null;
+        rating: number | null;
+        ratings_count: number | null;
+        is_beta: boolean;
+        listing_id: string | null;
+      }>(
+        `select id, name, developer, version, rating, ratings_count, is_beta, listing_id
+         from themes order by id`,
+      ),
       this.#db.query<{
         id: string;
         kind: EvidenceKind;
@@ -1042,6 +1116,20 @@ export class KnowledgeRepository {
       };
     }
 
+    const themes: Record<string, ThemeInfo> = {};
+    for (const row of themeRows) {
+      themes[row.id] = {
+        id: row.id,
+        name: row.name,
+        ...(row.developer === null ? {} : { developer: row.developer }),
+        ...(row.version === null ? {} : { version: row.version }),
+        ...(row.rating === null ? {} : { rating: row.rating }),
+        ...(row.ratings_count === null ? {} : { ratingsCount: row.ratings_count }),
+        ...(row.is_beta ? { isBeta: true } : {}),
+        ...(row.listing_id === null ? {} : { listingId: row.listing_id }),
+      };
+    }
+
     const fingerprints: Fingerprint[] = fingerprintRows.map((row) => ({
       id: row.id,
       kind: row.kind,
@@ -1062,8 +1150,9 @@ export class KnowledgeRepository {
     }
 
     return {
-      version: `db-${fnv1a(JSON.stringify([appRows, fingerprintRows, noiseRows]))}`,
+      version: `db-${fnv1a(JSON.stringify([appRows, themeRows, fingerprintRows, noiseRows]))}`,
       apps,
+      themes,
       fingerprints,
       noise,
     };

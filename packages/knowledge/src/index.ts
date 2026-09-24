@@ -4,8 +4,10 @@ import {
   type Fingerprint,
   type KnowledgeSnapshot,
   type NoiseRules,
+  type ThemeInfo,
 } from "@salla-app-detector/engine";
 import appsData from "./data/apps.json" with { type: "json" };
+import themesData from "./data/themes.json" with { type: "json" };
 import fingerprintsData from "./data/fingerprints.json" with { type: "json" };
 import noiseData from "./data/noise.json" with { type: "json" };
 
@@ -16,12 +18,13 @@ import noiseData from "./data/noise.json" with { type: "json" };
  * to the exact knowledge that produced it.
  */
 const apps = appsData as unknown as Record<string, AppInfo>;
+const themes = themesData as unknown as Record<string, ThemeInfo>;
 const fingerprints = fingerprintsData as unknown as Fingerprint[];
 const noise = noiseData as unknown as NoiseRules;
 
-const version = `seed-${fnv1a(JSON.stringify([appsData, fingerprintsData, noiseData]))}`;
+const version = `seed-${fnv1a(JSON.stringify([appsData, themesData, fingerprintsData, noiseData]))}`;
 
-export const seedKnowledge: KnowledgeSnapshot = { version, apps, fingerprints, noise };
+export const seedKnowledge: KnowledgeSnapshot = { version, apps, themes, fingerprints, noise };
 
 export function loadSeedKnowledge(): KnowledgeSnapshot {
   return seedKnowledge;
@@ -44,6 +47,7 @@ export type {
   HealthEvent,
   ScanRow,
   StatusShare,
+  ThemeUpsert,
   StoreDetections,
   HealthEventRow,
   SignalCluster,

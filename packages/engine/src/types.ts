@@ -71,8 +71,27 @@ export interface NoiseRules {
 export interface KnowledgeSnapshot {
   readonly version: string;
   readonly apps: Readonly<Record<string, AppInfo>>;
+  /** Keyed by the identifier a storefront reports for its theme. */
+  readonly themes: Readonly<Record<string, ThemeInfo>>;
   readonly fingerprints: readonly Fingerprint[];
   readonly noise: NoiseRules;
+}
+
+/**
+ * A theme is not detected but declared: the storefront names the one it runs, so the
+ * catalogue only has to say which theme that identifier belongs to.
+ */
+export interface ThemeInfo {
+  readonly id: string;
+  readonly name: string;
+  readonly developer?: string;
+  /** The version the theme's author published, which a store may be behind. */
+  readonly version?: string;
+  readonly rating?: number;
+  readonly ratingsCount?: number;
+  readonly isBeta?: boolean;
+  /** Its product in Salla's theme store, which is what a link points at. */
+  readonly listingId?: string;
 }
 
 export interface ReportEvidence {
