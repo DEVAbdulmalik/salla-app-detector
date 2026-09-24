@@ -11,6 +11,8 @@ export interface StoreConfig {
   readonly username?: string;
   readonly storeUrl?: string;
   readonly themeName?: string;
+  /** The theme release a store is actually serving, which may trail the published one. */
+  readonly themeVersion?: string;
   readonly twilightVersion?: string;
   readonly paymentMethods: readonly string[];
   /** Providers the merchant actually enabled, such as tabby or tamara. */
@@ -51,6 +53,8 @@ const initSchema = z.looseObject({
   theme: z
     .looseObject({
       name: optionalText,
+      // Assets are served from a path that carries the theme's release: .../{id}/{version}/
+      assets: optionalText,
       twilight: z.looseObject({ version: optionalText }).optional().catch(undefined),
     })
     .optional()
@@ -64,6 +68,11 @@ const dispatchSchema = z.looseObject({ "twilight::init": initSchema });
  * argument inside a script tag, so it is located by scanning balanced braces rather than
  * by a regular expression, which would break on the nested HTML and quotes it contains.
  */
+/** The assets path names the release: https://…/themes/1247874246/1.377.0/:path */
+function themeVersionOf(assets: string | undefined): string | undefined {
+  return assets === undefined ? undefined : /\/themes\/\d+\/([\d.]+)\//.exec(assets)?.[1];
+}
+
 export function extractStoreConfig(html: string): Result<StoreConfig, ConfigError> {
   const markerIndex = html.indexOf(DISPATCH_MARKER);
   if (markerIndex < 0) {
@@ -107,6 +116,7 @@ export function extractStoreConfig(html: string): Result<StoreConfig, ConfigErro
     ...optional("username", store.username),
     ...optional("storeUrl", store.url),
     ...optional("themeName", init.theme?.name),
+    ...optional("themeVersion", themeVersionOf(init.theme?.assets)),
     ...optional("twilightVersion", init.theme?.twilight?.version),
     paymentMethods: settings?.payments ?? [],
     installments: enabledInstallments(settings?.installments),

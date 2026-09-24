@@ -8,7 +8,7 @@ import { matchEvidence } from "./match";
 import { filterNoise } from "./noise";
 import { analyzeProducts, type ProductSample } from "./products";
 import { buildReport } from "./report";
-import type { ScanReport, StoreSummary } from "./types";
+import type { DetectedTheme, ScanReport, StoreSummary } from "./types";
 import { ENGINE_VERSION } from "./version";
 
 export interface AnalyzeInput {
@@ -46,7 +46,10 @@ export function analyzeStore(input: AnalyzeInput, knowledge: CompiledKnowledge):
     status: classification.status,
     ...(storeConfig === undefined
       ? {}
-      : { store: summarize(storeConfig, document.storeAssetCode) }),
+      : {
+          store: summarize(storeConfig, document.storeAssetCode),
+          ...optionalTheme(describeTheme(storeConfig, knowledge)),
+        }),
     matches,
     unmatched: [...unmatched, ...products.unknownImageHosts],
     payments: {
@@ -55,6 +58,32 @@ export function analyzeStore(input: AnalyzeInput, knowledge: CompiledKnowledge):
     },
     knowledge,
   });
+}
+
+function optionalTheme(theme: DetectedTheme | undefined): { theme?: DetectedTheme } {
+  return theme === undefined ? {} : { theme };
+}
+
+/** The store names its theme; the catalogue says what that name means. */
+function describeTheme(
+  config: StoreConfig,
+  knowledge: CompiledKnowledge,
+): DetectedTheme | undefined {
+  if (config.themeName === undefined) {
+    return undefined;
+  }
+  const known = knowledge.snapshot.themes[config.themeName];
+  return {
+    id: config.themeName,
+    ...(known?.name === undefined ? {} : { name: known.name }),
+    ...(known?.developer === undefined ? {} : { developer: known.developer }),
+    ...(config.themeVersion === undefined ? {} : { installedVersion: config.themeVersion }),
+    ...(known?.version === undefined ? {} : { latestVersion: known.version }),
+    ...(known?.rating === undefined ? {} : { rating: known.rating }),
+    ...(known?.ratingsCount === undefined ? {} : { ratingsCount: known.ratingsCount }),
+    ...(known?.isBeta === undefined ? {} : { isBeta: known.isBeta }),
+    ...(known?.listingId === undefined ? {} : { listingId: known.listingId }),
+  };
 }
 
 function summarize(config: StoreConfig, assetCode: string | undefined): StoreSummary {

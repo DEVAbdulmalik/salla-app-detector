@@ -12,6 +12,7 @@ import type {
   PaymentSummary,
   ReportEvidence,
   ScanReport,
+  DetectedTheme,
   StoreSummary,
   UnknownSignal,
 } from "./types";
@@ -21,6 +22,7 @@ export interface ReportInput {
   readonly target: { readonly url: string; readonly host: string; readonly key: string };
   readonly status: PageStatus;
   readonly store?: StoreSummary;
+  readonly theme?: DetectedTheme;
   readonly matches: readonly Match[];
   readonly unmatched: readonly Evidence[];
   readonly payments: PaymentSummary;
@@ -93,6 +95,7 @@ export function buildReport(input: ReportInput): ScanReport {
     target: input.target,
     status: input.status,
     ...(input.store === undefined ? {} : { store: input.store }),
+    ...(input.theme === undefined ? {} : { theme: input.theme }),
     apps: apps.sort(compareApps),
     dropshipping: dropshipping.sort(compareApps),
     integrations: buildIntegrations(input, byApp),

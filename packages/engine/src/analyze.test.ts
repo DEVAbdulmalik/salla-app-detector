@@ -79,7 +79,11 @@ const CONFIG = {
       username: "test-store",
       settings: { payments: ["mada"], installments: { tabby: { publicKey: "p" } } },
     },
-    theme: { name: "1130931637", twilight: { version: "2.14.584" } },
+    theme: {
+      name: "1130931637",
+      assets: "https://cdn.assets.salla.network/themes/1034648396/1.174.0/:path",
+      twilight: { version: "2.14.584" },
+    },
   },
   "services::hotjar.init": { services: { hotjar: { hotjar_id: "1" } } },
   "services::brand_new_pixel.init": { services: { brand_new_pixel: { id: "2" } } },
@@ -185,6 +189,28 @@ describe("analyzeStore", () => {
       ]),
     );
     expect(report.unknownSignals.some((signal) => signal.kind === "host")).toBe(false);
+  });
+
+  it("names the theme the store declares, and what it is running against what is published", () => {
+    const report = scan(page(`<div></div>`));
+
+    expect(report.theme).toEqual({
+      id: "1130931637",
+      name: "ملاك",
+      developer: "أفتر أدز",
+      installedVersion: "1.174.0",
+    });
+  });
+
+  it("reports a theme the catalogue does not know by its identifier alone", () => {
+    const config = structuredClone(CONFIG) as { "twilight::init": { theme: { name: string } } };
+    config["twilight::init"].theme.name = "999999";
+
+    const report = scan(page(`<div></div>`, config));
+
+    // Naming it would be a guess, and a guess is worse than an honest identifier.
+    expect(report.theme).toMatchObject({ id: "999999" });
+    expect(report.theme?.name).toBeUndefined();
   });
 
   it("keeps the store's CDN code, which ties review avatars back to this storefront", () => {

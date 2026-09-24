@@ -94,6 +94,25 @@ export interface ThemeInfo {
   readonly listingId?: string;
 }
 
+/**
+ * The theme a storefront declares. Unlike an app, nothing is inferred: the store names
+ * its theme, and the catalogue only supplies what that name means. A theme absent from
+ * the catalogue is reported by its identifier rather than guessed at.
+ */
+export interface DetectedTheme {
+  readonly id: string;
+  readonly name?: string;
+  readonly developer?: string;
+  /** What the store serves today, read from the path its theme assets come from. */
+  readonly installedVersion?: string;
+  /** What the theme's author has published, which a store may be behind. */
+  readonly latestVersion?: string;
+  readonly rating?: number;
+  readonly ratingsCount?: number;
+  readonly isBeta?: boolean;
+  readonly listingId?: string;
+}
+
 export interface ReportEvidence {
   readonly kind: EvidenceKind;
   readonly value: string;
@@ -148,6 +167,7 @@ export interface ScanReport {
   /** Why the page ended up with this status, kept for health monitoring. */
   readonly statusDetail?: string;
   readonly store?: StoreSummary;
+  readonly theme?: DetectedTheme;
   readonly apps: readonly DetectedApp[];
   readonly dropshipping: readonly DetectedApp[];
   readonly integrations: readonly Integration[];
