@@ -86,7 +86,16 @@ function CandidateCard({
         </span>
       </div>
 
-      <p className="mt-1 text-xs text-muted">{candidate.signalKind}</p>
+      <p className="mt-1 text-xs text-muted">
+        {candidate.signalKind}
+        {candidate.themeName !== undefined && (
+          // Every store carrying this trace runs the same theme, so it is the theme's own
+          // asset; naming it saves the reviewer from investigating it as an app.
+          <span className="ms-2 rounded bg-accent-soft px-2 py-0.5 text-accent">
+            {m.fromTheme}: {candidate.themeName}
+          </span>
+        )}
+      </p>
 
       {candidate.sample !== undefined && (
         <p dir="ltr" className="mt-2 line-clamp-2 font-mono text-xs text-muted">

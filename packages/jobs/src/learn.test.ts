@@ -25,6 +25,18 @@ async function observe(signalValue: string, stores: readonly string[], kind = "d
   }
 }
 
+/** A scan that reports which theme the store runs, which is what ties a trace to a theme. */
+async function recordThemedScan(storeKey: string, themeId: string): Promise<void> {
+  await repository.recordScan({
+    storeKey,
+    status: "live",
+    report: { store: { theme: themeId } },
+    engineVersion: "1.0.0",
+    knowledgeVersion: "test",
+    durationMs: 5,
+  });
+}
+
 async function recordScans(count: number): Promise<void> {
   for (let index = 0; index < count; index += 1) {
     await repository.recordScan({
@@ -129,6 +141,40 @@ describe("learn", () => {
     expect(first.newServiceKeys).toEqual(["brand_new_pixel"]);
     expect(second.newServiceKeys).toEqual([]);
     expect(events[0]?.n).toBe("1");
+  });
+
+  it("recognises a trace that belongs to a theme rather than to an app", async () => {
+    await repository.upsertThemes([{ id: "632105401", name: "سيليا", developer: "Selia Tech" }]);
+    for (const index of [0, 1, 2, 3, 4]) {
+      await recordThemedScan(`store-${String(index)}.test`, "632105401");
+    }
+    await observe("selia-tech.com", stores(5));
+
+    const result = await learn({ repository });
+    const [candidate] = await repository.listCandidates("new");
+
+    expect(result.themeAssets).toBe(1);
+    expect(candidate).toMatchObject({ themeId: "632105401", themeName: "سيليا" });
+  });
+
+  it("leaves a trace spread across themes to be judged as an app", async () => {
+    await repository.upsertThemes([
+      { id: "a", name: "ثيم أ" },
+      { id: "b", name: "ثيم ب" },
+    ]);
+    for (const index of [0, 1, 2]) {
+      await recordThemedScan(`store-${String(index)}.test`, "a");
+    }
+    for (const index of [3, 4]) {
+      await recordThemedScan(`store-${String(index)}.test`, "b");
+    }
+    await observe("vendor.example", stores(5));
+
+    const result = await learn({ repository });
+
+    // Merchants install an app whatever their store looks like, so a spread means an app.
+    expect(result.themeAssets).toBe(0);
+    expect((await repository.listCandidates("new"))[0]?.themeId).toBeUndefined();
   });
 
   it("keeps a decision a person already made", async () => {

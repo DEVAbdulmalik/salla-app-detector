@@ -13,6 +13,7 @@ export interface LearnOptions {
   readonly candidateThreshold?: number;
   /** A signal on nearly every store belongs to the platform, not to an app. */
   readonly noiseShare?: number;
+  readonly themeShare?: number;
   readonly minimumScansForNoise?: number;
   readonly logger?: Logger;
   readonly now?: () => Date;
@@ -21,6 +22,8 @@ export interface LearnOptions {
 export interface LearnResult {
   readonly candidates: number;
   readonly attributed: number;
+  /** Traces that belong to a theme rather than to an app a merchant installed. */
+  readonly themeAssets: number;
   readonly noiseRulesAdded: readonly string[];
   readonly newServiceKeys: readonly string[];
 }
@@ -28,6 +31,8 @@ export interface LearnResult {
 const JOB = "learn";
 const DEFAULTS = {
   candidateThreshold: 5,
+  /** Below this, a theme's stores merely happen to share something. */
+  themeShare: 0.9,
   noiseShare: 0.85,
   minimumScansForNoise: 100,
 } as const;
@@ -49,19 +54,36 @@ export async function learn(options: LearnOptions): Promise<LearnResult> {
   const remaining = clusters.filter((cluster) => !noiseRulesAdded.includes(cluster.signalValue));
 
   const domainOwners = await options.repository.domainOwners();
+  const themeShare = options.themeShare ?? DEFAULTS.themeShare;
+  const concentration = await options.repository.signalThemeConcentration(threshold);
   const candidates: CandidateUpsert[] = [];
   let attributed = 0;
+  let themeAssets = 0;
 
   for (const cluster of remaining) {
     const suggestion = suggestApp(cluster, domainOwners);
     if (suggestion !== undefined) {
       attributed += 1;
     }
+
+    // A trace on every store running one theme is that theme's own asset. Saying so keeps
+    // the reviewer from investigating the same theme's files as if they were an app.
+    const theme = concentration.find(
+      (entry) =>
+        entry.signalKind === cluster.signalKind &&
+        entry.signalValue === cluster.signalValue &&
+        entry.share >= themeShare,
+    );
+    if (theme !== undefined) {
+      themeAssets += 1;
+    }
+
     candidates.push({
       signalKind: cluster.signalKind,
       signalValue: cluster.signalValue,
       storeCount: cluster.storeCount,
       ...(suggestion === undefined ? {} : { suggestedAppId: suggestion }),
+      ...(theme === undefined ? {} : { themeId: theme.themeId }),
       ...(cluster.sample === undefined ? {} : { sample: cluster.sample }),
     });
   }
@@ -93,7 +115,13 @@ export async function learn(options: LearnOptions): Promise<LearnResult> {
     startedAt,
   );
 
-  return { candidates: candidates.length, attributed, noiseRulesAdded, newServiceKeys };
+  return {
+    candidates: candidates.length,
+    attributed,
+    themeAssets,
+    noiseRulesAdded,
+    newServiceKeys,
+  };
 }
 
 /**

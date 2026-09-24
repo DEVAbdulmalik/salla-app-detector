@@ -5,6 +5,9 @@ export type { ScanClient, ScanFailure, ScanOptions, ScanOutcome } from "./scan-s
 export { syncCatalog } from "./catalog-sync";
 export type { CatalogClient, CatalogSyncOptions, CatalogSyncResult } from "./catalog-sync";
 
+export { syncThemes } from "./theme-sync";
+export type { ThemeClient, ThemeSyncOptions, ThemeSyncResult } from "./theme-sync";
+
 export { learn } from "./learn";
 export type { LearnOptions, LearnResult } from "./learn";
 

@@ -89,6 +89,23 @@ export const catalogPageSchema = z.looseObject({
   nbPages: z.number(),
 });
 
+const demoStoreSchema = z.looseObject({ preview_url: nullableText });
+
+export const themeListingSchema = z.looseObject({
+  id: z.union([z.number(), z.string()]),
+  name: z.string(),
+  developer: nullableText,
+  version: nullableText,
+  is_beta: z.boolean().optional().catch(undefined),
+  ratings: z
+    .looseObject({ rating: z.number().optional(), count: z.number().optional() })
+    .optional()
+    .catch(undefined),
+  demo_stores: z.array(demoStoreSchema).optional().catch(undefined),
+});
+
+export const themeCatalogSchema = z.array(themeListingSchema);
+
 export type ProductPayload = z.output<typeof productSchema>;
 export type AppDetailsPayload = z.output<typeof appDetailsSchema>["data"];
 export type AppReviewPayload = z.output<typeof appReviewsSchema>["data"][number];

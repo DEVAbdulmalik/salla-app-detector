@@ -1,4 +1,4 @@
-import { syncCatalog } from "@salla-app-detector/jobs";
+import { syncCatalog, syncThemes } from "@salla-app-detector/jobs";
 import { SallaClient } from "@salla-app-detector/salla";
 import { createLogger } from "@salla-app-detector/shared";
 import { isAuthorized, requireRepository } from "@/lib/cron";
@@ -15,14 +15,26 @@ export async function GET(request: Request): Promise<Response> {
     return new Response("unauthorized", { status: 401 });
   }
 
+  const client = new SallaClient({ timeoutMs: 20_000 });
+  const repository = requireRepository();
+
+  // The theme catalogue is one request, so it rides along with the catalogue refresh
+  // rather than taking a schedule of its own.
+  const themes = await syncThemes({
+    client,
+    repository,
+    logger: createLogger({ level: "info", bindings: { job: "theme-sync" } }),
+  });
+
   const result = await syncCatalog({
-    client: new SallaClient({ timeoutMs: 20_000 }),
-    repository: requireRepository(),
+    client,
+    repository,
     logger: createLogger({ level: "info", bindings: { job: "catalog-sync" } }),
     budgetMs: BUDGET_MS,
   });
 
+  const themeSummary = themes.ok ? themes.value : { error: themes.error.code };
   return result.ok
-    ? Response.json(result.value)
-    : Response.json({ error: result.error.code }, { status: 502 });
+    ? Response.json({ ...result.value, themes: themeSummary })
+    : Response.json({ error: result.error.code, themes: themeSummary }, { status: 502 });
 }

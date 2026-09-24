@@ -11,6 +11,7 @@ import {
   appDetailsSchema,
   appReviewsSchema,
   catalogPageSchema,
+  themeCatalogSchema,
   menuListSchema,
   productListSchema,
   searchTokenSchema,
@@ -22,6 +23,8 @@ import {
 
 const STORE_API = "https://api.salla.dev/store/v1";
 const MARKETPLACE_API = "https://api.salla.dev/marketplace/v2";
+/** Themes are not on the marketplace API; the theme store publishes its own listing. */
+const THEME_CATALOG = "https://salla.com/themes/api/themes";
 const ALGOLIA_APP_ID = "VLRNJKLRFI";
 const ALGOLIA_INDEX = "apps_index";
 const CATALOG_PAGE_SIZE = 1000;
@@ -67,6 +70,17 @@ export interface AppReviewer {
 export interface AppReviews {
   readonly reviewers: readonly AppReviewer[];
   readonly nextPage?: number;
+}
+
+export interface CatalogTheme {
+  readonly id: string;
+  readonly name: string;
+  readonly listingId: string;
+  readonly developer?: string;
+  readonly version?: string;
+  readonly rating?: number;
+  readonly ratingsCount?: number;
+  readonly isBeta?: boolean;
 }
 
 export interface CatalogApp {
@@ -217,6 +231,40 @@ export class SallaClient {
     const next = payload.value.cursor?.next;
 
     return ok({ reviewers, ...(typeof next === "number" ? { nextPage: next } : {}) });
+  }
+
+  /**
+   * Reads Salla's theme store. A store reports its theme by the identifier in that theme's
+   * preview link, so a listing without one cannot be tied to anything and is left out.
+   */
+  async fetchThemes(): Promise<Result<CatalogTheme[], ApiFailure>> {
+    const payload = await this.#json(THEME_CATALOG, themeCatalogSchema, {
+      headers: { accept: "application/json" },
+    });
+    if (!payload.ok) {
+      return payload;
+    }
+
+    const themes: CatalogTheme[] = [];
+    for (const listing of payload.value) {
+      const id = previewThemeId(listing.demo_stores);
+      if (id === undefined) {
+        continue;
+      }
+      const rating = listing.ratings?.rating;
+      const ratingsCount = listing.ratings?.count;
+      themes.push({
+        id,
+        name: listing.name,
+        listingId: String(listing.id),
+        ...(typeof listing.developer === "string" ? { developer: listing.developer } : {}),
+        ...(typeof listing.version === "string" ? { version: listing.version } : {}),
+        ...(typeof rating === "number" ? { rating } : {}),
+        ...(typeof ratingsCount === "number" ? { ratingsCount } : {}),
+        ...(listing.is_beta === true ? { isBeta: true } : {}),
+      });
+    }
+    return ok(themes);
   }
 
   /** Reads the public app catalogue, refreshing the short-lived search token as needed. */
@@ -374,6 +422,21 @@ function storeIdFromAvatar(review: AppReviewPayload): string | undefined {
   return typeof review.avatar === "string"
     ? (AVATAR_STORE_ID.exec(review.avatar)?.[1] ?? undefined)
     : undefined;
+}
+
+const PREVIEW_THEME_ID = /\/themes\/(\d+)\/preview/;
+
+function previewThemeId(
+  demoStores: readonly Readonly<Record<string, unknown>>[] | undefined,
+): string | undefined {
+  for (const store of demoStores ?? []) {
+    const match =
+      typeof store.preview_url === "string" ? PREVIEW_THEME_ID.exec(store.preview_url) : null;
+    if (match?.[1] !== undefined) {
+      return match[1];
+    }
+  }
+  return undefined;
 }
 
 function storeCodeFromAvatar(review: AppReviewPayload): string | undefined {

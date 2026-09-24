@@ -47,6 +47,7 @@ export type {
   HealthEvent,
   ScanRow,
   StatusShare,
+  ThemeConcentration,
   ThemeUpsert,
   StoreDetections,
   HealthEventRow,

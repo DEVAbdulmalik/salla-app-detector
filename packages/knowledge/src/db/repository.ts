@@ -88,10 +88,22 @@ export interface CandidateUpsert {
   readonly signalValue: string;
   readonly storeCount: number;
   readonly suggestedAppId?: string;
+  /** Set when the trace belongs to a theme rather than to any app. */
+  readonly themeId?: string;
   readonly sample?: string;
 }
 
+export interface ThemeConcentration {
+  readonly signalKind: string;
+  readonly signalValue: string;
+  readonly themeId: string;
+  readonly themeName: string | null;
+  readonly share: number;
+}
+
 export interface CandidateRow extends SignalCluster {
+  readonly themeId?: string;
+  readonly themeName?: string;
   readonly status: string;
   readonly suggestedAppId?: string;
   readonly suggestedAppName?: string;
@@ -453,20 +465,58 @@ export class KnowledgeRepository {
     return new Map(rows.map((row) => [row.domain, row.app_ids]));
   }
 
+  /**
+   * For each unexplained signal, the theme most of its stores run. An asset belonging to a
+   * theme shows up on every store using that theme and almost nowhere else, which is what
+   * separates it from an app that merchants install regardless of how their store looks.
+   */
+  async signalThemeConcentration(minimumStores: number): Promise<ThemeConcentration[]> {
+    return this.#db.query<ThemeConcentration>(
+      `with latest as (
+         select distinct on (store_key) store_key, report->'store'->>'theme' as theme_id
+         from scans where status = 'live'
+         order by store_key, scanned_at desc
+       ), tallied as (
+         select o.signal_kind, o.signal_value, latest.theme_id, count(distinct o.store_key)::int as stores
+         from observations o
+         join latest on latest.store_key = o.store_key
+         where latest.theme_id is not null
+         group by 1, 2, 3
+       ), totals as (
+         select signal_kind, signal_value, sum(stores)::int as total
+         from tallied group by 1, 2
+       )
+       select distinct on (t.signal_kind, t.signal_value)
+              t.signal_kind as "signalKind",
+              t.signal_value as "signalValue",
+              t.theme_id as "themeId",
+              th.name as "themeName",
+              (t.stores::numeric / totals.total)::float8 as share
+       from tallied t
+       join totals on totals.signal_kind = t.signal_kind and totals.signal_value = t.signal_value
+       left join themes th on th.id = t.theme_id
+       where totals.total >= $1
+       order by t.signal_kind, t.signal_value, t.stores desc`,
+      [minimumStores],
+    );
+  }
+
   async upsertCandidates(candidates: readonly CandidateUpsert[]): Promise<void> {
     if (candidates.length === 0) {
       return;
     }
     await this.#db.query(
-      `insert into candidates (signal_kind, signal_value, store_count, suggested_app_id, sample)
-       select signal_kind, signal_value, store_count, suggested_app_id, sample
+      `insert into candidates (signal_kind, signal_value, store_count, suggested_app_id, theme_id, sample)
+       select signal_kind, signal_value, store_count, suggested_app_id, theme_id, sample
        from jsonb_to_recordset($1::text::jsonb) as incoming(
-         signal_kind text, signal_value text, store_count int, suggested_app_id text, sample text
+         signal_kind text, signal_value text, store_count int,
+         suggested_app_id text, theme_id text, sample text
        )
        on conflict (signal_kind, signal_value) do update set
          store_count = excluded.store_count,
          -- A decision already made by a person is never overwritten by a later run.
          suggested_app_id = coalesce(candidates.suggested_app_id, excluded.suggested_app_id),
+         theme_id = excluded.theme_id,
          sample = coalesce(candidates.sample, excluded.sample),
          updated_at = now()`,
       [
@@ -476,6 +526,7 @@ export class KnowledgeRepository {
             signal_value: candidate.signalValue,
             store_count: candidate.storeCount,
             suggested_app_id: candidate.suggestedAppId ?? null,
+            theme_id: candidate.themeId ?? null,
             sample: candidate.sample ?? null,
           })),
         ),
@@ -492,6 +543,8 @@ export class KnowledgeRepository {
       sample: string | null;
       suggestedAppId: string | null;
       suggestedAppName: string | null;
+      themeId: string | null;
+      themeName: string | null;
     }>(
       `select c.signal_kind as "signalKind",
               c.signal_value as "signalValue",
@@ -499,9 +552,12 @@ export class KnowledgeRepository {
               c.status,
               c.sample,
               c.suggested_app_id as "suggestedAppId",
-              a.name as "suggestedAppName"
+              a.name as "suggestedAppName",
+              c.theme_id as "themeId",
+              t.name as "themeName"
        from candidates c
        left join apps a on a.id = c.suggested_app_id
+       left join themes t on t.id = c.theme_id
        where c.status = $1
        order by c.store_count desc
        limit $2`,
@@ -517,6 +573,8 @@ export class KnowledgeRepository {
       ...(row.sample === null ? {} : { sample: row.sample }),
       ...(row.suggestedAppId === null ? {} : { suggestedAppId: row.suggestedAppId }),
       ...(row.suggestedAppName === null ? {} : { suggestedAppName: row.suggestedAppName }),
+      ...(row.themeId === null ? {} : { themeId: row.themeId }),
+      ...(row.themeName === null ? {} : { themeName: row.themeName }),
     }));
   }
 

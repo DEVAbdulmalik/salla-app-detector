@@ -5,6 +5,7 @@ export type {
   AppReviewer,
   AppReviews,
   CatalogApp,
+  CatalogTheme,
   PageFetcher,
   ProductSummary,
   SallaClientOptions,
