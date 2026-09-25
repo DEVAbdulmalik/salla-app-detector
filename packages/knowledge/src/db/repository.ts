@@ -814,6 +814,92 @@ export class KnowledgeRepository {
     );
   }
 
+  /**
+   * Fingerprints a person wrote or approved. Generated ones are left out: the catalogue
+   * sync rebuilds them, while these exist nowhere else.
+   */
+  async curatedFingerprints(): Promise<FingerprintUpsert[]> {
+    const rows = await this.#db.query<{
+      id: string;
+      kind: EvidenceKind;
+      pattern: string;
+      strength: FingerprintStrength;
+      source: FingerprintSource;
+      status: FingerprintStatus;
+      app_id: string | null;
+      company: string | null;
+      company_app_ids: string[];
+      min_product_share: number | null;
+    }>(
+      `select id, kind, pattern, strength, source, status, app_id, company, company_app_ids, min_product_share
+       from fingerprints where source in ('manual', 'mined') order by id`,
+    );
+    return rows.map((row) => ({
+      id: row.id,
+      kind: row.kind,
+      pattern: row.pattern,
+      strength: row.strength,
+      source: row.source,
+      status: row.status,
+      ...(row.app_id === null ? {} : { appId: row.app_id }),
+      ...(row.company === null ? {} : { company: row.company }),
+      ...(row.company_app_ids.length === 0 ? {} : { companyAppIds: row.company_app_ids }),
+      ...(row.min_product_share === null ? {} : { minProductShare: row.min_product_share }),
+    }));
+  }
+
+  /** Noise added after the seed, by a person or by the learning loop. */
+  async curatedNoise(): Promise<NoiseUpsert[]> {
+    const rows = await this.#db.query<{ kind: NoiseKind; pattern: string; reason: string | null }>(
+      "select kind, pattern, reason from noise_rules where reason is distinct from 'seed' order by kind, pattern",
+    );
+    return rows.map((row) => ({
+      kind: row.kind,
+      pattern: row.pattern,
+      ...(row.reason === null ? {} : { reason: row.reason }),
+    }));
+  }
+
+  /** Every candidate with the decision taken on it, so a restore does not reopen the queue. */
+  async candidateDecisions(): Promise<(CandidateUpsert & { readonly status: string })[]> {
+    const rows = await this.#db.query<{
+      signal_kind: string;
+      signal_value: string;
+      store_count: number;
+      suggested_app_id: string | null;
+      theme_id: string | null;
+      sample: string | null;
+      status: string;
+    }>(
+      `select signal_kind, signal_value, store_count, suggested_app_id, theme_id, sample, status
+       from candidates order by signal_kind, signal_value`,
+    );
+    return rows.map((row) => ({
+      signalKind: row.signal_kind,
+      signalValue: row.signal_value,
+      storeCount: row.store_count,
+      status: row.status,
+      ...(row.suggested_app_id === null ? {} : { suggestedAppId: row.suggested_app_id }),
+      ...(row.theme_id === null ? {} : { themeId: row.theme_id }),
+      ...(row.sample === null ? {} : { sample: row.sample }),
+    }));
+  }
+
+  async groundTruthPairs(): Promise<{ appId: string; storeId: number; observedOn?: string }[]> {
+    const rows = await this.#db.query<{
+      app_id: string;
+      store_id: string;
+      observed_on: string | null;
+    }>(
+      "select app_id, store_id::text, observed_on::text from ground_truth order by app_id, store_id",
+    );
+    return rows.map((row) => ({
+      appId: row.app_id,
+      storeId: Number(row.store_id),
+      ...(row.observed_on === null ? {} : { observedOn: row.observed_on }),
+    }));
+  }
+
   /** A canary that no longer answers teaches nothing and raises the same alert every night. */
   async removeCanary(storeUrl: string): Promise<boolean> {
     const rows = await this.#db.query<{ store_url: string }>(

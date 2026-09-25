@@ -32,6 +32,9 @@ export function loadSeedKnowledge(): KnowledgeSnapshot {
 
 export { GENERIC_DEVELOPER_DOMAINS } from "./generic-domains";
 
+export { exportKnowledge, parseBackup, restoreKnowledge } from "./backup";
+export type { KnowledgeBackup, RestoreSummary } from "./backup";
+
 export { connect } from "./db/postgres";
 export type { ConnectOptions } from "./db/postgres";
 export { KnowledgeRepository } from "./db/repository";

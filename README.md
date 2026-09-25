@@ -60,23 +60,31 @@ falls back to the knowledge bundled in `packages/knowledge`.
 Every report records the engine version and the knowledge version that produced it, so any
 result can be reproduced.
 
+Most of the database can be rebuilt: apps and themes come back from Salla, generated
+fingerprints from the next sync. What cannot is what people decided — hand-written and
+approved fingerprints, noise added by hand, review decisions, canaries and ground truth.
+`db export` saves exactly that. To rebuild from nothing: `db migrate`, `db import`,
+`sync catalog`, then `db restore` with the latest backup.
+
 ## Commands
 
-| Command                                 | What it does                                                |
-| --------------------------------------- | ----------------------------------------------------------- |
-| `pnpm check`                            | Types, lint, formatting and tests                           |
-| `pnpm cli scan <url>`                   | Scan one store (`--json` for the full report)               |
-| `pnpm cli crawl --file <path>`          | Scan and record a list of stores, which feeds learning      |
-| `pnpm cli db migrate`                   | Create or update the schema                                 |
-| `pnpm cli db import`                    | Load the bundled knowledge into an empty database           |
-| `pnpm cli db snapshot`                  | Show what the database currently knows                      |
-| `pnpm cli sync catalog`                 | Refresh apps and regenerate their fingerprints              |
-| `pnpm cli sync themes`                  | Refresh the theme catalogue                                 |
-| `pnpm cli learn`                        | Turn unexplained traces into candidates                     |
-| `pnpm cli validate <signal> --app <id>` | Check a proposed fingerprint against stores running the app |
-| `pnpm cli health`                       | Run the monitoring checks now                               |
-| `pnpm cli canary <url> ...`             | Watch a store whose apps are known (`--list` to see them)   |
-| `pnpm cli quality-report`               | Measure detection against known installations               |
+| Command                                 | What it does                                                   |
+| --------------------------------------- | -------------------------------------------------------------- |
+| `pnpm check`                            | Types, lint, formatting and tests                              |
+| `pnpm cli scan <url>`                   | Scan one store (`--json` for the full report)                  |
+| `pnpm cli crawl --file <path>`          | Scan and record a list of stores, which feeds learning         |
+| `pnpm cli db migrate`                   | Create or update the schema                                    |
+| `pnpm cli db import`                    | Load the bundled knowledge into an empty database              |
+| `pnpm cli db snapshot`                  | Show what the database currently knows                         |
+| `pnpm cli db export [dir]`              | Back up what people decided (beside the repository by default) |
+| `pnpm cli db restore <file>`            | Load such a backup into a database                             |
+| `pnpm cli sync catalog`                 | Refresh apps and regenerate their fingerprints                 |
+| `pnpm cli sync themes`                  | Refresh the theme catalogue                                    |
+| `pnpm cli learn`                        | Turn unexplained traces into candidates                        |
+| `pnpm cli validate <signal> --app <id>` | Check a proposed fingerprint against stores running the app    |
+| `pnpm cli health`                       | Run the monitoring checks now                                  |
+| `pnpm cli canary <url> ...`             | Watch a store whose apps are known (`--list` to see them)      |
+| `pnpm cli quality-report`               | Measure detection against known installations                  |
 
 `sync catalog` works to a time budget and saves its place, so a large refresh can span
 several scheduled runs.
