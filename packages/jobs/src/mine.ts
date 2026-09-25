@@ -43,6 +43,8 @@ export interface MineResult {
   readonly liveStores: number;
   readonly apps: readonly AppMining[];
   readonly candidates: readonly MinedCandidate[];
+  /** Of those, the ones waiting for a decision; a trace someone already decided on stays decided. */
+  readonly queued: number;
 }
 
 const DEFAULTS = {
@@ -195,7 +197,7 @@ export async function mineAppSignals(options: MineOptions): Promise<MineResult> 
       })),
   );
 
-  await Promise.all([
+  const [queued] = await Promise.all([
     options.repository.recordMinedCandidates(candidates),
     options.repository.saveAppQuality(
       apps.map(({ appId, stores: count, detected, verdict }) => ({
@@ -210,9 +212,10 @@ export async function mineAppSignals(options: MineOptions): Promise<MineResult> 
     liveStores: byStore.size,
     apps: apps.length,
     candidates: candidates.length,
+    queued,
   });
 
-  return { liveStores: byStore.size, apps, candidates };
+  return { liveStores: byStore.size, apps, candidates, queued };
 }
 
 function verdictFor(

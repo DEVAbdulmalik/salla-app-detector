@@ -32,7 +32,7 @@ export async function GET(request: Request): Promise<Response> {
 
   return Response.json({
     learned,
-    mined: { apps: mined.apps.length, candidates: mined.candidates.length },
+    mined: { apps: mined.apps.length, candidates: mined.candidates.length, queued: mined.queued },
     health: checked,
   });
 }

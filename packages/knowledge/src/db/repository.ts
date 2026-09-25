@@ -1181,11 +1181,12 @@ export class KnowledgeRepository {
    * still decides; the evidence is there so the decision is quick, and a trace someone
    * already ignored stays ignored.
    */
-  async recordMinedCandidates(candidates: readonly MinedCandidate[]): Promise<void> {
+  /** Returns how many of them are waiting for a decision, as opposed to already decided. */
+  async recordMinedCandidates(candidates: readonly MinedCandidate[]): Promise<number> {
     if (candidates.length === 0) {
-      return;
+      return 0;
     }
-    await this.#db.query(
+    const rows = await this.#db.query<{ status: string }>(
       `insert into candidates (signal_kind, signal_value, store_count, suggested_app_id, sample, evidence)
        select incoming.signal_kind, incoming.signal_value, incoming.store_count, incoming.app_id,
               (select observations.sample from observations
@@ -1203,7 +1204,8 @@ export class KnowledgeRepository {
          suggested_app_id = coalesce(candidates.suggested_app_id, excluded.suggested_app_id),
          sample = coalesce(candidates.sample, excluded.sample),
          evidence = excluded.evidence,
-         updated_at = now()`,
+         updated_at = now()
+       returning status`,
       [
         JSON.stringify(
           candidates.map((candidate) => ({
@@ -1221,6 +1223,7 @@ export class KnowledgeRepository {
         ),
       ],
     );
+    return rows.filter((row) => row.status === "new").length;
   }
 
   async saveAppQuality(rows: readonly AppQuality[]): Promise<void> {

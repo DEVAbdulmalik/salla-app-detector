@@ -51,7 +51,7 @@ export async function mineCommand(argv: readonly string[]): Promise<number> {
         "",
         `live stores   ${String(result.liveStores)}`,
         `apps judged   ${String(result.apps.length)}: ${[...verdicts].map(([verdict, count]) => `${String(count)} ${verdict}`).join(", ")}`,
-        `candidates    ${String(result.candidates.length)} new traces filed for review`,
+        `candidates    ${String(result.candidates.length)} traces tied to an app, ${String(result.queued)} waiting for review`,
         "",
       ].join("\n"),
     );

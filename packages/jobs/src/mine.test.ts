@@ -145,6 +145,7 @@ describe("mineAppSignals", () => {
         baselineShare: 0,
       },
     ]);
+    expect(result.queued).toBe(1);
     const [queued] = await repository.listCandidates("new");
     expect(queued).toMatchObject({
       signalValue: "abcd1234",
@@ -178,6 +179,10 @@ describe("mineAppSignals", () => {
 
     await mineAppSignals({ repository, ...SMALL });
 
+    const result = await mineAppSignals({ repository, ...SMALL });
+
+    expect(result).toMatchObject({ queued: 0 });
+    expect(result.candidates).toHaveLength(1);
     expect(await repository.listCandidates("new")).toEqual([]);
     expect(await repository.listCandidates("ignored")).toMatchObject([
       { signalValue: "abcd1234", evidence: { appId: "lead" } },
