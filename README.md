@@ -60,6 +60,11 @@ falls back to the knowledge bundled in `packages/knowledge`.
 Every report records the engine version and the knowledge version that produced it, so any
 result can be reproduced.
 
+A fingerprint on paper is not coverage. Most apps get one automatically from their
+developer's domain, and most of those domains never appear on a storefront. `coverage`
+reports what counts instead: apps that have turned up in live stores, and fingerprints that
+have matched a real page.
+
 Most of the database can be rebuilt: apps and themes come back from Salla, generated
 fingerprints from the next sync. What cannot is what people decided — hand-written and
 approved fingerprints, noise added by hand, review decisions, canaries and ground truth.
@@ -85,6 +90,7 @@ approved fingerprints, noise added by hand, review decisions, canaries and groun
 | `pnpm cli health`                       | Run the monitoring checks now                                  |
 | `pnpm cli canary <url> ...`             | Watch a store whose apps are known (`--list` to see them)      |
 | `pnpm cli quality-report`               | Measure detection against known installations                  |
+| `pnpm cli coverage`                     | How much of the catalogue detection has actually seen          |
 
 `sync catalog` works to a time budget and saves its place, so a large refresh can span
 several scheduled runs.

@@ -528,3 +528,119 @@ describe("canaries", () => {
     ]);
   });
 });
+
+describe("coverage", () => {
+  async function scan(storeKey: string, status: string, report: Record<string, unknown>) {
+    await repository.recordScan({
+      storeKey,
+      status,
+      report: { apps: [], dropshipping: [], integrations: [], ...report },
+      engineVersion: "1.0.0",
+      knowledgeVersion: "test",
+      durationMs: 5,
+    });
+  }
+
+  beforeEach(async () => {
+    await repository.upsertApps([
+      { id: "1", name: "وِدجت", installs: 100 },
+      { id: "2", name: "Google Analytics", installs: 50 },
+      { id: "3", name: "دروب", installs: 30 },
+      { id: "4", name: "never seen", installs: 20 },
+    ]);
+    await repository.upsertFingerprints([
+      {
+        id: "manual:domain:vendor.example",
+        kind: "domain",
+        pattern: "vendor.example",
+        strength: "strong",
+        source: "manual",
+        appId: "1",
+      },
+      {
+        id: "auto:domain:quiet.example",
+        kind: "domain",
+        pattern: "quiet.example",
+        strength: "strong",
+        source: "auto",
+        appId: "4",
+      },
+    ]);
+    await repository.recordFingerprintMatches([{ kind: "domain", value: "vendor.example" }]);
+
+    await scan("a.test", "live", {
+      apps: [{ appId: "1" }, { appId: "company:Vendor" }],
+      integrations: [{ key: "google_analytics", appId: "2" }, { key: "tiktok_pixel" }],
+    });
+    await scan("b.test", "live", { apps: [{ appId: "1" }], dropshipping: [{ appId: "3" }] });
+    await scan("c.test", "live", {});
+    await scan("c.test", "maintenance", {});
+  });
+
+  it("counts an app found in any section of a report as detected", async () => {
+    const coverage = await repository.coverage(2);
+
+    expect(coverage.detectedApps).toEqual([
+      { appId: "1", name: "وِدجت", status: "listed", installs: 100, stores: 2, via: ["page"] },
+      {
+        appId: "2",
+        name: "Google Analytics",
+        status: "listed",
+        installs: 50,
+        stores: 1,
+        via: ["integration"],
+      },
+      { appId: "3", name: "دروب", status: "listed", installs: 30, stores: 1, via: ["products"] },
+      { appId: "company:Vendor", name: "company:Vendor", stores: 1, via: ["page"] },
+    ]);
+    expect(await repository.appDetectionCounts(7)).toEqual(
+      new Map([
+        ["1", 2],
+        ["2", 1],
+        ["3", 1],
+        ["company:Vendor", 1],
+      ]),
+    );
+  });
+
+  it("tells a fingerprint that matched a page from one that only exists on paper", async () => {
+    const coverage = await repository.coverage(2);
+
+    expect(coverage).toMatchObject({ listedApps: 4, listedInstalls: 200, fingerprintedApps: 2 });
+    expect(coverage.fingerprints).toEqual([
+      { kind: "domain", source: "auto", active: 1, matched: 0 },
+      { kind: "domain", source: "manual", active: 1, matched: 1 },
+    ]);
+  });
+
+  it("describes the corpus by each store's latest scan", async () => {
+    const coverage = await repository.coverage(2);
+
+    expect(coverage.corpus).toEqual([
+      { status: "live", stores: 2 },
+      { status: "maintenance", stores: 1 },
+    ]);
+  });
+
+  it("counts the traces still waiting for a decision", async () => {
+    await repository.recordObservations("a.test", [
+      { kind: "domain", value: "recurring.example" },
+      { kind: "domain", value: "decided.example" },
+      { kind: "domain", value: "rare.example" },
+    ]);
+    await repository.recordObservations("b.test", [
+      { kind: "domain", value: "recurring.example" },
+      { kind: "domain", value: "decided.example" },
+    ]);
+    await repository.upsertCandidates([
+      { signalKind: "domain", signalValue: "decided.example", storeCount: 2 },
+    ]);
+    await repository.setCandidateStatus("domain", "decided.example", "ignored");
+    await repository.recordGroundTruth([{ appId: "1", storeId: 42 }]);
+
+    const coverage = await repository.coverage(2);
+
+    expect(coverage.unexplained).toEqual({ traces: 2, recurring: 1 });
+    expect(coverage.groundTruth).toEqual({ pairs: 1, apps: 1 });
+  });
+});

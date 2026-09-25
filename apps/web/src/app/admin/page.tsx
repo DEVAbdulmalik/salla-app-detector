@@ -28,16 +28,19 @@ export default async function AdminPage() {
   }
 
   const repository = getRepository();
-  const [snapshot, candidates, scans, events, canaries] = await Promise.all([
+  const [snapshot, candidates, scans, events, canaries, coverage] = await Promise.all([
     repository?.readPublishedSnapshot(),
     repository?.listCandidates("new", 40) ?? [],
     repository?.recentScanCount(30) ?? 0,
     repository?.recentHealthEvents(12) ?? [],
     repository?.canaries() ?? [],
+    repository?.coverage(5),
   ]);
 
   const m = messages.admin;
   const kinds: Record<string, string> = m.health.kinds;
+  const detected = coverage?.detectedApps.filter((app) => app.status === "listed").length ?? 0;
+  const fingerprints = coverage?.fingerprints ?? [];
   const alarming = events.filter(
     (event) => event.severity === "critical" && isRecent(event.createdAt),
   );
@@ -56,8 +59,18 @@ export default async function AdminPage() {
       )}
 
       <section className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-5">
-        <Stat label={m.stats.apps} value={Object.keys(snapshot?.apps ?? {}).length} />
-        <Stat label={m.stats.fingerprints} value={snapshot?.fingerprints.length ?? 0} />
+        <Stat
+          label={m.stats.detectedApps}
+          value={detected}
+          of={coverage?.listedApps ?? 0}
+          ofLabel={m.stats.of}
+        />
+        <Stat
+          label={m.stats.provenFingerprints}
+          value={fingerprints.reduce((sum, row) => sum + row.matched, 0)}
+          of={fingerprints.reduce((sum, row) => sum + row.active, 0)}
+          ofLabel={m.stats.of}
+        />
         <Stat label={m.stats.scans} value={scans} />
         <Stat label={m.stats.candidates} value={candidates.length} />
         <Stat label={m.stats.canaries} value={canaries.length} />
@@ -110,10 +123,28 @@ function isRecent(at: Date): boolean {
   return Date.now() - at.getTime() < 24 * 60 * 60 * 1000;
 }
 
-function Stat({ label, value }: { label: string; value: number }) {
+function Stat({
+  label,
+  value,
+  of,
+  ofLabel,
+}: {
+  label: string;
+  value: number;
+  /** The whole the value is part of, shown so a small number reads as what it is. */
+  of?: number;
+  ofLabel?: string;
+}) {
   return (
     <div className="rounded-xl border border-line bg-surface p-4">
-      <div className="text-2xl font-semibold">{value.toLocaleString("ar-SA")}</div>
+      <div className="flex items-baseline gap-1.5">
+        <span className="text-2xl font-semibold">{value.toLocaleString("ar-SA")}</span>
+        {of !== undefined && (
+          <span className="text-sm text-muted">
+            {ofLabel} {of.toLocaleString("ar-SA")}
+          </span>
+        )}
+      </div>
       <div className="mt-1 text-sm text-muted">{label}</div>
     </div>
   );

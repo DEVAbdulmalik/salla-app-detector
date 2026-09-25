@@ -2,6 +2,7 @@ import { DATABASE_USAGE, databaseCommand } from "./commands/database";
 import { SCAN_USAGE, scanCommand } from "./commands/scan";
 import { CANARY_USAGE, canaryCommand } from "./commands/canary";
 import { CANDIDATES_USAGE, candidatesCommand } from "./commands/candidates";
+import { COVERAGE_USAGE, coverageCommand } from "./commands/coverage";
 import { CRAWL_USAGE, crawlCommand } from "./commands/crawl";
 import { HEALTH_USAGE, healthCommand } from "./commands/health";
 import { LEARN_USAGE, learnCommand } from "./commands/learn";
@@ -22,6 +23,7 @@ const USAGE = `Usage: pnpm cli <command>
   learn              turn unexplained signals into candidates
   candidates         review what learning proposed, and decide
   quality-report     measure detection against known installations
+  coverage           how much of the catalogue detection has actually seen
 
 ${SCAN_USAGE}
 ${DATABASE_USAGE}
@@ -32,7 +34,8 @@ ${CRAWL_USAGE}
 ${HEALTH_USAGE}
 ${LEARN_USAGE}
 ${CANDIDATES_USAGE}
-${QUALITY_USAGE}`;
+${QUALITY_USAGE}
+${COVERAGE_USAGE}`;
 
 async function main(argv: readonly string[]): Promise<number> {
   loadEnvironment();
@@ -62,6 +65,8 @@ async function main(argv: readonly string[]): Promise<number> {
       return candidatesCommand(rest);
     case "quality-report":
       return qualityCommand(rest);
+    case "coverage":
+      return coverageCommand(rest);
     default:
       process.stdout.write(USAGE);
       return command === "--help" ? 0 : 1;

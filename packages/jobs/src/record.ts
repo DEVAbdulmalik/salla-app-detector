@@ -30,11 +30,7 @@ export async function recordScanOutcome(
   // away, so they go together rather than one round trip after another.
   await Promise.all([
     scan,
-    repository.recordFingerprintMatches(
-      report.apps.flatMap((app) =>
-        app.evidence.map((item) => ({ kind: item.kind, value: item.value })),
-      ),
-    ),
+    repository.recordFingerprintMatches(matchedSignals(report)),
     report.store?.assetCode === undefined
       ? Promise.resolve()
       : repository.rememberStoreCode(report.store.assetCode, report.store.id, report.target.key),
@@ -47,4 +43,19 @@ export async function recordScanOutcome(
       })),
     ),
   ]);
+}
+
+/**
+ * Every signal in the report that a fingerprint accounted for. Integrations and
+ * dropshipping have sections of their own, but they are fingerprint matches all the same,
+ * and leaving them out made fingerprints that match every other store look unused.
+ */
+export function matchedSignals(report: ScanReport): { kind: string; value: string }[] {
+  const evidence = [...report.apps, ...report.dropshipping].flatMap((app) =>
+    app.evidence.map((item) => ({ kind: item.kind, value: item.value })),
+  );
+  const services = report.integrations.flatMap((integration) =>
+    integration.appId === undefined ? [] : [{ kind: "service", value: integration.key }],
+  );
+  return [...evidence, ...services];
 }

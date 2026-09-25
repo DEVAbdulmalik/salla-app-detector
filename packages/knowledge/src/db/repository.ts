@@ -201,6 +201,60 @@ export interface JobState {
   readonly lastStatus?: string;
 }
 
+/** Where a report named an app: the page itself, the product sample, or an integration. */
+export type DetectionSource = "page" | "products" | "integration";
+
+export interface DetectedAppCoverage {
+  readonly appId: string;
+  readonly name: string;
+  /** Absent for an id the catalogue has never listed, such as a company match. */
+  readonly status?: string;
+  readonly installs?: number;
+  readonly stores: number;
+  readonly via: readonly DetectionSource[];
+}
+
+export interface FingerprintCoverage {
+  readonly kind: string;
+  readonly source: string;
+  readonly active: number;
+  /** Fingerprints that have matched at least one real page. */
+  readonly matched: number;
+}
+
+/**
+ * How much of the catalogue detection can actually see. A fingerprint on paper is not
+ * coverage: most developer domains never appear on a storefront, so the honest measure is
+ * what has turned up in stores we scanned.
+ */
+export interface Coverage {
+  readonly listedApps: number;
+  readonly listedInstalls: number;
+  readonly fingerprintedApps: number;
+  readonly detectedApps: readonly DetectedAppCoverage[];
+  readonly fingerprints: readonly FingerprintCoverage[];
+  /** Stores by the status of their latest scan. */
+  readonly corpus: readonly StatusShare[];
+  readonly groundTruth: { readonly pairs: number; readonly apps: number };
+  /** Traces nobody has decided on yet, and how many recur often enough to learn from. */
+  readonly unexplained: { readonly traces: number; readonly recurring: number };
+}
+
+/**
+ * Every app a stored report names, from any section. Reports written before a section
+ * existed simply lack it, and an absent array yields no rows.
+ */
+const DETECTED_APPS = `lateral (
+  select app->>'appId' as app_id, 'page' as via
+  from jsonb_array_elements(scans.report->'apps') as app
+  union all
+  select app->>'appId', 'products'
+  from jsonb_array_elements(scans.report->'dropshipping') as app
+  union all
+  select integration->>'appId', 'integration'
+  from jsonb_array_elements(scans.report->'integrations') as integration
+) as detected`;
+
 const NOISE_KINDS: readonly NoiseKind[] = [
   "hosts",
   "domains",
@@ -927,15 +981,102 @@ export class KnowledgeRepository {
    */
   async appDetectionCounts(days: number, endingDaysAgo = 0): Promise<Map<string, number>> {
     const rows = await this.#db.query<{ app_id: string; stores: number }>(
-      `select app->>'appId' as app_id, count(distinct store_key)::int as stores
-       from scans, jsonb_array_elements(report->'apps') as app
-       where status = 'live'
-         and scanned_at > now() - make_interval(days => $1::int + $2::int)
-         and scanned_at <= now() - make_interval(days => $2::int)
-       group by app->>'appId'`,
+      `select detected.app_id, count(distinct scans.store_key)::int as stores
+       from scans cross join ${DETECTED_APPS}
+       where scans.status = 'live'
+         and detected.app_id is not null
+         and scans.scanned_at > now() - make_interval(days => $1::int + $2::int)
+         and scans.scanned_at <= now() - make_interval(days => $2::int)
+       group by detected.app_id`,
       [days, endingDaysAgo],
     );
     return new Map(rows.map((row) => [row.app_id, row.stores]));
+  }
+
+  async coverage(recurringStores: number): Promise<Coverage> {
+    const [catalogue, detected, fingerprints, corpus, groundTruth, unexplained] = await Promise.all(
+      [
+        this.#db.query<{ listed: number; installs: string; fingerprinted: number }>(
+          `with fingerprinted as (
+             select app_id from fingerprints where status = 'active' and app_id is not null
+             union
+             select unnest(company_app_ids) from fingerprints where status = 'active'
+           )
+           select count(*)::int as listed,
+                  coalesce(sum(installs), 0)::text as installs,
+                  count(*) filter (where id in (select app_id from fingerprinted))::int
+                    as fingerprinted
+           from apps where status = 'listed'`,
+        ),
+        this.#db.query<{
+          app_id: string;
+          name: string | null;
+          status: string | null;
+          installs: number | null;
+          stores: number;
+          via: DetectionSource[];
+        }>(
+          `select detected.app_id, apps.name, apps.status, apps.installs,
+                  count(distinct scans.store_key)::int as stores,
+                  array_agg(distinct detected.via order by detected.via) as via
+           from scans cross join ${DETECTED_APPS}
+           left join apps on apps.id = detected.app_id
+           where scans.status = 'live' and detected.app_id is not null
+           group by detected.app_id, apps.name, apps.status, apps.installs
+           order by stores desc, detected.app_id`,
+        ),
+        this.#db.query<FingerprintCoverage>(
+          `select kind, source, count(*)::int as active,
+                  count(*) filter (where match_count > 0)::int as matched
+           from fingerprints where status = 'active'
+           group by kind, source
+           order by count(*) desc, kind, source`,
+        ),
+        this.#db.query<StatusShare>(
+          `select status, count(*)::int as stores
+           from (select distinct on (store_key) status from scans
+                 order by store_key, scanned_at desc, id desc) as latest
+           group by status
+           order by count(*) desc, status`,
+        ),
+        this.#db.query<{ pairs: number; apps: number }>(
+          "select count(*)::int as pairs, count(distinct app_id)::int as apps from ground_truth",
+        ),
+        this.#db.query<{ traces: number; recurring: number }>(
+          `select count(*)::int as traces,
+                  count(*) filter (where stores >= $1)::int as recurring
+           from (
+             select observations.signal_kind, observations.signal_value,
+                    count(distinct observations.store_key) as stores
+             from observations
+             left join candidates
+               on candidates.signal_kind = observations.signal_kind
+              and candidates.signal_value = observations.signal_value
+             where candidates.status is null or candidates.status in ('new', 'investigating')
+             group by observations.signal_kind, observations.signal_value
+           ) as traces`,
+          [recurringStores],
+        ),
+      ],
+    );
+
+    return {
+      listedApps: catalogue[0]?.listed ?? 0,
+      listedInstalls: Number(catalogue[0]?.installs ?? 0),
+      fingerprintedApps: catalogue[0]?.fingerprinted ?? 0,
+      detectedApps: detected.map((row) => ({
+        appId: row.app_id,
+        name: row.name ?? row.app_id,
+        ...(row.status === null ? {} : { status: row.status }),
+        ...(row.installs === null ? {} : { installs: row.installs }),
+        stores: row.stores,
+        via: row.via,
+      })),
+      fingerprints,
+      corpus,
+      groundTruth: groundTruth[0] ?? { pairs: 0, apps: 0 },
+      unexplained: unexplained[0] ?? { traces: 0, recurring: 0 },
+    };
   }
 
   async recentHealthEvents(limit: number): Promise<HealthEventRow[]> {
