@@ -7,6 +7,7 @@ import { CRAWL_USAGE, crawlCommand } from "./commands/crawl";
 import { HARVEST_USAGE, harvestCommand } from "./commands/harvest";
 import { HEALTH_USAGE, healthCommand } from "./commands/health";
 import { LEARN_USAGE, learnCommand } from "./commands/learn";
+import { MINE_USAGE, mineCommand } from "./commands/mine";
 import { QUALITY_USAGE, qualityCommand } from "./commands/quality";
 import { SYNC_USAGE, syncCommand } from "./commands/sync";
 import { VALIDATE_USAGE, validateCommand } from "./commands/validate";
@@ -23,6 +24,7 @@ const USAGE = `Usage: pnpm cli <command>
   harvest            grow the corpus from the stores that reviewed each app
   health             run the monitoring checks now
   learn              turn unexplained signals into candidates
+  mine               find each app's traces by comparing its stores with the rest
   candidates         review what learning proposed, and decide
   quality-report     measure detection against known installations
   coverage           how much of the catalogue detection has actually seen
@@ -36,6 +38,7 @@ ${CRAWL_USAGE}
 ${HARVEST_USAGE}
 ${HEALTH_USAGE}
 ${LEARN_USAGE}
+${MINE_USAGE}
 ${CANDIDATES_USAGE}
 ${QUALITY_USAGE}
 ${COVERAGE_USAGE}`;
@@ -66,6 +69,8 @@ async function main(argv: readonly string[]): Promise<number> {
       return healthCommand();
     case "learn":
       return learnCommand();
+    case "mine":
+      return mineCommand(rest);
     case "candidates":
       return candidatesCommand(rest);
     case "quality-report":

@@ -107,6 +107,45 @@ export interface CandidateRow extends SignalCluster {
   readonly status: string;
   readonly suggestedAppId?: string;
   readonly suggestedAppName?: string;
+  readonly evidence?: CandidateEvidence;
+}
+
+/** How a candidate was tied to an app: measured on the stores known to run it. */
+export interface CandidateEvidence {
+  readonly appId: string;
+  /** Stores known to run the app that carry the trace. */
+  readonly groupStores: number;
+  /** Stores known to run the app that a live scan has seen. */
+  readonly groupSize: number;
+  /** Share of every other live store that carries it too. */
+  readonly baselineShare: number;
+}
+
+export interface MinedCandidate extends CandidateEvidence {
+  readonly signalKind: string;
+  readonly signalValue: string;
+}
+
+/** What each live store showed on its latest scan, reduced to what mining compares. */
+export interface StoreSignals {
+  readonly storeId: number;
+  readonly appIds: readonly string[];
+  readonly signals: readonly { readonly kind: string; readonly value: string }[];
+}
+
+export interface FingerprintOwner {
+  readonly kind: string;
+  readonly pattern: string;
+  readonly appIds: readonly string[];
+}
+
+export type AppVerdict = "detected" | "no-trace" | "unclear";
+
+export interface AppQuality {
+  readonly appId: string;
+  readonly stores: number;
+  readonly detected: number;
+  readonly verdict: AppVerdict;
 }
 
 export interface CanaryStore {
@@ -251,6 +290,8 @@ export interface Coverage {
   };
   /** Traces nobody has decided on yet, and how many recur often enough to learn from. */
   readonly unexplained: { readonly traces: number; readonly recurring: number };
+  /** What mining concluded about each app it had enough known stores to judge. */
+  readonly verdicts: Readonly<Record<AppVerdict, number>>;
 }
 
 /**
@@ -709,6 +750,7 @@ export class KnowledgeRepository {
       suggestedAppName: string | null;
       themeId: string | null;
       themeName: string | null;
+      evidence: CandidateEvidence | null;
     }>(
       `select c.signal_kind as "signalKind",
               c.signal_value as "signalValue",
@@ -718,12 +760,13 @@ export class KnowledgeRepository {
               c.suggested_app_id as "suggestedAppId",
               a.name as "suggestedAppName",
               c.theme_id as "themeId",
-              t.name as "themeName"
+              t.name as "themeName",
+              c.evidence
        from candidates c
        left join apps a on a.id = c.suggested_app_id
        left join themes t on t.id = c.theme_id
        where c.status = $1
-       order by c.store_count desc
+       order by c.evidence is null, c.store_count desc
        limit $2`,
       [status, limit],
     );
@@ -739,6 +782,7 @@ export class KnowledgeRepository {
       ...(row.suggestedAppName === null ? {} : { suggestedAppName: row.suggestedAppName }),
       ...(row.themeId === null ? {} : { themeId: row.themeId }),
       ...(row.themeName === null ? {} : { themeName: row.themeName }),
+      ...(row.evidence === null ? {} : { evidence: row.evidence }),
     }));
   }
 
@@ -1056,6 +1100,158 @@ export class KnowledgeRepository {
     }));
   }
 
+  /**
+   * Every live store's latest scan: the apps it named and every trace it carried, matched
+   * or not. Stores without an id cannot be tied to ground truth, so they are left out.
+   */
+  async liveStoreSignals(): Promise<StoreSignals[]> {
+    const latest = `latest as (
+      select distinct on (store_key) store_key, store_id, report
+      from scans
+      where status = 'live' and store_id is not null
+      order by store_key, scanned_at desc, id desc
+    )`;
+    const [ids, detections, signals] = await Promise.all([
+      // A store that showed nothing at all counts too: it is how an app proves traceless.
+      this.#db.query<{ store_id: string }>(
+        `with ${latest} select distinct store_id::text as store_id from latest`,
+      ),
+      this.#db.query<{ store_id: string; app_id: string }>(
+        `with ${latest}
+         select distinct scans.store_id::text as store_id, detected.app_id
+         from latest as scans cross join ${DETECTED_APPS}
+         where detected.app_id is not null`,
+      ),
+      this.#db.query<{ store_id: string; kind: string; value: string }>(
+        `with ${latest}
+         select distinct latest.store_id::text as store_id, signal.kind, signal.value
+         from latest cross join lateral (
+           select item->>'kind' as kind, item->>'value' as value
+           from jsonb_array_elements(latest.report->'unknownSignals') as item
+           union all
+           select evidence->>'kind', evidence->>'value'
+           from jsonb_array_elements(
+                  coalesce(latest.report->'apps', '[]') || coalesce(latest.report->'dropshipping', '[]')
+                ) as app,
+                jsonb_array_elements(app->'evidence') as evidence
+           union all
+           select 'service', integration->>'key'
+           from jsonb_array_elements(latest.report->'integrations') as integration
+         ) as signal
+         where signal.kind is not null and signal.value is not null`,
+      ),
+    ]);
+
+    const stores = new Map<
+      string,
+      { appIds: string[]; signals: { kind: string; value: string }[] }
+    >();
+    const entry = (id: string) => {
+      let found = stores.get(id);
+      if (found === undefined) {
+        found = { appIds: [], signals: [] };
+        stores.set(id, found);
+      }
+      return found;
+    };
+    for (const row of ids) {
+      entry(row.store_id);
+    }
+    for (const row of detections) {
+      entry(row.store_id).appIds.push(row.app_id);
+    }
+    for (const row of signals) {
+      entry(row.store_id).signals.push({ kind: row.kind, value: row.value });
+    }
+    return [...stores].map(([id, found]) => ({ storeId: Number(id), ...found }));
+  }
+
+  /** Which apps each active fingerprint points at; a company fingerprint points at several. */
+  async fingerprintOwners(): Promise<FingerprintOwner[]> {
+    const rows = await this.#db.query<{ kind: string; pattern: string; app_ids: string[] }>(
+      `select kind, pattern,
+              array_remove(array_cat(array[app_id], company_app_ids), null) as app_ids
+       from fingerprints where status = 'active'`,
+    );
+    return rows.map((row) => ({ kind: row.kind, pattern: row.pattern, appIds: row.app_ids }));
+  }
+
+  /**
+   * Files traces that stores known to run an app share and other stores lack. A person
+   * still decides; the evidence is there so the decision is quick, and a trace someone
+   * already ignored stays ignored.
+   */
+  async recordMinedCandidates(candidates: readonly MinedCandidate[]): Promise<void> {
+    if (candidates.length === 0) {
+      return;
+    }
+    await this.#db.query(
+      `insert into candidates (signal_kind, signal_value, store_count, suggested_app_id, sample, evidence)
+       select incoming.signal_kind, incoming.signal_value, incoming.store_count, incoming.app_id,
+              (select observations.sample from observations
+                where observations.signal_kind = incoming.signal_kind
+                  and observations.signal_value = incoming.signal_value
+                  and observations.sample is not null
+                limit 1),
+              incoming.evidence
+       from jsonb_to_recordset($1::text::jsonb) as incoming(
+         signal_kind text, signal_value text, store_count int, app_id text, evidence jsonb
+       )
+       where exists (select 1 from apps where apps.id = incoming.app_id)
+       on conflict (signal_kind, signal_value) do update set
+         store_count = greatest(candidates.store_count, excluded.store_count),
+         suggested_app_id = coalesce(candidates.suggested_app_id, excluded.suggested_app_id),
+         sample = coalesce(candidates.sample, excluded.sample),
+         evidence = excluded.evidence,
+         updated_at = now()`,
+      [
+        JSON.stringify(
+          candidates.map((candidate) => ({
+            signal_kind: candidate.signalKind,
+            signal_value: candidate.signalValue,
+            store_count: candidate.groupStores,
+            app_id: candidate.appId,
+            evidence: {
+              appId: candidate.appId,
+              groupStores: candidate.groupStores,
+              groupSize: candidate.groupSize,
+              baselineShare: candidate.baselineShare,
+            },
+          })),
+        ),
+      ],
+    );
+  }
+
+  async saveAppQuality(rows: readonly AppQuality[]): Promise<void> {
+    if (rows.length === 0) {
+      return;
+    }
+    await this.#db.query(
+      `insert into app_quality (app_id, stores, detected, verdict)
+       select app_id, stores, detected, verdict
+       from jsonb_to_recordset($1::text::jsonb) as incoming(
+         app_id text, stores int, detected int, verdict text
+       )
+       where exists (select 1 from apps where apps.id = incoming.app_id)
+       on conflict (app_id) do update set
+         stores = excluded.stores,
+         detected = excluded.detected,
+         verdict = excluded.verdict,
+         measured_at = now()`,
+      [
+        JSON.stringify(
+          rows.map((row) => ({
+            app_id: row.appId,
+            stores: row.stores,
+            detected: row.detected,
+            verdict: row.verdict,
+          })),
+        ),
+      ],
+    );
+  }
+
   /** A canary that no longer answers teaches nothing and raises the same alert every night. */
   async removeCanary(storeUrl: string): Promise<boolean> {
     const rows = await this.#db.query<{ store_url: string }>(
@@ -1096,8 +1292,8 @@ export class KnowledgeRepository {
   }
 
   async coverage(recurringStores: number): Promise<Coverage> {
-    const [catalogue, detected, fingerprints, corpus, groundTruth, unexplained] = await Promise.all(
-      [
+    const [catalogue, detected, fingerprints, corpus, groundTruth, unexplained, verdicts] =
+      await Promise.all([
         this.#db.query<{ listed: number; installs: string; fingerprinted: number }>(
           `with fingerprinted as (
              select app_id from fingerprints where status = 'active' and app_id is not null
@@ -1166,8 +1362,10 @@ export class KnowledgeRepository {
            ) as traces`,
           [recurringStores],
         ),
-      ],
-    );
+        this.#db.query<{ verdict: AppVerdict; apps: number }>(
+          "select verdict, count(*)::int as apps from app_quality group by verdict",
+        ),
+      ]);
 
     return {
       listedApps: catalogue[0]?.listed ?? 0,
@@ -1185,6 +1383,12 @@ export class KnowledgeRepository {
       corpus,
       groundTruth: groundTruth[0] ?? { pairs: 0, apps: 0, waitingCodes: 0 },
       unexplained: unexplained[0] ?? { traces: 0, recurring: 0 },
+      verdicts: {
+        detected: 0,
+        "no-trace": 0,
+        unclear: 0,
+        ...Object.fromEntries(verdicts.map((row) => [row.verdict, row.apps])),
+      },
     };
   }
 

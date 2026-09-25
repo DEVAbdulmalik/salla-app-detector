@@ -90,6 +90,13 @@ async function list(
       `${String(row.storeCount).padStart(3)}  ${row.signalKind.padEnd(17)} ` +
         `${row.signalValue.slice(0, 44).padEnd(46)} ${note}\n`,
     );
+    if (row.evidence !== undefined) {
+      const { groupStores, groupSize, baselineShare } = row.evidence;
+      process.stdout.write(
+        `     in ${String(groupStores)} of ${String(groupSize)} stores known to run it, ` +
+          `${(baselineShare * 100).toFixed(1)}% of the rest\n`,
+      );
+    }
     if (row.sample !== undefined) {
       process.stdout.write(`     ${row.sample.slice(0, 96)}\n`);
     }

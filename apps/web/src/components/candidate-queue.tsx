@@ -97,6 +97,22 @@ function CandidateCard({
         )}
       </p>
 
+      {candidate.evidence !== undefined && (
+        // Measured on stores known to run the app, which is what makes this worth approving.
+        <p className="mt-2 text-sm">
+          {m.evidence.found} {candidate.evidence.groupStores.toLocaleString("ar-SA")}{" "}
+          {m.evidence.of} {candidate.evidence.groupSize.toLocaleString("ar-SA")} {m.evidence.stores}
+          <span className="text-muted">
+            {" · "}
+            {candidate.evidence.baselineShare.toLocaleString("ar-SA", {
+              style: "percent",
+              maximumFractionDigits: 1,
+            })}{" "}
+            {m.evidence.elsewhere}
+          </span>
+        </p>
+      )}
+
       {candidate.sample !== undefined && (
         <p dir="ltr" className="mt-2 line-clamp-2 font-mono text-xs text-muted">
           {candidate.sample}

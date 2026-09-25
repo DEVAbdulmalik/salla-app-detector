@@ -1,4 +1,4 @@
-import { learn } from "@salla-app-detector/jobs";
+import { learn, mineAppSignals } from "@salla-app-detector/jobs";
 import { createLogger } from "@salla-app-detector/shared";
 import { isAuthorized, requireRepository } from "@/lib/cron";
 import { runHealth } from "@/lib/health-run";
@@ -12,9 +12,17 @@ export async function GET(request: Request): Promise<Response> {
     return new Response("unauthorized", { status: 401 });
   }
 
+  const repository = requireRepository();
   const learned = await learn({
-    repository: requireRepository(),
+    repository,
     logger: createLogger({ level: "info", bindings: { job: "learn" } }),
+  });
+
+  // Mining reads only what harvests and visitors' scans already stored, so it is safe to run
+  // from here even though Salla refuses the deployment's addresses.
+  const mined = await mineAppSignals({
+    repository,
+    logger: createLogger({ level: "info", bindings: { job: "mine" } }),
   });
 
   // The nightly monitoring runs here rather than on a schedule of its own: the plan allows
@@ -22,5 +30,9 @@ export async function GET(request: Request): Promise<Response> {
   // the checks see the knowledge that was just published.
   const checked = await runHealth(createLogger({ level: "info", bindings: { job: "health" } }));
 
-  return Response.json({ learned, health: checked });
+  return Response.json({
+    learned,
+    mined: { apps: mined.apps.length, candidates: mined.candidates.length },
+    health: checked,
+  });
 }

@@ -24,3 +24,6 @@ export type { ValidateOptions, ValidationClient, ValidationResult } from "./vali
 
 export { harvestableApps, harvestReviewerStores } from "./harvest";
 export type { AppHarvest, HarvestClient, HarvestOptions, HarvestResult } from "./harvest";
+
+export { mineAppSignals } from "./mine";
+export type { AppMining, MinedSignal, MineOptions, MineResult, SignalStanding } from "./mine";

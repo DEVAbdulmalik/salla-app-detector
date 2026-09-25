@@ -641,6 +641,7 @@ describe("coverage", () => {
     const coverage = await repository.coverage(2);
 
     expect(coverage.unexplained).toEqual({ traces: 2, recurring: 1 });
+    expect(coverage.verdicts).toEqual({ detected: 0, "no-trace": 0, unclear: 0 });
     expect(coverage.groundTruth).toEqual({ pairs: 1, apps: 1, waitingCodes: 0 });
   });
 });

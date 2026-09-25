@@ -63,6 +63,7 @@ function summary(coverage: Coverage): string {
     `ground truth   ${count(coverage.groundTruth.pairs)} known installations across ${appCount(coverage.groundTruth.apps)}`,
     `               ${count(coverage.groundTruth.waitingCodes)} more reviews wait for a scan to tie their code to a store`,
     `unexplained    ${count(coverage.unexplained.traces)} traces, ${count(coverage.unexplained.recurring)} seen in ${String(RECURRING_STORES)} or more stores`,
+    `judged         ${count(coverage.verdicts.detected)} apps found in their own stores, ${count(coverage.verdicts["no-trace"])} leave no public trace, ${count(coverage.verdicts.unclear)} unclear`,
     "",
   ];
   return lines.join("\n");

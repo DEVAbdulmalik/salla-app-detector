@@ -87,6 +87,7 @@ approved fingerprints, noise added by hand, review decisions, canaries and groun
 | `pnpm cli sync catalog`                 | Refresh apps and regenerate their fingerprints                 |
 | `pnpm cli sync themes`                  | Refresh the theme catalogue                                    |
 | `pnpm cli learn`                        | Turn unexplained traces into candidates                        |
+| `pnpm cli mine`                         | Find each app's traces by comparing its stores with the rest   |
 | `pnpm cli validate <signal> --app <id>` | Check a proposed fingerprint against stores running the app    |
 | `pnpm cli health`                       | Run the monitoring checks now                                  |
 | `pnpm cli canary <url> ...`             | Watch a store whose apps are known (`--list` to see them)      |
@@ -99,11 +100,18 @@ always run it, so each reviewer store is recorded as a known installation and sc
 it has not been lately. It runs from an ordinary network, since Salla refuses the
 deployment's addresses, and stops by itself if stores begin to refuse it too.
 
+`mine` then compares the stores known to run each app with every other live store. A trace
+most of an app's stores carry and few others do goes to the review queue with those
+numbers attached; a trace that belongs to another app is set aside, since merchants who run
+one app often run another. An app that many of its own stores show nothing for is marked as
+leaving no public trace. Mining reads only the database, and runs every night after
+learning.
+
 ## Running it in production
 
 The web app is deployed on Vercel, the database is Supabase, and two schedules keep the
 knowledge current: the catalogue and theme sync at 02:00, and the learning loop at 03:00,
-which also runs the monitoring checks. Both endpoints require the `CRON_SECRET` bearer
+which also mines app traces and runs the monitoring checks. Both endpoints require the `CRON_SECRET` bearer
 token. `GET /api/health?deep=1` reports the region, the knowledge version, database timings
 and which optional settings the deployment received.
 
