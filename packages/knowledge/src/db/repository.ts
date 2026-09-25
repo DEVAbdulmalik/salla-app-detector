@@ -814,6 +814,15 @@ export class KnowledgeRepository {
     );
   }
 
+  /** A canary that no longer answers teaches nothing and raises the same alert every night. */
+  async removeCanary(storeUrl: string): Promise<boolean> {
+    const rows = await this.#db.query<{ store_url: string }>(
+      "delete from canaries where store_url = $1 returning store_url",
+      [storeUrl],
+    );
+    return rows.length > 0;
+  }
+
   /** How scans ended over a window, which is how a platform-wide block shows itself. */
   async statusShares(hours: number): Promise<StatusShare[]> {
     return this.#db.query<StatusShare>(

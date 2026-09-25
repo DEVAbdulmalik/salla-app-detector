@@ -513,3 +513,18 @@ describe("themes", () => {
     ]);
   });
 });
+
+describe("canaries", () => {
+  it("stops watching a store that was removed", async () => {
+    await repository.upsertCanaries([
+      { storeUrl: "https://closed.test/", expectedAppIds: ["a"], expectedServices: [] },
+      { storeUrl: "https://open.test/", expectedAppIds: ["b"], expectedServices: [] },
+    ]);
+
+    expect(await repository.removeCanary("https://closed.test/")).toBe(true);
+    expect(await repository.removeCanary("https://never.test/")).toBe(false);
+    expect((await repository.canaries()).map((canary) => canary.storeUrl)).toEqual([
+      "https://open.test/",
+    ]);
+  });
+});

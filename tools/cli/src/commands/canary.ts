@@ -11,6 +11,7 @@ is noticed by the nightly health check rather than by a user.
 
 Options:
   --list          print the current canaries and leave them alone
+  --remove <url>  stop watching a store, such as one that has closed
   --from-scans <n>  take the n most recently scanned stores that had several
                   confirmed apps, instead of scanning the URLs given
 `;
@@ -21,6 +22,7 @@ export async function canaryCommand(argv: readonly string[]): Promise<number> {
     allowPositionals: true,
     options: {
       list: { type: "boolean", default: false },
+      remove: { type: "string" },
       "from-scans": { type: "string" },
     },
   });
@@ -30,6 +32,18 @@ export async function canaryCommand(argv: readonly string[]): Promise<number> {
     if (values.list) {
       print(await repository.canaries());
       return 0;
+    }
+
+    if (values.remove !== undefined) {
+      const removed = await repository.removeCanary(values.remove);
+      process.stdout.write(
+        removed
+          ? `removed ${values.remove}
+`
+          : `not a canary: ${values.remove}
+`,
+      );
+      return removed ? 0 : 1;
     }
 
     const fromScans = values["from-scans"];
