@@ -14,8 +14,15 @@ export async function currentUserEmail(): Promise<string | undefined> {
     cookies: {
       getAll: () => store.getAll(),
       setAll: (entries) => {
-        for (const entry of entries) {
-          store.set(entry.name, entry.value, entry.options);
+        // A page render may not write cookies, and Supabase writes them whenever it
+        // refreshes an expired token. Letting that throw would fail the whole page, so the
+        // refreshed session is dropped here and renewed by the middleware instead.
+        try {
+          for (const entry of entries) {
+            store.set(entry.name, entry.value, entry.options);
+          }
+        } catch {
+          return;
         }
       },
     },
