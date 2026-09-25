@@ -76,9 +76,9 @@ export async function scan(input: string, clientIp: string | undefined): Promise
   }
 
   const repository = getRepository();
-  // Both answers come from the same database and neither depends on the other, so they
+  // These answers come from the same database and none depends on another, so they
   // travel together: a round trip to the database is the slowest part of a warm scan.
-  const [limit, cached] = await Promise.all([
+  const [limit, cached, knowledge] = await Promise.all([
     repository && clientIp !== undefined
       ? tolerate("rate-limit", () =>
           repository.consumeRateLimit(
@@ -89,6 +89,7 @@ export async function scan(input: string, clientIp: string | undefined): Promise
         )
       : undefined,
     readCache(repository, target.value.key),
+    loadKnowledge(repository),
   ]);
 
   // An unreachable database must not become an outage: the limit simply cannot be
@@ -96,7 +97,9 @@ export async function scan(input: string, clientIp: string | undefined): Promise
   if (limit?.allowed === false) {
     return { ok: false, error: "rate-limited" };
   }
-  if (cached) {
+  // The page itself is not kept, so a report made before the knowledge last changed can
+  // only pick up what was learned since by scanning again.
+  if (cached?.report.meta.knowledgeVersion === knowledge.snapshot.version) {
     return cached;
   }
 
