@@ -78,6 +78,7 @@ approved fingerprints, noise added by hand, review decisions, canaries and groun
 | `pnpm check`                            | Types, lint, formatting and tests                              |
 | `pnpm cli scan <url>`                   | Scan one store (`--json` for the full report)                  |
 | `pnpm cli crawl --file <path>`          | Scan and record a list of stores, which feeds learning         |
+| `pnpm cli harvest`                      | Grow the corpus from the stores that reviewed each app         |
 | `pnpm cli db migrate`                   | Create or update the schema                                    |
 | `pnpm cli db import`                    | Load the bundled knowledge into an empty database              |
 | `pnpm cli db snapshot`                  | Show what the database currently knows                         |
@@ -93,7 +94,10 @@ approved fingerprints, noise added by hand, review decisions, canaries and groun
 | `pnpm cli coverage`                     | How much of the catalogue detection has actually seen          |
 
 `sync catalog` works to a time budget and saves its place, so a large refresh can span
-several scheduled runs.
+several scheduled runs. `harvest` works the same way: merchants who review an app almost
+always run it, so each reviewer store is recorded as a known installation and scanned if
+it has not been lately. It runs from an ordinary network, since Salla refuses the
+deployment's addresses, and stops by itself if stores begin to refuse it too.
 
 ## Running it in production
 

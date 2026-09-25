@@ -53,6 +53,7 @@ export type {
   NoiseRow,
   HealthEvent,
   JobRun,
+  ListedApp,
   ScanRow,
   StatusShare,
   ThemeConcentration,

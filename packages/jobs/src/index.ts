@@ -21,3 +21,6 @@ export type { ApiContract, CanaryOutcome, HealthOptions, HealthResult } from "./
 
 export { validateCandidate } from "./validate-candidate";
 export type { ValidateOptions, ValidationClient, ValidationResult } from "./validate-candidate";
+
+export { harvestableApps, harvestReviewerStores } from "./harvest";
+export type { AppHarvest, HarvestClient, HarvestOptions, HarvestResult } from "./harvest";

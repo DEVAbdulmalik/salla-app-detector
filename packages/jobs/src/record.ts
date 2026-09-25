@@ -10,10 +10,16 @@ export async function recordScanOutcome(
   repository: KnowledgeRepository,
   report: ScanReport,
   durationMs: number,
+  /**
+   * The store's id when the caller already knows it. A page under maintenance carries no
+   * configuration to read it from, and without it the store looks unvisited.
+   */
+  knownStoreId?: number,
 ): Promise<void> {
+  const storeId = report.store?.id ?? knownStoreId;
   const scan = repository.recordScan({
     storeKey: report.target.key,
-    ...(report.store === undefined ? {} : { storeId: report.store.id }),
+    ...(storeId === undefined ? {} : { storeId }),
     status: report.status,
     report,
     engineVersion: report.meta.engineVersion,

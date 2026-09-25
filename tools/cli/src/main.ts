@@ -4,6 +4,7 @@ import { CANARY_USAGE, canaryCommand } from "./commands/canary";
 import { CANDIDATES_USAGE, candidatesCommand } from "./commands/candidates";
 import { COVERAGE_USAGE, coverageCommand } from "./commands/coverage";
 import { CRAWL_USAGE, crawlCommand } from "./commands/crawl";
+import { HARVEST_USAGE, harvestCommand } from "./commands/harvest";
 import { HEALTH_USAGE, healthCommand } from "./commands/health";
 import { LEARN_USAGE, learnCommand } from "./commands/learn";
 import { QUALITY_USAGE, qualityCommand } from "./commands/quality";
@@ -19,6 +20,7 @@ const USAGE = `Usage: pnpm cli <command>
   validate <signal>  check a proposed fingerprint against reviewer stores
   canary             manage the stores the health check watches
   crawl              scan several stores and record what they show
+  harvest            grow the corpus from the stores that reviewed each app
   health             run the monitoring checks now
   learn              turn unexplained signals into candidates
   candidates         review what learning proposed, and decide
@@ -31,6 +33,7 @@ ${SYNC_USAGE}
 ${VALIDATE_USAGE}
 ${CANARY_USAGE}
 ${CRAWL_USAGE}
+${HARVEST_USAGE}
 ${HEALTH_USAGE}
 ${LEARN_USAGE}
 ${CANDIDATES_USAGE}
@@ -57,6 +60,8 @@ async function main(argv: readonly string[]): Promise<number> {
       return canaryCommand(rest);
     case "crawl":
       return crawlCommand(rest);
+    case "harvest":
+      return harvestCommand(rest);
     case "health":
       return healthCommand();
     case "learn":

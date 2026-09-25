@@ -127,6 +127,14 @@ export interface GroundTruthRow {
   readonly storeId: string;
 }
 
+export interface ListedApp {
+  readonly id: string;
+  readonly name: string;
+  readonly categories: readonly string[];
+  readonly installs?: number;
+  readonly isDefault: boolean;
+}
+
 export interface ThemeUpsert {
   readonly id: string;
   readonly name: string;
@@ -440,6 +448,55 @@ export class KnowledgeRepository {
       [codes],
     );
     return new Map(rows.map((row) => [row.code, row.store_key]));
+  }
+
+  /** The same index read the other way: which store id a review avatar's code belongs to. */
+  async storeIdsByCode(codes: readonly string[]): Promise<Map<string, number>> {
+    if (codes.length === 0) {
+      return new Map();
+    }
+    const rows = await this.#db.query<{ code: string; store_id: string }>(
+      `select code, store_id::text as store_id from store_codes
+        where store_id is not null and code = any($1::text[])`,
+      [codes],
+    );
+    return new Map(rows.map((row) => [row.code, Number(row.store_id)]));
+  }
+
+  /** Stores scanned within the window, whatever the scan found, so a crawl can skip them. */
+  async recentlyScannedStoreIds(storeIds: readonly number[], days: number): Promise<Set<number>> {
+    if (storeIds.length === 0) {
+      return new Set();
+    }
+    const rows = await this.#db.query<{ store_id: string }>(
+      `select distinct store_id::text as store_id from scans
+        where store_id = any($1::bigint[])
+          and scanned_at > now() - make_interval(days => $2::int)`,
+      [storeIds, days],
+    );
+    return new Set(rows.map((row) => Number(row.store_id)));
+  }
+
+  /** Apps still on the marketplace, most installed first. */
+  async listedApps(): Promise<ListedApp[]> {
+    const rows = await this.#db.query<{
+      id: string;
+      name: string;
+      categories: string[];
+      installs: number | null;
+      is_default: boolean;
+    }>(
+      `select id, name, categories, installs, is_default from apps
+        where status = 'listed'
+        order by installs desc nulls last, id`,
+    );
+    return rows.map((row) => ({
+      id: row.id,
+      name: row.name,
+      categories: row.categories,
+      ...(row.installs === null ? {} : { installs: row.installs }),
+      isDefault: row.is_default,
+    }));
   }
 
   /**
@@ -1267,11 +1324,15 @@ export class KnowledgeRepository {
       return;
     }
     await this.#db.query(
+      // A merchant can review the same app twice; one statement may touch a row only once,
+      // and the later review is the better evidence that the app is still there.
       `insert into ground_truth (app_id, store_id, observed_on)
-       select app_id, store_id, observed_on
+       select distinct on (app_id, store_id) app_id, store_id, observed_on
        from jsonb_to_recordset($1::text::jsonb) as incoming(app_id text, store_id bigint, observed_on date)
        where exists (select 1 from apps where apps.id = incoming.app_id)
-       on conflict (app_id, store_id) do update set observed_on = excluded.observed_on`,
+       order by app_id, store_id, observed_on desc nulls last
+       on conflict (app_id, store_id) do update
+         set observed_on = greatest(excluded.observed_on, ground_truth.observed_on)`,
       [
         JSON.stringify(
           entries.map((entry) => ({
