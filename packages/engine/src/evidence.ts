@@ -1,6 +1,7 @@
 import type { StoreConfig } from "./config";
 import type { StorefrontDocument } from "./document";
 import { describeHost } from "./domains";
+import { PLATFORM_TAG_CONTAINERS } from "./noise";
 import type { Evidence } from "./types";
 
 export interface EvidenceContext {
@@ -52,6 +53,18 @@ export function collectEvidence(
 
   for (const element of document.customElements) {
     evidence.add({ kind: "custom-element", value: element });
+  }
+
+  // The loader is the same few lines on every store, so its signature is platform noise;
+  // what sets a merchant's own container apart is only the id inside it. Ids are unique
+  // per merchant, so the signal is the container's presence, with the ids kept as detail.
+  const containers = document.gtmContainers.filter((id) => !PLATFORM_TAG_CONTAINERS.includes(id));
+  if (containers.length > 0) {
+    evidence.add({
+      kind: "tag-container",
+      value: "google-tag-manager",
+      detail: containers.join(", "),
+    });
   }
 
   for (const component of document.customComponents) {

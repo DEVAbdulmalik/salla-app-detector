@@ -12,6 +12,7 @@ const KINDS = new Set([
   "dom-id",
   "custom-element",
   "bundle",
+  "tag-container",
   "product-image-host",
   "product-sku-prefix",
 ]);

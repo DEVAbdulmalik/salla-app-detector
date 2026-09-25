@@ -19,6 +19,24 @@ function valuesOf(evidence: readonly Evidence[], kind: Evidence["kind"]): string
 }
 
 describe("collectEvidence", () => {
+  function loader(container: string): string {
+    return `<script>(function(w,d,s,l,i){w[l]=w[l]||[];var j=d.createElement(s);
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i;})(window,document,'script','dataLayer','${container}');</script>`;
+  }
+
+  it("notes a Tag Manager container the merchant brought, but not Salla's own", () => {
+    const own = collectEvidence(parseStorefront(loader("GTM-TGFC6FV"), "mystore.com"), undefined);
+    const merchant = collectEvidence(
+      parseStorefront(loader("GTM-TGFC6FV") + loader("GTM-WHBMQMVP"), "mystore.com"),
+      undefined,
+    );
+
+    expect(valuesOf(own, "tag-container")).toEqual([]);
+    expect(merchant.filter((item) => item.kind === "tag-container")).toEqual([
+      { kind: "tag-container", value: "google-tag-manager", detail: "GTM-WHBMQMVP" },
+    ]);
+  });
+
   const document = parseStorefront(
     `<script src="https://files.tooliify.com/widget.js"></script>
      <script src="https://cdn.portal.files.salla.network/snippets/prod/996829016/1.js" data-snippet-id="1"></script>

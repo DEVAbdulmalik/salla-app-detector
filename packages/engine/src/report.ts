@@ -78,7 +78,10 @@ export function buildReport(input: ReportInput): ScanReport {
     if (entry.appIds.some((appId) => byApp.has(appId))) {
       continue; // Another signal already named the exact app.
     }
-    apps.push({
+    // A trace can be shared by apps from different vendors, such as a supplier's image host
+    // that several importers bring along, so the candidates are named, not just counted.
+    const productOnly = entry.matches.every((match) => match.evidence.kind.startsWith("product-"));
+    (productOnly ? dropshipping : apps).push({
       appId: `company:${company}`,
       name: company,
       company,
@@ -88,6 +91,10 @@ export function buildReport(input: ReportInput): ScanReport {
       confidence: "possible",
       evidence: toReportEvidence(entry.matches),
       ambiguousWith: entry.appIds,
+      alternatives: entry.appIds.map((appId) => ({
+        appId,
+        name: input.knowledge.snapshot.apps[appId]?.name ?? appId,
+      })),
     });
   }
 

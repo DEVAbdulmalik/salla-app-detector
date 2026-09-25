@@ -32,6 +32,7 @@ const FINGERPRINT_KINDS = [
   "inline-signature",
   "dom-id",
   "custom-element",
+  "tag-container",
   "product-image-host",
   "product-sku-prefix",
 ] as const satisfies readonly EvidenceKind[];

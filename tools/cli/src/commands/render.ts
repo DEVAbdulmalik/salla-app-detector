@@ -77,7 +77,11 @@ function appLine(app: DetectedApp): string {
     app.status === "unidentified" ? "unidentified" : "",
   ].filter((flag) => flag !== "");
   const evidence = app.evidence.map((item) => `${item.kind}=${item.value}`).join(", ");
-  return `${app.name}  [${flags.join(", ")}]\n      ${evidence}`;
+  const oneOf =
+    app.alternatives === undefined
+      ? ""
+      : `\n      one of: ${app.alternatives.map((alternative) => alternative.name).join(", ")}`;
+  return `${app.name}  [${flags.join(", ")}]\n      ${evidence}${oneOf}`;
 }
 
 function section(title: string, entries: readonly string[]): string {

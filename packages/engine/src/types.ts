@@ -20,6 +20,7 @@ export type EvidenceKind =
   | "dom-id"
   | "custom-element"
   | "bundle"
+  | "tag-container"
   | "product-image-host"
   | "product-sku-prefix";
 
@@ -132,6 +133,8 @@ export interface DetectedApp {
   readonly evidence: readonly ReportEvidence[];
   /** Set when a shared developer domain cannot tell the company's apps apart. */
   readonly ambiguousWith?: readonly string[];
+  /** The apps behind `ambiguousWith`, named, so a report can say which ones it might be. */
+  readonly alternatives?: readonly { readonly appId: string; readonly name: string }[];
 }
 
 export interface Integration {

@@ -19,6 +19,7 @@ const KINDS = [
   "dom-id",
   "custom-element",
   "snippet",
+  "tag-container",
   "product-image-host",
   "product-sku-prefix",
 ] as const;

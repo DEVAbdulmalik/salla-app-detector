@@ -1,5 +1,15 @@
 [
  {
+  "id": "tag-container:google-tag-manager",
+  "kind": "tag-container",
+  "pattern": "google-tag-manager",
+  "strength": "strong",
+  "target": {
+   "type": "app",
+   "appId": "347166518"
+  }
+ },
+ {
   "id": "service:google_analytics",
   "kind": "service",
   "pattern": "google_analytics",
@@ -425,8 +435,12 @@
   "pattern": "cdn.dsmcdn.com",
   "strength": "medium",
   "target": {
-   "type": "app",
-   "appId": "940314408"
+   "type": "company",
+   "company": "ترينديول",
+   "appIds": [
+    "940314408",
+    "1620259190"
+   ]
   }
  },
  {

@@ -193,18 +193,25 @@ function ThemeRow({ theme, messages }: { theme: DetectedTheme; messages: Message
 function AppRow({ app, messages }: { app: DetectedApp; messages: Messages }) {
   const m = messages.report;
   const isCompanyGuess = app.ambiguousWith !== undefined;
+  // Reports saved before alternatives were recorded can only name the company.
+  const title =
+    app.alternatives === undefined
+      ? isCompanyGuess
+        ? `${m.flags.company}: ${app.name}`
+        : app.name
+      : `${m.flags.oneOf}: ${app.alternatives.map((alternative) => alternative.name).join("، ")}`;
 
   return (
     <article className="rounded-xl border border-line bg-surface p-4 sm:p-5">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
-        <h3 className="text-base font-medium">
-          {isCompanyGuess ? `${m.flags.company}: ${app.name}` : app.name}
-        </h3>
+        <h3 className="text-base font-medium">{title}</h3>
         <Confidence label={m.confidence[app.confidence]} level={app.confidence} />
       </div>
 
       <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted">
-        {app.company !== undefined && !isCompanyGuess && <span>{app.company}</span>}
+        {app.company !== undefined && (!isCompanyGuess || app.alternatives !== undefined) && (
+          <span>{app.company}</span>
+        )}
         {app.categories.slice(0, 2).map((category) => (
           <span key={category}>{category}</span>
         ))}

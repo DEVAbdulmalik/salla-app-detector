@@ -17,6 +17,7 @@ const GROUPS = {
   "dom-id": "dom",
   "custom-element": "dom",
   bundle: "dom",
+  "tag-container": "tag",
   "product-image-host": "product",
   "product-sku-prefix": "product",
 } as const satisfies Record<EvidenceKind, string>;

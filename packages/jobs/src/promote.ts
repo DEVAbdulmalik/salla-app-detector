@@ -12,6 +12,7 @@ export const PROMOTABLE_KINDS = [
   "inline-signature",
   "inline-token",
   "product-image-host",
+  "tag-container",
 ] as const satisfies readonly EvidenceKind[];
 
 export interface Promotion {

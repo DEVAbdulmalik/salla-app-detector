@@ -47,6 +47,13 @@ const fingerprints: Fingerprint[] = [
     target: { type: "app", appId: "610038364" },
   },
   {
+    id: "product:shared-supplier",
+    kind: "product-image-host",
+    pattern: "marketplace-cdn.example",
+    strength: "strong",
+    target: { type: "company", company: "Marketplace", appIds: ["900", "610038364"] },
+  },
+  {
     id: "domain:shared-studio.example",
     kind: "domain",
     pattern: "shared-studio.example",
@@ -176,7 +183,33 @@ describe("analyzeStore", () => {
       appId: "company:Shared Studio",
       confidence: "possible",
       ambiguousWith: ["900", "901"],
+      alternatives: [
+        { appId: "900", name: "First App" },
+        { appId: "901", name: "Second App" },
+      ],
     });
+  });
+
+  it("files a supplier several importers share under dropshipping, naming each importer", () => {
+    const report = scan(
+      page(""),
+      ["1", "2", "3"].map((sku) => ({
+        sku,
+        imageUrls: [`https://marketplace-cdn.example/${sku}.jpg`],
+      })),
+    );
+
+    expect(report.apps).toEqual([]);
+    expect(report.dropshipping).toMatchObject([
+      {
+        appId: "company:Marketplace",
+        confidence: "possible",
+        alternatives: [
+          { appId: "900", name: "First App" },
+          { appId: "610038364", name: "M5AZN" },
+        ],
+      },
+    ]);
   });
 
   it("keeps unfamiliar signals for the learning loop", () => {

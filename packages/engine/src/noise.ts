@@ -6,6 +6,12 @@ const PLATFORM_DOMAINS = ["salla.sa", "salla.network", "salla.dev", "salla.com",
 
 const PLATFORM_ELEMENT_PREFIX = "salla-";
 
+/**
+ * Salla loads its own Tag Manager container on every storefront to run the integrations a
+ * merchant switches on. Any other container is one the merchant brought.
+ */
+export const PLATFORM_TAG_CONTAINERS: readonly string[] = ["GTM-TGFC6FV"];
+
 export interface NoiseSplit {
   readonly signals: readonly Evidence[];
   readonly noise: readonly Evidence[];
@@ -58,6 +64,7 @@ export function filterNoise(evidence: readonly Evidence[], rules: NoiseRules): N
       case "snippet":
       case "service":
       case "bundle":
+      case "tag-container":
       case "product-image-host":
       case "product-sku-prefix":
         return false;
