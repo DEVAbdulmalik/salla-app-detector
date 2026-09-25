@@ -144,8 +144,9 @@ function defaultScan(
   return scanStore(url, { client, knowledge });
 }
 
+/** Dropshipping apps are found in the product sample, and go stale like any other. */
 function detectedIds(report: ScanReport): Set<string> {
-  return new Set(report.apps.map((app) => app.appId));
+  return new Set([...report.apps, ...report.dropshipping].map((app) => app.appId));
 }
 
 /**

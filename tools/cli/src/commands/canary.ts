@@ -80,17 +80,21 @@ async function scanEach(urls: readonly string[]): Promise<CanaryStore[]> {
       process.stderr.write(`skipped ${url}: not a live store\n`);
       continue;
     }
-    const confirmed = result.value.report.apps
-      .filter((app) => app.confidence === "confirmed")
+    // A strong detection rests on a single fingerprint, which is exactly the kind that
+    // breaks quietly, so it is watched along with confirmed ones. A company guess names no
+    // app, and "possible" is too loose to raise an alarm over.
+    const { apps, dropshipping } = result.value.report;
+    const watched = [...apps, ...dropshipping]
+      .filter((app) => app.confidence !== "possible" && !app.appId.startsWith("company:"))
       .map((app) => app.appId);
-    if (confirmed.length === 0) {
-      process.stderr.write(`skipped ${url}: nothing confirmed to watch\n`);
+    if (watched.length === 0) {
+      process.stderr.write(`skipped ${url}: nothing detected firmly enough to watch\n`);
       continue;
     }
     canaries.push({
       // Keyed by origin: a store reached through /ar and through / is one canary.
       storeUrl: `https://${result.value.report.target.host}/`,
-      expectedAppIds: confirmed,
+      expectedAppIds: watched,
       expectedServices: result.value.report.integrations.map((integration) => integration.key),
     });
   }

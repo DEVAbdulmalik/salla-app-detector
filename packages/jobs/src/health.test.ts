@@ -54,6 +54,7 @@ function reportFor(url: string, appIds: readonly string[], status: string): Scan
     target: { url, host: new URL(url).hostname, key: new URL(url).hostname },
     status,
     apps: appIds.map((appId) => ({ appId, name: appId, confidence: "confirmed", evidence: [] })),
+    dropshipping: [],
     integrations: [],
     payments: { methods: [], installments: [] },
     unknownSignals: [],
@@ -97,6 +98,27 @@ describe("health", () => {
         detail: { store: "https://one.test/", appIds: ["b"] },
       },
     ]);
+  });
+
+  it("finds a canary's dropshipping app in the product sample", async () => {
+    await repository.upsertCanaries([
+      { storeUrl: "https://drop.test/", expectedAppIds: ["importer"], expectedServices: [] },
+    ]);
+    const report = {
+      ...reportFor("https://drop.test/", [], "live"),
+      dropshipping: [{ appId: "importer", name: "importer", confidence: "strong", evidence: [] }],
+    } as unknown as ScanReport;
+    const target = { url: "https://drop.test/", host: "drop.test", key: "drop.test" };
+
+    const result = await health({
+      repository,
+      client,
+      knowledge,
+      jobLimitsHours: {},
+      scan: () => Promise.resolve(ok({ report, target } as ScanOutcome)),
+    });
+
+    expect(result).toMatchObject({ canariesChecked: 1, canariesIntact: 1, events: [] });
   });
 
   it("treats several canaries losing apps at once as a platform change", async () => {
