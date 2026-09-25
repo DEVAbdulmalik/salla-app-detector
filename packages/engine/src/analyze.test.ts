@@ -224,6 +224,13 @@ describe("analyzeStore", () => {
     expect(report.unknownSignals.some((signal) => signal.kind === "host")).toBe(false);
   });
 
+  it("does not hand back the host of a vendor whose domain it already recognised", () => {
+    const report = scan(page('<script src="https://files.tooliify.com/1027728745.js"></script>'));
+
+    expect(report.apps.map((app) => app.appId)).toContain("1514900071");
+    expect(report.unknownSignals.map((signal) => signal.value)).not.toContain("files.tooliify.com");
+  });
+
   it("names the theme the store declares, and what it is running against what is published", () => {
     const report = scan(page(`<div></div>`));
 

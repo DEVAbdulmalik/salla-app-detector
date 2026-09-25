@@ -1,3 +1,4 @@
+import { describeHost } from "./domains";
 import type { CompiledKnowledge } from "./knowledge";
 import type { Match } from "./match";
 import { confidenceOf } from "./score";
@@ -107,7 +108,7 @@ export function buildReport(input: ReportInput): ScanReport {
     dropshipping: dropshipping.sort(compareApps),
     integrations: buildIntegrations(input, byApp),
     payments: input.payments,
-    unknownSignals: buildUnknownSignals(input.unmatched),
+    unknownSignals: buildUnknownSignals(input.unmatched, input.matches),
     meta: {
       engineVersion: ENGINE_VERSION,
       knowledgeVersion: input.knowledge.snapshot.version,
@@ -163,9 +164,17 @@ function buildIntegrations(
   return [...integrations.values()].sort((left, right) => left.key.localeCompare(right.key));
 }
 
-function buildUnknownSignals(unmatched: readonly Evidence[]): readonly UnknownSignal[] {
+function buildUnknownSignals(
+  unmatched: readonly Evidence[],
+  matches: readonly Match[],
+): readonly UnknownSignal[] {
+  // A host adds nothing once its domain is accounted for, whether a fingerprint matched the
+  // domain or the domain is listed as unknown itself. Without the matched half, every host
+  // of a known vendor came back to the review queue as something new.
   const domains = new Set(
-    unmatched.filter((item) => item.kind === "domain").map((item) => item.value),
+    [...unmatched, ...matches.map((match) => match.evidence)]
+      .filter((item) => item.kind === "domain")
+      .map((item) => item.value),
   );
 
   const signals: UnknownSignal[] = [];
@@ -173,8 +182,7 @@ function buildUnknownSignals(unmatched: readonly Evidence[]): readonly UnknownSi
     if (!LEARNABLE_KINDS.has(item.kind)) {
       continue;
     }
-    // A host adds nothing when its own domain is already listed as unknown.
-    if (item.kind === "host" && domains.has(shortenHost(item.value))) {
+    if (item.kind === "host" && domains.has(describeHost(item.value)?.domain ?? item.value)) {
       continue;
     }
     signals.push({
@@ -189,11 +197,6 @@ function buildUnknownSignals(unmatched: readonly Evidence[]): readonly UnknownSi
       (left, right) => left.kind.localeCompare(right.kind) || left.value.localeCompare(right.value),
     )
     .slice(0, MAX_UNKNOWN_SIGNALS);
-}
-
-function shortenHost(host: string): string {
-  const parts = host.split(".");
-  return parts.length > 2 ? parts.slice(-2).join(".") : host;
 }
 
 function toReportEvidence(matches: readonly Match[]): readonly ReportEvidence[] {
