@@ -1,5 +1,16 @@
 import type { DetectedApp, ScanReport } from "@salla-app-detector/engine";
 
+/** The identifier alone says nothing; the catalogue turns it into a theme someone knows. */
+function themeLine(report: ScanReport): string {
+  const theme = report.theme;
+  if (theme === undefined) {
+    return "?";
+  }
+  const version = theme.installedVersion === undefined ? "" : ` ${theme.installedVersion}`;
+  const developer = theme.developer === undefined ? "" : ` (${theme.developer})`;
+  return theme.name === undefined ? `${theme.id} (unknown)` : `${theme.name}${version}${developer}`;
+}
+
 export function renderReport(report: ScanReport, elapsedMs: number): string {
   const lines: string[] = [];
   const store = report.store;
@@ -8,7 +19,7 @@ export function renderReport(report: ScanReport, elapsedMs: number): string {
   lines.push(`${store?.name ?? report.target.host}  —  ${report.target.host}`);
   lines.push(
     `status: ${report.status}${report.statusDetail === undefined ? "" : ` (${report.statusDetail})`}${
-      store === undefined ? "" : `   store: ${String(store.id)}   theme: ${store.theme ?? "?"}`
+      store === undefined ? "" : `   store: ${String(store.id)}   theme: ${themeLine(report)}`
     }`,
   );
 
