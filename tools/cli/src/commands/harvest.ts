@@ -16,6 +16,8 @@ Options:
   --app <id>             harvest this app now, even if done recently (repeatable)
   --stores-per-app <n>   scanned stores to aim for per app (default 10)
   --again                read every app's reviews again, even if done recently
+  --rescan               scan reviewer stores again even if seen lately, which is how
+                         a new fingerprint is measured on the stores known to run it
 `;
 
 export async function harvestCommand(argv: readonly string[]): Promise<number> {
@@ -27,6 +29,7 @@ export async function harvestCommand(argv: readonly string[]): Promise<number> {
       app: { type: "string", multiple: true },
       "stores-per-app": { type: "string" },
       again: { type: "boolean", default: false },
+      rescan: { type: "boolean", default: false },
     },
   });
 
@@ -57,6 +60,7 @@ export async function harvestCommand(argv: readonly string[]): Promise<number> {
       budgetMs: (positive(values.minutes) ?? 15) * 60 * 1000,
       ...(storesPerApp === undefined ? {} : { storesPerApp }),
       ...(chosen.length > 0 || values.again ? { revisitAfterDays: 0 } : {}),
+      ...(values.rescan ? { rescanAfterDays: 0 } : {}),
       onApp: (harvest) => {
         index += 1;
         process.stdout.write(`${String(index).padStart(4)}  ${describe(harvest)}\n`);
