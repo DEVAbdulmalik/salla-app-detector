@@ -173,6 +173,14 @@ export interface StatusShare {
   readonly stores: number;
 }
 
+export interface JobRun {
+  readonly job: string;
+  readonly lastRunAt?: Date;
+  readonly lastStatus?: string;
+  /** When the job last finished well, which a nightly failure does not move. */
+  readonly lastSuccessAt?: Date;
+}
+
 export interface HealthEvent {
   readonly kind: string;
   readonly severity: "info" | "warning" | "critical";
@@ -1041,16 +1049,18 @@ export class KnowledgeRepository {
   }
 
   /** When each scheduled job last finished, so a schedule that stopped can be noticed. */
-  async jobRuns(): Promise<{ job: string; lastRunAt?: Date; lastStatus?: string }[]> {
+  async jobRuns(): Promise<JobRun[]> {
     const rows = await this.#db.query<{
       job: string;
       last_run_at: Date | null;
       last_status: string | null;
-    }>("select job, last_run_at, last_status from job_state order by job");
+      last_success_at: Date | null;
+    }>("select job, last_run_at, last_status, last_success_at from job_state order by job");
     return rows.map((row) => ({
       job: row.job,
       ...(row.last_run_at === null ? {} : { lastRunAt: row.last_run_at }),
       ...(row.last_status === null ? {} : { lastStatus: row.last_status }),
+      ...(row.last_success_at === null ? {} : { lastSuccessAt: row.last_success_at }),
     }));
   }
 
@@ -1078,12 +1088,15 @@ export class KnowledgeRepository {
     ranAt: Date,
   ): Promise<void> {
     await this.#db.query(
-      `insert into job_state (job, cursor, last_run_at, last_status, updated_at)
-       values ($1, $2::text::jsonb, $3, $4, now())
+      `insert into job_state (job, cursor, last_run_at, last_status, last_success_at, updated_at)
+       values ($1, $2::text::jsonb, $3, $4, case when $4 = 'completed' then $3::timestamptz end, now())
        on conflict (job) do update set
          cursor = excluded.cursor,
          last_run_at = excluded.last_run_at,
          last_status = excluded.last_status,
+         -- A failure leaves the last success where it was: that is what says how stale
+         -- the job's output has become.
+         last_success_at = coalesce(excluded.last_success_at, job_state.last_success_at),
          updated_at = now()`,
       [job, JSON.stringify(cursor), ranAt, status],
     );

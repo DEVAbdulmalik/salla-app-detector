@@ -94,6 +94,10 @@ Two things are worth knowing before changing the deployment:
 - **Region matters twice.** Serverless functions far from the database spend most of a scan
   waiting on the network, and some of Salla's own hosts refuse requests from certain
   regions outright.
+- **Some of Salla's sites refuse the deployment.** The theme store answers Frankfurt with a
+  Cloudflare challenge, so the nightly theme refresh is expected to fail there. Themes
+  change slowly; run `pnpm cli sync themes` from an ordinary network when the alert says
+  the catalogue is two weeks old.
 - **Canaries define themselves.** A canary's expectation is whatever detection finds on the
   day it is added, so add canaries only from stores you have looked at.
 
@@ -107,7 +111,7 @@ Two things are worth knowing before changing the deployment:
 | `fingerprint-silent`   | An app detected across several stores last week and none this week. Treat as a stale fingerprint.                                              |
 | `unmapped-service-key` | Salla added a built-in integration. Map the key to an app, or ignore it if the platform provides it directly.                                  |
 | `api-contract`         | An endpoint we read no longer answers the shape we parse. Check it before trusting new reports.                                                |
-| `job-not-running`      | A schedule has been silent for a day and a half. The knowledge is going stale even though scanning still works.                                |
+| `job-not-running`      | A schedule has not finished well for too long — a day and a half for daily jobs, two weeks for themes. The last status says why.               |
 | `request-failed`       | An unexpected error in a page or an endpoint, recorded where the other alerts live.                                                            |
 
 ## Note

@@ -67,6 +67,6 @@ describe("syncThemes", () => {
 
     expect(result.ok).toBe(false);
     expect((await repository.loadSnapshot()).themes["1"]?.name).toBe("رائد");
-    expect((await repository.jobState("theme-sync"))?.lastStatus).toBe("failed:http");
+    expect((await repository.jobState("theme-sync"))?.lastStatus).toBe("failed:http:503");
   });
 });

@@ -1,5 +1,6 @@
 import type { KnowledgeRepository } from "@salla-app-detector/knowledge";
 import type { ApiFailure, CatalogTheme } from "@salla-app-detector/salla";
+import { failureStatus } from "./failure";
 import { err, ok, type Logger, type Result } from "@salla-app-detector/shared";
 
 export interface ThemeClient {
@@ -32,7 +33,7 @@ export async function syncThemes(
   const catalog = await options.client.fetchThemes();
 
   if (!catalog.ok) {
-    await options.repository.saveJobState(JOB, {}, `failed:${catalog.error.code}`, startedAt);
+    await options.repository.saveJobState(JOB, {}, failureStatus(catalog.error), startedAt);
     options.logger?.error("theme catalogue unavailable", { reason: catalog.error.code });
     return err(catalog.error);
   }

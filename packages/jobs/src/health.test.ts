@@ -85,7 +85,7 @@ describe("health", () => {
       repository,
       client,
       knowledge,
-      expectedJobs: [],
+      jobLimitsHours: {},
       scan: scanner({ "https://one.test/": ["a"], "https://two.test/": ["a"] }),
     });
 
@@ -112,7 +112,7 @@ describe("health", () => {
       repository,
       client,
       knowledge,
-      expectedJobs: [],
+      jobLimitsHours: {},
       scan: scanner({
         "https://one.test/": [],
         "https://two.test/": [],
@@ -172,7 +172,7 @@ describe("health", () => {
       repository,
       client,
       knowledge,
-      expectedJobs: [],
+      jobLimitsHours: {},
       scan: scanner({ "https://one.test/": ["a"] }),
       notify: (events) => {
         sent.push(events.map((event) => event.kind));
@@ -189,7 +189,7 @@ describe("health", () => {
       repository,
       client,
       knowledge,
-      expectedJobs: [],
+      jobLimitsHours: {},
       scan: scanner({}),
       contracts: [
         { name: "marketplace/search", probe: () => Promise.resolve(ok(undefined)) },
@@ -212,21 +212,59 @@ describe("health", () => {
   });
 
   it("raises an alert for a schedule that has stopped running", async () => {
-    await repository.saveJobState("catalog-sync", {}, "completed", new Date(Date.now() - 864e5));
+    const yesterday = new Date(Date.now() - 864e5);
+    await repository.saveJobState("catalog-sync", {}, "completed", yesterday);
 
     const result = await health({
       repository,
       client,
       knowledge,
       scan: scanner({}),
-      expectedJobs: ["catalog-sync", "learn"],
-      staleJobHours: 36,
+      jobLimitsHours: { "catalog-sync": 36, learn: 36 },
     });
     const silent = result.events.find((event) => event.kind === "job-not-running");
 
     // The catalogue sync ran yesterday, which is fine; learning has never run at all.
     expect(silent?.severity).toBe("critical");
     expect(silent?.detail).toEqual({ jobs: [{ job: "learn" }] });
+  });
+
+  it("counts a job that runs but keeps failing as stale, and says why", async () => {
+    const weeksAgo = new Date(Date.now() - 20 * 864e5);
+    await repository.saveJobState("theme-sync", {}, "completed", weeksAgo);
+    await repository.saveJobState("theme-sync", {}, "failed:http:403", new Date());
+
+    const result = await health({
+      repository,
+      client,
+      knowledge,
+      scan: scanner({}),
+      jobLimitsHours: { "theme-sync": 14 * 24 },
+    });
+    const stale = result.events.find((event) => event.kind === "job-not-running");
+
+    // It ran tonight, so a check on the last attempt would have called it healthy.
+    expect(stale?.detail).toEqual({
+      jobs: [
+        { job: "theme-sync", lastSuccessAt: weeksAgo.toISOString(), lastStatus: "failed:http:403" },
+      ],
+    });
+  });
+
+  it("gives a slowly changing catalogue time before calling it stale", async () => {
+    await repository.saveJobState("theme-sync", {}, "completed", new Date(Date.now() - 3 * 864e5));
+    await repository.saveJobState("theme-sync", {}, "failed:http:403", new Date());
+
+    const result = await health({
+      repository,
+      client,
+      knowledge,
+      scan: scanner({}),
+      jobLimitsHours: { "theme-sync": 14 * 24 },
+    });
+
+    // Three days of refusals is not yet worth waking anyone for.
+    expect(result.events.some((event) => event.kind === "job-not-running")).toBe(false);
   });
 
   it("stays quiet while every schedule is keeping up", async () => {
@@ -238,7 +276,7 @@ describe("health", () => {
       client,
       knowledge,
       scan: scanner({}),
-      expectedJobs: ["catalog-sync", "learn"],
+      jobLimitsHours: { "catalog-sync": 36, learn: 36 },
     });
 
     expect(result.events.some((event) => event.kind === "job-not-running")).toBe(false);

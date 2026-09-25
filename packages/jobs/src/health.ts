@@ -10,8 +10,12 @@ export interface HealthOptions {
   /** Canaries are scanned one by one; the cron budget decides how many fit. */
   readonly maxCanaries?: number;
   /** Scheduled jobs that should have run recently; a silent schedule is a silent detector. */
-  readonly expectedJobs?: readonly string[];
-  readonly staleJobHours?: number;
+  /**
+   * How long each scheduled job may go without finishing well. Daily jobs get a day and a
+   * half; the theme catalogue changes slowly and is refused from some regions, so it is
+   * only raised once its names are genuinely at risk of going stale.
+   */
+  readonly jobLimitsHours?: Readonly<Record<string, number>>;
   /** Salla's endpoints are undocumented, so each one we depend on is called and checked. */
   readonly contracts?: readonly ApiContract[];
   /** Share of scans ending in "blocked" that means we are being kept out, not the store. */
@@ -54,9 +58,7 @@ const DEFAULTS = {
   minimumScansForRates: 20,
   /** Two windows of a week each: what detection found lately against the week before. */
   windowDays: 7,
-  expectedJobs: ["catalog-sync", "learn"],
-  /** A daily job that has not run for a day and a half has stopped running. */
-  staleJobHours: 36,
+  jobLimitsHours: { "catalog-sync": 36, learn: 36, "theme-sync": 14 * 24 },
 } as const;
 
 /**
@@ -225,25 +227,33 @@ async function rateEvents(options: HealthOptions): Promise<HealthEvent[]> {
 }
 
 /** Nothing else notices a schedule that stopped: the jobs are what watch everything else. */
+/**
+ * A job counts by when it last finished well, not when it last ran: one that runs every
+ * night and fails every night is exactly as stale as one that stopped, and the status it
+ * failed with says why.
+ */
 async function silentJobEvents(options: HealthOptions, now: Date): Promise<HealthEvent[]> {
   const runs = await options.repository.jobRuns();
-  const limitMs = (options.staleJobHours ?? DEFAULTS.staleJobHours) * 60 * 60 * 1000;
-  const silent: { job: string; lastRunAt?: string }[] = [];
+  const stale: { job: string; lastSuccessAt?: string; lastStatus?: string }[] = [];
 
-  for (const job of options.expectedJobs ?? DEFAULTS.expectedJobs) {
+  for (const [job, hours] of Object.entries(options.jobLimitsHours ?? DEFAULTS.jobLimitsHours)) {
     const run = runs.find((entry) => entry.job === job);
-    const lastRunAt = run?.lastRunAt;
-    if (lastRunAt === undefined || now.getTime() - lastRunAt.getTime() > limitMs) {
-      silent.push({
+    const lastSuccessAt = run?.lastSuccessAt;
+    if (
+      lastSuccessAt === undefined ||
+      now.getTime() - lastSuccessAt.getTime() > hours * 3_600_000
+    ) {
+      stale.push({
         job,
-        ...(lastRunAt === undefined ? {} : { lastRunAt: lastRunAt.toISOString() }),
+        ...(lastSuccessAt === undefined ? {} : { lastSuccessAt: lastSuccessAt.toISOString() }),
+        ...(run?.lastStatus === undefined ? {} : { lastStatus: run.lastStatus }),
       });
     }
   }
 
-  return silent.length === 0
+  return stale.length === 0
     ? []
-    : [{ kind: "job-not-running", severity: "critical", detail: { jobs: silent } }];
+    : [{ kind: "job-not-running", severity: "critical", detail: { jobs: stale } }];
 }
 
 /** An app detected across many stores last week and none this week has lost its signal. */

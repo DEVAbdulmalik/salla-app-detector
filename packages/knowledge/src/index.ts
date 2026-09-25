@@ -45,6 +45,7 @@ export type {
   GroundTruthRow,
   NoiseRow,
   HealthEvent,
+  JobRun,
   ScanRow,
   StatusShare,
   ThemeConcentration,

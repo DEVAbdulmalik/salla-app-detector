@@ -10,6 +10,7 @@ import {
   type KnowledgeRepository,
 } from "@salla-app-detector/knowledge";
 import type { ApiFailure, AppDetails, CatalogApp } from "@salla-app-detector/salla";
+import { failureStatus } from "./failure";
 import { err, ok, type Logger, type Result } from "@salla-app-detector/shared";
 
 export interface CatalogClient {
@@ -67,7 +68,7 @@ export async function syncCatalog(
     await options.repository.saveJobState(
       JOB,
       {},
-      `catalog-failed:${catalog.error.code}`,
+      `catalog-${failureStatus(catalog.error)}`,
       startedAt,
     );
     return err(catalog.error);
