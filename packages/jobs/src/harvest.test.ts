@@ -263,6 +263,22 @@ describe("harvestReviewerStores", () => {
     expect(scanned).toHaveLength(5);
   });
 
+  it("carries on past a store that fails in a way nobody expected", async () => {
+    const { scan, scanned } = scanner();
+    const result = await harvestReviewerStores({
+      repository,
+      knowledge,
+      apps: [APP_A],
+      workers: 1,
+      scan: (url) => (url.includes("store-1.") ? Promise.reject(new Error("odd")) : scan(url)),
+      client: client({ a: ["0", "1", "2"].map((storeId) => reviewer({ storeId })) }),
+    });
+
+    expect(result.apps[0]).toMatchObject({ knownStores: 2, scanned: { failed: 1, live: 1 } });
+    expect(scanned).toEqual([2]);
+    expect(result.remaining).toBe(0);
+  });
+
   it("tries an app again when its reviews could not be read", async () => {
     const result = await harvestReviewerStores({
       repository,

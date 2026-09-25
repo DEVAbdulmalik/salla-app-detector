@@ -221,7 +221,14 @@ async function harvestApp(
         return;
       }
       run.attempted.add(id);
-      const status = await harvestStore(options, id);
+      const status = await harvestStore(options, id).catch((error: unknown) => {
+        // One strange store is not a reason to throw away the rest of a long run.
+        options.logger?.warn("store harvest failed", {
+          storeId: id,
+          error: error instanceof Error ? error.message : String(error),
+        });
+        return "failed";
+      });
       scanned[status] = (scanned[status] ?? 0) + 1;
       run.refusals = status === "blocked" || status === "refused" ? run.refusals + 1 : 0;
     }
@@ -302,7 +309,7 @@ async function reviewerStores(
       reviewer.storeId === undefined
         ? byCode.get(reviewer.storeCode ?? "")
         : Number(reviewer.storeId);
-    if (id !== undefined && Number.isSafeInteger(id) && !stores.has(id)) {
+    if (id !== undefined && Number.isSafeInteger(id) && id > 0 && !stores.has(id)) {
       stores.set(id, reviewer.date);
     }
   }

@@ -126,6 +126,23 @@ describe("SallaClient marketplace", () => {
     const identified = reviews.reviewers.filter((reviewer) => reviewer.storeId !== undefined);
     expect(identified.every((reviewer) => /^\d+$/.test(reviewer.storeId ?? ""))).toBe(true);
   });
+
+  it("does not take a placeholder avatar for a store", async () => {
+    const payload = JSON.parse(fixture("app-reviews")) as { data: Record<string, unknown>[] };
+    const placeholder = {
+      ...payload,
+      data: payload.data.slice(0, 1).map((review) => ({
+        ...review,
+        avatar: "https://cdn.files.salla.network/theme/0/avatar.png",
+      })),
+    };
+    const { fetchPage } = stub({ "/reviews": JSON.stringify(placeholder) });
+    const client = new SallaClient({ fetchPage });
+
+    const reviews = unwrap(await client.fetchAppReviews("1514900071", 1));
+
+    expect(reviews.reviewers[0]?.storeId).toBeUndefined();
+  });
 });
 
 describe("SallaClient catalogue", () => {

@@ -419,9 +419,10 @@ function toCatalogApp(hit: CatalogHit): CatalogApp {
 }
 
 function storeIdFromAvatar(review: AppReviewPayload): string | undefined {
-  return typeof review.avatar === "string"
-    ? (AVATAR_STORE_ID.exec(review.avatar)?.[1] ?? undefined)
-    : undefined;
+  const id =
+    typeof review.avatar === "string" ? AVATAR_STORE_ID.exec(review.avatar)?.[1] : undefined;
+  // Some avatars point at a placeholder folder numbered zero, which names no store.
+  return id === undefined || Number(id) === 0 ? undefined : id;
 }
 
 const PREVIEW_THEME_ID = /\/themes\/(\d+)\/preview/;
