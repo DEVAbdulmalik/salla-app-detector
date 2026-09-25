@@ -243,7 +243,12 @@ export interface Coverage {
   readonly fingerprints: readonly FingerprintCoverage[];
   /** Stores by the status of their latest scan. */
   readonly corpus: readonly StatusShare[];
-  readonly groundTruth: { readonly pairs: number; readonly apps: number };
+  readonly groundTruth: {
+    readonly pairs: number;
+    readonly apps: number;
+    /** Reviews whose store is known only by a CDN code no scan has tied to a store yet. */
+    readonly waitingCodes: number;
+  };
   /** Traces nobody has decided on yet, and how many recur often enough to learn from. */
   readonly unexplained: { readonly traces: number; readonly recurring: number };
 }
@@ -425,15 +430,55 @@ export class KnowledgeRepository {
   }
 
   /** Builds the index that lets a review avatar be traced back to the store behind it. */
+  /**
+   * Ties a CDN code to its store, and settles every review that was waiting on that code:
+   * the reviewers become known installations the moment their store is first scanned.
+   */
   async rememberStoreCode(code: string, storeId: number | undefined, host: string): Promise<void> {
     await this.#db.query(
-      `insert into store_codes (code, store_id, store_key)
-       values ($1, $2, $3)
-       on conflict (code) do update set
-         store_id = coalesce(excluded.store_id, store_codes.store_id),
-         store_key = excluded.store_key,
-         seen_at = now()`,
+      `with remembered as (
+         insert into store_codes (code, store_id, store_key)
+         values ($1, $2, $3)
+         on conflict (code) do update set
+           store_id = coalesce(excluded.store_id, store_codes.store_id),
+           store_key = excluded.store_key,
+           seen_at = now()
+         returning code, store_id
+       )
+       insert into ground_truth (app_id, store_id, observed_on)
+       select review_codes.app_id, remembered.store_id, review_codes.observed_on
+       from review_codes join remembered on remembered.code = review_codes.code
+       where remembered.store_id is not null
+       on conflict (app_id, store_id) do update
+         set observed_on = greatest(excluded.observed_on, ground_truth.observed_on)`,
       [code, storeId ?? null, host],
+    );
+  }
+
+  /** Review avatars that carried a code, kept until a scan says which store it is. */
+  async rememberReviewCodes(
+    entries: readonly { appId: string; code: string; observedOn?: string }[],
+  ): Promise<void> {
+    if (entries.length === 0) {
+      return;
+    }
+    await this.#db.query(
+      `insert into review_codes (app_id, code, observed_on)
+       select distinct on (app_id, code) app_id, code, observed_on
+       from jsonb_to_recordset($1::text::jsonb) as incoming(app_id text, code text, observed_on date)
+       where exists (select 1 from apps where apps.id = incoming.app_id)
+       order by app_id, code, observed_on desc nulls last
+       on conflict (app_id, code) do update
+         set observed_on = greatest(excluded.observed_on, review_codes.observed_on)`,
+      [
+        JSON.stringify(
+          entries.map((entry) => ({
+            app_id: entry.appId,
+            code: entry.code,
+            observed_on: entry.observedOn ?? null,
+          })),
+        ),
+      ],
     );
   }
 
@@ -1096,8 +1141,15 @@ export class KnowledgeRepository {
            group by status
            order by count(*) desc, status`,
         ),
-        this.#db.query<{ pairs: number; apps: number }>(
-          "select count(*)::int as pairs, count(distinct app_id)::int as apps from ground_truth",
+        this.#db.query<{ pairs: number; apps: number; waitingCodes: number }>(
+          `select (select count(*) from ground_truth)::int as pairs,
+                  (select count(distinct app_id) from ground_truth)::int as apps,
+                  (select count(*) from review_codes
+                    where not exists (
+                      select 1 from store_codes
+                       where store_codes.code = review_codes.code
+                         and store_codes.store_id is not null
+                    ))::int as "waitingCodes"`,
         ),
         this.#db.query<{ traces: number; recurring: number }>(
           `select count(*)::int as traces,
@@ -1131,7 +1183,7 @@ export class KnowledgeRepository {
       })),
       fingerprints,
       corpus,
-      groundTruth: groundTruth[0] ?? { pairs: 0, apps: 0 },
+      groundTruth: groundTruth[0] ?? { pairs: 0, apps: 0, waitingCodes: 0 },
       unexplained: unexplained[0] ?? { traces: 0, recurring: 0 },
     };
   }

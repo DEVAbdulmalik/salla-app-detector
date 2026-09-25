@@ -641,6 +641,47 @@ describe("coverage", () => {
     const coverage = await repository.coverage(2);
 
     expect(coverage.unexplained).toEqual({ traces: 2, recurring: 1 });
-    expect(coverage.groundTruth).toEqual({ pairs: 1, apps: 1 });
+    expect(coverage.groundTruth).toEqual({ pairs: 1, apps: 1, waitingCodes: 0 });
+  });
+});
+
+describe("review codes", () => {
+  beforeEach(async () => {
+    await repository.upsertApps([
+      { id: "a", name: "وِدجت" },
+      { id: "b", name: "نافذة" },
+    ]);
+  });
+
+  async function groundTruth(): Promise<string[]> {
+    const rows = await database.query<{ pair: string }>(
+      `select app_id || ':' || store_id || ':' || coalesce(observed_on::text, '-') as pair
+       from ground_truth order by 1`,
+    );
+    return rows.map((row) => row.pair);
+  }
+
+  it("turns waiting reviews into installations once a scan names the store", async () => {
+    await repository.rememberReviewCodes([
+      { appId: "a", code: "QNvEG", observedOn: "2026-09-01" },
+      { appId: "a", code: "QNvEG", observedOn: "2026-09-20" },
+      { appId: "b", code: "QNvEG" },
+      { appId: "a", code: "other" },
+    ]);
+
+    expect((await repository.coverage(5)).groundTruth.waitingCodes).toBe(3);
+
+    await repository.rememberStoreCode("QNvEG", 986119567, "mahwous.com");
+
+    expect(await groundTruth()).toEqual(["a:986119567:2026-09-20", "b:986119567:-"]);
+    expect((await repository.coverage(5)).groundTruth.waitingCodes).toBe(1);
+  });
+
+  it("waits while the code is seen without a store id", async () => {
+    await repository.rememberReviewCodes([{ appId: "a", code: "QNvEG" }]);
+
+    await repository.rememberStoreCode("QNvEG", undefined, "mahwous.com");
+
+    expect(await groundTruth()).toEqual([]);
   });
 });

@@ -61,6 +61,7 @@ function summary(coverage: Coverage): string {
     "",
     `corpus         ${count(stores)} stores: ${coverage.corpus.map((row) => `${count(row.stores)} ${row.status}`).join(", ")}`,
     `ground truth   ${count(coverage.groundTruth.pairs)} known installations across ${appCount(coverage.groundTruth.apps)}`,
+    `               ${count(coverage.groundTruth.waitingCodes)} more reviews wait for a scan to tie their code to a store`,
     `unexplained    ${count(coverage.unexplained.traces)} traces, ${count(coverage.unexplained.recurring)} seen in ${String(RECURRING_STORES)} or more stores`,
     "",
   ];

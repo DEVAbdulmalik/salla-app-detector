@@ -15,6 +15,7 @@ Options:
   --apps <n>             harvest at most this many apps
   --app <id>             harvest this app now, even if done recently (repeatable)
   --stores-per-app <n>   scanned stores to aim for per app (default 10)
+  --again                read every app's reviews again, even if done recently
 `;
 
 export async function harvestCommand(argv: readonly string[]): Promise<number> {
@@ -25,6 +26,7 @@ export async function harvestCommand(argv: readonly string[]): Promise<number> {
       apps: { type: "string" },
       app: { type: "string", multiple: true },
       "stores-per-app": { type: "string" },
+      again: { type: "boolean", default: false },
     },
   });
 
@@ -54,7 +56,7 @@ export async function harvestCommand(argv: readonly string[]): Promise<number> {
       apps,
       budgetMs: (positive(values.minutes) ?? 15) * 60 * 1000,
       ...(storesPerApp === undefined ? {} : { storesPerApp }),
-      ...(chosen.length > 0 ? { revisitAfterDays: 0 } : {}),
+      ...(chosen.length > 0 || values.again ? { revisitAfterDays: 0 } : {}),
       onApp: (harvest) => {
         index += 1;
         process.stdout.write(`${String(index).padStart(4)}  ${describe(harvest)}\n`);
@@ -88,9 +90,10 @@ function describe(harvest: AppHarvest): string {
     return `${name}  reviews unavailable (${harvest.reviewsFailed}), will retry`;
   }
   const scanned = tally(harvest.scanned);
+  const tail = scanned === "" ? "" : `, scanned ${scanned}`;
   return (
     `${name}  ${String(harvest.reviewers)} reviewers, ${String(harvest.knownStores)} stores known, ` +
-    `${String(harvest.alreadyScanned)} seen lately${scanned === "" ? "" : `, scanned ${scanned}`}`
+    `${String(harvest.waitingCodes)} codes waiting, ${String(harvest.alreadyScanned)} seen lately${tail}`
   );
 }
 

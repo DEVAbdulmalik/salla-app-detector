@@ -125,6 +125,7 @@ describe("harvestReviewerStores", () => {
         name: "وِدجت",
         reviewers: 6,
         knownStores: 4,
+        waitingCodes: 1,
         alreadyScanned: 1,
         scanned: { live: 2, maintenance: 1 },
       },
@@ -135,6 +136,9 @@ describe("harvestReviewerStores", () => {
       { app_id: "a", store_id: "2", observed_on: null },
       { app_id: "a", store_id: "3", observed_on: null },
       { app_id: "a", store_id: "4", observed_on: null },
+    ]);
+    expect(await database.query("select app_id, code from review_codes")).toEqual([
+      { app_id: "a", code: "unknown" },
     ]);
     // A store under maintenance has no configuration to name it, yet it still counts as visited.
     expect(await repository.recentlyScannedStoreIds([2], 1)).toEqual(new Set([2]));

@@ -40,6 +40,8 @@ export interface AppHarvest {
   readonly reviewers: number;
   /** Reviewer stores we could put an id to, each now recorded as a known installation. */
   readonly knownStores: number;
+  /** Reviewers known only by a code no scan has tied to a store yet. */
+  readonly waitingCodes: number;
   /** Known stores scanned recently enough that they were not fetched again. */
   readonly alreadyScanned: number;
   /** Stores scanned now, by the status the scan ended with. */
@@ -186,6 +188,7 @@ async function harvestApp(
         name: app.name,
         reviewers: 0,
         knownStores: 0,
+        waitingCodes: 0,
         alreadyScanned: 0,
         scanned: {},
         reviewsFailed: reviews.error.code,
@@ -194,14 +197,23 @@ async function harvestApp(
     };
   }
 
-  const stores = await reviewerStores(options.repository, reviews.value);
-  await options.repository.recordGroundTruth(
-    [...stores].map(([storeId, date]) => ({
-      appId: app.id,
-      storeId,
-      ...(date === undefined ? {} : { observedOn: date }),
-    })),
-  );
+  const { stores, waiting } = await reviewerStores(options.repository, reviews.value);
+  await Promise.all([
+    options.repository.recordGroundTruth(
+      [...stores].map(([storeId, date]) => ({
+        appId: app.id,
+        storeId,
+        ...(date === undefined ? {} : { observedOn: date }),
+      })),
+    ),
+    options.repository.rememberReviewCodes(
+      [...waiting].map(([code, date]) => ({
+        appId: app.id,
+        code,
+        ...(date === undefined ? {} : { observedOn: date }),
+      })),
+    ),
+  ]);
 
   const ids = [...stores.keys()];
   const recent = await options.repository.recentlyScannedStoreIds(
@@ -243,6 +255,7 @@ async function harvestApp(
       name: app.name,
       reviewers: reviews.value.length,
       knownStores: stores.size,
+      waitingCodes: waiting.size,
       alreadyScanned: recent.size,
       scanned,
     },
@@ -297,23 +310,30 @@ async function readReviewers(
 async function reviewerStores(
   repository: KnowledgeRepository,
   reviewers: readonly AppReviewer[],
-): Promise<Map<number, string | undefined>> {
+): Promise<{
+  stores: Map<number, string | undefined>;
+  /** Codes no scan has tied to a store yet, kept so a later scan can settle them. */
+  waiting: Map<string, string | undefined>;
+}> {
   const codes = reviewers.flatMap((reviewer) =>
     reviewer.storeId === undefined && reviewer.storeCode !== undefined ? [reviewer.storeCode] : [],
   );
   const byCode = await repository.storeIdsByCode(codes);
 
   const stores = new Map<number, string | undefined>();
+  const waiting = new Map<string, string | undefined>();
   for (const reviewer of reviewers) {
-    const id =
-      reviewer.storeId === undefined
-        ? byCode.get(reviewer.storeCode ?? "")
-        : Number(reviewer.storeId);
-    if (id !== undefined && Number.isSafeInteger(id) && id > 0 && !stores.has(id)) {
-      stores.set(id, reviewer.date);
+    const code = reviewer.storeCode;
+    const id = reviewer.storeId === undefined ? byCode.get(code ?? "") : Number(reviewer.storeId);
+    if (id !== undefined && Number.isSafeInteger(id) && id > 0) {
+      if (!stores.has(id)) {
+        stores.set(id, reviewer.date);
+      }
+    } else if (reviewer.storeId === undefined && code !== undefined && !waiting.has(code)) {
+      waiting.set(code, reviewer.date);
     }
   }
-  return stores;
+  return { stores, waiting };
 }
 
 function isRefusal(failure: ApiFailure): boolean {
