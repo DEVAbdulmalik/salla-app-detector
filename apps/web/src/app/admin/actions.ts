@@ -1,22 +1,12 @@
 "use server";
 
-import type { EvidenceKind } from "@salla-app-detector/engine";
+import { ignoreCandidate, promoteCandidate } from "@salla-app-detector/jobs";
 import { revalidatePath } from "next/cache";
 import { getRepository } from "@/lib/database";
 import { isAdminEmail } from "@/lib/supabase/config";
 import { currentUserEmail } from "@/lib/supabase/server";
 
 export type Decision = "promote" | "ignore";
-
-/** The signal kinds the learning loop clusters on, and which a fingerprint can carry. */
-const PROMOTABLE = [
-  "service",
-  "host",
-  "domain",
-  "inline-signature",
-  "inline-token",
-  "product-image-host",
-] as const satisfies readonly EvidenceKind[];
 
 /**
  * Turns a reviewed candidate into knowledge. Promoting writes a fingerprint that scans
@@ -39,33 +29,16 @@ export async function decideCandidate(
   }
 
   if (decision === "ignore") {
-    await repository.setCandidateStatus(signalKind, signalValue, "ignored");
+    await ignoreCandidate(repository, signalKind, signalValue);
     revalidatePath("/admin");
     return { ok: true };
   }
 
-  const target = appId.trim();
-  if (target === "") {
-    return { ok: false, error: "missing-app" };
-  }
-  const kind = PROMOTABLE.find((promotable) => promotable === signalKind);
-  if (kind === undefined) {
-    return { ok: false, error: "unsupported-kind" };
+  const result = await promoteCandidate(repository, { signalKind, signalValue, appId });
+  if (!result.ok) {
+    return { ok: false, error: result.error };
   }
 
-  await repository.upsertFingerprints([
-    {
-      id: `mined:${signalKind}:${signalValue}`,
-      kind,
-      pattern: signalValue,
-      strength: "strong",
-      source: "mined",
-      appId: target,
-    },
-  ]);
-  await repository.setCandidateStatus(signalKind, signalValue, "promoted");
-  await repository.publishSnapshot();
   revalidatePath("/admin");
-
   return { ok: true };
 }

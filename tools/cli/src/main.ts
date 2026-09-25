@@ -1,6 +1,7 @@
 import { DATABASE_USAGE, databaseCommand } from "./commands/database";
 import { SCAN_USAGE, scanCommand } from "./commands/scan";
 import { CANARY_USAGE, canaryCommand } from "./commands/canary";
+import { CANDIDATES_USAGE, candidatesCommand } from "./commands/candidates";
 import { CRAWL_USAGE, crawlCommand } from "./commands/crawl";
 import { HEALTH_USAGE, healthCommand } from "./commands/health";
 import { LEARN_USAGE, learnCommand } from "./commands/learn";
@@ -19,6 +20,7 @@ const USAGE = `Usage: pnpm cli <command>
   crawl              scan several stores and record what they show
   health             run the monitoring checks now
   learn              turn unexplained signals into candidates
+  candidates         review what learning proposed, and decide
   quality-report     measure detection against known installations
 
 ${SCAN_USAGE}
@@ -29,6 +31,7 @@ ${CANARY_USAGE}
 ${CRAWL_USAGE}
 ${HEALTH_USAGE}
 ${LEARN_USAGE}
+${CANDIDATES_USAGE}
 ${QUALITY_USAGE}`;
 
 async function main(argv: readonly string[]): Promise<number> {
@@ -55,6 +58,8 @@ async function main(argv: readonly string[]): Promise<number> {
       return healthCommand();
     case "learn":
       return learnCommand();
+    case "candidates":
+      return candidatesCommand(rest);
     case "quality-report":
       return qualityCommand(rest);
     default:

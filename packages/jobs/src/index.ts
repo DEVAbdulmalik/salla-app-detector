@@ -8,6 +8,9 @@ export type { CatalogClient, CatalogSyncOptions, CatalogSyncResult } from "./cat
 export { syncThemes } from "./theme-sync";
 export type { ThemeClient, ThemeSyncOptions, ThemeSyncResult } from "./theme-sync";
 
+export { ignoreCandidate, promoteCandidate, PROMOTABLE_KINDS } from "./promote";
+export type { Promotion, PromotionError } from "./promote";
+
 export { learn } from "./learn";
 export type { LearnOptions, LearnResult } from "./learn";
 
