@@ -1,112 +1,114 @@
 # Salla App Detector
 
-Paste the URL of a store built on the Salla platform and get back the apps it uses.
+Paste the URL of a store built on the Salla platform and get back what it runs.
 
-Detection reads what the storefront actually serves: app snippets, built-in integrations,
-inline app code, third-party scripts, and — for dropshipping apps — the store's public
-product data. Every finding is reported with the evidence behind it and a confidence
-level. Apps that run only between Salla and a vendor's server (shipping, accounting,
-messaging) leave no public trace and are out of scope, so a result of "not detected" never
-means "not installed".
+Detection reads what the storefront actually serves — app snippets, built-in integrations,
+inline app code, third-party scripts, the theme the store declares, and, for dropshipping,
+the store's public product data. Every finding carries the evidence behind it.
 
-## Layout
+Apps that run only between Salla and a vendor's server (shipping, accounting, messaging)
+leave no public trace and are out of scope, so "not detected" never means "not installed".
 
-| Path                 | Purpose                                                             |
-| -------------------- | ------------------------------------------------------------------- |
-| `packages/shared`    | Result type, structured logger, environment validation              |
-| `packages/engine`    | Pure detection: parse a page, gather evidence, match, score, report |
-| `packages/salla`     | Clients for Salla's storefront and marketplace endpoints            |
-| `packages/knowledge` | Fingerprint store, snapshot building                                |
-| `packages/jobs`      | Scanning, catalog sync, learning loop, health checks                |
-| `apps/web`           | Next.js front end, public API, admin                                |
-| `tools/cli`          | Local commands for scanning and maintaining the knowledge base      |
+## A report contains
 
-The engine never performs I/O. It takes a page and a knowledge snapshot and returns a
-report, which keeps the whole detection path testable offline against saved pages. Fetching
-lives in `packages/salla`, where requests are restricted to public addresses and every
-response is validated against a schema.
+| Section        | Where it comes from                                                                  |
+| -------------- | ------------------------------------------------------------------------------------ |
+| Apps           | Fingerprints matched against the page, each with its evidence and a confidence level |
+| Theme          | The store declares it; the catalogue supplies the name, developer and version        |
+| Integrations   | Salla's built-in services, read from the page configuration                          |
+| Payments       | Methods and instalment providers the merchant enabled                                |
+| Dropshipping   | Product image hosts and SKU shapes, matched by proportion                            |
+| Unknown traces | What nothing explained yet, collected for the learning loop                          |
 
-## Requirements
+## Quick start
 
-- Node.js 24 (see `.node-version`)
-- pnpm 12 (`npm install -g pnpm@12`)
-
-## Getting started
+Node.js 24 (see `.node-version`) and pnpm 12.
 
 ```bash
 pnpm install
 cp .env.example .env.local
 pnpm check
+pnpm cli scan mahwous.com
 ```
 
-## Scanning a store
+Any link to a store works: its own domain, a `salla.sa` handle, or a product page.
 
-```bash
-pnpm cli scan mahwous.com          # readable summary
-pnpm cli scan mahwous.com --json   # the full report
-```
+## How it is built
 
-Any link to the store works: its own domain, a `salla.sa` handle, or a product page.
+| Path                 | Purpose                                                             |
+| -------------------- | ------------------------------------------------------------------- |
+| `packages/shared`    | Result type, structured logger, environment validation              |
+| `packages/engine`    | Pure detection: parse a page, gather evidence, match, score, report |
+| `packages/salla`     | Clients for Salla's storefront, marketplace and theme endpoints     |
+| `packages/knowledge` | Apps, themes, fingerprints, noise, and the snapshot they compile to |
+| `packages/jobs`      | Scanning, catalogue sync, learning loop, monitoring                 |
+| `apps/web`           | Next.js front end, public API, admin panel                          |
+| `tools/cli`          | Local commands for scanning and maintaining the knowledge base      |
+
+The engine never performs I/O. It takes a page and a knowledge snapshot and returns a
+report, so the whole detection path is testable offline against saved pages. Fetching lives
+in `packages/salla`, where requests reach public addresses only, every response is checked
+against a schema, and requests to one host are paced so a burst is queued rather than
+refused.
 
 ## Knowledge base
 
-Detection reads from a Postgres database that holds the app catalogue, the fingerprints
-that point at those apps, and the platform background to ignore. Without a database the
-scanner falls back to the knowledge bundled in `packages/knowledge`.
+Detection reads a Postgres database holding the app catalogue, the theme catalogue, the
+fingerprints pointing at apps, and the platform background to ignore. Without a database it
+falls back to the knowledge bundled in `packages/knowledge`.
 
-```bash
-pnpm cli db migrate      # create or update the schema
-pnpm cli db import       # load the bundled knowledge into an empty database
-pnpm cli db snapshot     # show what the database currently knows
-pnpm cli sync catalog    # refresh the catalogue and regenerate fingerprints
-```
+Every report records the engine version and the knowledge version that produced it, so any
+result can be reproduced.
 
-`sync catalog` works within a time budget and saves its place, so a large refresh can span
-several scheduled runs. Set `DATABASE_URL` in `.env.local`; see `.env.example`.
+## Commands
+
+| Command                                 | What it does                                                |
+| --------------------------------------- | ----------------------------------------------------------- |
+| `pnpm check`                            | Types, lint, formatting and tests                           |
+| `pnpm cli scan <url>`                   | Scan one store (`--json` for the full report)               |
+| `pnpm cli crawl --file <path>`          | Scan and record a list of stores, which feeds learning      |
+| `pnpm cli db migrate`                   | Create or update the schema                                 |
+| `pnpm cli db import`                    | Load the bundled knowledge into an empty database           |
+| `pnpm cli db snapshot`                  | Show what the database currently knows                      |
+| `pnpm cli sync catalog`                 | Refresh apps and regenerate their fingerprints              |
+| `pnpm cli sync themes`                  | Refresh the theme catalogue                                 |
+| `pnpm cli learn`                        | Turn unexplained traces into candidates                     |
+| `pnpm cli validate <signal> --app <id>` | Check a proposed fingerprint against stores running the app |
+| `pnpm cli health`                       | Run the monitoring checks now                               |
+| `pnpm cli canary <url> ...`             | Watch a store whose apps are known (`--list` to see them)   |
+| `pnpm cli quality-report`               | Measure detection against known installations               |
+
+`sync catalog` works to a time budget and saves its place, so a large refresh can span
+several scheduled runs.
 
 ## Running it in production
 
-The web app is deployed on Vercel and the database is Supabase. Two schedules keep the
-knowledge current: the catalogue sync at 02:00 and the learning loop at 03:00, which also
-runs the monitoring checks. Both endpoints require the `CRON_SECRET` bearer token.
+The web app is deployed on Vercel, the database is Supabase, and two schedules keep the
+knowledge current: the catalogue and theme sync at 02:00, and the learning loop at 03:00,
+which also runs the monitoring checks. Both endpoints require the `CRON_SECRET` bearer
+token. `GET /api/health?deep=1` reports the region, the knowledge version, database timings
+and which optional settings the deployment received.
 
-Keep the serverless functions in the same region as the database. A scan that crosses
-continents spends most of its time waiting on the network rather than on the store.
+Two things are worth knowing before changing the deployment:
 
-```bash
-pnpm cli health                  # run the monitoring checks now
-pnpm cli canary <url> ...        # watch a store whose apps are known
-pnpm cli canary --list
-pnpm cli quality-report          # measure detection against known installations
-pnpm cli validate <signal> --app <id>   # check a proposed fingerprint
-```
+- **Region matters twice.** Serverless functions far from the database spend most of a scan
+  waiting on the network, and some of Salla's own hosts refuse requests from certain
+  regions outright.
+- **Canaries define themselves.** A canary's expectation is whatever detection finds on the
+  day it is added, so add canaries only from stores you have looked at.
 
 ### What the alerts mean
 
-| Alert                  | Reading                                                                                                                                                                              |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `canary-missing-app`   | One store lost one app: that app's fingerprint is probably stale. Scan the store, look at what changed, and promote a replacement from the candidate queue.                          |
-| `canary-sweep`         | Several canaries lost apps at once: Salla changed something structural. Compare a saved page with a fresh one before touching any fingerprint.                                       |
-| `blocked-rate`         | A quarter of recent scans came back blocked. Usually the hosting provider's addresses are being challenged; check from a different network before assuming the detector is at fault. |
-| `fingerprint-silent`   | An app detected across several stores last week and none this week. Treat like a stale fingerprint.                                                                                  |
-| `unmapped-service-key` | Salla added a built-in integration. Map the key to an app in the services table.                                                                                                     |
-
-The canary expectation is whatever detection finds on the day the canary is added, so add
-canaries only from stores you have looked at.
-
-## Scripts
-
-| Command               | Description                          |
-| --------------------- | ------------------------------------ |
-| `pnpm check`          | Types, lint, formatting, and tests   |
-| `pnpm cli scan <url>` | Scan one store from the terminal     |
-| `pnpm typecheck`      | TypeScript across every package      |
-| `pnpm lint`           | ESLint, warnings treated as failures |
-| `pnpm format`         | Apply Prettier                       |
-| `pnpm test`           | Vitest once                          |
-| `pnpm test:watch`     | Vitest in watch mode                 |
-| `pnpm test:coverage`  | Vitest with coverage                 |
-| `pnpm cli health`     | Run the monitoring checks            |
+| Alert                  | Reading                                                                                                                                        |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `canary-missing-app`   | One store lost one app: that app's fingerprint is probably stale. Scan the store, see what changed, promote a replacement from the queue.      |
+| `canary-sweep`         | Several canaries lost apps at once: Salla changed something structural. Compare a saved page with a fresh one before touching any fingerprint. |
+| `blocked-rate`         | A quarter of recent scans came back blocked. Usually the hosting addresses are being challenged; check from another network first.             |
+| `fingerprint-silent`   | An app detected across several stores last week and none this week. Treat as a stale fingerprint.                                              |
+| `unmapped-service-key` | Salla added a built-in integration. Map the key to an app, or ignore it if the platform provides it directly.                                  |
+| `api-contract`         | An endpoint we read no longer answers the shape we parse. Check it before trusting new reports.                                                |
+| `job-not-running`      | A schedule has been silent for a day and a half. The knowledge is going stale even though scanning still works.                                |
+| `request-failed`       | An unexpected error in a page or an endpoint, recorded where the other alerts live.                                                            |
 
 ## Note
 
