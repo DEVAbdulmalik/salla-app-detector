@@ -1,8 +1,23 @@
 /**
- * Next calls this for every error it catches on the server: a page, a route handler or a
- * server action. Recording them here means a broken page raises the same kind of alert as
- * a broken job, instead of waiting for someone to report it.
+ * Watches the two ways the server can fail. Next reports what it catches itself — a page,
+ * a route handler, a server action — through `onRequestError`. A rejected promise that
+ * nothing awaits never reaches it: the visitor may even get a normal page while the work
+ * behind it failed, so the process is watched for those too.
  */
+export async function register(): Promise<void> {
+  if (process.env.NEXT_RUNTIME !== "nodejs") {
+    return;
+  }
+  const { reportError } = await import("./lib/report-error");
+
+  process.on("unhandledRejection", (reason) => {
+    void reportError("unhandled-rejection", reason);
+  });
+  process.on("uncaughtException", (error) => {
+    void reportError("uncaught-exception", error);
+  });
+}
+
 export async function onRequestError(
   error: unknown,
   request: { path: string; method: string },

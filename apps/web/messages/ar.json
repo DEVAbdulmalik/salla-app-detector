@@ -165,7 +165,9 @@
         "job-not-running": "مهمة مجدولة توقفت عن العمل",
         "request-failed": "خطأ غير متوقع في الموقع",
         "scan-failed": "فشل فحص بشكل غير متوقع",
-        "api-contract": "رد من سلة ما عاد يطابق ما نقرأه"
+        "api-contract": "رد من سلة ما عاد يطابق ما نقرأه",
+        "unhandled-rejection": "عملية فشلت في الخلفية دون أن يلاحظها أحد",
+        "uncaught-exception": "خطأ غير معالج في الخادم"
       }
     },
     "signInErrors": {
